@@ -1,0 +1,21 @@
+# Routes
+url: "https://brandonb.io"
+
+debug: false
+
+# Publishing
+future: false
+show_drafts: false
+
+exclude: [
+  '.ruby-version',
+  '.editorconfig',
+  '.bowerrc',
+  'Gulpfile.js',
+  'package.json',
+  'bower.json',
+  'README.md',
+  'node_modules',
+  'gulp',
+  'build_dev'
+]

@@ -1,0 +1,48 @@
+{% if site.google_analytics.id and site.google_analytics.domain %}
+<!-- Analytics -->
+<script>
+  /**
+   * Detect if localStorage exists in the browser
+   */
+  var hasLocalStorage = (function () {
+    try {
+      localStorage.setItem(mod, mod);
+      localStorage.removeItem(mod);
+      return true;
+    }
+    catch (exception) {
+      return false;
+    }
+  }());
+
+  /**
+   * Use localstorage to store the Google tracking cookie
+   * so it's not sent to the server on every request
+   * See: https://github.com/h5bp/html5-boilerplate/issues/1444
+   *
+   * Or, if localStorage isn't available, use the regular Google Analytics code
+   */
+  if (hasLocalStorage) {
+    (function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
+    function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
+    e=o.createElement(i);r=o.getElementsByTagName(i)[0];
+    e.src='//www.google-analytics.com/analytics.js';
+    r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
+    ga('create', '{{ site.google_analytics.id }}', '{{ site.google_analytics.domain }}', {
+      'storage': 'none',
+      'clientId': localStorage.getItem('gaClientId')
+    });
+    ga(function(t){localStorage.setItem('gaClientId',t.get('clientId'));});
+    ga('require', 'displayfeatures');
+    ga('send','pageview');
+  } else {
+    (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+    (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+    m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+    })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+    ga('create', '{{ site.google_analytics.id }}', '{{ site.google_analytics.domain }}');
+    ga('require', 'displayfeatures');
+    ga('send', 'pageview');
+  }
+</script>
+{% endif %}

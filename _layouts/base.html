@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#" xmlns:og="http://ogp.me/ns#">
+  <head>
+    {% include head.html %}
+  </head>
+  <body{% if page.body_class %} class="{{ page.body_class }}"{% endif %} itemscope itemtype="http://schema.org/WebPage">
+    <div class="site-container">
+      {% include header.html %}
+
+      <main class="site-content" role="main" itemprop="mainContentOfPage">
+        <section itemscope itemtype="http://schema.org/Blog">
+          {{ content }}
+        </section>
+      </main>
+
+      {% include footer.html %}
+    </div>
+  </body>
+</html>

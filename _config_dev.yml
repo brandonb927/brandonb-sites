@@ -1,0 +1,27 @@
+# Routes
+url: "http://127.0.0.1:8888"
+
+# Publishing
+show_drafts: true
+
+# Disable some things for development
+google_analytics:
+  id: ''
+  domain: ''
+
+disqus:
+  shortname: ''
+
+# Build settings
+exclude: [
+  '.ruby-version',
+  '.editorconfig',
+  '.bowerrc',
+  'README.md',
+  'Gulpfile.js',
+  'package.json',
+  'bower.json',
+  'gulp',
+  'node_modules',
+  'build_prod'
+]

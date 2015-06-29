@@ -1,0 +1,12 @@
+{
+  "name": "static-blog",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components"
+  ],
+  "dependencies": {
+    "picturefill": "~3.0.0-alpha1"
+  }
+}

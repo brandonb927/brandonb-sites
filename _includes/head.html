@@ -1,0 +1,42 @@
+<meta charset="utf-8">
+<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="ClearType" content="true">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
+
+<base href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">
+
+<link rel="dns-prefetch" href="//ajax.googleapis.com">
+{% if site.google_analytics.id %}
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+{% endif %}
+
+{% include social_meta_tags.html %}
+
+{% if page.robots %}
+<meta name="robots" content="{{ page.robots }}">
+{% else %}
+<meta name="robots" content="all">
+{% endif %}
+
+{% include favicons.html %}
+
+<link rel="stylesheet" href="{{ "/assets/styles/site.css" | prepend: site.baseurl | prepend: site.url }}">
+<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ '/rss.xml' | prepend: site.baseurl | prepend: site.url }}">
+
+{% include google_analytics.html %}
+
+{% if page.title == 'About' and site.mapbox.token and site.mapbox.id %}
+<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
+<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
+{% endif %}
+
+<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>

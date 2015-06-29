@@ -1,0 +1,69 @@
+encoding: "utf-8"
+language: "en-us"
+
+# Site Settings
+title: "Brandons Blog"
+author:
+  name: "Brandon Brown"
+  email: "brandon@brandonb.io"
+description: > # ignore newlines in this value
+  Canadian, passion for open source, tech, and front-end web development.
+  This is where I dump my ideas, thoughts, and tech-related bits & pieces
+  that I find interesting.
+
+# Favicons
+favicons:
+  ico: https://dl.dropbox.com/u/3408044/brandonb.io/favicon.ico
+  png: https://dl.dropbox.com/u/3408044/brandonb.io/logo-144.png
+  theme_color: "#FFFFFF"
+
+# Routes
+baseurl: "" # Use if your site is in a subdirectory, e.g. /blog/
+root: /
+permalink: /:title
+
+assets_images: /assets/images
+assets_scripts: /assets/scripts
+assets_styles: /assets/styles
+
+# Writing
+markdown: redcarpet
+
+# Build-stuff
+keep_files: [
+  'assets'
+]
+
+# Pagination
+paginate: 5
+paginate_path: "/page/:num"
+
+defaults:
+  -
+    scope:
+      path: ""
+      type: posts
+    values:
+      layout: base
+
+# 3rd-party
+social:
+  twitter: brandonb927
+  github: brandonb927
+  googleplus: brandonbrown927
+
+gravatar: https://en.gravatar.com/userimage/19053779/f8b5c9ca0e71f6deb7137403b8338bb5.jpg?size=512
+
+disqus:
+  shortname: brandonbrownsblog
+
+google_analytics:
+  id: "UA-32422940-2"
+  domain: "brandonb.io"
+
+# Extras
+gems:
+  - jekyll-gist
+  - jekyll-paginate
+  - jekyll-sitemap
+  - jekyll-redirect-from

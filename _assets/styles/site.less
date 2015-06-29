@@ -1,0 +1,312 @@
+// Variables and utilities
+@import 'utilities.less';
+@import 'variables.less';
+@import 'fonts.less';
+
+// 3rd-party
+@import (less) "normalize.css";
+@import (less) "tomorrow-night-eighties.css";
+
+// Base modules
+@import 'buttons.less';
+@import 'base.less';
+@import 'errors.less';
+
+// Main styles
+.site-container {
+  position: relative;
+  width: 60%;
+  margin-top: 10rem;
+  margin-right: auto;
+  margin-bottom: 10rem;
+  margin-left: auto;
+  box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,.1);
+}
+
+.site-header,
+.site-content,
+.site-footer {
+  background: @white;
+}
+
+.site-header {
+  padding-top: 6rem;
+  padding-right: 0;
+  padding-bottom: 0;
+  padding-left: 0;
+
+  color: @white;
+  text-align: center;
+}
+
+// Navigation
+.site-header-nav {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin-top: 6rem;
+    margin-bottom: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  a {
+    display: inline-block;
+    margin-left: 1rem;
+    margin-right: 1rem;
+    padding: 1rem;
+  }
+
+  a:hover {
+    text-decoration: none;
+    background: @gray-lighter;
+  }
+}
+
+.site-header-avatar {
+  // nothing here
+}
+
+.site-header-avatar-img {
+  height: 19.6rem;
+  width: 19.6rem;
+  border-radius: 50%;
+}
+
+.site-header-title {
+  margin-top: 4rem;
+  margin-bottom: 4rem;
+  padding: 0;
+
+  h1 {
+    margin: 0;
+  }
+
+  a {
+    color: @gray-darkest;
+    text-decoration: none;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+.site-header-description {
+  color: @black;
+  width: 60%;
+  margin: 0 auto;
+}
+
+// Content area
+.site-content {
+  padding-top: 6rem;
+  padding-right: 8rem;
+  padding-bottom: 4rem;
+  padding-left: 8rem;
+}
+
+.site-footer {
+  text-align: center;
+}
+
+.site-footer-inner {
+  padding-top: 4rem;
+  padding-right: 0;
+  padding-bottom: 6rem;
+  padding-left: 0;
+
+  p {
+    margin: 0;
+  }
+}
+
+.site-footer-social {
+  ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+
+    margin: 0;
+    padding: 0;
+  }
+
+  li {
+    list-style-type: none;
+  }
+
+  a {
+    display: inline-block;
+    padding: 1rem;
+  }
+
+  a:hover {
+    text-decoration: none;
+    background: @gray-lighter;
+  }
+}
+
+// Feed posts
+.posts-feed {
+  // nothing here right now
+}
+
+.posts-feed-item {
+  padding-top: 6rem;
+  padding-right: 0;
+  padding-bottom: 6rem;
+  padding-left: 0;
+
+  &:first-child {
+    padding-top: 0;
+  }
+}
+
+
+// Individual post
+.post-title {
+  margin-bottom: 4rem;
+}
+
+.post-meta {
+  font-size: 1.3rem;
+  color: @gray-darker;
+  .clearfix;
+}
+
+.post-meta-left {
+  float: left;
+}
+
+.post-meta-right {
+  float: right;
+}
+
+.post-content {
+  margin-bottom: 4rem;
+
+  figure {
+    margin-top: 6rem;
+    margin-right: -8rem;
+    margin-bottom: 6rem;
+    margin-left: -8rem;
+    text-align: center;
+  }
+
+  picture {
+    display: block;
+  }
+
+  img {
+    margin: 0 auto;
+    max-width: 100%;
+  }
+}
+
+.post-comments {
+  margin-top: 2rem;
+  margin-right: 0;
+  margin-bottom: 2rem;
+  margin-left: 0;
+}
+
+.post-comments-button {
+  margin-top: 4rem;
+  text-align: center;
+}
+
+// Pagination
+.posts-pagination {
+  margin-top: 8rem;
+  margin-right: 0;
+  margin-bottom: 2rem;
+  margin-left: 0;
+
+  ul {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+  }
+
+  li {
+    display: inline-block;
+    list-style-type: none;
+  }
+
+  a {
+    display: inline-block;
+    padding: 1rem;
+  }
+
+  a:hover {
+    text-decoration: none;
+    background: @gray-lighter;
+  }
+}
+
+.posts-pagination-page-num {
+  text-align: center;
+  flex: 2;
+}
+
+.posts-pagination-prev,
+.posts-pagination-next {
+  flex: 1;
+}
+
+.posts-pagination-prev {
+  //
+}
+
+.posts-pagination-next {
+  text-align: right;
+}
+
+.posts-pagination-none {
+  color: @gray-dark;
+}
+
+// Fix Github gists
+.highlight {
+  margin: 0;
+
+  .line-data {
+    .line-pre {
+      color: inherit;
+      box-shadow: none;
+      text-shadow: none;
+    }
+  }
+}
+
+// Mapbox stuff
+.mapbox-map-container {
+  position: relative;
+  height: 60rem;
+  margin-bottom: 4rem;
+  margin-left: -8rem;
+  margin-right: -8rem;
+}
+
+.mapbox-map {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 100%;
+}
+
+// Disable Mapbox webkit cursor grab
+.leaflet-container {
+  cursor: auto !important;
+}
+
+
+// Responsive-related classes
+@import 'responsive.less';

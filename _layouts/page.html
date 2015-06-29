@@ -1,0 +1,19 @@
+---
+layout: base
+---
+
+<article class="posts-feed-item" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
+  <h2 class="post-title" itemprop="name headline">
+    {{ page.title }}
+  </h2>
+
+  {% if page.title == 'About' %}
+  <div class="mapbox-map-container">
+    <div id="map" class="mapbox-map"></div>
+  </div>
+  {% endif %}
+
+  <div class="post-content" itemprop="text">
+    {{ content }}
+  </div>
+</article>

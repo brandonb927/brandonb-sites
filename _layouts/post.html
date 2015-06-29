@@ -1,0 +1,74 @@
+---
+layout: base
+---
+
+<article class="posts-feed-item" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
+  <h2 class="post-title" itemprop="name headline">
+    {{ page.title }}
+  </h2>
+
+  <div class="post-content" itemprop="text">
+    {{ content }}
+  </div>
+
+  <div class="post-meta">
+    <div class="post-meta-left">
+      <p>
+        Posted by
+        <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+          {% if site.social.googleplus %}
+          <a href="https://plus.google.com/+{{ site.social.googleplus }}?rel=author" target="_blank" itemprop="url">
+            <span itemprop="name">{{ site.author.name }}</span>
+          </a>
+          {% else %}
+          <span itemprop="name">{{ site.author.name }}</span>
+          {% endif %}
+        </span>
+        on <time datetime="{{ page.date | date_to_rfc822 }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+      </p>
+    </div>
+    <div class="post-meta-right">
+      <p>
+        {% if page.tags %}
+        Tagged with
+        <span class="post-meta-tags">
+          {% for tag in page.tags %}
+          <a href="/tag/{{ tag }}">{{ tag }}</a>
+          {% endfor %}
+        </span>
+        {% endif %}
+      </p>
+    </div>
+  </div>
+</article>
+
+{% if page && disqus.shortname %}
+<div class="post-comments">
+  <div class="post-comments-button">
+    <button class="button show-comments">Load Comments</button>
+  </div>
+  <div id="disqus_thread" data-disqus-shortname="{{ site.disqus.shortname }}" data-disqus-url="{{ page.url }}"></div>
+  <script>
+    var commentsButton = document.querySelector('.show-comments');
+    var buttonStyle = commentsButton.style;
+    buttonStyle.opacity = 1;
+
+    commentsButton.addEventListener('click', function () {
+      {% if site.google_analytics.id %}
+      ga('send', 'event', 'button', 'click', 'show-comments');
+      {% endif %}
+
+      // Delay the script loading so the button fades out
+      // before the disqus loader takes it's place
+      setTimeout(function () {
+        var script = document.createElement('script');
+        script.setAttribute('type','text/javascript');
+        script.setAttribute('src', '//{{ site.disqus.shortname }}.disqus.com/embed.js');
+        document.getElementsByTagName('head')[0].appendChild(script);
+      }, 200);
+
+      ;(function fade () { (buttonStyle.opacity -= .1) < 0 ? buttonStyle.display = "none" : setTimeout(fade ,40) })();
+    });
+  </script>
+</div>
+{% endif %}

@@ -1,0 +1,92 @@
+@media (min-width: @grid-breakpoint-large-min) { // Desktop or higher
+
+  // Resize for larger screens
+  body {
+    font-size: 1.8rem;
+  }
+
+}
+
+
+@media (max-width: @grid-breakpoint-medium-max) { // Everything up to desktop
+
+  .site-container {
+    width: 92%;
+    margin-top: 4rem;
+    margin-bottom: 4rem;
+  }
+
+  .site-content {
+    // Fix long links breaking out of boxes
+    word-break: break-word;
+    hyphens:    auto;
+  }
+
+}
+
+@media (max-width: @grid-breakpoint-small-max) { // iPhone size
+
+  p {
+    margin-bottom: 3rem;
+  }
+
+  pre {
+    margin: 2rem -2rem;
+    padding: 2rem 2rem;
+  }
+
+  blockquote {
+    padding: 1rem;
+  }
+
+  .site-header {
+    padding-top: 4rem;
+    padding-bottom: 2rem;
+  }
+
+  .site-header-title {
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+
+    h1 {
+      font-size: 2.6rem;
+    }
+  }
+
+  .site-header-avatar-img {
+    height: 12.8rem;
+    width: 12.8rem;
+  }
+
+  .site-header-description {
+    width: 80%;
+  }
+
+  .site-content {
+    width: 100%;
+    padding-top: 2rem;
+    padding-right: 2rem;
+    padding-bottom: 2rem;
+    padding-left: 2rem;
+  }
+
+  .posts-feed-item {
+    padding: 1rem 0;
+  }
+
+  .post-content {
+    figure {
+      margin: 1rem -2rem;
+    }
+  }
+
+  .post-meta-left,
+  .post-meta-right {
+    float: none;
+
+    p {
+      margin-bottom: 1rem;
+    }
+  }
+
+}

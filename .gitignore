@@ -1,0 +1,12 @@
+# Node stuff
+node_modules
+
+# Build stuff
+build_dev
+build_prod
+_posts
+_drafts
+_assets/bower_components
+_assets/images
+
+.jekyll-metadata
