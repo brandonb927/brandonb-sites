@@ -22,7 +22,8 @@ baseurl: "" # Use if your site is in a subdirectory, e.g. /blog/
 root: /
 permalink: /:title
 
-assets_images: /assets/images
+# assets_images: /assets/images
+assets_images: https://d3b5kx8qsv0rui.cloudfront.net
 assets_scripts: /assets/scripts
 assets_styles: /assets/styles
 

@@ -23,7 +23,6 @@ gulp.task('build:prod', (callback) ->
     [
       'styles:prod'
       'scripts:prod'
-      'copy:images:prod'
     ]
     callback
   )

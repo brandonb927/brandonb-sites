@@ -1,18 +1,18 @@
 gulp           = require('gulp')
 runSequence    = require('run-sequence')
-copyConfigDev  = require('../config/dev').copy.images
-copyConfigProd = require('../config/prod').copy.images
+copyConfigDev  = require('../config/dev').copy
+copyConfigProd = require('../config/prod').copy
 
 
 # Copy images
 gulp.task('copy:images:dev', () ->
-  return gulp.src(copyConfigDev.src)
-    .pipe(gulp.dest(copyConfigDev.dest))
+  return gulp.src(copyConfigDev.images.src)
+    .pipe(gulp.dest(copyConfigDev.images.dest))
 )
 
 gulp.task('copy:images:prod', () ->
-  return gulp.src(copyConfigProd.src)
-    .pipe(gulp.dest(copyConfigProd.dest))
+  return gulp.src(copyConfigProd.images.src)
+    .pipe(gulp.dest(copyConfigProd.images.dest))
 )
 
 gulp.task('copy:dev', (callback) ->

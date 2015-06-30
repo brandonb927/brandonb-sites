@@ -27,8 +27,10 @@ module Jekyll
       @image2x = "#{filename2x}.#{image2x_array[1]}"
 
       # Replace the images with the proper urls
-      @image1x = "#{@site_url}#{@base_url}#{@assets_images}/#{@image1x}"
-      @image2x = "#{@site_url}#{@base_url}#{@assets_images}/#{@image2x}"
+      # @image1x = "#{@site_url}#{@base_url}#{@assets_images}/#{@image1x}"
+      # @image2x = "#{@site_url}#{@base_url}#{@assets_images}/#{@image2x}"
+      @image1x = "#{@assets_images}/#{@image1x}"
+      @image2x = "#{@assets_images}/#{@image2x}"
 
       alt_text = @attributes['alt'] ? "alt=\"#{@attributes['alt']}\"" : ''
 

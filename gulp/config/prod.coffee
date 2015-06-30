@@ -20,6 +20,8 @@ module.exports =
     src: build
     dest: build
     domain: "brandonb.io"
+    s3:
+      bucket: 'brandonb-io-images'
   delete:
     src: [
       build
