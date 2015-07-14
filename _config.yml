@@ -32,8 +32,7 @@ markdown: redcarpet
 
 # Build-stuff
 keep_files: [
-  'assets'
-]
+  'assets']
 
 # Pagination
 paginate: 5

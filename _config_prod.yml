@@ -17,5 +17,4 @@ exclude: [
   'README.md',
   'node_modules',
   'gulp',
-  'build_dev'
-]
+  'build_dev']

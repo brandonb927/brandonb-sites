@@ -23,5 +23,4 @@ exclude: [
   'bower.json',
   'gulp',
   'node_modules',
-  'build_prod'
-]
+  'build_prod']
