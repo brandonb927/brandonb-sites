@@ -1,5 +1,8 @@
 <!DOCTYPE html>
-<html lang="en-US" prefix="og: http://ogp.me/ns#" xmlns:og="http://ogp.me/ns#">
+<html lang="en-US"
+      prefix="og: http://ogp.me/ns#"
+      xmlns:og="http://ogp.me/ns#"
+      manifest="{{ "/auto.appcache" | prepend: site.baseurl | prepend: site.url }}">
   <head>
     {% include head.html %}
   </head>
