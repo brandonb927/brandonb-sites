@@ -5,6 +5,7 @@ layout: base
 {% if paginator.posts %}
 <div class="posts-feed">
   {% for post in paginator.posts %}
+  {% unless post.draft %}
   <article class="posts-feed-item" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
     <h2 class="post-title" itemprop="name headline">
       <a href="{{ post.url | prepend: site.baseurl }}">
@@ -50,6 +51,7 @@ layout: base
   {% if loop.last %}{% else %}
   <hr />
   {% endif %}
+  {% endunless %}
   {% endfor %}
 </div>
 {% else %}
