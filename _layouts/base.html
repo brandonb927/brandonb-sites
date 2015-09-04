@@ -2,21 +2,25 @@
 <html lang="en-US"
       prefix="og: http://ogp.me/ns#"
       xmlns:og="http://ogp.me/ns#"
-      manifest="{{ "/auto.appcache" | prepend: site.baseurl | prepend: site.url }}">
+      {% if !site.debug %}manifest="{{ "/auto.appcache" | prepend: site.baseurl | prepend: site.url }}"{% endif %}>
   <head>
     {% include head.html %}
   </head>
   <body{% if page.body_class %} class="{{ page.body_class }}"{% endif %} itemscope itemtype="http://schema.org/WebPage">
-    <div class="site-container">
-      {% include header.html %}
 
+    <div class="left-container">
+      {% include header.html %}
+      {% include footer.html %}
+    </div>
+
+    <div class="right-container">
       <main class="site-content" role="main" itemprop="mainContentOfPage">
         <section itemscope itemtype="http://schema.org/Blog">
           {{ content }}
         </section>
       </main>
-
-      {% include footer.html %}
     </div>
+
+    {% include foot.html %}
   </body>
 </html>

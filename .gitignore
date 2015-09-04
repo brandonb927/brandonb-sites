@@ -5,7 +5,6 @@ node_modules
 build_dev
 build_prod
 _posts
-_drafts
 _assets/bower_components
 _assets/images
 

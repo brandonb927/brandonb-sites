@@ -44,7 +44,7 @@ defaults:
       path: ""
       type: posts
     values:
-      layout: base
+      layout: post
 
 # 3rd-party
 social:

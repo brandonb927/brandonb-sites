@@ -13,27 +13,17 @@
 @import 'errors.less';
 
 // Main styles
-.site-container {
-  position: relative;
-  width: 60%;
-  margin-top: 10rem;
-  margin-right: auto;
-  margin-bottom: 10rem;
-  margin-left: auto;
-  box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,.1);
+.left-container {
+  width: 35%;
 }
 
-.site-header,
-.site-content,
-.site-footer {
-  background: @white;
+.right-container {
+  width: 60%;
+  box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,.1);
 }
 
 .site-header {
   padding-top: 6rem;
-  padding-right: 0;
-  padding-bottom: 0;
-  padding-left: 0;
 
   color: @white;
   text-align: center;
@@ -48,6 +38,7 @@
 
     margin-top: 6rem;
     margin-bottom: 0;
+    margin-left: 0;
     padding: 0;
   }
 
@@ -76,6 +67,7 @@
   height: 19.6rem;
   width: 19.6rem;
   border-radius: 50%;
+  box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,.1);
 }
 
 .site-header-title {
@@ -109,6 +101,7 @@
   padding-right: 8rem;
   padding-bottom: 4rem;
   padding-left: 8rem;
+  background: @white;
 }
 
 .site-footer {
@@ -190,12 +183,17 @@
 .post-content {
   margin-bottom: 4rem;
 
-  figure {
+  figure,
+  .iframe-gmap {
     margin-top: 6rem;
     margin-right: -8rem;
     margin-bottom: 6rem;
     margin-left: -8rem;
     text-align: center;
+  }
+
+  .iframe-gmap {
+    margin-bottom: 0;
   }
 
   picture {

@@ -42,7 +42,7 @@ layout: base
   </div>
 </article>
 
-{% if page && disqus.shortname %}
+{% if page.type == 'post' and disqus.shortname %}
 <div class="post-comments">
   <div class="post-comments-button">
     <button class="button show-comments">Load Comments</button>

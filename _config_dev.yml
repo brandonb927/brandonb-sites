@@ -20,6 +20,7 @@ exclude: [
   'README.md',
   'Gulpfile.js',
   'package.json',
+  'coffeelint.json',
   'bower.json',
   'gulp',
   'node_modules',

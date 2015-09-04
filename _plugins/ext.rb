@@ -20,34 +20,50 @@ module Jekyll
 
       # Get the 1x path
       @image1x = @attributes['src']
-
-      # Build the 2x image path from the 1x path
-      image2x_array = @image1x.split('.')
-      filename2x = "#{image2x_array[0]}@2x"
-      @image2x = "#{filename2x}.#{image2x_array[1]}"
-
-      # Replace the images with the proper urls
-      # @image1x = "#{@site_url}#{@base_url}#{@assets_images}/#{@image1x}"
-      # @image2x = "#{@site_url}#{@base_url}#{@assets_images}/#{@image2x}"
-      @image1x = "#{@assets_images}/#{@image1x}"
-      @image2x = "#{@assets_images}/#{@image2x}"
-
       alt_text = @attributes['alt'] ? "alt=\"#{@attributes['alt']}\"" : ''
 
-      """
-      <figure>
-        <a href=\"#{@image1x}\" target=\"_blank\">
-          <picture>
-            <source
-              srcset=\"#{@image1x}, #{@image2x} 2x\">
-            <img
-              src=\"#{@image1x}\"
-              srcset=\"#{@image1x}, #{@image2x} 2x\"
-              #{alt_text}>
-          </picture>
-        </a>
-      </figure>
-      """.strip
+      if @image1x.include? "http" or @image1x.include? "https"
+        """
+        <figure>
+          <a href=\"#{@image1x}\" target=\"_blank\">
+            <picture>
+              <source
+                srcset=\"#{@image1x}\">
+              <img
+                src=\"#{@image1x}\"
+                srcset=\"#{@image1x}\"
+                #{alt_text}>
+            </picture>
+          </a>
+        </figure>
+        """.strip
+      else
+        # Build the 2x image path from the 1x path
+        @image2x_array = @image1x.split('.')
+        filename2x = "#{@image2x_array[0]}@2x"
+        @image2x = "#{filename2x}.#{@image2x_array[1]}"
+
+        # Replace the images with the proper urls
+        # @image1x = "#{@site_url}#{@base_url}#{@assets_images}/#{@image1x}"
+        # @image2x = "#{@site_url}#{@base_url}#{@assets_images}/#{@image2x}"
+        @image1x = "#{@assets_images}/#{@image1x}"
+        @image2x = "#{@assets_images}/#{@image2x}"
+
+        """
+        <figure>
+          <a href=\"#{@image1x}\" target=\"_blank\">
+            <picture>
+              <source
+                srcset=\"#{@image1x}, #{@image2x} 2x\">
+              <img
+                src=\"#{@image1x}\"
+                srcset=\"#{@image1x}, #{@image2x} 2x\"
+                #{alt_text}>
+            </picture>
+          </a>
+        </figure>
+        """.strip
+      end
     end
   end
 end

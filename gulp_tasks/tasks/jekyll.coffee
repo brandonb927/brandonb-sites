@@ -14,10 +14,10 @@ gulp.task('jekyll-build:dev', (callback) ->
     'jekyll'
     [
       'build'
+      '-f'
       "--source=#{configDev.src}"
       "--destination=#{configDev.dest}"
       "--config=#{configDev.config}"
-      "--no-watch"
     ]
     { stdio: 'inherit' }
   ).on('close', callback)
@@ -30,10 +30,10 @@ gulp.task('jekyll-build:prod', (callback) ->
     'jekyll'
     [
       'build'
+      '-f'
       "--source=#{configProd.src}"
       "--destination=#{configProd.dest}"
       "--config=#{configProd.config}"
-      "--no-watch"
     ]
     { stdio: 'inherit' }
   ).on('close', callback)
