@@ -44,7 +44,7 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
-  jekyll (~> 3.0.0.pre.beta)
+  jekyll (~> 3.0.0.pre.beta8)
   jekyll-paginate
   jekyll-redirect-from
   jekyll-sitemap
