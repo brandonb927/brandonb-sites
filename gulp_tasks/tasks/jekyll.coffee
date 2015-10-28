@@ -11,10 +11,11 @@ gulp.task('jekyll-build:dev', (callback) ->
   notify('Compiling Jekyll for development')
 
   return cp.spawn(
-    'jekyll'
+    'bundle'
     [
+      'exec'
+      'jekyll'
       'build'
-      '-f'
       "--source=#{configDev.src}"
       "--destination=#{configDev.dest}"
       "--config=#{configDev.config}"
@@ -27,10 +28,11 @@ gulp.task('jekyll-build:prod', (callback) ->
   notify('Compiling Jekyll for production')
 
   return cp.spawn(
-    'jekyll'
+    'bundle'
     [
+      'exec'
+      'jekyll'
       'build'
-      '-f'
       "--source=#{configProd.src}"
       "--destination=#{configProd.dest}"
       "--config=#{configProd.config}"
