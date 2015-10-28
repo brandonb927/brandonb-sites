@@ -63,7 +63,7 @@ google_analytics:
 
 # Extras
 gems:
-  # - jekyll-gist
+  - jekyll-gist
   - jekyll-paginate
   - jekyll-sitemap
   - jekyll-redirect-from
