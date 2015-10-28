@@ -12,14 +12,30 @@
 @import 'base.less';
 @import 'errors.less';
 
+
 // Main styles
 .left-container {
   width: 35%;
+  position: relative;
+}
+
+.left-container-inner {
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+
+  width: inherit;
+  position: fixed;
+  top: 0;
 }
 
 .right-container {
   width: 60%;
   box-shadow: 0 0.2rem 1.2rem rgba(0,0,0,.1);
+}
+
+.sticky-footer-spacer {
+  flex: 1;
 }
 
 .site-header {
@@ -269,6 +285,22 @@
 
 .posts-pagination-none {
   color: @gray-dark;
+}
+
+// Error page
+.body-error {
+  .right-container,
+  .site-content {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  .site-content {
+    align-items: center;
+    justify-content: center;
+    .text-center;
+  }
 }
 
 // Fix Github gists

@@ -4,14 +4,7 @@
     {% include head.html %}
   </head>
   <body class="body-error" itemscope itemtype="http://schema.org/WebPage">
-    <div class="site-container">
-      {% include header.html %}
-
-      <main class="site-content" role="main">
-        {{ content }}
-      </main>
-
-      {% include footer.html %}
-    </div>
+    {% include body.html %}
+    {% include foot.html %}
   </body>
 </html>

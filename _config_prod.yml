@@ -12,6 +12,8 @@ exclude: [
   '.editorconfig',
   '.bowerrc',
   'Gulpfile.js',
+  'Gemfile',
+  'Gemfile.lock',
   'package.json',
   'coffeelint.json',
   'bower.json',

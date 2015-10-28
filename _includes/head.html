@@ -9,9 +9,7 @@
 <meta name="apple-mobile-web-app-capable" content="yes">
 <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}">
-
-<base href="{{ '/' | prepend: site.baseurl | prepend: site.url }}">
+<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.description | strip_html }}{% endif %}">
 
 <link rel="dns-prefetch" href="//ajax.googleapis.com">
 {% if site.google_analytics.id %}
@@ -28,15 +26,17 @@
 
 {% include favicons.html %}
 
-<link rel="stylesheet" href="{{ "/assets/styles/site.css" | prepend: site.baseurl | prepend: site.url }}">
-<link rel="canonical" href="{{ page.url | replace:'index.html','' | prepend: site.baseurl | prepend: site.url }}">
-<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="{{ '/rss.xml' | prepend: site.baseurl | prepend: site.url }}">
+<link href="https://fonts.googleapis.com/css?family=Oxygen:400,700|Fjalla+One" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles/site.css">
+<link href="{{ page.url | replace:'.html','' | prepend: site.baseurl | prepend: site.url }}" rel="canonical">
+<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml">
+
 
 {% include google_analytics.html %}
 
 {% if page.title == 'About' and site.mapbox.token and site.mapbox.id %}
-<script src='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js'></script>
-<link href='https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css' rel='stylesheet' />
+<script async src="https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.js"></script>
+<link href="https://api.tiles.mapbox.com/mapbox.js/v2.1.9/mapbox.css" rel="stylesheet">
 {% endif %}
 
 <script async src="https://assets.codepen.io/assets/embed/ei.js"></script>

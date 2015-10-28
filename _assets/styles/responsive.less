@@ -26,6 +26,10 @@
 
 @media (max-width: @grid-breakpoint-small-max) { // iPhone size
 
+  body {
+    display: block;
+  }
+
   p {
     margin-bottom: 3rem;
   }
@@ -39,6 +43,41 @@
     padding: 1rem;
   }
 
+  .sticky-footer-spacer {
+    flex: none;
+  }
+
+  // Not proud of this hack but it does the trick for now
+  .site-header-avatar,
+  .site-header-description,
+  .site-footer-inner > p:first-child {
+    display: none;
+  }
+
+  .left-container,
+  .left-container-inner,
+  .right-container {
+    width: 100%;
+    display: flex;
+  }
+
+  .left-container-inner {
+    min-height: 100%;
+  }
+
+  .left-container {
+    order: 2
+  }
+
+  .right-container {
+    order: 1
+  }
+
+  .left-container-inner {
+    position: relative;
+    top: auto;
+  }
+
   .site-header {
     padding-top: 4rem;
     padding-bottom: 2rem;
@@ -49,17 +88,14 @@
     margin-bottom: 2rem;
 
     h1 {
-      font-size: 2.6rem;
+      font-size: 3.6rem;
     }
   }
 
-  .site-header-avatar-img {
-    height: 12.8rem;
-    width: 12.8rem;
-  }
-
-  .site-header-description {
-    width: 80%;
+  .site-header-nav {
+    ul {
+      margin-top: 2rem;
+    }
   }
 
   .site-content {
@@ -68,6 +104,11 @@
     padding-right: 2rem;
     padding-bottom: 2rem;
     padding-left: 2rem;
+  }
+
+  .site-footer-inner {
+    padding-top: 0;
+    padding-bottom: 4rem;
   }
 
   .posts-feed-item {

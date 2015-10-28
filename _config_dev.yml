@@ -18,6 +18,8 @@ exclude: [
   '.editorconfig',
   '.bowerrc',
   'README.md',
+  'Gemfile',
+  'Gemfile.lock',
   'Gulpfile.js',
   'package.json',
   'coffeelint.json',
