@@ -13,7 +13,7 @@ scriptConfig = require('../config/prod').scripts
 deployConfig = require('../config/prod').deploy
 errorHandler = require('../utils/errorHandler')
 
-awsConfig        = JSON.parse(fs.readFileSync("#{process.env.HOME}/.aws.json"));
+awsConfig = JSON.parse(fs.readFileSync("#{process.env.HOME}/.aws.json"))
 awsConfig.bucket = deployConfig.s3.bucket
 awsConfig.region = 'us-east-1'
 
