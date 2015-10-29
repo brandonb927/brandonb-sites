@@ -1,3 +1,4 @@
+argv        = require('yargs').argv
 gulp        = require('gulp')
 cp          = require('child_process')
 notify      = require('browser-sync').notify
@@ -10,16 +11,22 @@ configProd  = require('../config/prod').jekyll
 gulp.task('jekyll-build:dev', (callback) ->
   notify('Compiling Jekyll for development')
 
+  args = [
+    'exec'
+    'jekyll'
+    'build'
+    "--source=#{configDev.src}"
+    "--destination=#{configDev.dest}"
+    "--config=#{configDev.config}"
+  ]
+
+  # Activate the profiler if needed
+  if argv.profile
+    args = args.concat('--profile')
+
   return cp.spawn(
     'bundle'
-    [
-      'exec'
-      'jekyll'
-      'build'
-      "--source=#{configDev.src}"
-      "--destination=#{configDev.dest}"
-      "--config=#{configDev.config}"
-    ]
+    args
     { stdio: 'inherit' }
   ).on('close', callback)
 )
@@ -27,16 +34,22 @@ gulp.task('jekyll-build:dev', (callback) ->
 gulp.task('jekyll-build:prod', (callback) ->
   notify('Compiling Jekyll for production')
 
+  args = [
+    'exec'
+    'jekyll'
+    'build'
+    "--source=#{configProd.src}"
+    "--destination=#{configProd.dest}"
+    "--config=#{configProd.config}"
+  ]
+
+  # Activate the profiler if needed
+  if argv.profile
+    args = args.concat('--profile')
+
   return cp.spawn(
     'bundle'
-    [
-      'exec'
-      'jekyll'
-      'build'
-      "--source=#{configProd.src}"
-      "--destination=#{configProd.dest}"
-      "--config=#{configProd.config}"
-    ]
+    args
     { stdio: 'inherit' }
   ).on('close', callback)
 )
