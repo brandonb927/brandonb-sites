@@ -12,7 +12,4 @@ window.requestAnimFrame = () ->
          (callback) -> window.setTimeout(callback, 1000 / 60)
 
 $ () ->
-  $.scrollDepth(
-    eventHandler: (data) ->
-      console.log(data)
-  )
+  $.scrollDepth()
