@@ -45,8 +45,9 @@ baseConfig.scripts =
     debug: true
   vendor:
     src: [
-      "node_modules/picturefill/dist/picturefill.js"
-      "node_modules/zepto/zepto.min.js"
+      "#{baseConfig.src.assets}/bower_components/picturefill/dist/picturefill.js"
+      "#{baseConfig.src.assets}/bower_components/jquery/dist/jquery.js"
+      "#{baseConfig.src.assets}/bower_components/scroll-depth/jquery.scrolldepth.js"
     ]
 
 module.exports = baseConfig
