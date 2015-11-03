@@ -27,12 +27,12 @@ module Jekyll
         <figure>
           <a href=\"#{@image1x}\" target=\"_blank\">
             <picture>
-              <source
-                srcset=\"#{@image1x}\">
-              <img
-                src=\"#{@image1x}\"
-                srcset=\"#{@image1x}\"
-                #{alt_text}>
+              <source data-srcset=\"#{@image1x}\">
+              <img src=\"#{@image1x}\"
+                   srcset=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\"
+                   data-sizes=\"auto\"
+                   data-srcset=\"#{@image1x}\"
+                   class=\"lazyload\" #{alt_text}>
             </picture>
           </a>
         </figure>
@@ -50,15 +50,15 @@ module Jekyll
         @image2x = "#{@assets_images}/#{@image2x}"
 
         """
-        <figure>
+        <figure class=\"\">
           <a href=\"#{@image1x}\" target=\"_blank\">
             <picture>
-              <source
-                srcset=\"#{@image1x}, #{@image2x} 2x\">
-              <img
-                src=\"#{@image1x}\"
-                srcset=\"#{@image1x}, #{@image2x} 2x\"
-                #{alt_text}>
+              <source data-srcset=\"#{@image1x}, #{@image2x} 2x\">
+              <img src=\"#{@image1x}\"
+                   srcset=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\"
+                   data-sizes=\"auto\"
+                   data-srcset=\"#{@image1x}, #{@image2x} 2x\"
+                   class=\"lazyload\" #{alt_text}>
             </picture>
           </a>
         </figure>

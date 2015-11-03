@@ -337,6 +337,18 @@
   cursor: auto !important;
 }
 
+// lazysizes
+/* fade image in after load */
+.lazyload,
+.lazyloading {
+  opacity: 0;
+}
+
+.lazyloaded {
+  opacity: 1;
+  transition: opacity .3s;
+}
+
 
 // Responsive-related classes
 @import 'responsive.less';
