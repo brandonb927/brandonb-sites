@@ -1,7 +1,7 @@
 ---
 layout: base
 ---
- 
+
 <article class="posts-feed-item" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
   <h2 class="post-title" itemprop="name headline">
     {{ page.title }}
@@ -24,7 +24,7 @@ layout: base
           <span itemprop="name">{{ site.author.name }}</span>
           {% endif %}
         </span>
-        on <time datetime="{{ page.date | date_to_rfc822 }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+        on&nbsp;<time datetime="{{ page.date | date_to_rfc822 }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
       </p>
     </div>
     <div class="post-meta-right">

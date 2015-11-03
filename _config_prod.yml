@@ -1,5 +1,6 @@
 # Routes
 url: "https://brandonb.io"
+assets_images: https://d3b5kx8qsv0rui.cloudfront.net
 
 debug: false
 
