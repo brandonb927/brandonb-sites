@@ -20,13 +20,9 @@
 {% endif %}
 {% if page.date %}
 <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
-<meta content="{{ site.url }}/about/" property="article:author">
+<meta content="{{ site.url }}/about" property="article:author">
 {% endif %}
-{% if page.open_graph_image %}
-<meta content="{{ site.url }}/assets/images/{{ page.open_graph_image }}" property="og:image">
-{% else %}
-<meta content="{{ site.url }}/assets/images/logo.png" property="og:image">
-{% endif %}
+<meta content="{{ site.favicon.png }}" property="og:image">
 
 <!-- Twitter Cards  -->
 <meta name="twitter:card" content="summary">
@@ -47,8 +43,4 @@
 {% else %}
 <meta name="twitter:description" content="{{ site.description | strip_html }}">
 {% endif %}
-{% if page.header_bg_image %}
-<meta name="twitter:image:src" content="{{ site.url }}/assets/images/{{ page.header_bg_image }}">
-{% else %}
-<meta name="twitter:image:src" content="{{ site.url }}/assets/images/logo.png">
-{% endif %}
+<meta name="twitter:image:src" content="{{ site.favicon.png }}">

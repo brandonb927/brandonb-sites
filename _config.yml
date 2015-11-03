@@ -12,9 +12,9 @@ description: > # ignore newlines in this value
   <br/>Checkout my podcast <a href="http://faviconvalley.show">Favicon Valley</a>
 
 # Favicons
-favicons:
-  ico: https://dl.dropbox.com/u/3408044/brandonb.io/favicon.ico
-  png: https://dl.dropbox.com/u/3408044/brandonb.io/logo-144.png
+favicon:
+  ico: https://dl.dropboxusercontent.com/u/3408044/brandonb.io/favicon.ico
+  png: https://dl.dropboxusercontent.com/u/3408044/brandonb.io/logo-144.png
   theme_color: "#FFFFFF"
 
 # Routes
