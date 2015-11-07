@@ -28,7 +28,22 @@
 {% include favicons.html %}
 
 <link href="{{ page.url | replace:'.html','' | prepend: site.baseurl | prepend: site.url }}" rel="canonical">
-<link href="https://fonts.googleapis.com/css?family=Oxygen:400,300,700|Fjalla+One" rel="stylesheet">
+
+<!-- Webfont loading -->
+<script>
+  WebFontConfig = {
+    google: {
+     families: ['Oxygen:400,300,700', 'Fjalla One']
+    }
+  };
+
+  (function(d) {
+    var wf = d.createElement('script'), s = d.scripts[0];
+    wf.src = 'https://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+    s.parentNode.insertBefore(wf, s);
+  })(document);
+</script>
+
 <link href="/assets/styles/site.css" rel="stylesheet" inline>
 <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml">
 
