@@ -5,6 +5,7 @@ path         = require('path')
 gulp         = require('gulp')
 awspublish   = require('gulp-awspublish')
 inlinesource = require('gulp-inline-source')
+duration     = require('gulp-duration')
 gutil        = require('gulp-util')
 plumber      = require('gulp-plumber')
 runSequence  = require('run-sequence')
@@ -28,13 +29,6 @@ s3Config =
 deployHtmlPath = "#{deployConfig.src}/**/*.html"
 
 
-gulp.task('rev', () ->
-  return gulp.src(deployHtmlPath)
-    .pipe(plumber(errorHandler:errorHandler))
-    .pipe(rev(revOpts))
-    .pipe(gulp.dest(deployConfig.dest))
-)
-
 # Upload a published build to the interwebs
 gulp.task('surge-deploy', (callback) ->
   return cp.spawn(
@@ -57,6 +51,7 @@ gulp.task('s3-deploy', () ->
   return gulp.src(imagesConfig.src)
     .pipe(publisher.publish())
     .pipe(publisher.cache())
+    .pipe(duration('Uploading images to S3'))
     .pipe(awspublish.reporter())
 )
 
@@ -66,6 +61,7 @@ gulp.task('inlinesource', () ->
 
   return gulp.src(deployHtmlPath)
       .pipe(inlinesource(options))
+      .pipe(duration('Inlining styles and scripts'))
       .pipe(gulp.dest(deployConfig.dest))
 )
 
