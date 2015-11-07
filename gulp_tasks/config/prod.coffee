@@ -50,9 +50,9 @@ baseProdConfig =
         keepSpecialComments: 0
     scripts:
       src: [
-        "#{buildAssets}/js/*.js"
+        "#{buildAssets}/scripts/*.js"
       ]
-      dest: "#{buildAssets}/js"
+      dest: "#{buildAssets}/scripts"
       options: {}
     images:
       src: "#{srcAssets}/images/*"
