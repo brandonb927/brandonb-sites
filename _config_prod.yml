@@ -1,5 +1,5 @@
 # Routes
-url: "https://brandonb.io"
+url: https://brandonb.io
 assets_images: https://d3b5kx8qsv0rui.cloudfront.net
 
 debug: false
@@ -20,5 +20,5 @@ exclude: [
   'bower.json',
   'README.md',
   'node_modules',
-  'gulp',
+  'gulp_tasks',
   'build_dev']

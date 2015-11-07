@@ -24,6 +24,6 @@ exclude: [
   'package.json',
   'coffeelint.json',
   'bower.json',
-  'gulp',
+  'gulp_tasks',
   'node_modules',
   'build_prod']
