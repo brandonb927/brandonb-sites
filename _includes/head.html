@@ -27,9 +27,9 @@
 
 {% include favicons.html %}
 
-<link href="https://fonts.googleapis.com/css?family=Oxygen:400,700|Fjalla+One" rel="stylesheet">
-<link rel="stylesheet" href="/assets/styles/site.css">
 <link href="{{ page.url | replace:'.html','' | prepend: site.baseurl | prepend: site.url }}" rel="canonical">
+<link href="https://fonts.googleapis.com/css?family=Oxygen:400,700|Fjalla+One" rel="stylesheet">
+<link rel="stylesheet" href="/assets/styles/site.css" inline>
 <link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/rss.xml">
 
 {% include google_analytics.html %}

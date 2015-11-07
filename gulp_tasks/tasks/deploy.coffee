@@ -4,6 +4,7 @@ cp           = require('child_process')
 path         = require('path')
 gulp         = require('gulp')
 awspublish   = require('gulp-awspublish')
+inlinesource = require('gulp-inline-source')
 gutil        = require('gulp-util')
 plumber      = require('gulp-plumber')
 runSequence  = require('run-sequence')
@@ -24,9 +25,11 @@ s3Config =
   params:
     Bucket: awsConfig.bucket
 
+deployHtmlPath = "#{deployConfig.src}/**/*.html"
+
 
 gulp.task('rev', () ->
-  return gulp.src("#{deployConfig.src}/**/*.html")
+  return gulp.src(deployHtmlPath)
     .pipe(plumber(errorHandler:errorHandler))
     .pipe(rev(revOpts))
     .pipe(gulp.dest(deployConfig.dest))
@@ -57,6 +60,15 @@ gulp.task('s3-deploy', () ->
     .pipe(awspublish.reporter())
 )
 
+gulp.task('inlinesource', () ->
+  options =
+    compress: false
+
+  return gulp.src(deployHtmlPath)
+      .pipe(inlinesource(options))
+      .pipe(gulp.dest(deployConfig.dest))
+)
+
 gulp.task('deploy', (callback) ->
   if argv.dryrun
     runSequence(
@@ -65,6 +77,7 @@ gulp.task('deploy', (callback) ->
         'optimize:scripts'
         'optimize:styles'
       ]
+      'inlinesource'
       'optimize:html'
       callback
     )
@@ -75,6 +88,7 @@ gulp.task('deploy', (callback) ->
         'optimize:scripts'
         'optimize:styles'
       ]
+      'inlinesource'
       'optimize:html'
       'surge-deploy'
       's3-deploy'
