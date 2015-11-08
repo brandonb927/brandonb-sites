@@ -8,14 +8,6 @@
         {{ post.title }}
       </a>
     </h2>
-
-    <div class="post-content" itemprop="text">
-      {{ post.content | split:'<!-- break -->' | first }}
-      {% if post.content contains '<!-- break -->' %}
-        <a href="{{ post.url }}">Read more…</a>
-      {% endif %}
-    </div>
-
     <div class="post-meta">
       <div class="post-meta-left">
         <p>
@@ -36,6 +28,14 @@
         <!-- Nothing here -->
       </div>
     </div>
+
+    <div class="post-content" itemprop="text">
+      {{ post.content | split:'<!-- break -->' | first }}
+      {% if post.content contains '<!-- break -->' %}
+        <a href="{{ post.url }}">Read more…</a>
+      {% endif %}
+    </div>
+
   </article>
 
   {% if loop.last %}{% else %}
