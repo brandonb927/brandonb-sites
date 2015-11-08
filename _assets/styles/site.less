@@ -1,7 +1,6 @@
 // Variables and utilities
 @import 'utilities.less';
 @import 'variables.less';
-@import 'fonts.less';
 
 // 3rd-party
 @import (less) "normalize.css";
@@ -10,7 +9,6 @@
 // Base modules
 @import 'buttons.less';
 @import 'base.less';
-@import 'errors.less';
 
 
 // Main styles
@@ -315,27 +313,6 @@
   }
 }
 
-// Mapbox stuff
-.mapbox-map-container {
-  position: relative;
-  height: 60rem;
-  margin-bottom: 4rem;
-  margin-left: -8rem;
-  margin-right: -8rem;
-}
-
-.mapbox-map {
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  width: 100%;
-}
-
-// Disable Mapbox webkit cursor grab
-.leaflet-container {
-  cursor: auto !important;
-}
-
 // lazysizes
 .lazyload,
 .lazyloading {
@@ -346,6 +323,12 @@
   opacity: 1;
   transition: opacity .3s;
 }
+
+// 404, other error pages
+.error-page {
+  text-align: center;
+}
+
 
 
 // Responsive-related classes
