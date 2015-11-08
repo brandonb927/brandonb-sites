@@ -45,6 +45,7 @@ baseConfig.scripts =
     debug: true
   vendor:
     src: [
+      "#{baseConfig.src.assets}/bower_components/jquery/dist/jquery.js"
       "#{baseConfig.src.assets}/bower_components/picturefill/dist/picturefill.js"
       "#{baseConfig.src.assets}/bower_components/lazysizes/lazysizes.js"
       "#{baseConfig.src.assets}/bower_components/scroll-depth/jquery.scrolldepth.js"
