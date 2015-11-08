@@ -30,7 +30,7 @@
     </div>
 
     <div class="post-content" itemprop="text">
-      {{ post.content | split:'<!-- break -->' | first }}
+      {{ post.content | split: '<!-- break -->' | first }}
       {% if post.content contains '<!-- break -->' %}
         <a href="{{ post.url }}">Read more…</a>
       {% endif %}
