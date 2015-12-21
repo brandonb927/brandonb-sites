@@ -15,6 +15,11 @@ gulp.task('copy:images:prod', () ->
     .pipe(gulp.dest(copyConfigProd.images.dest))
 )
 
+gulp.task('copy:surgeignore:prod', () ->
+  return gulp.src(copyConfigProd.surgeignore.src)
+    .pipe(gulp.dest(copyConfigProd.surgeignore.dest))
+)
+
 gulp.task('copy:dev', (callback) ->
   runSequence(
     'copy:images:dev'
@@ -25,6 +30,7 @@ gulp.task('copy:dev', (callback) ->
 gulp.task('copy:prod', (callback) ->
   runSequence(
     'copy:images:prod'
+    'copy:surgeignore:prod'
     callback
   )
 )

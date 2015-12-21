@@ -36,6 +36,9 @@ baseProdConfig =
     images:
       src: "#{srcAssets}/images/*"
       dest: "#{buildAssets}/images"
+    surgeignore:
+      src: "#{src}/.surgeignore"
+      dest: build
   jekyll:
     src: src
     dest: build
