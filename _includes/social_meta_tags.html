@@ -13,7 +13,7 @@
 {% if page.description %}
 <meta content="{{ page.description }}" property="og:description">
 {% else %}
-<meta content="{{ site.description | strip_html }}" property="og:description">
+<meta content="{{ site.meta_description }}" property="og:description">
 {% endif %}
 {% if page.url %}
 <meta content="{{ page.url | prepend: site.baseurl | prepend: site.url }}" property="og:url">
@@ -45,7 +45,7 @@
 {% if page.description %}
 <meta name="twitter:description" content="{{ page.description }}">
 {% else %}
-<meta name="twitter:description" content="{{ site.description | strip_html }}">
+<meta name="twitter:description" content="{{ site.meta_description }}">
 {% endif %}
 {% if post.share_image %}
 <meta name="twitter:image:src" content="{{ post.share_image }}">

@@ -8,8 +8,8 @@ author:
   email: "brandon@brandonb.io"
 description: > # ignore newlines in this value
   Canadian with a passion for open source, tech, and front-end web development.
-  This area is where I dump my ideas, thoughts, and tech-related bits & pieces.
   <br/>Checkout my podcast <a href="http://faviconvalley.show">Favicon Valley</a>
+meta_description: Brandon has a passion for front-end web development, open source, tech, and hosts Favicon Valley podcast.
 
 # Favicons
 favicon:
