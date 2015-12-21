@@ -29,13 +29,14 @@ baseConfig =
 baseConfig.watch =
   jekyll: [
     "#{baseConfig.src.base}/*.yml"
-    "#{baseConfig.src.base}/_data/**/*.{json,yml}"
+    "#{baseConfig.src.base}/_data/*.{json,yml}"
     "#{baseConfig.src.base}/{index,404}.html"
-    "#{baseConfig.src.base}/{_includes,_layouts,_pages,_posts}/**/*.{md,html}"
+    "#{baseConfig.src.base}/_pages/*.{md,html}"
+    "#{baseConfig.src.base}/{_includes,_layouts,_posts}/*.{md,html}"
   ]
-  styles: "#{baseConfig.src.assets}/styles/**/*.less"
-  scripts: "#{baseConfig.src.assets}/scripts/**/*.{js,coffee}"
-  images: "#{baseConfig.src.assets}/images/**/*"
+  styles: "#{baseConfig.src.assets}/styles/*.less"
+  scripts: "#{baseConfig.src.assets}/scripts/*.{js,coffee}"
+  images: "#{baseConfig.src.assets}/images/*"
 
 baseConfig.scripts =
   sitePack: 'site-pack.js'

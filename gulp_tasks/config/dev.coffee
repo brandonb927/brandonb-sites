@@ -51,7 +51,7 @@ baseDevConfig =
     dest: "#{buildAssets}/scripts"
   copy:
     images:
-      src: "#{srcAssets}/images/**/*"
+      src: "#{srcAssets}/images/*"
       dest: "#{buildAssets}/images"
   jekyll:
     src: src

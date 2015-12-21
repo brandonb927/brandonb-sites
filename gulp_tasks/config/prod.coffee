@@ -43,7 +43,7 @@ baseProdConfig =
   optimize:
     styles:
       src: [
-        "#{buildAssets}/styles/**/*.css"
+        "#{buildAssets}/styles/*.css"
       ]
       dest: "#{buildAssets}/styles"
       options:

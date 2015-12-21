@@ -29,7 +29,7 @@ layout: base
     </div>
     <div class="post-meta-right">
       <p>
-        {% if page.tags %}
+        {% if page.tags > 0 %}
         Tagged with
         <span class="post-meta-tags">
           {% for tag in page.tags %}
@@ -42,7 +42,7 @@ layout: base
   </div>
 </article>
 
-{% if page.type == 'post' and disqus.shortname %}
+{% if page.type == 'post' and site.disqus.shortname %}
 <div class="post-comments">
   <div class="post-comments-button">
     <button class="button show-comments">Load Comments</button>
