@@ -14,7 +14,6 @@
 
   // Get Swarm checkins
   $.getJSON('/foursquare.json').then(function (results) {
-    console.log(results)
     var checkinItems = results.checkinItems
     var checkinVenueCountMap = results.checkinVenueCountMap
     for (var checkin of checkinItems) {
