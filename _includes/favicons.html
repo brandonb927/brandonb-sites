@@ -1,19 +1,19 @@
 {% if site.favicon %}
-<!-- Favicons for all browsers and unfortunately IE8/9 -->
-<link rel="icon" href="{{ site.favicon.png }}">
-<!--[if IE]><link rel="shortcut icon" href="{{ site.favicon.ico }}" /><![endif]-->
-<link rel="apple-touch-icon" sizes="144x144" href="{{ site.favicon.png }}">
-<link rel="apple-touch-icon" sizes="114x114" href="{{ site.favicon.png }}">
-<link rel="apple-touch-icon" sizes="72x72" href="{{ site.favicon.png }}">
-<link rel="apple-touch-icon" href="{{ site.favicon.png }}">
-<link rel="apple-touch-icon-precomposed" href="{{ site.favicon.png }}">
+  <!-- Favicons for all browsers and unfortunately IE8/9 -->
+  <link rel="icon" href="{{ site.favicon.png }}">
+  <!--[if IE]><link rel="shortcut icon" href="{{ site.favicon.ico }}" /><![endif]-->
+  <link rel="apple-touch-icon" sizes="144x144" href="{{ site.favicon.png }}">
+  <link rel="apple-touch-icon" sizes="114x114" href="{{ site.favicon.png }}">
+  <link rel="apple-touch-icon" sizes="72x72" href="{{ site.favicon.png }}">
+  <link rel="apple-touch-icon" href="{{ site.favicon.png }}">
+  <link rel="apple-touch-icon-precomposed" href="{{ site.favicon.png }}">
 
-<!-- Because IE10 ignores conditionals and doesn't support PNG for favicons, we use start screen tile icons!
-   - http://www.jonathantneal.com/blog/understand-the-favicon/ -->
-<meta name="msapplication-TileColor" content="#D83434">
-<meta name="msapplication-TileImage" content="{{ site.favicon.png }}">
+  <!-- Because IE10 ignores conditionals and doesn't support PNG for favicons, we use start screen tile icons!
+     - http://www.jonathantneal.com/blog/understand-the-favicon/ -->
+  <meta name="msapplication-TileColor" content="#D83434">
+  <meta name="msapplication-TileImage" content="{{ site.favicon.png }}">
 
-{% if site.favicons.theme_color %}
-<meta name="theme-color" content="{{ site.favicons.theme_color }}">
-{% endif %}
+  {% if site.favicons.theme_color %}
+  <meta name="theme-color" content="{{ site.favicons.theme_color }}">
+  {% endif %}
 {% endif %}

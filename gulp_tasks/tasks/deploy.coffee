@@ -75,6 +75,7 @@ gulp.task('deploy', (callback) ->
       ]
       'inlinesource'
       'optimize:html'
+      'foursquare:prod'
       callback
     )
   else
@@ -86,6 +87,7 @@ gulp.task('deploy', (callback) ->
       ]
       'inlinesource'
       'optimize:html'
+      'foursquare:prod'
       'surge-deploy'
       's3-deploy'
       callback

@@ -17,16 +17,16 @@
     {% assign navurl = page.url | remove: 'index.html' %}
     <ul>
       {% for page in site.pages %}
-      {% if page.include_in_nav %}
-      <li itemprop="url">
-        <a href="{{ page.url }}"
-          {% if page.url == navurl %}class="active"{% endif %}
-          {% if page.target %} target="{{ page.target }}"{% endif %}
-           title="{{ page.title }}" itemprop="name">
-          {{ page.title }}
-        </a>
-      </li>
-      {% endif %}
+        {% if page.include_in_nav %}
+        <li itemprop="url">
+          <a href="{{ page.url }}"
+            {% if page.url == navurl %}class="active"{% endif %}
+            {% if page.target %} target="{{ page.target }}"{% endif %}
+             title="{{ page.title }}" itemprop="name">
+            {{ page.title }}
+          </a>
+        </li>
+        {% endif %}
       {% endfor %}
     </ul>
   </nav>

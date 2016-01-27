@@ -1,5 +1,52 @@
-<script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+<script src='https://code.jquery.com/jquery-2.2.0.min.js'></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.1/picturefill.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrolldepth/0.8.0/jquery.scrolldepth.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/1.3.1/lazysizes.min.js"></script>
 <script src="/assets/scripts/site-pack.js" inline></script>
+
+{% if page.title == 'Check-Ins' %}
+<script>
+  L.mapbox.accessToken = 'pk.eyJ1IjoiYnJhbmRvbmI5MjciLCJhIjoic1RRVkdTdyJ9.6k_mxsjzAVn1Mjk1k2t0SQ'
+  var map = L.mapbox.map('map', 'mapbox.emerald').setView([45, -102], 4)
+
+  // Keep our place markers organized in a nice group.
+  var checkinMarkers = L.layerGroup().addTo(map)
+
+  // Get Swarm checkins
+  $.getJSON('/foursquare.json').then(function (results) {
+    console.log(results)
+    var checkinItems = results.checkinItems
+    var checkinVenueCountMap = results.checkinVenueCountMap
+    for (var checkin of checkinItems) {
+      var venue = checkin.venue
+
+      var imageHtml = ''
+      for (var photo of checkin.photos.items) {
+        photoUrl = photo.prefix + photo.width +'x' + photo.height + photo.suffix
+        imageHtml += '<a href="' + photoUrl + '" target="_blank"><img src="' + photoUrl + '" style="width:300px;height:auto;" /></a>'
+      }
+      var latLon = L.latLng(venue.location.lat, venue.location.lng)
+      var checkinVenueName = venue.name + '<br />' + (venue.location.city ? venue.location.city + ', ' : '') + venue.location.country
+      var marker = L.marker(latLon, {
+        icon: L.mapbox.marker.icon({
+          'marker-color': '#333',
+          'marker-symbol': 'circle-stroked',
+        })
+      })
+      .bindPopup(
+        '<div style="text-align:center;">' +
+        '<h3>' +
+        '<a href="https://foursquare.com/brandonb927/checkin/' + checkin.id + '" target="_blank">' + checkinVenueName + '</a>' +
+        '</h3>' +
+        '<br /> <small>(' + checkinVenueCountMap[venue.id] + ' Check-In' + (checkinVenueCountMap[venue.id] > 1 ? 's' : '') + ')</small>' +
+        imageHtml +
+        '</div>',
+        {
+          minWidth: 300
+        }
+      )
+      .addTo(checkinMarkers)
+    }
+  })
+</script>
+{% endif %}

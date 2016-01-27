@@ -31,11 +31,12 @@ markdown: redcarpet
 
 # Build-stuff
 keep_files: [
-  'assets']
+  'assets',
+  'foursquare.json']
 
 # Pagination
 paginate: 5
-paginate_path: "/page/:num"
+paginate_path: /page/:num
 
 defaults:
   -
@@ -55,8 +56,8 @@ disqus:
   shortname: brandonbrownsblog
 
 google_analytics:
-  id: "UA-32422940-2"
-  domain: "brandonb.io"
+  id: UA-32422940-2
+  domain: brandonb.io
 
 # Extras
 gems:

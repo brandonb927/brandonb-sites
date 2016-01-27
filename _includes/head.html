@@ -50,3 +50,16 @@
     s.parentNode.insertBefore(wf, s);
   })(document);
 </script>
+
+{% if page.title == 'Check-Ins' %}
+<script src='https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.2.4/mapbox.css' rel='stylesheet' />
+<style>
+  #map {
+    height: 60rem;
+    margin-top: 4rem;
+    margin-left: -8rem;
+    margin-right: -8rem;
+  }
+</style>
+{% endif %}

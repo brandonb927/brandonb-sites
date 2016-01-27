@@ -2,25 +2,25 @@
   <div class="site-footer-social">
     <ul>
       {% if site.social.twitter %}
-      <li>
-        <a href="https://twitter.com/{{ site.social.twitter }}" title="Twitter">
-          Twitter
-        </a>
-      </li>
+        <li>
+          <a href="https://twitter.com/{{ site.social.twitter }}" title="Twitter">
+            Twitter
+          </a>
+        </li>
       {% endif %}
       {% if site.social.github %}
-      <li>
-        <a href="https://github.com/{{ site.social.github }}" title="Github">
-          Github
-        </a>
-      </li>
+        <li>
+          <a href="https://github.com/{{ site.social.github }}" title="Github">
+            Github
+          </a>
+        </li>
       {% endif %}
       {% if site.social.googleplus %}
-      <li>
-        <a href="https://plus.google.com/+{{ site.social.googleplus }}?rel=author" title="Google+">
-          Google+
-        </a>
-      </li>
+        <li>
+          <a href="https://plus.google.com/+{{ site.social.googleplus }}?rel=author" title="Google+">
+            Google+
+          </a>
+        </li>
       {% endif %}
       <li>
         <a href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" title="RSS Feed">
