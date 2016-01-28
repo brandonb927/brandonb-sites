@@ -18,7 +18,6 @@
     var checkinVenueCountMap = results.checkinVenueCountMap
     for (var checkin of checkinItems) {
       var venue = checkin.venue
-
       var imageHtml = ''
       for (var photo of checkin.photos.items) {
         photoUrl = photo.prefix + photo.width +'x' + photo.height + photo.suffix
@@ -26,6 +25,7 @@
       }
       var latLon = L.latLng(venue.location.lat, venue.location.lng)
       var checkinVenueName = venue.name + '<br />' + (venue.location.city ? venue.location.city + ', ' : '') + venue.location.country
+      var checkinShout = checkin.shout ? '<p style="margin-top:.5rem;margin-bottom:.5rem;">' + checkin.shout + '</p>' : ''
       var marker = L.marker(latLon, {
         icon: L.mapbox.marker.icon({
           'marker-color': '#333',
@@ -34,10 +34,11 @@
       })
       .bindPopup(
         '<div style="text-align:center;">' +
-        '<h3>' +
-        '<a href="https://foursquare.com/brandonb927/checkin/' + checkin.id + '" target="_blank">' + checkinVenueName + '</a>' +
+        '<h3 style="margin-bottom:.3rem;">' +
+          '<a href="https://foursquare.com/brandonb927/checkin/' + checkin.id + '" target="_blank">' + checkinVenueName + '</a>' +
         '</h3>' +
-        '<br /> <small>(' + checkinVenueCountMap[venue.id] + ' Check-In' + (checkinVenueCountMap[venue.id] > 1 ? 's' : '') + ')</small>' +
+        checkinShout +
+        '<small>(' + checkinVenueCountMap[venue.id] + ' Check-In' + (checkinVenueCountMap[venue.id] > 1 ? 's' : '') + ')</small>' +
         imageHtml +
         '</div>',
         {
