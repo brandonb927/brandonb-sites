@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: page
 title: About
 include_in_nav: true
 ---

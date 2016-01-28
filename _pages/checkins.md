@@ -1,5 +1,5 @@
 ---
-layout: base
+layout: page
 title: Check-Ins
 include_in_nav: true
 ---

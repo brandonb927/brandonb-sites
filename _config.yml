@@ -1,11 +1,11 @@
-encoding: "utf-8"
-language: "en-us"
+encoding: 'utf-8'
+language: 'en-us'
 
 # Site Settings
-title: "Brandons Blog"
+title: 'Brandons Blog'
 author:
-  name: "Brandon Brown"
-  email: "brandon@brandonb.io"
+  name: 'Brandon Brown'
+  email: 'brandon@brandonb.io'
 description: > # ignore newlines in this value
   Canadian with a passion for open source, tech, and front-end web development.
   <br/>Checkout my podcast <a href="http://faviconvalley.show">Favicon Valley</a>
@@ -15,10 +15,10 @@ meta_description: Product Developer at sendwithus, host of Favicon Valley podcas
 favicon:
   ico: https://dl.dropboxusercontent.com/u/3408044/brandonb.io/favicon.ico
   png: https://dl.dropboxusercontent.com/u/3408044/brandonb.io/logo-144.png
-  theme_color: "#FFFFFF"
+  theme_color: '#FFFFFF'
 
 # Routes
-baseurl: "" # Use if your site is in a subdirectory, e.g. /blog/
+baseurl: '' # Use if your site is in a subdirectory, e.g. /blog/
 root: /
 permalink: /:title
 
@@ -41,7 +41,7 @@ paginate_path: /page/:num
 defaults:
   -
     scope:
-      path: ""
+      path: ''
       type: posts
     values:
       layout: post

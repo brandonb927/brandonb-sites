@@ -6,6 +6,19 @@
 
 {% if page.title == 'Check-Ins' %}
 <script>
+  // TODO: Make checkins show individual checkins per-venue
+
+  function formatDate (timestamp){
+    var a = new Date(timestamp * 1000)
+    var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
+    var year = a.getFullYear()
+    var month = months[a.getMonth()]
+    var date = a.getDate()
+    var hour = a.getHours()
+    var min = a.getMinutes()
+    return  date + ' ' + month + ' ' + year + ' ' + hour + ':' + min
+  }
+
   L.mapbox.accessToken = 'pk.eyJ1IjoiYnJhbmRvbmI5MjciLCJhIjoic1RRVkdTdyJ9.6k_mxsjzAVn1Mjk1k2t0SQ'
   var map = L.mapbox.map('map', 'mapbox.emerald').setView([45, -102], 4)
 
@@ -24,8 +37,9 @@
         imageHtml += '<a href="' + photoUrl + '" target="_blank"><img src="' + photoUrl + '" style="width:300px;height:auto;" /></a>'
       }
       var latLon = L.latLng(venue.location.lat, venue.location.lng)
+      var checkinDate = '<span style="font-size:1.2rem">' + formatDate(checkin.createdAt)  + '</span>'
       var checkinVenueName = venue.name + '<br />' + (venue.location.city ? venue.location.city + ', ' : '') + venue.location.country
-      var checkinShout = checkin.shout ? '<p style="margin-top:.5rem;margin-bottom:.5rem;">' + checkin.shout + '</p>' : ''
+      var checkinShout = checkin.shout ? '<p style="margin-top:.5rem;margin-bottom:.5rem;">' + checkin.shout + '</p>' : '<br/>'
       var marker = L.marker(latLon, {
         icon: L.mapbox.marker.icon({
           'marker-color': '#333',
@@ -34,12 +48,13 @@
       })
       .bindPopup(
         '<div style="text-align:center;">' +
-        '<h3 style="margin-bottom:.3rem;">' +
-          '<a href="https://foursquare.com/brandonb927/checkin/' + checkin.id + '" target="_blank">' + checkinVenueName + '</a>' +
-        '</h3>' +
-        checkinShout +
-        '<small>(' + checkinVenueCountMap[venue.id] + ' Check-In' + (checkinVenueCountMap[venue.id] > 1 ? 's' : '') + ')</small>' +
-        imageHtml +
+          '<h3 style="margin-bottom:.3rem;">' +
+            '<a href="https://foursquare.com/brandonb927/checkin/' + checkin.id + '" target="_blank">' + checkinVenueName + '</a>' +
+          '</h3>' +
+          checkinDate +
+          checkinShout +
+          '<span style="font-size:1rem">(' + checkinVenueCountMap[venue.id] + ' Check-In' + (checkinVenueCountMap[venue.id] > 1 ? 's' : '') + ')</span>' +
+          imageHtml +
         '</div>',
         {
           minWidth: 300
