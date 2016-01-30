@@ -1,0 +1,68 @@
+// Development config
+
+import { existsSync } from 'fs'
+import { extname, resolve } from 'path'
+import url from 'url'
+import { merge } from 'lodash'
+
+import baseConfig from './base'
+
+// Paths
+const src = baseConfig.src.base
+const srcAssets = baseConfig.src.assets
+const build = resolve(src, 'build_dev')
+const buildAssets = resolve(build, 'assets')
+
+const devBuildConfigFilename = resolve(src, '_config_dev.yml')
+const buildConfigFilename = `${baseConfig.jekyll.baseConfig},${devBuildConfigFilename}`
+
+// Config
+const baseDevConfig = {
+  browsersync: {
+    server: {
+      baseDir: build,
+      middleware: [
+        (req, res, next) => { // middleware for clean, extensionless URLs
+          let uri = url.parse(req.url)
+          if (uri.pathname.length > 1 &&
+              extname(uri.pathname) === '' &&
+              existsSync(`${path.join(build, uri.pathname)}.html`)) {
+            req.url = `${uri.pathname}.html${uri.search || ''}`
+          }
+          next()
+        }
+      ]
+    },
+    port: 8888,
+    ui: {
+      port: 9001
+    },
+    open: false
+  },
+  delete: {
+    src: build
+  },
+  styles:{
+    src: `${srcAssets}/styles/site.less`,
+    dest: `${buildAssets}/styles`
+  },
+  scripts: {
+    src: `${srcAssets}/scripts/*.js`,
+    dest: `${buildAssets}/scripts`
+  },
+  copy: {
+    images: {
+      src: `${srcAssets}/images/*`,
+      dest: `${buildAssets}/images`
+    }
+  },
+  jekyll: {
+    src: src,
+    dest: build,
+    config: buildConfigFilename
+  }
+}
+
+const devConfig = merge(baseDevConfig, baseConfig)
+
+export default devConfig

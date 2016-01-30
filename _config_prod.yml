@@ -16,7 +16,6 @@ exclude: [
   'Gemfile',
   'Gemfile.lock',
   'package.json',
-  'coffeelint.json',
   'bower.json',
   'README.md',
   'node_modules',

@@ -22,7 +22,6 @@ exclude: [
   'Gemfile.lock',
   'Gulpfile.js',
   'package.json',
-  'coffeelint.json',
   'bower.json',
   'gulp_tasks',
   'node_modules',
