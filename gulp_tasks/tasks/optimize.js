@@ -2,8 +2,8 @@ import gulp from 'gulp'
 import duration from 'gulp-duration'
 import sourcemaps from 'gulp-sourcemaps'
 import imagemin from 'gulp-imagemin'
-import minifycss from 'gulp-minify-css'
-import minifyHTML from 'gulp-minify-html'
+import cssnano from 'gulp-cssnano'
+import htmlmin from 'gulp-htmlmin'
 import plumber from 'gulp-plumber'
 import rename from 'gulp-rename'
 import size from 'gulp-size'
@@ -28,7 +28,7 @@ gulp.task('optimize:images', () => {
 gulp.task('optimize:styles', () => {
   return gulp.src(config.optimize.styles.src)
              .pipe(plumber({errorHandler:errorHandler}))
-             .pipe(minifycss(config.optimize.styles.options))
+             .pipe(cssnano(config.optimize.styles.options))
              .pipe(duration('Optimizing and minifying CSS for production'))
              .pipe(gulp.dest(config.optimize.styles.dest))
              .pipe(size(sizeConfig.size))
@@ -48,7 +48,7 @@ gulp.task('optimize:scripts', () => {
 gulp.task('optimize:html', () => {
   return gulp.src(config.optimize.html.src)
              .pipe(plumber({errorHandler:errorHandler}))
-             .pipe(minifyHTML(config.optimize.html.options))
+             .pipe(htmlmin(config.optimize.html.options))
              .pipe(duration('Optimizing and minifying HTML for production'))
              .pipe(gulp.dest(config.optimize.html.dest))
              .pipe(size(sizeConfig.size))
