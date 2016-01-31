@@ -1,22 +1,22 @@
 import gulp from 'gulp'
 import runSequence from 'run-sequence'
-import copyConfigDev from '../config/dev'
-import copyConfigProd from '../config/prod'
+import configDev from '../config/dev'
+import configProd from '../config/prod'
 
 // Copy images
 gulp.task('copy:images:dev', () => {
-  return gulp.src(copyConfigDev.copy.images.src)
-    .pipe(gulp.dest(copyConfigDev.copy.images.dest))
+  return gulp.src(configDev.copy.images.src)
+             .pipe(gulp.dest(configDev.copy.images.dest))
 })
 
 gulp.task('copy:images:prod', () => {
-  return gulp.src(copyConfigProd.images.src)
-    .pipe(gulp.dest(copyConfigProd.images.dest))
+  return gulp.src(configProd.copy.images.src)
+             .pipe(gulp.dest(configProd.copy.images.dest))
 })
 
 gulp.task('copy:surgeignore:prod', () => {
-  return gulp.src(copyConfigProd.surgeignore.src)
-    .pipe(gulp.dest(copyConfigProd.surgeignore.dest))
+  return gulp.src(configProd.copy.surgeignore.src)
+             .pipe(gulp.dest(configProd.copy.surgeignore.dest))
 })
 
 gulp.task('copy:dev', (callback) => {

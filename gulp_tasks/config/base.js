@@ -48,9 +48,6 @@ baseConfig.watch = {
 }
 
 baseConfig.scripts = {
-  sitePack: 'site-pack.js',
-  vendorPack: 'vendor-pack.js',
-  site: 'site.js',
   options: {
     debug: true
   },

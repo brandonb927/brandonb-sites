@@ -1,3 +1,4 @@
+
 import { argv } from 'yargs'
 import gulp from 'gulp'
 import cp from 'child_process'
@@ -38,9 +39,9 @@ gulp.task('jekyll-build:prod', (callback) => {
     'exec',
     'jekyll',
     'build',
-    `--source=${configProd.src}`,
-    `--destination=${configProd.dest}`,
-    `--config=${configProd.config}`
+    `--source=${configProd.jekyll.src}`,
+    `--destination=${configProd.jekyll.dest}`,
+    `--config=${configProd.jekyll.config}`
   ]
 
   // Activate the profiler if needed
