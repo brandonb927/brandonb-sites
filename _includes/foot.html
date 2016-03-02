@@ -6,8 +6,6 @@
 
 {% if page.title == 'Check-Ins' %}
 <script>
-  // TODO: Make checkins show individual checkins per-venue
-
   function formatDate (timestamp){
     var a = new Date(timestamp * 1000)
     var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
@@ -25,43 +23,73 @@
   // Keep our place markers organized in a nice group.
   var checkinMarkers = L.layerGroup().addTo(map)
 
-  // Get Swarm checkins
-  $.getJSON('/foursquare.json').then(function (results) {
-    var checkinItems = results.checkinItems
-    var checkinVenueCountMap = results.checkinVenueCountMap
-    for (var checkin of checkinItems) {
-      var venue = checkin.venue
-      var imageHtml = ''
-      for (var photo of checkin.photos.items) {
-        photoUrl = photo.prefix + photo.width +'x' + photo.height + photo.suffix
-        imageHtml += '<a href="' + photoUrl + '" target="_blank"><img src="' + photoUrl + '" style="width:300px;height:auto;" /></a>'
-      }
-      var latLon = L.latLng(venue.location.lat, venue.location.lng)
-      var checkinDate = '<span style="font-size:1.2rem">' + formatDate(checkin.createdAt)  + '</span>'
-      var checkinVenueName = venue.name + '<br />' + (venue.location.city ? venue.location.city + ', ' : '') + venue.location.country
-      var checkinShout = checkin.shout ? '<p style="margin-top:.5rem;margin-bottom:.5rem;">' + checkin.shout + '</p>' : '<br/>'
-      var marker = L.marker(latLon, {
+  var generateMapMarkers = function (results) {
+    for (var venueId in results) {
+      var venue = results[venueId].venue
+      var checkins = results[venue.id]['checkins']
+
+      var marker = L.marker(
+        L.latLng(venue.location.lat, venue.location.lng), {
         icon: L.mapbox.marker.icon({
           'marker-color': '#333',
           'marker-symbol': 'circle-stroked',
         })
       })
-      .bindPopup(
-        '<div style="text-align:center;">' +
-          '<h3 style="margin-bottom:.3rem;">' +
-            '<a href="https://foursquare.com/brandonb927/checkin/' + checkin.id + '" target="_blank">' + checkinVenueName + '</a>' +
-          '</h3>' +
-          checkinDate +
-          checkinShout +
-          '<span style="font-size:1rem">(' + checkinVenueCountMap[venue.id] + ' Check-In' + (checkinVenueCountMap[venue.id] > 1 ? 's' : '') + ')</span>' +
-          imageHtml +
-        '</div>',
+
+
+      var venueCheckinsHtml = function () {
+        var html = ''
+        var checkinVenueName = venue.name + '<br />' + (venue.location.city ? venue.location.city + ', ' : '') + venue.location.country
+
+        html += '<div style="text-align:center;">' +
+                  '<h3 style="margin-bottom:.3rem;">' +
+                    '<a href="https://foursquare.com/brandonb927/checkin/' + checkins[0].id + '" target="_blank">' + checkinVenueName + '</a>' +
+                  '</h3>' +
+                  '<span style="font-size:1rem">(' + checkins.length + ' Check-In' + (checkins.length > 1 ? 's' : '') + ')</span><br/>'
+
+        for (var checkin of checkins) {
+          var checkinWith = ''
+          var checkinDate = '<span style="font-size:1.2rem">' + formatDate(checkin.createdAt)  + '</span>'
+
+          if (checkin.hasOwnProperty('with')) {
+            for (var checkinFriend of checkin.with) {
+              friendPhotoUrl = checkinFriend.photo.prefix + '48x48' + checkinFriend.photo.suffix
+              checkinWith += '<a href="https://foursquare.com/user/' + checkinFriend.id + '" alt="' + checkinFriend.firstName + ' ' + checkinFriend.lastName + '" target="_blank">' +
+                                '<img src="' + friendPhotoUrl + '" class="img-rounded" style="width:48px;height:auto;" />' +
+                              '</a>'
+            }
+          }
+
+          var checkinShout = checkin.shout ? '<p style="margin-top:.5rem;margin-bottom:.5rem;">' + checkin.shout + '</p>' + checkinWith : '<br/>'
+          var imageHtml = ''
+
+          for (var photo of checkin.photos.items) {
+            photoUrl = photo.prefix + photo.width +'x' + photo.height + photo.suffix
+            imageHtml += '<a href="' + photoUrl + '" target="_blank"><img src="' + photoUrl + '" style="width:300px;height:auto;" /></a>'
+          }
+
+          html += (checkins.length > 1 ? '<hr style="margin: 1.25rem 0;" />' : '') +
+                  (checkin.shout ? checkinDate : 'Check-in ' + checkinDate) +
+                  checkinShout +
+                  imageHtml
+        }
+
+        html += '</div>'
+        return html
+      }
+
+      marker.bindPopup(
+        '<div style="text-align:center;">' + venueCheckinsHtml() + '</div>',
         {
-          minWidth: 300
+          minWidth: 300,
+          maxHeight: 300
         }
       )
       .addTo(checkinMarkers)
     }
-  })
+  }
+
+  // Get Swarm checkins
+  $.getJSON('/foursquare.json').then(generateMapMarkers)
 </script>
 {% endif %}

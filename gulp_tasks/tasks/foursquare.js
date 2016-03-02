@@ -1,4 +1,4 @@
-import { writeFileSync, closeSync, openSync } from 'fs'
+import { writeFile, closeSync, openSync } from 'fs'
 import gulp from 'gulp'
 import gutil from 'gulp-util'
 import request from 'sync-request'
@@ -11,8 +11,7 @@ const API_BASE_URL = "https://api.foursquare.com/v2/users/self/checkins"
 const API_ENDPOINT = `${API_BASE_URL}?oauth_token=${FOURSQUARE_OAUTH_TOKEN}&v=${Date.now()}`
 
 const buildJSON = (buildPath, callback) => {
-  let checkinItems = []
-  let checkinVenueCountMap = {}
+  let checkinItems = {}
   let filePath = `${buildPath}/foursquare.json`
 
   // Get Swarm checkins
@@ -43,30 +42,34 @@ const buildJSON = (buildPath, callback) => {
       return
     }
 
-    checkinData.response.checkins.items.forEach((checkin, index) => {
+    for (let checkin of checkinData.response.checkins.items) {
       let venue = checkin.venue
-      checkinItems.push(checkin)
 
-      // Increment counter for this venue
-      if (checkinVenueCountMap.hasOwnProperty(venue.id)) {
-        checkinVenueCountMap[venue.id] += 1
-      } else {
-        checkinVenueCountMap[venue.id] = 1
+      if (!checkinItems.hasOwnProperty(venue.id)) {
+        checkinItems[venue.id] = {
+          'venue': venue,
+          'checkins': []
+        }
       }
-    })
+
+      checkinItems[venue.id]['checkins'].push(checkin)
+    }
+
+    // Sort dates of checkins
+    for (let venueId in checkinItems) {
+      checkinItems[venueId]['checkins'].sort(function(a, b) {
+        a = new Date(a.createdAt);
+        b = new Date(b.createdAt);
+        return a>b ? -1 : a<b ? 1 : 0;
+      })
+    }
 
     checkinOffset += maxApiCheckins
     i++
   }
 
-  if (checkinItems.length === totalApiCheckins) {
-    let data = JSON.stringify({
-      checkinItems: checkinItems,
-      checkinVenueCountMap: checkinVenueCountMap
-    })
-    writeFileSync(filePath, data, 'UTF-8')
-    callback()
-  }
+  let jsonData = JSON.stringify(checkinItems)
+  writeFile(filePath, jsonData, 'UTF-8', callback)
 }
 
 
