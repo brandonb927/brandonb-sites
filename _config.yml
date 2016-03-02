@@ -35,7 +35,7 @@ kramdown:
 # Build-stuff
 keep_files: [
   'assets',
-  'foursquare.json']
+  'api']
 
 # Pagination
 paginate: 5

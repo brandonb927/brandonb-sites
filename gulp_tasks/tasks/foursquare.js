@@ -1,4 +1,10 @@
-import { writeFile, closeSync, openSync } from 'fs'
+import {
+    writeFile,
+    closeSync,
+    openSync,
+    mkdirSync,
+    existsSync
+} from 'fs'
 import gulp from 'gulp'
 import gutil from 'gulp-util'
 import request from 'sync-request'
@@ -18,7 +24,8 @@ const API_ENDPOINT = `${API_BASE_URL}?oauth_token=${FOURSQUARE_OAUTH_TOKEN}&v=${
 
 const buildJSON = (buildPath, callback) => {
   let checkinItems = {}
-  let filePath = `${buildPath}/foursquare.json`
+  let folderPath = `${buildPath}/api`
+  let filePath = `${folderPath}/foursquare.json`
   let errorMsg = '✗ Request to Foursquare failed'
   let successMsg = '✓ Hitting Foursquare API:'
 
@@ -28,6 +35,11 @@ const buildJSON = (buildPath, callback) => {
   if (data.meta.code !== 200) {
     gutil.log(gutil.colors.red(errorMsg))
     return
+  }
+
+  // Create the `api` directory if it doesn't already exist
+  if (!existsSync(folderPath)) {
+    mkdirSync(folderPath)
   }
 
   // 'touch' the file first so it exists when writing to it

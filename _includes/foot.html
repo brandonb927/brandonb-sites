@@ -6,7 +6,7 @@
 
 {% if page.title == 'Check-Ins' %}
 <script>
-  function formatDate (timestamp){
+  function formatDate (timestamp) {
     var a = new Date(timestamp * 1000)
     var months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec']
     var year = a.getFullYear()
@@ -18,7 +18,7 @@
   }
 
   L.mapbox.accessToken = 'pk.eyJ1IjoiYnJhbmRvbmI5MjciLCJhIjoic1RRVkdTdyJ9.6k_mxsjzAVn1Mjk1k2t0SQ'
-  var map = L.mapbox.map('map', 'mapbox.emerald').setView([45, -102], 4)
+  var map = L.mapbox.map('checkin_map', 'mapbox.emerald').setView([45, -102], 4)
 
   // Keep our place markers organized in a nice group.
   var checkinMarkers = L.layerGroup().addTo(map)
@@ -87,9 +87,12 @@
       )
       .addTo(checkinMarkers)
     }
+
+    // Show the map
+    $('#checkin_map').css('opacity', '1')
   }
 
   // Get Swarm checkins
-  $.getJSON('/foursquare.json').then(generateMapMarkers)
+  $.getJSON('/api/foursquare.json').then(generateMapMarkers)
 </script>
 {% endif %}
