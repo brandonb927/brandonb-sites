@@ -70,7 +70,7 @@ const buildJSON = (buildPath, callback) => {
       return
     }
 
-    // Build a giant object of Venue ID => Venue + Checkin
+    // Build a giant object of Venue ID => Venue + Checkins Array
     for (let checkin of checkinData.response.checkins.items) {
       let venue = checkin.venue
 
