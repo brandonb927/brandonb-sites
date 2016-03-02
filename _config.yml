@@ -27,7 +27,10 @@ assets_scripts: /assets/scripts
 assets_styles: /assets/styles
 
 # Writing
-markdown: redcarpet
+markdown: kramdown
+kramdown:
+  input: GFM
+  syntax_highlighter: rouge
 
 # Build-stuff
 keep_files: [
