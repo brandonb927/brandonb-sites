@@ -22,7 +22,11 @@ html {
 body {
   font-size: @base-rem-unit;
   line-height: 1.6;
-  font-family: "Oxygen", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family:
+    /* https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/ */
+    /* 1 */ -apple-system, BlinkMacSystemFont,
+    /* 2 */ "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
+    /* 3 */ "Helvetica Neue", sans-serif;
   background: @gray-lightest;
   font-weight: 300;
   display: flex;
@@ -49,7 +53,7 @@ h4,
 h5 {
   margin: 0;
   color: @black;
-  font-family: "Fjalla One", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+  font-family: Georgia, Times, Times New Roman, serif;
   font-weight: 400;
   line-height: 1.333;
 }
