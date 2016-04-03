@@ -84,7 +84,7 @@ gulp.task('deploy', (callback) => {
       'build:prod',
       [
         'optimize:scripts',
-        'optimize:styles',
+        'optimize:styles'
       ],
       'inlinesource',
       'optimize:html',
