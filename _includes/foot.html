@@ -21,9 +21,7 @@
   // Keep our place markers organized in a nice group.
   var checkinMarkers = L.layerGroup().addTo(map)
 
-  var generateMapMarkers = function (response) {
-    var results = response.json()
-
+  var generateMapMarkers = function (results) {
     for (var venueId in results) {
       var venue = results[venueId].venue
       var checkins = results[venue.id]['checkins']
@@ -89,10 +87,14 @@
     }
 
     // Show the map
-    document.getElementByID('#checkin_map').style.opacity = '1.0'
+    document.getElementById('checkin_map').style.opacity = '1.0'
   }
 
   // Get Swarm checkins
-  fetch('/api/foursquare.json').then(generateMapMarkers)
+  fetch('/api/foursquare.json')
+    .then(function (response) {
+      return response.json()
+    })
+    .then(generateMapMarkers)
 </script>
 {% endif %}

@@ -8,21 +8,12 @@
         {{ post.title }}
       </a>
     </h2>
-    <p>
-      Posted by
-      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-        {% if site.social.googleplus %}
-        <a href="https://plus.google.com/+{{ site.social.googleplus }}?rel=author" target="_blank" itemprop="url">
-          <span itemprop="name">{{ site.author.name }}</span>
-        </a>
-        {% else %}
-        <span itemprop="name">{{ site.author.name }}</span>
-        {% endif %}
-      </span>
-      &nbsp;on&nbsp;<time datetime="{{ post.date | date_to_rfc822 }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
-    </p>
 
     <div itemprop="text">
+      <p class="u-text-faded u-margin-bottom-none">
+        🕒&nbsp;&nbsp;Posted <span><time datetime="{{ post.date | date_to_rfc822 }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></span>
+      </p>
+
       {{ post.content | split: '<!-- break -->' | first }}
 
       {% if post.content contains '<!-- break -->' %}
@@ -38,32 +29,26 @@
   {% else %}
     <h3>No posts found :(</h3>
   {% endif %}
-</div>
 
-<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-  <ul class="main-content-pagination">
-    {% if paginator.previous_page %}
-    <li class="main-content-pagination-item" itemprop="url">
-      <a href="{{ paginator.previous_page_path }}" rel="prev" itemprop="name" title="Newer Posts">
-        &larr; Newer posts
-      </a>
-    </li>
-    {% else %}
-    <li class="main-content-pagination-item">
-      &larr; Newer posts
-    </li>
-    {% endif %}
-   <li class="main-content-pagination-item">Page: {{ paginator.page }} of {{ paginator.total_pages }}</li>
-    {% if paginator.next_page %}
-    <li class="main-content-pagination-item" itemprop="url">
-      <a href="{{ paginator.next_page_path }}" rel="next" itemprop="name" title="Older Posts">
-        Older posts &rarr;
-      </a>
-    </li>
-    {% else %}
-    <li class="main-content-pagination-item">
-      Older posts &rarr;
-    </li>
-    {% endif %}
-  </ul>
-</nav>
+  <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+    <p class="main-content-pagination-description">
+      Page: {{ paginator.page }} of {{ paginator.total_pages }}
+    </p>
+    <ul class="main-content-pagination">
+      {% if paginator.previous_page %}
+      <li class="main-content-pagination-item" itemprop="url">
+        <a href="{{ paginator.previous_page_path }}" rel="prev" itemprop="name" title="Newer Posts">
+          &larr; Newer posts
+        </a>
+      </li>
+      {% else %}{% endif %}
+      {% if paginator.next_page %}
+      <li class="main-content-pagination-item" itemprop="url">
+        <a href="{{ paginator.next_page_path }}" rel="next" itemprop="name" title="Older Posts">
+          Older posts &rarr;
+        </a>
+      </li>
+      {% else %}{% endif %}
+    </ul>
+  </nav>
+</div>

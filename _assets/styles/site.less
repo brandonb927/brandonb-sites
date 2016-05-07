@@ -7,23 +7,90 @@
 
 // Main Site CSS
 
+.restricted-width {
+  margin: 0 auto;
+  max-width: 600px;
+}
+
+.bordered {
+  border-top: solid .3rem #222;
+  border-bottom: solid .3rem #222;
+}
+
+.margin-lr {
+  margin-left: 2rem;
+  margin-right: 2rem;
+}
+
+.margin-tb {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.padding-lr {
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.padding-tb {
+  padding-top: 2rem;
+  padding-bottom: 2rem;
+}
+
+.spacing-bottom {
+  margin-bottom: 6rem;
+}
+
+.navigation {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+  .u-unstyled-list;
+}
+
+.navigation-item {
+  margin-bottom: 0;
+  flex-grow: 1;
+  flex-shrink: 1;
+  flex-basis: auto;
+
+  a {
+    display: block;
+    padding: 2rem;
+    text-decoration: none;
+    transition: background .2s;
+  }
+
+  a:hover,
+  a:active {
+    background: #222;
+    color: #eee;
+  }
+}
+
+// Restrict site width larger than mobile
+@media (min-width: 550px) {
+  .main-header,
+  .main-footer,
+  .main-content-feed,
+  .main-content-post,
+  .main-content-page {
+    .restricted-width;
+  }
+}
+
+
 // Main header
 .main-header {
-  margin-bottom: 6rem;
+  .spacing-bottom;
   .u-text-center;
 }
 
 .main-header-title {
-  margin-left: 2rem;
-  margin-right: 2rem;
-  margin-top: 2rem;
-  margin-bottom: 2rem;
-
-  padding-top: 2rem;
-  padding-bottom: 2rem;
-
-  border-top: solid .3rem #222;
-  border-bottom: solid .3rem #222;
+  .bordered;
+  .margin-lr;
+  .padding-tb;
 
   a {
     text-decoration: none;
@@ -33,22 +100,23 @@
 .main-header-image {
   height: 8rem;
 
-  margin-top: 2rem;
-  margin-bottom: 2rem;
+  .margin-tb;
 }
 
+.main-header-description {
+  margin-bottom: 4rem;
+}
 
 .main-header-nav {
-  .u-unstyled-list;
+  .navigation;
+  .bordered;
 }
 
 .main-header-nav-item {
-  margin: 0;
-  padding: 0;
+  .navigation-item;
 }
 
 @media (min-width: 550px) {
-
   .main-header-image {
     height: 16rem;
   }
@@ -61,32 +129,57 @@
 }
 
 // Main content
+.main-content {
+  .padding-lr;
+}
+
 .main-content-feed {
-  padding-left: 2rem;
-  padding-right: 2rem;
+  .spacing-bottom;
 }
 
 .main-content-feed-item {
-  margin-bottom: 6rem;
+  .spacing-bottom;
 }
 
+.main-content-pagination-description,
 .main-content-pagination {
-  margin-bottom: 6rem;
-  padding-left: 2rem;
-  padding-right: 2rem;
-
-  .u-unstyled-list;
   .u-text-center;
 }
 
+.main-content-pagination {
+  .spacing-bottom;
+  .navigation;
+}
+
 .main-content-pagination-item {
-  margin: 0;
-  padding: 0;
+  .navigation-item;
+}
+
+
+// Main content post/page
+.main-content-post,
+.main-content-page {
+  .spacing-bottom;
+
+  figure {
+    margin-top: 0;
+    margin-left: -2rem;
+    margin-right: -2rem;
+    margin-bottom: 4rem;
+  }
 }
 
 // Main footer
 .main-footer {
-  padding-left: 2rem;
-  padding-right: 2rem;
   .u-text-center;
+}
+
+.main-footer-nav {
+  .navigation;
+  .bordered;
+  .spacing-bottom;
+}
+
+.main-footer-nav-item {
+  .navigation-item;
 }
