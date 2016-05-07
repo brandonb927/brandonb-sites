@@ -1,0 +1,39 @@
+/* Code
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+pre,
+code {
+  font-family: "Droid Sans Mono", Monaco, "Lucida Sans Typewriter", Consolas, "Courier New", monospace;
+  font-size: 1.4rem;
+  color: @gray-lighter;
+  background: @gray-darkest;
+  text-shadow: .1rem .1rem .1rem rgba(0, 0, 0, .6);
+}
+
+pre {
+  margin: 4rem -8rem;
+  padding: 4rem 8rem;
+  overflow-x: scroll;
+}
+
+code {
+  padding: .1rem .5rem;
+}
+
+pre code {
+  padding: 0;
+  background: none;
+}
+
+.highlighter-rouge > pre {
+  margin: 4rem -8rem;
+}
+
+ul .highlighter-rouge,
+ol .highlighter-rouge, {
+  margin: 0 0 0 -4rem;
+
+  pre {
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+  }
+}

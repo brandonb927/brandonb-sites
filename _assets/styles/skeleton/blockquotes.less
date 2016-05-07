@@ -1,0 +1,22 @@
+/* Blockquote
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+blockquote {
+  margin: 0;
+  padding: 2rem 4rem;
+  background: @gray-lightest;
+  border-left: solid .6rem @gray-lighter;
+
+  .bq-cite {
+    font-style: italic;
+  }
+
+  .bq-cite:before {
+    content: '- ';
+    padding-left: 2rem;
+  }
+
+  pre {
+    margin: 2rem -4rem;
+    padding: 2rem 4rem;
+  }
+}
