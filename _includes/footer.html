@@ -1,38 +1,34 @@
-<footer class="site-footer">
-  <div class="site-footer-social">
-    <ul>
-      {% if site.social.twitter %}
-        <li>
-          <a href="https://twitter.com/{{ site.social.twitter }}" title="Twitter">
-            Twitter
-          </a>
-        </li>
-      {% endif %}
-      {% if site.social.github %}
-        <li>
-          <a href="https://github.com/{{ site.social.github }}" title="Github">
-            Github
-          </a>
-        </li>
-      {% endif %}
-      {% if site.social.googleplus %}
-        <li>
-          <a href="https://plus.google.com/+{{ site.social.googleplus }}?rel=author" title="Google+">
-            Google+
-          </a>
-        </li>
-      {% endif %}
+<footer>
+  <ul>
+    {% if site.social.twitter %}
       <li>
-        <a href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" title="RSS Feed">
-          RSS
+        <a href="https://twitter.com/{{ site.social.twitter }}" title="Twitter">
+          Twitter
         </a>
       </li>
-    </ul>
-  </div>
+    {% endif %}
+    {% if site.social.github %}
+      <li>
+        <a href="https://github.com/{{ site.social.github }}" title="Github">
+          Github
+        </a>
+      </li>
+    {% endif %}
+    {% if site.social.googleplus %}
+      <li>
+        <a href="https://plus.google.com/+{{ site.social.googleplus }}?rel=author" title="Google+">
+          Google+
+        </a>
+      </li>
+    {% endif %}
+    <li>
+      <a href="{{ "/feed.xml" | prepend: site.baseurl | prepend: site.url }}" title="RSS Feed">
+        RSS
+      </a>
+    </li>
+  </ul>
 
-  <div class="site-footer-inner">
-    <p>Want to send email better? <br /><a href="https://www.sendwithus.com?ref=brandonb.io">Try Sendwithus for free</a>!</p>
-    <br />
-    <p><small>&copy; 2009 -&nbsp;<time datetime="{{ site.time | date_to_rfc822 }}" itemprop="datePublished">{{ site.time | date: "%Y" }}</time></small></p>
-  </div>
+  <p>Want to send email better? <br /><a href="https://www.sendwithus.com?ref=brandonb.io">Try Sendwithus for free</a>!</p>
+  <br />
+  <p><small>&copy; 2009 -&nbsp;<time datetime="{{ site.time | date_to_rfc822 }}" itemprop="datePublished">{{ site.time | date: "%Y" }}</time></small></p>
 </footer>

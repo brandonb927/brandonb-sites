@@ -1,15 +1,5 @@
-<div class="left-container">
-  <div class="left-container-inner">
-    {% include header.html %}
-    <div class="sticky-footer-spacer"></div>
-    {% include footer.html %}
-  </div>
-</div>
-
-<div class="right-container">
-  <main class="site-content" role="main" itemprop="mainContentOfPage">
-    <section itemscope itemtype="http://schema.org/Blog">
-      {{ content }}
-    </section>
-  </main>
-</div>
+<main role="main" itemprop="mainContentOfPage">
+  <section itemscope itemtype="http://schema.org/Blog">
+    {{ content }}
+  </section>
+</main>

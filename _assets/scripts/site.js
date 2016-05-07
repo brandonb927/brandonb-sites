@@ -3,5 +3,5 @@
 */
 
 $(document).ready(() => {
-  $.scrollDepth()
+  // $.scrollDepth()
 })

@@ -1,28 +1,19 @@
-<header class="site-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
-  <div class="site-header-avatar">
-    <img class="site-header-avatar-img" src="{{ '/avatar256.jpg' | prepend: site.assets_images }}">
-  </div>
+<header role="banner" itemscope itemtype="http://schema.org/WPHeader">
+  <img src="{{ '/avatar256.jpg' | prepend: site.assets_images }}">
 
-  <div class="site-header-title">
-    <h1 itemprop="headline">
-      <a href="/" title="{{ site.description | strip_html }}">{{ site.title }}</a>
-    </h1>
-  </div>
+  <h1 itemprop="headline">
+    <a href="/" title="{{ site.description | strip_html }}">{{ site.title }}</a>
+  </h1>
 
-  <div class="site-header-description">
-    <p>{{ site.description }}</p>
-  </div>
+  <p>{{ site.description }}</p>
 
-  <nav class="site-header-nav" role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+  <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
     {% assign navurl = page.url | remove: 'index.html' %}
     <ul>
       {% for page in site.pages %}
         {% if page.include_in_nav %}
         <li itemprop="url">
-          <a href="{{ page.url }}"
-            {% if page.url == navurl %}class="active"{% endif %}
-            {% if page.target %} target="{{ page.target }}"{% endif %}
-             title="{{ page.title }}" itemprop="name">
+          <a href="{{ page.url }}" {% if page.url == navurl %}class="active"{% endif %} {% if page.target %} target="{{ page.target }}"{% endif %} title="{{ page.title }}" itemprop="name">
             {{ page.title }}
           </a>
         </li>

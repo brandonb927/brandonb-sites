@@ -1,8 +1,6 @@
-<script src='https://code.jquery.com/jquery-2.2.0.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js'></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.1/picturefill.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-scrolldepth/0.8.0/jquery.scrolldepth.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/1.3.1/lazysizes.min.js"></script>
-<script src="/assets/scripts/site.js"></script>
 
 {% if page.title == 'Check-Ins' %}
 <script>
@@ -23,7 +21,9 @@
   // Keep our place markers organized in a nice group.
   var checkinMarkers = L.layerGroup().addTo(map)
 
-  var generateMapMarkers = function (results) {
+  var generateMapMarkers = function (response) {
+    var results = response.json()
+
     for (var venueId in results) {
       var venue = results[venueId].venue
       var checkins = results[venue.id]['checkins']
@@ -89,10 +89,10 @@
     }
 
     // Show the map
-    $('#checkin_map').css('opacity', '1')
+    document.getElementByID('#checkin_map').style.opacity = '1.0'
   }
 
   // Get Swarm checkins
-  $.getJSON('/api/foursquare.json').then(generateMapMarkers)
+  fetch('/api/foursquare.json').then(generateMapMarkers)
 </script>
 {% endif %}
