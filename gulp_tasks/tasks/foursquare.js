@@ -21,6 +21,7 @@ const API_BASE_URL = "https://api.foursquare.com/v2/users/self/checkins"
 // Give the API a unique URL (the docs demonstrate this, though I'm not sure why)
 // https://developer.foursquare.com/overview/auth
 const API_ENDPOINT = `${API_BASE_URL}?oauth_token=${FOURSQUARE_OAUTH_TOKEN}&v=${Date.now()}`
+const LOGGED_API_ENDPOINT = `${API_BASE_URL}?oauth_token=XXXXXX&v=${Date.now()}`
 
 const buildJSON = (buildPath, callback) => {
   let checkinItems = {}
@@ -62,9 +63,12 @@ const buildJSON = (buildPath, callback) => {
   while (i < totalApiCheckinPages) {
     // Build the paging URL to use with the API call
     let API_URL = `${API_ENDPOINT}&limit=${maxApiCheckins}&offset=${checkinOffset}`
-    gutil.log(gutil.colors.green(successMsg, API_URL))
     let result = request('GET', API_URL)
     let checkinData = JSON.parse(result.getBody('utf8'))
+
+    let LOGGED_API_URL = `${LOGGED_API_ENDPOINT}&limit=${maxApiCheckins}&offset=${checkinOffset}`
+    gutil.log(gutil.colors.green(successMsg, LOGGED_API_URL))
+
     if (checkinData.meta.code !== 200) {
       gutil.log(gutil.colors.red(errorMsg))
       return
