@@ -27,6 +27,14 @@
   margin-bottom: 2rem;
 }
 
+.margin-top-large {
+  margin-top: 6rem;
+}
+
+.margin-bottom-large {
+  margin-bottom: 6rem;
+}
+
 .padding-lr {
   padding-left: 2rem;
   padding-right: 2rem;
@@ -37,8 +45,8 @@
   padding-bottom: 2rem;
 }
 
-.spacing-bottom {
-  margin-bottom: 6rem;
+.padding-top-large {
+  padding-top: 4rem;
 }
 
 .navigation {
@@ -83,7 +91,8 @@
 
 // Main header
 .main-header {
-  .spacing-bottom;
+  .margin-top-large;
+  .margin-bottom-large;
   .u-text-center;
 }
 
@@ -130,15 +139,36 @@
 
 // Main content
 .main-content {
+  .padding-top-large;
   .padding-lr;
 }
 
 .main-content-feed {
-  .spacing-bottom;
+  .margin-bottom-large;
+}
+
+.main-content-feed-sponsor {
+  .margin-bottom-large;
+  .u-text-center;
+  .padding-tb;
+  background: #efefef;
+
+  a {
+    display: block;
+  }
+
+  p {
+    margin-bottom: 0;
+  }
+
+  img {
+    width: 30rem;
+    .margin-tb;
+  }
 }
 
 .main-content-feed-item {
-  .spacing-bottom;
+  .margin-bottom-large;
 }
 
 .main-content-pagination-description,
@@ -147,7 +177,7 @@
 }
 
 .main-content-pagination {
-  .spacing-bottom;
+  .margin-bottom-large;
   .navigation;
 }
 
@@ -159,7 +189,7 @@
 // Main content post/page
 .main-content-post,
 .main-content-page {
-  .spacing-bottom;
+  .margin-bottom-large;
 
   figure {
     margin-top: 0;
@@ -177,7 +207,7 @@
 .main-footer-nav {
   .navigation;
   .bordered;
-  .spacing-bottom;
+  .margin-bottom-large;
 }
 
 .main-footer-nav-item {

@@ -23,8 +23,21 @@
       {% endif %}
     </div>
   </article>
-
   {% endunless %}
+
+  {% if forloop.index0 == 2 %}
+  <div class="main-content-feed-sponsor">
+    <a href="http://faviconvalley.show/iwantmyname">
+      <p>
+        This site brought to you by:
+      </p>
+      <img src="https://d1a5a04sfj6djm.cloudfront.net/sponsors/iwantmyname.png" alt="iWantMyName.com" />
+      <p>
+        Get your new domain today!
+      </p>
+    </a>
+  </div>
+  {% endif %}
   {% endfor %}
   {% else %}
     <h3>No posts found :(</h3>
