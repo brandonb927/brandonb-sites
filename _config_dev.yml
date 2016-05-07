@@ -6,11 +6,11 @@ show_drafts: true
 
 # Disable some things for development
 google_analytics:
-  id: ''
-  domain: ''
+  id: false
+  domain: false
 
 disqus:
-  shortname: ''
+  shortname: false
 
 # Build settings
 exclude: [
