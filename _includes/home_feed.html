@@ -1,63 +1,67 @@
 {% if paginator.posts %}
-{% for post in paginator.posts %}
-{% unless post.draft %}
-<article itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
-  <h2 itemprop="name headline">
-    <a href="{{ post.url | prepend: site.baseurl }}">
-      {{ post.title }}
-    </a>
-  </h2>
-  <p>
-    Posted
-    <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-      {% if site.social.googleplus %}
+<div class="main-content-feed">
+  {% for post in paginator.posts %}
+  {% unless post.draft %}
+  <article class="main-content-feed-item" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
+    <h2 itemprop="name headline">
+      <a href="{{ post.url | prepend: site.baseurl }}">
+        {{ post.title }}
+      </a>
+    </h2>
+    <p>
+      Posted by
+      <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+        {% if site.social.googleplus %}
         <a href="https://plus.google.com/+{{ site.social.googleplus }}?rel=author" target="_blank" itemprop="url">
           <span itemprop="name">{{ site.author.name }}</span>
         </a>
-      {% else %}
+        {% else %}
         <span itemprop="name">{{ site.author.name }}</span>
+        {% endif %}
+      </span>
+      &nbsp;on&nbsp;<time datetime="{{ post.date | date_to_rfc822 }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
+    </p>
+
+    <div itemprop="text">
+      {{ post.content | split: '<!-- break -->' | first }}
+
+      {% if post.content contains '<!-- break -->' %}
+      <div class="u-text-right">
+        <a href="{{ post.url }}">Read more…</a>
+      </div>
       {% endif %}
-    </span>
-    on&nbsp;<time datetime="{{ post.date | date_to_rfc822 }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
-  </p>
+    </div>
+  </article>
 
-  <div itemprop="text">
-    {{ post.content | split: '<!-- break -->' | first }}
-    {% if post.content contains '<!-- break -->' %}
-    <a href="{{ post.url }}">Read more…</a>
-    {% endif %}
-  </div>
-</article>
-{% unless loop.last %}<hr />{% endunless %}
-
-{% endunless %}
-{% endfor %}
-{% else %}
-  <h3>No posts found :(</h3>
-{% endif %}
+  {% endunless %}
+  {% endfor %}
+  {% else %}
+    <h3>No posts found :(</h3>
+  {% endif %}
+</div>
 
 <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-  <ul>
+  <ul class="main-content-pagination">
     {% if paginator.previous_page %}
-    <li itemprop="url">
+    <li class="main-content-pagination-item" itemprop="url">
       <a href="{{ paginator.previous_page_path }}" rel="prev" itemprop="name" title="Newer Posts">
         &larr; Newer posts
       </a>
     </li>
     {% else %}
-    <li>
+    <li class="main-content-pagination-item">
       &larr; Newer posts
     </li>
     {% endif %}
-   <li>Page: {{ paginator.page }} of {{ paginator.total_pages }}</li>
+   <li class="main-content-pagination-item">Page: {{ paginator.page }} of {{ paginator.total_pages }}</li>
     {% if paginator.next_page %}
-    <li itemprop="url">
+    <li class="main-content-pagination-item" itemprop="url">
       <a href="{{ paginator.next_page_path }}" rel="next" itemprop="name" title="Older Posts">
         Older posts &rarr;
       </a>
     </li>
     {% else %}
-    <li>
+    <li class="main-content-pagination-item">
       Older posts &rarr;
     </li>
     {% endif %}

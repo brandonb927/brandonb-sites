@@ -1,18 +1,19 @@
-<header role="banner" itemscope itemtype="http://schema.org/WPHeader">
-  <img src="{{ '/avatar256.jpg' | prepend: site.assets_images }}">
+<header class="main-header" role="banner" itemscope itemtype="http://schema.org/WPHeader">
 
-  <h1 itemprop="headline">
+  <h1 class="main-header-title" itemprop="headline">
     <a href="/" title="{{ site.description | strip_html }}">{{ site.title }}</a>
   </h1>
+
+  <img class="main-header-image img-rounded" src="{{ '/avatar256.jpg' | prepend: site.assets_images }}">
 
   <p>{{ site.description }}</p>
 
   <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
     {% assign navurl = page.url | remove: 'index.html' %}
-    <ul>
+    <ul class="main-header-nav">
       {% for page in site.pages %}
         {% if page.include_in_nav %}
-        <li itemprop="url">
+        <li class="main-header-nav-item" itemprop="url">
           <a href="{{ page.url }}" {% if page.url == navurl %}class="active"{% endif %} {% if page.target %} target="{{ page.target }}"{% endif %} title="{{ page.title }}" itemprop="name">
             {{ page.title }}
           </a>
