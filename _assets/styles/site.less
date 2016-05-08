@@ -88,7 +88,6 @@
   }
 }
 
-
 // Main header
 .main-header {
   .margin-top-large;
@@ -96,9 +95,26 @@
   .u-text-center;
 }
 
+
+.main-header-title,
+.main-header-description,
+.main-header-nav,
+.main-footer-nav {
+  .margin-lr;
+}
+
+@media (min-width: 550px) {
+  .main-header-title,
+  .main-header-description,
+  .main-header-nav,
+  .main-footer-nav {
+    margin-left: 0;
+    margin-right: 0;
+  }
+}
+
 .main-header-title {
   .bordered;
-  .margin-lr;
   .padding-tb;
 
   a {
@@ -151,7 +167,6 @@
   .margin-bottom-large;
   .u-text-center;
   .padding-tb;
-  // background: #efefef;
   border: solid .3rem #efefef;
 
   a {
