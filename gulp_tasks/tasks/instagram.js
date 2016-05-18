@@ -42,17 +42,21 @@ const buildJSON = (buildPath, callback) => {
   for (let item of response.data) {
     if (item.type === 'image') {
       imageItems[item.id] = {
+        type: item.type,
         url: item.link,
         image: item.images.standard_resolution.url,
+        height: item.images.standard_resolution.height,
+        width: item.images.standard_resolution.width,
         caption: item.caption.text,
         tags: item.tags,
         likes: item.likes.count,
       }
     }
-    else if (item.type === 'image') {
+    else if (item.type === 'video') {
       imageItems[item.id] = {
+        type: item.type,
         url: item.link,
-        image: item.videos.standard_resolution.url,
+        video: item.videos.standard_resolution.url,
         caption: item.caption.text,
         tags: item.tags,
         likes: item.likes.count,

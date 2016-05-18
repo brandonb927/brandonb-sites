@@ -105,18 +105,32 @@
     var images_div = document.getElementById('instagram_images')
 
     for (var imageId in results) {
-      var imageItem = results[imageId]
-      caption = imageItem.caption.replace(/\S*#(\S+)/gi, '<a href="https://instagram.com/explore/tags/$1" class="instagram-tag">#$1</a>')
+      var data = results[imageId]
+      caption = data.caption.replace(/\S*#(\S+)/gi, '<a href="https://instagram.com/explore/tags/$1" class="instagram-tag">#$1</a>')
 
-      images_div.innerHTML += ' \
-        <div class="instagram-post"> \
-          <a href="' + imageItem.url + '" class="instagram-link"> \
-            <img src="' + imageItem.image + '" class="instagram-image" /> \
-          </a> \
-          <div class="instagram-caption"> \
-            ' + caption + ' \
-          </div> \
-        </div>'
+      if (data.type === 'image') {
+        images_div.innerHTML += ' \
+          <div class="instagram-post"> \
+            <a href="' + data.url + '" class="instagram-link"> \
+              <img src="' + data.image + '" class="instagram-image" /> \
+            </a> \
+            <div class="instagram-caption"> \
+              ' + caption + ' \
+            </div> \
+          </div>'
+      }
+      // TODO: UNTESTED!
+      // else if (data.type === 'video') {
+      //   images_div.innerHTML += ' \
+      //     <div class="instagram-post"> \
+      //       <video width="480" height="480" controls> \
+      //       <source src="' + data.video + '" type="video/mp4"/> \
+      //       </video> \
+      //       <div class="instagram-caption"> \
+      //         ' + caption + ' \
+      //       </div> \
+      //     </div>'
+      // }
     }
 
     images_div.style.opacity = '1.0'

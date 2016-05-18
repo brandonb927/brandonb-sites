@@ -4,6 +4,8 @@
 
 @import 'skeleton.less';
 
+@mobile-width: 550px;
+
 
 // Main Site CSS
 
@@ -78,7 +80,7 @@
 }
 
 // Restrict site width larger than mobile
-@media (min-width: 550px) {
+@media (min-width: @mobile-width) {
   .main-header,
   .main-footer,
   .main-content-feed,
@@ -103,7 +105,7 @@
   .margin-lr;
 }
 
-@media (min-width: 550px) {
+@media (min-width: @mobile-width) {
   .main-header-title,
   .main-header-description,
   .main-header-nav,
@@ -141,7 +143,7 @@
   .navigation-item;
 }
 
-@media (min-width: 550px) {
+@media (min-width: @mobile-width) {
   .main-header-image {
     height: 16rem;
   }
@@ -215,6 +217,20 @@
   }
 }
 
+.page-title,
+.page-subtitle {
+  display: inline;
+}
+
+.page-title {
+
+}
+
+.page-subtitle {
+  font-size: 80%;
+  color: #666;
+}
+
 // Main footer
 .main-footer {
   .u-text-center;
@@ -242,7 +258,7 @@
   transition: opacity .2s ease;
 }
 
-@media (min-width: 550px) {
+@media (min-width: @mobile-width) {
   #checkin_map {
     height: 60rem;
     margin-top: 4rem;
@@ -256,26 +272,18 @@
   margin-left: -2rem;
   margin-right: -2rem;
   transition: opacity .2s ease;
-
-  display: flex;
-	flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .instagram-post {
-  width: calc(50% - 4rem);
-  margin-right: 2rem;
-  margin-bottom: 2rem;
-  border-radius: .3rem;
+
 }
 
 .instagram-link {
   display: inline-block;
-  height: 100%;
 }
 
 .instagram-image {
-
+  width: 100vw;
 }
 
 .instagram-caption {
@@ -289,9 +297,16 @@
 
 }
 
-
-@media (min-width: 550px) {
+@media (min-width: @mobile-width) {
   #instagram_images {
-    margin-top: 4rem;
+    display: flex;
+  	flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  .instagram-post {
+    width: calc(50% - 4rem);
+    margin-right: 2rem;
+    margin-bottom: 2rem;
   }
 }
