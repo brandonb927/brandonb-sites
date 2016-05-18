@@ -6,7 +6,10 @@ gulp.task('default', (callback) => {
   runSequence(
     'build:dev',
     'browser-sync',
-    'foursquare:dev',
+    [
+      'foursquare:dev',
+      'instagram:dev'
+    ],
     'watch',
     callback
   )

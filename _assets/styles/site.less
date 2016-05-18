@@ -229,3 +229,69 @@
 .main-footer-nav-item {
   .navigation-item;
 }
+
+
+// Custom pages
+
+// Check-ins page
+#checkin_map {
+  height: 46rem;
+  margin-top: 2rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  transition: opacity .2s ease;
+}
+
+@media (min-width: 550px) {
+  #checkin_map {
+    height: 60rem;
+    margin-top: 4rem;
+  }
+}
+
+// Instagram page
+#instagram_images {
+  min-height: 46rem;
+  margin-top: 2rem;
+  margin-left: -2rem;
+  margin-right: -2rem;
+  transition: opacity .2s ease;
+
+  display: flex;
+	flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.instagram-post {
+  width: calc(50% - 4rem);
+  margin-right: 2rem;
+  margin-bottom: 2rem;
+  border-radius: .3rem;
+}
+
+.instagram-link {
+  display: inline-block;
+  height: 100%;
+}
+
+.instagram-image {
+
+}
+
+.instagram-caption {
+  padding-top: 2rem;
+  padding-right: 2rem;
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+}
+
+.instagram-tag {
+
+}
+
+
+@media (min-width: 550px) {
+  #instagram_images {
+    margin-top: 4rem;
+  }
+}

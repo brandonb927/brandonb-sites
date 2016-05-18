@@ -1,6 +1,7 @@
 ---
 layout: page
 title: Check-Ins
+page_id: checkins
 include_in_nav: true
 ---
 

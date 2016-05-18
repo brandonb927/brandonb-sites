@@ -76,7 +76,10 @@ gulp.task('deploy', (callback) => {
       ],
       'inlinesource',
       'optimize:html',
-      'foursquare:prod',
+      [
+        'foursquare:prod',
+        'instagram:prod'
+      ],
       callback
     )
   } else {
@@ -88,7 +91,10 @@ gulp.task('deploy', (callback) => {
       ],
       'inlinesource',
       'optimize:html',
-      'foursquare:prod',
+      [
+        'foursquare:prod',
+        'instagram:prod'
+      ],
       'surge-deploy',
       's3-deploy',
       callback
