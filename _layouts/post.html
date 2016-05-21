@@ -31,8 +31,8 @@ layout: base
 </article>
 
 {% if page.layout == 'post' and site.disqus.shortname %}
-<div class="post-comments">
-  <div class="post-comments-button">
+<div class="main-content-comments">
+  <div class="main-content-comments-button">
     <button class="button show-comments">Load Comments</button>
   </div>
   <div id="disqus_thread" data-disqus-shortname="{{ site.disqus.shortname }}" data-disqus-url="{{ page.url }}"></div>
