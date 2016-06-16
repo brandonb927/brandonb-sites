@@ -38,6 +38,10 @@ const baseProdConfig = {
     surgeignore: {
       src: `${src}/.surgeignore`,
       dest: build
+    },
+    minecraft: {
+      src: `${baseConfig.homeFolder}/minecraft_render/**`,
+      dest: `${build}/minecraft_render`
     }
   },
   jekyll: {

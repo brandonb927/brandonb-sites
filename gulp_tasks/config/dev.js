@@ -54,6 +54,10 @@ const baseDevConfig = {
     images: {
       src: `${srcAssets}/images/*`,
       dest: `${buildAssets}/images`
+    },
+    minecraft: {
+      src: `${baseConfig.homeFolder}/minecraft_render/**`,
+      dest: `${build}/minecraft_render`
     }
   },
   jekyll: {

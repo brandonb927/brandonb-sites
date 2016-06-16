@@ -2,8 +2,13 @@ import { normalize, resolve } from 'path'
 
 const base = normalize(`${__dirname}/../..`)
 
+const getHomeFolder = () => {
+  return process.env[(process.platform == 'win32') ? 'USERPROFILE' : 'HOME'];
+}
+
 // Export the base config
 const baseConfig = {
+  homeFolder: getHomeFolder(),
   src: {
     base: base,
     assets: resolve(base, "_assets")
@@ -11,7 +16,8 @@ const baseConfig = {
   deploy: {
     domain: 'brandonb.io',
     s3: {
-      bucket: 'brandonb-io-images'
+      bucketImages: 'brandonb-io-images',
+      bucketMinecraft: 'brandonb-io-minecraft'
     }
   },
   jekyll: {

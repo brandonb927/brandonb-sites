@@ -13,15 +13,25 @@ import deployConfig from '../config/prod'
 import errorHandler from '../utils/errorHandler'
 
 const awsConfig = JSON.parse(readFileSync(`${process.env.HOME}/.aws.json`))
-awsConfig.bucket = deployConfig.deploy.s3.bucket
+awsConfig.bucketImages = deployConfig.deploy.s3.bucketImages
+awsConfig.bucketMinecraft = deployConfig.deploy.s3.bucketMinecraft
 awsConfig.region = 'us-east-1'
 
-const s3Config = {
+const s3ImagesConfig = {
   accessKeyId: awsConfig.key,
   secretAccessKey: awsConfig.secret,
   region: awsConfig.region,
   params:{
-    'Bucket': awsConfig.bucket
+    'Bucket': awsConfig.bucketImages
+  }
+}
+
+const s3MinecraftConfig = {
+  accessKeyId: awsConfig.key,
+  secretAccessKey: awsConfig.secret,
+  region: awsConfig.region,
+  params:{
+    'Bucket': awsConfig.bucketMinecraft
   }
 }
 
@@ -39,19 +49,44 @@ gulp.task('surge-deploy', (callback) => {
   ).on('close', callback)
 })
 
-gulp.task('s3-deploy', () => {
+gulp.task('s3-images', () => {
   let options = {
     headers: {
       'Cache-Control': 'max-age=315360000, no-transform, public'
     }
   }
 
-  let publisher = awspublish.create(s3Config)
+  let publisher = awspublish.create(s3ImagesConfig)
 
   return gulp.src(imagesConfig.copy.images.src)
              .pipe(publisher.publish())
              .pipe(publisher.cache())
              .pipe(duration('Uploading images to S3'))
+             .pipe(awspublish.reporter())
+})
+
+gulp.task('inlinesource', () => {
+  let options = {
+    compress: false
+  }
+
+  return gulp.src(deployHtmlPath)
+             .pipe(inlinesource(options))
+             .pipe(duration('Inlining styles and scripts'))
+             .pipe(gulp.dest(deployConfig.deploy.dest))
+})
+
+gulp.task('s3-minecraft', () => {
+  let options = {
+    // None
+  }
+
+  let publisher = awspublish.create(s3MinecraftConfig)
+
+  return gulp.src(imagesConfig.copy.minecraft.src)
+             .pipe(publisher.publish())
+             .pipe(publisher.cache())
+             .pipe(duration('Uploading minecraft render to S3'))
              .pipe(awspublish.reporter())
 })
 
@@ -96,7 +131,7 @@ gulp.task('deploy', (callback) => {
         'instagram:prod'
       ],
       'surge-deploy',
-      's3-deploy',
+      's3-images',
       callback
     )
   }
