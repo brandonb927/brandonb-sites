@@ -1,6 +1,7 @@
 import { readFileSync } from 'fs'
 import { argv } from 'yargs'
 import cp from 'child_process'
+import parallelize from 'concurrent-transform'
 import gulp from 'gulp'
 import awspublish from 'gulp-awspublish'
 import inlinesource from 'gulp-inline-source'
@@ -84,7 +85,7 @@ gulp.task('s3-minecraft', () => {
   let publisher = awspublish.create(s3MinecraftConfig)
 
   return gulp.src(imagesConfig.copy.minecraft.src)
-             .pipe(publisher.publish())
+             .pipe(parallelize(publisher.publish(), 10))
              .pipe(publisher.cache())
              .pipe(duration('Uploading minecraft render to S3'))
              .pipe(awspublish.reporter())
