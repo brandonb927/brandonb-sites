@@ -85,7 +85,7 @@ gulp.task('s3-minecraft', () => {
   let publisher = awspublish.create(s3MinecraftConfig)
 
   return gulp.src(imagesConfig.copy.minecraft.src)
-             .pipe(parallelize(publisher.publish(), 10))
+             .pipe(parallelize(publisher.publish(), 25))
              .pipe(publisher.cache())
              .pipe(duration('Uploading minecraft render to S3'))
              .pipe(awspublish.reporter())
