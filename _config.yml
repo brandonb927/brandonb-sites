@@ -27,6 +27,7 @@ assets_styles: /assets/styles
 
 # Writing
 markdown: kramdown
+highlighter: rouge
 kramdown:
   input: GFM
   syntax_highlighter: rouge
