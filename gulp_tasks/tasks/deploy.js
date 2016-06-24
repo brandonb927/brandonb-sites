@@ -14,25 +14,13 @@ import deployConfig from '../config/prod'
 import errorHandler from '../utils/errorHandler'
 
 const awsConfig = JSON.parse(readFileSync(`${process.env.HOME}/.aws.json`))
-awsConfig.bucketImages = deployConfig.deploy.s3.bucketImages
-awsConfig.bucketMinecraft = deployConfig.deploy.s3.bucketMinecraft
-awsConfig.region = 'us-east-1'
 
 const s3ImagesConfig = {
   accessKeyId: awsConfig.key,
   secretAccessKey: awsConfig.secret,
-  region: awsConfig.region,
+  region: deployConfig.deploy.s3.region,
   params:{
-    'Bucket': awsConfig.bucketImages
-  }
-}
-
-const s3MinecraftConfig = {
-  accessKeyId: awsConfig.key,
-  secretAccessKey: awsConfig.secret,
-  region: awsConfig.region,
-  params:{
-    'Bucket': awsConfig.bucketMinecraft
+    'Bucket': deployConfig.deploy.s3.bucketImages
   }
 }
 
@@ -75,20 +63,6 @@ gulp.task('inlinesource', () => {
              .pipe(inlinesource(options))
              .pipe(duration('Inlining styles and scripts'))
              .pipe(gulp.dest(deployConfig.deploy.dest))
-})
-
-gulp.task('s3-minecraft', () => {
-  let options = {
-    // None
-  }
-
-  let publisher = awspublish.create(s3MinecraftConfig)
-
-  return gulp.src(imagesConfig.copy.minecraft.src)
-             .pipe(parallelize(publisher.publish(), 25))
-             .pipe(publisher.cache())
-             .pipe(duration('Uploading minecraft render to S3'))
-             .pipe(awspublish.reporter())
 })
 
 gulp.task('inlinesource', () => {

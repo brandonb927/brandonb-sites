@@ -16,6 +16,7 @@ const baseConfig = {
   deploy: {
     domain: 'brandonb.io',
     s3: {
+      region: 'us-east-1',
       bucketImages: 'brandonb-io-images',
       bucketMinecraft: 'brandonb-io-minecraft'
     }
