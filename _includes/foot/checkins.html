@@ -88,23 +88,31 @@
     mapElem.style.opacity = '1.0'
   }
 
+  var showMap = function () {
+    mapElem.style.opacity = '1.0'
+  }
+
+  var handleGeoLocation = function () {
+    if (navigator.geolocation) {
+      mapElem.style.opacity = '0.25'
+      navigator.geolocation.getCurrentPosition(function (position) {
+        map.setView([
+          position.coords.latitude,
+          position.coords.longitude
+        ], 12)
+        showMap()
+      }, showMap);
+    } else {
+      showMap()
+    }
+  }
+
   // Get Swarm checkins
   fetch('/api/foursquare.json')
     .then(function (response) {
       return response.json()
     })
     .then(generateMapMarkers)
-    .then(function () {
-      if (navigator.geolocation) {
-        mapElem.style.opacity = '0.25'
-        navigator.geolocation.getCurrentPosition(function (position) {
-          map.setView([
-            position.coords.latitude,
-            position.coords.longitude
-          ], 12)
-          mapElem.style.opacity = '1.0'
-        }, null);
-      }
-    })
+    .then(handleGeoLocation)
 </script>
 {% endif %}
