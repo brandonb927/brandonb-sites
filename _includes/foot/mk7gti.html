@@ -1,0 +1,45 @@
+{% if page.page_id == 'mk7gti' %}
+<script>
+  var generateImages = function (results) {
+    var images_div = document.getElementById('instagram_images')
+
+    for (var imageId in results) {
+      var data = results[imageId]
+      caption = data.caption.replace(/\S*#(\S+)/gi, '<a href="https://instagram.com/explore/tags/$1" class="instagram-tag">#$1</a>')
+
+      if (data.type === 'image') {
+        images_div.innerHTML += ' \
+          <div class="instagram-post"> \
+            <a href="' + data.url + '" class="instagram-link"> \
+              <img src="' + data.image + '" class="instagram-image" /> \
+            </a> \
+            <div class="instagram-caption"> \
+              ' + caption + ' \
+            </div> \
+          </div>'
+      }
+      // TODO: UNTESTED!
+      // else if (data.type === 'video') {
+      //   images_div.innerHTML += ' \
+      //     <div class="instagram-post"> \
+      //       <video width="480" height="480" controls> \
+      //       <source src="' + data.video + '" type="video/mp4"/> \
+      //       </video> \
+      //       <div class="instagram-caption"> \
+      //         ' + caption + ' \
+      //       </div> \
+      //     </div>'
+      // }
+    }
+
+    images_div.style.opacity = '1.0'
+  }
+
+  // Get Swarm checkins
+  fetch('/api/instagram.json')
+    .then(function (response) {
+      return response.json()
+    })
+    .then(generateImages)
+</script>
+{% endif %}
