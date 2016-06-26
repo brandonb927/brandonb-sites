@@ -2,7 +2,6 @@
 <script>
   var generateImages = function (results) {
     var images_div = document.getElementById('instagram_images')
-    console.log(results);
 
     for (var imageId in results) {
       var data = results[imageId]
@@ -11,7 +10,7 @@
 
       if (data.type === 'image') {
         html += ' \
-          <a href="' + data.url + '" class="instagram-link"> \
+          <a href="#' + imageId + '" class="instagram-link"> \
             <img src="' + data.image + '" class="instagram-image" /> \
             <svg class="instagram-image-heart" viewBox="0 -256 1850 1850"> \
               <g transform="matrix(1,0,0,-1,37.966102,1343.4237)"> \
@@ -19,7 +18,11 @@
               </g> \
             </svg> \
             <span class="instagram-image-likes">' + data.likes + '</span> \
-          </a>'
+          </a> \
+          <div id="' + imageId + '" class="lightbox"> \
+            <a href="#_" class="lightbox-close">&times;</a> \
+            <img src="' + data.image + '" /> \
+          </div>'
       }
       else if (data.type === 'video') {
         html += ' \
@@ -38,6 +41,22 @@
     }
 
     images_div.style.opacity = '1.0'
+
+    return results
+  }
+
+  var addLightbox = function (results) {
+    for (var imageId in results) {
+      if (results[imageId].type === 'image') {
+        var lightbox = document.getElementById(imageId)
+        var closeButton = lightbox.querySelector('.lightbox-close')
+        closeButton.addEventListener('click', function (e) {
+          e.preventDefault()
+          window.history.back()
+          window.history.pushState(null, null, window.location.pathname)
+        })
+      }
+    }
   }
 
   // Get Swarm checkins
@@ -46,5 +65,6 @@
       return response.json()
     })
     .then(generateImages)
+    .then(addLightbox)
 </script>
 {% endif %}

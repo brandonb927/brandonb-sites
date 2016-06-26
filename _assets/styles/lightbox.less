@@ -1,0 +1,43 @@
+.lightbox {
+	/** Default lightbox to hidden */
+	display: none;
+
+	/** Position and style */
+	position: fixed;
+  top: 0;
+  left: 0;
+	width: 100%;
+	height: 100%;
+  text-align: center;
+	background: rgba(255,255,255,0.65);
+  z-index: 999;
+}
+
+.lightbox-close {
+  margin: 0;
+  float: right;
+  font-size: 4rem;
+  line-height: 1;
+  color: #333;
+}
+
+.lightbox-close,
+.lightbox-close:hover,
+.lightbox-close:active {
+  text-decoration: none;
+}
+
+.lightbox img {
+	/** Pad the lightbox image */
+	max-width: 90%;
+	max-height: 80%;
+	margin-top: 10%;
+}
+
+.lightbox:target {
+	/** Remove default browser outline */
+	outline: none;
+
+	/** Unhide lightbox **/
+	display: block;
+}
