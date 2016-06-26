@@ -6,7 +6,6 @@
 
 @mobile-width: 550px;
 
-
 // Main Site CSS
 
 .restricted-width {
@@ -290,10 +289,38 @@
 
 .instagram-link {
   display: inline-block;
+  position: relative;
 }
 
-.instagram-image {
-  width: 100vw;
+.instagram-image-heart,
+.instagram-image-likes {
+  position: absolute;
+}
+
+.instagram-link:hover .instagram-image-heart,
+.instagram-link:hover .instagram-image-likes {
+  opacity: 1;
+}
+
+.instagram-image-heart,
+.instagram-image-likes {
+  display: inline-block;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: .1s ease-in-out opacity;
+  opacity: 0;
+}
+
+.instagram-image-heart {
+  height: 5rem;
+  width: 5rem;
+  fill: #fff;
+}
+
+.instagram-image-likes {
+  width: 4rem;
+  text-align: center;
 }
 
 .instagram-caption {
