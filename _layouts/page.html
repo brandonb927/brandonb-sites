@@ -3,9 +3,20 @@ layout: base
 ---
 
 <article class="main-content-page">
+  {% if page.subtitle %}
+  <div class="page-title-group">
+    <h2 class="page-title">
+      {{ page.title }}
+    </h2>
+    <h5 class="page-subtitle">
+      {{ page.subtitle }}
+    </h5>
+  </div>
+  {% else %}
   <h2 class="page-title">
     {{ page.title }}
   </h2>
+  {% endif %}
 
   {{ content }}
 </article>
