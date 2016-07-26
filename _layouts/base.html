@@ -7,9 +7,11 @@
     {% include head.html %}
   </head>
   <body{% if page.body_class %} class="{{ page.body_class }}"{% endif %} itemscope itemtype="http://schema.org/WebPage">
-    {% include header.html %}
-    {% include body.html %}
-    {% include footer.html %}
-    {% include foot.html %}
+    <div  class="site-wrapper">
+      {% include header.html %}
+      {% include body.html %}
+      {% include footer.html %}
+      {% include foot.html %}
+    </div>
   </body>
 </html>

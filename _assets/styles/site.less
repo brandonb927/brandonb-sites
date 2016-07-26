@@ -9,10 +9,27 @@
 
 // Main Site CSS
 
+/* Once there is natural vertical overflow,
+  it causes horizontal overflow, so stopping here. */
+body {
+  overflow-x: hidden;
+}
+
 .restricted-width {
-  margin: 0 auto;
-  width: 600px;
   max-width: 600px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.full-width {
+  width: 100vw;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw;
+  margin-right: -50vw;
 }
 
 .bordered {
@@ -52,6 +69,8 @@
   padding-top: 4rem;
 }
 
+// Navigation
+
 .navigation {
   display: flex;
   flex-wrap: wrap;
@@ -80,29 +99,10 @@
   }
 }
 
-// Restrict site width larger than mobile
-@media (min-width: @mobile-width) {
-  .main-header,
-  .main-footer,
-  .main-content-feed,
-  .main-content-post,
-  .main-content-comments,
-  .main-content-page {
-    .restricted-width;
-  }
+// Main site wrapper
 
-  // Page specific
-  #mk7gti {
-    .main-content-page {
-      max-width: 90rem;
-      width: 100%;
-    }
-
-    .page-title-group,
-    p {
-      .restricted-width;
-    }
-  }
+.site-wrapper {
+  .restricted-width;
 }
 
 // Main header
@@ -167,9 +167,7 @@
   }
 
   .main-header-title {
-    margin-left: auto;
-    margin-right: auto;
-    max-width: 600px;
+    // nothing
   }
 }
 
@@ -177,6 +175,13 @@
 .main-content {
   .padding-top-large;
   .padding-lr;
+}
+
+@media (min-width: @mobile-width) {
+  .main-content {
+      padding-left: 0;
+      padding-right: 0;
+  }
 }
 
 .main-content-feed {
@@ -228,10 +233,7 @@
   .margin-bottom-large;
 
   figure {
-    margin-top: 0;
-    margin-left: -2rem;
-    margin-right: -2rem;
-    margin-bottom: 4rem;
+    .full-width;
   }
 }
 
@@ -249,7 +251,7 @@
 }
 
 .page-title {
-  // Nothing
+  // nothing
 }
 
 .page-subtitle {
@@ -294,9 +296,7 @@
 // Instagram page
 #instagram_images {
   min-height: 46rem;
-  margin-top: 6rem;
-  margin-left: -2rem;
-  margin-right: -2rem;
+  .full-width;
   transition: opacity .2s ease;
   opacity: 0;
 }
