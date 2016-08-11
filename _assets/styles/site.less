@@ -7,6 +7,28 @@
 
 @mobile-width: 550px;
 
+// Not sure where this should live...
+.u-loader {
+  width: 4rem;
+  height: 4rem;
+  background-color: #222;
+  margin: 4rem auto;
+  -webkit-animation: cssLoader 1.2s infinite ease-in-out;
+          animation: cssLoader 1.2s infinite ease-in-out;
+}
+
+@keyframes cssLoader {
+  0% {
+    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
+  }
+  100% {
+    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
+  }
+}
+
 // Main Site CSS
 
 /* Once there is natural vertical overflow,
@@ -282,6 +304,23 @@ body {
 // Custom pages
 
 // Check-ins page
+.checkin-map-wrapper {
+  position: relative;
+
+  .checkin-map-loader-wrapper {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 1021;
+  }
+
+  #checkin_map {
+    position: relative;
+    z-index: 1020;
+  }
+}
+
 #checkin_map {
   height: 46rem;
   margin-top: 2rem;
