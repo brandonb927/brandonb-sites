@@ -51,8 +51,9 @@ defaults:
 
 # 3rd-party
 social:
-  twitter: brandonb927
   github: brandonb927
+  twitter: brandonb927
+  instagram: brandonb.927
   googleplus: brandonbrown927
 
 disqus:
