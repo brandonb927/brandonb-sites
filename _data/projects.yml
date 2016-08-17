@@ -1,8 +1,10 @@
 pages:
   -
     url: /projects/checkins
-    title: Personal Swarm Check-ins
-    description: Powered by the Foursquare API, a historical map of my Swarm check-ins. See check out where I've been lately!
+    title: Swarm Check-ins
+    description: |
+      Powered by Mapbox and the Foursquare API, a historical map of my Swarm check-ins.
+      See check out where I've been lately!
   -
     url: /projects/podcast
     title: Favicon Valley Podcast
