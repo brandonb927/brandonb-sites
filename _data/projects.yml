@@ -9,6 +9,12 @@ pages:
     description: |
       A podcast hosted by myself where I talk about products, email, and the web.
       I chat with founders and other product developers.
+  -
+    url: https://gist.github.com/brandonb927/3195465
+    title: OS X for Hackers
+    description: |
+      With over 2400 stars and 700 forks, an automated script of not-too-opinionated hacker-oriented
+      changes to OS X that make your life alot better. Who says Apple gets to have all the control, right?
 packages:
   -
     url: https://github.com/brandonb927/ron-swanson
