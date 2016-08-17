@@ -39,14 +39,6 @@ body {
   overflow-x: hidden;
 }
 
-.restricted-width {
-  max-width: 600px;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
-}
-
 // Thank you Chris!
 // https://css-tricks.com/full-width-containers-limited-width-parents/
 .full-width {
@@ -128,7 +120,11 @@ body {
 // Main site wrapper
 
 .site-wrapper {
-  .restricted-width;
+  max-width: 600px;
+  margin-top: 0;
+  margin-bottom: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 // Main header
@@ -305,7 +301,15 @@ body {
 
 // Custom pages
 
-// Check-ins page
+// Projects
+
+#projects {
+  // something here soon
+}
+
+
+// Swarm Check-ins
+
 .checkin-map-wrapper {
   position: relative;
 
@@ -338,8 +342,10 @@ body {
   }
 }
 
-// Instagram page
-#instagram_images {
+
+// Garage
+
+#garage_images {
   min-height: 46rem;
   .full-width;
   transition: opacity .2s ease;
@@ -351,8 +357,9 @@ body {
 }
 
 .instagram-link {
-  display: inline-block;
+  display: block;
   position: relative;
+  .u-text-center;
 }
 
 .instagram-image-heart,
@@ -402,7 +409,7 @@ body {
 }
 
 @media (min-width: @mobile-width) {
-  #instagram_images {
+  #garage_images {
     display: flex;
   	flex-wrap: wrap;
     justify-content: space-around;

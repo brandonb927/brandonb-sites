@@ -48,6 +48,16 @@ defaults:
       type: posts
     values:
       layout: post
+  -
+    scope:
+      path: ''
+      type: projects
+    values:
+      layout: page
+
+collections:
+  projects:
+    output: true
 
 # 3rd-party
 social:

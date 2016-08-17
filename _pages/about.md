@@ -2,6 +2,7 @@
 layout: page
 title: About
 include_in_nav: true
+order: 1
 ---
 
 I'm a front end Product Developer at [sendwithus](https://www.sendwithus.com) in Victoria, BC, building user-facing product experiences. Formerly a part of the Postach.io team at Input Logic, I have a fiery passion for web development, and as a product developer I'm speaking directly with customers and using their ideas to shape the future of what I'm working on.
