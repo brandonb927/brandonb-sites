@@ -1,4 +1,4 @@
-<li itemprop="url">
+<li class="projects-list-item" itemprop="url">
   <a href="{{ item.url }}"
      title="{{ item.title }}"
      itemprop="name">
@@ -7,6 +7,13 @@
   {% if item.description %}
   <p>
     {{ item.description | markdownify }}
+  </p>
+  {% endif %}
+  {% if item.image %}
+  <p>
+    <a href="{{ '/' | append: item.image | prepend: site.assets_images }}">
+      <img src="{{ '/' | append: item.image | prepend: site.assets_images }}">
+    </a>
   </p>
   {% endif %}
 </li>

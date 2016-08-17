@@ -14,7 +14,7 @@ page_id: projects
 </p>
 
 <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-  <ul class="u-unstyled-list">
+  <ul class="projects-list">
     {% for item in site.data.projects.pages %}
     {% include projects/list-item.html %}
     {% endfor %}
@@ -24,7 +24,7 @@ page_id: projects
 <h4>npm packages</h4>
 
 <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-  <ul class="u-unstyled-list">
+  <ul class="projects-list">
     {% for item in site.data.projects.packages %}
     {% include projects/list-item.html %}
     {% endfor %}
