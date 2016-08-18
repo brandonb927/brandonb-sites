@@ -65,17 +65,6 @@ gulp.task('inlinesource', () => {
              .pipe(gulp.dest(deployConfig.deploy.dest))
 })
 
-gulp.task('inlinesource', () => {
-  let options = {
-    compress: false
-  }
-
-  return gulp.src(deployHtmlPath)
-             .pipe(inlinesource(options))
-             .pipe(duration('Inlining styles and scripts'))
-             .pipe(gulp.dest(deployConfig.deploy.dest))
-})
-
 gulp.task('deploy', (callback) => {
   if (argv.dryrun) {
     runSequence(
