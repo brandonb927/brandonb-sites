@@ -420,13 +420,16 @@ body {
 
 @media (min-width: @mobile-width) {
   #garage_images {
+    .margin-top-large;
+    .margin-bottom-large;
     display: flex;
   	flex-wrap: wrap;
     justify-content: space-around;
   }
 
   .instagram-post {
-    width: calc(50% - 4rem);
+    max-width: 40rem;
+    // width: calc(50% - 4rem);
     margin-top: 0;
     margin-bottom: 0;
   }

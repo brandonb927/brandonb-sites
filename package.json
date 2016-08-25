@@ -2,7 +2,7 @@
   "name": "brandonb.io",
   "private": true,
   "devDependencies": {
-    "babel-core": "^6.13.2",
+    "babel-core": "^6.14.0",
     "babel-preset-node6": "^11.0.0",
     "browser-sync": "^2.14.0",
     "concurrent-transform": "^1.0.0",
