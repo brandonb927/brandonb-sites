@@ -75,10 +75,21 @@ gulp.task('deploy', (callback) => {
       ],
       'inlinesource',
       'optimize:html',
+      'foursquare:prod',
+      'instagram:prod',
+      callback
+    )
+  } else if (argv.update_apis) {
+    runSequence(
+      'build:prod',
       [
-        'foursquare:prod',
-        'instagram:prod'
+        'optimize:scripts',
+        'optimize:styles',
       ],
+      'inlinesource',
+      'optimize:html',
+      'foursquare:prod',
+      'instagram:prod',
       callback
     )
   } else {
@@ -90,10 +101,6 @@ gulp.task('deploy', (callback) => {
       ],
       'inlinesource',
       'optimize:html',
-      [
-        'foursquare:prod',
-        'instagram:prod'
-      ],
       'surge-deploy',
       's3-images',
       callback
