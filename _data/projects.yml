@@ -17,6 +17,7 @@ pages:
     description: |
       A useful unicode/emoji character map. Click on a character to
       have it copied to your clipboard, or use your arrow keys and hit enter to copy.
+    image: projects/unicodeforyou.gif
   -
     url: https://gist.github.com/brandonb927/3195465
     title: OS X for Hackers
