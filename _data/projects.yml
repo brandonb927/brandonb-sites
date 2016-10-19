@@ -19,11 +19,11 @@ pages:
       have it copied to your clipboard, or use your arrow keys and hit enter to copy.
     image: projects/unicodeforyou.gif
   -
-    url: https://pebble.com
+    url: https://apps.getpebble.com/applications/58070ba89392ff32cf0002ce
     title: VW (Unofficial) Pebble Watchface
     description: |
       For VW enthusiasts such as myself, built with RockyJS for Pebble smart watches.
-      Available on the Pebble App Store.
+      Available on the Pebble App Store. Source is available [on Github](https://github.com/brandonb927/pebble-watchface-vw-unofficial).
     image: https://pbs.twimg.com/media/CsruGyRVUAAfgdv.jpg
 packages:
   -
