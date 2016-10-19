@@ -24,7 +24,7 @@ pages:
     description: |
       For VW enthusiasts such as myself, built with RockyJS for Pebble smart watches.
       Available on the Pebble App Store. Source is available [on Github](https://github.com/brandonb927/pebble-watchface-vw-unofficial).
-    image: https://pbs.twimg.com/media/CsruGyRVUAAfgdv.jpg
+    image: projects/pebble-watchface-vw-unofficial.png
 packages:
   -
     url: https://github.com/brandonb927/ron-swanson
