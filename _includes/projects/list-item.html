@@ -11,9 +11,15 @@
   {% endif %}
   {% if item.image %}
   <p>
+    {% unless item.image contains '://'%}
     <a href="{{ '/' | append: item.image | prepend: site.assets_images }}">
-      <img src="{{ '/' | append: item.image | prepend: site.assets_images }}">
+      <img src="{{ '/' | append: item.image | prepend: site.assets_images }}" />
     </a>
+    {% else %}
+    <a href="{{ item.image }}">
+      <img src="{{ item.image }}" />
+    </a>
+    {% endunless %}
   </p>
   {% endif %}
 </li>
