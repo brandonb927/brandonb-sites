@@ -10,7 +10,7 @@ module Jekyll
 
       @base_url = site.config['baseurl']
       @site_url = site.config['url']
-      @assets_images = site.config['assets_images']
+      @images_root = "#{site.config['assets_images']}/#{context.environments.first['page']['layout']}s"
 
       @attributes = {}
 
@@ -24,18 +24,14 @@ module Jekyll
 
       if @image1x.include? "http" or @image1x.include? "https"
         """
-        <figure>
-          <a href=\"#{@image1x}\" target=\"_blank\">
-            <picture>
-              <source data-srcset=\"#{@image1x}\">
-              <img src=\"#{@image1x}\"
-                   srcset=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\"
-                   data-sizes=\"auto\"
-                   data-srcset=\"#{@image1x}\"
-                   class=\"lazyload\" #{alt_text}>
-            </picture>
-          </a>
-        </figure>
+        <picture>
+          <source data-srcset=\"#{@image1x}\">
+          <img src=\"#{@image1x}\"
+               srcset=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\"
+               data-sizes=\"auto\"
+               data-srcset=\"#{@image1x}\"
+               class=\"lazyload\" #{alt_text}>
+        </picture>
         """.strip
       else
         # Build the 2x image path from the 1x path
@@ -44,24 +40,18 @@ module Jekyll
         @image2x = "#{filename2x}.#{@image2x_array[1]}"
 
         # Replace the images with the proper urls
-        # @image1x = "#{@site_url}#{@base_url}#{@assets_images}/#{@image1x}"
-        # @image2x = "#{@site_url}#{@base_url}#{@assets_images}/#{@image2x}"
-        @image1x = "#{@assets_images}/#{@image1x}"
-        @image2x = "#{@assets_images}/#{@image2x}"
+        @image1x = "#{@images_root}/#{@image1x}"
+        @image2x = "#{@images_root}/#{@image2x}"
 
         """
-        <figure class=\"\">
-          <a href=\"#{@image1x}\" target=\"_blank\">
-            <picture>
-              <source data-srcset=\"#{@image1x}, #{@image2x} 2x\">
-              <img src=\"#{@image1x}\"
-                   srcset=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\"
-                   data-sizes=\"auto\"
-                   data-srcset=\"#{@image1x}, #{@image2x} 2x\"
-                   class=\"lazyload\" #{alt_text}>
-            </picture>
-          </a>
-        </figure>
+        <picture>
+          <source data-srcset=\"#{@image1x}, #{@image2x} 2x\">
+          <img src=\"#{@image1x}\"
+               srcset=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\"
+               data-sizes=\"auto\"
+               data-srcset=\"#{@image1x}, #{@image2x} 2x\"
+               class=\"lazyload\" #{alt_text}>
+        </picture>
         """.strip
       end
     end

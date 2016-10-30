@@ -39,8 +39,14 @@ body {
   overflow-x: hidden;
 }
 
+picture {
+  display: block;
+  text-align: center;
+}
+
 // Thank you Chris!
 // https://css-tricks.com/full-width-containers-limited-width-parents/
+
 .full-width {
   width: 100vw;
   position: relative;
@@ -259,6 +265,20 @@ body {
     .margin-top-large;
     .margin-bottom-large;
   }
+}
+
+// Fix lists globally
+.main-content-post ul ul,
+.main-content-post ul li {
+  margin-top: .5rem;
+  margin-bottom: .5rem;
+  margin-right: 0;
+  margin-left: 0;
+  padding: 0;
+}
+
+.main-content-post ul li {
+  padding-left: 2rem;
 }
 
 .main-content-comments {

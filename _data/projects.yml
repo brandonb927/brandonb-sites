@@ -17,14 +17,14 @@ pages:
     description: |
       A useful unicode/emoji character map. Click on a character to
       have it copied to your clipboard, or use your arrow keys and hit enter to copy.
-    image: projects/unicodeforyou.gif
+    image: unicodeforyou.gif
   -
     url: https://apps.getpebble.com/applications/58070ba89392ff32cf0002ce
     title: VW (Unofficial) Pebble Watchface
     description: |
       For VW enthusiasts such as myself, built with RockyJS for Pebble smart watches.
       Available on the Pebble App Store. Source is available [on Github](https://github.com/brandonb927/pebble-watchface-vw-unofficial).
-    image: projects/pebble-watchface-vw-unofficial.png
+    image: pebble-watchface-vw-unofficial.png
 packages:
   -
     url: https://github.com/brandonb927/ron-swanson
@@ -33,11 +33,11 @@ packages:
       An offline CLI npm package that exposes a single command `ron-swanson` which outputs quotes from the
       [Ron Swanson API](https://ron-swanson-quotes.herokuapp.com/v2/quotes). Imports the repo that powers
       the API directly rather than making calls over HTTP.
-    image: projects/ron-swanson-cli.gif
+    image: ron-swanson-cli.gif
   -
     url: https://github.com/brandonb927/dwight
     title: Dwight Schrute CLI
     description: |
       A CLI npm package that exposes two commands: `dwight` that simple outputs the face of the man himself,
       and `dwight-say` which allows stdout to be piped into a speech bubble.
-    image: projects/dwight-cli.gif
+    image: dwight-cli.gif
