@@ -22,9 +22,6 @@ root: /
 permalink: /:title
 
 assets_images: /assets/images
-posts_images: /assets/images/posts
-projects_images: /assets/images/projects
-
 assets_scripts: /assets/scripts
 assets_styles: /assets/styles
 
