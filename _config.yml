@@ -76,4 +76,5 @@ google_analytics:
 # Extras
 gems:
   - jekyll-paginate
+  - jekyll-redirect-from
   - jekyll-sitemap
