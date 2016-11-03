@@ -20,7 +20,14 @@ redirect_from:
     {% unless post.draft %}
     <item>
       <title>{{ post.title | xml_escape }}</title>
-      <description>{{ post.content | xml_escape }}</description>
+      {% capture post_content %}
+      {{ post.content | split:'<!-- break -->' | first }}
+      {% if post.content contains '<!-- break -->' %}
+      <br />
+      <a href="{{ post.url | prepend: site.baseurl | prepend: site.url }}">Click through to read this post!</a>
+      {% endif %}
+      {% endcapture %}
+      <description>{{ post_content | xml_escape }}</description>
       <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
       <link>{{ post.url | prepend: site.baseurl | prepend: site.url }}</link>
       <guid isPermaLink="true">{{ post.url | prepend: site.baseurl | prepend: site.url }}</guid>
