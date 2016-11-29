@@ -25,6 +25,13 @@ pages:
       For VW enthusiasts such as myself, built with RockyJS for Pebble smart watches.
       Available on the Pebble App Store. Source is available [on Github](https://github.com/brandonb927/pebble-watchface-vw-unofficial).
     image: pebble-watchface-vw-unofficial.png
+  -
+    url: https://apps.getpebble.com/en_US/application/583db01800355abe66000853
+    title: Tree Pebble Watchface
+    description: |
+      A very simple sitka spruce treee with a twist at certain times of the year, built with RockyJS for Pebble smart watches.
+      Available on the Pebble App Store. Source is available [on Github](https://github.com/brandonb927/pebble-watchface-tree).
+    image: pebble-watchface-tree.png
 packages:
   -
     url: https://github.com/brandonb927/ron-swanson
