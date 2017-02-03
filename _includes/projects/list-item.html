@@ -12,8 +12,8 @@
   {% if item.image %}
   <p>
     {% unless item.image contains '://'%}
-    <a href="{{ '/projects/' | append: item.image | prepend: site.assets_images}}">
-      <img src="{{ '/projects/' | append: item.image | prepend: site.assets_images}}" />
+    <a href="{{ '/projects/' | append: item.image | prepend: site.assets_images }}">
+      <img src="{{ '/projects/' | append: item.image | prepend: site.assets_images }}" />
     </a>
     {% else %}
     <a href="{{ item.image }}">

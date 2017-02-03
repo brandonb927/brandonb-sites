@@ -17,8 +17,6 @@ favicon:
   theme_color: '#FFFFFF'
 
 # Routes
-baseurl: '' # Use if your site is in a subdirectory, e.g. /blog/
-root: /
 permalink: /:title
 
 assets_images: /assets/images
@@ -64,7 +62,7 @@ social:
   github: brandonb927
   twitter: brandonb927
   instagram: brandonb.927
-  googleplus: brandonbrown927
+  unsplash: brandonb927
 
 disqus:
   shortname: brandonbrownsblog
