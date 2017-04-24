@@ -21,8 +21,8 @@ redirect_from:
     <item>
       <title>{{ post.title | xml_escape }}</title>
       {% capture post_content %}
-      {{ post.content | split:'<!-- break -->' | first }}
-      {% if post.content contains '<!-- break -->' %}
+      {{ post.content | split: site.break_tag | first }}
+      {% if post.content contains site.break_tag %}
       <br />
       <a href="{{ post.url | prepend: site.url }}">Click through to read this post!</a>
       {% endif %}

@@ -1,0 +1,10 @@
+{% capture sponsor %}{{include.sponsor}}{% endcapture %}
+<a href="{{ site.data.sponsors[sponsor].url }}">
+  <p>
+    This site brought to you by:
+  </p>
+  <img src="{{ site.data.sponsors[sponsor].image }}" alt="{{ site.data.sponsors[sponsor].image_alt }}" />
+  <p>
+    {{ site.data.sponsors[sponsor].caption }}
+  </p>
+</a>

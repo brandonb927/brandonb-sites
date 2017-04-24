@@ -3,9 +3,10 @@ layout: base
 ---
 
 <div class="main-content-feed">
-  {% if paginator.posts %}
-  {% for post in paginator.posts %}
-  {% unless post.draft %}
+  {% assign posts = paginator.posts | where: "draft",false  %}
+  {% assign random_post_index = site.time | date: "%s%N" | modulo: posts.size %}
+  {% if posts %}
+  {% for post in posts %}
   <article class="main-content-feed-item" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
     <h2 itemprop="name headline">
       <a href="{{ post.url | prepend: site.baseurl }}">
@@ -18,31 +19,21 @@ layout: base
         🕒&nbsp;&nbsp;Posted <span><time datetime="{{ post.date | date_to_rfc822 }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></span>
       </p>
 
-      {{ post.content | split: '<!-- break -->' | first }}
+      {{ post.content | split: site.break_tag | first }}
 
-      {% if post.content contains '<!-- break -->' %}
+      {% if post.content contains site.break_tag %}
       <div class="u-text-right">
         <a href="{{ post.url }}">Read more…</a>
       </div>
       {% endif %}
     </div>
   </article>
-  {% endunless %}
 
-  {% if forloop.index0 == 2 %}
+  {% if forloop.index0 == random_post_index %}
   <div class="main-content-feed-sponsor">
-    <a href="{{ site.data.sponsors.iwantmyname.url }}">
-      <p>
-        This site brought to you by:
-      </p>
-      <img src="{{ site.data.sponsors.iwantmyname.image }}" alt="iWantMyName.com" />
-      <p>
-        {{ site.data.sponsors.iwantmyname.caption }}
-      </p>
-    </a>
+    {% include sponsor.html sponsor='iwantmyname' %}
   </div>
   {% endif %}
-
   {% endfor %}
 
   <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
@@ -56,14 +47,14 @@ layout: base
           &larr; Newer posts
         </a>
       </li>
-      {% else %}{% endif %}
+      {% endif %}
       {% if paginator.next_page %}
       <li class="main-content-pagination-item" itemprop="url">
         <a href="{{ paginator.next_page_path }}" rel="next" itemprop="name" title="Older Posts">
           Older posts &rarr;
         </a>
       </li>
-      {% else %}{% endif %}
+      {% endif %}
     </ul>
   </nav>
 
