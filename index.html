@@ -2,11 +2,14 @@
 layout: base
 ---
 
+{% if site.show_drafts %}
+{% assign posts = site.posts %}
+{% else %}
+{% assign posts = site.posts | where: "draft",false %}
+{% endif %}
+
 <div class="main-content-feed">
-  {% assign posts = paginator.posts | where: "draft",false  %}
-  {% assign random_post_index = site.time | date: "%s%N" | modulo: posts.size %}
-  {% if posts %}
-  {% for post in posts %}
+  {% for post in posts limit:5 %}
   <article class="main-content-feed-item" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
     <h2 itemprop="name headline">
       <a href="{{ post.url | prepend: site.baseurl }}">
@@ -29,36 +32,18 @@ layout: base
     </div>
   </article>
 
-  {% if forloop.index0 == random_post_index %}
+  {% if forloop.index0 == 2 %}
   <div class="main-content-feed-sponsor">
     {% include sponsor.html sponsor='iwantmyname' %}
   </div>
   {% endif %}
   {% endfor %}
 
-  <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-    <p class="main-content-pagination-description">
-      Page: {{ paginator.page }} of {{ paginator.total_pages }}
-    </p>
-    <ul class="main-content-pagination">
-      {% if paginator.previous_page %}
-      <li class="main-content-pagination-item" itemprop="url">
-        <a href="{{ paginator.previous_page_path }}" rel="prev" itemprop="name" title="Newer Posts">
-          &larr; Newer posts
-        </a>
-      </li>
-      {% endif %}
-      {% if paginator.next_page %}
-      <li class="main-content-pagination-item" itemprop="url">
-        <a href="{{ paginator.next_page_path }}" rel="next" itemprop="name" title="Older Posts">
-          Older posts &rarr;
-        </a>
-      </li>
-      {% endif %}
-    </ul>
-  </nav>
-
-  {% else %}
-  <h3>No posts found :(</h3>
-  {% endif %}
+  <p class="u-text-center">
+    For more posts visit
+    <br />
+    <a href="/archive" title="Archive">
+      the Archive
+    </a>
+  </p>
 </div>

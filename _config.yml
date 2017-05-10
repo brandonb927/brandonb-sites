@@ -37,10 +37,6 @@ keep_files: [
   'assets',
   'api']
 
-# Pagination
-paginate: 5
-paginate_path: /page/:num
-
 defaults:
   -
     scope:
@@ -75,6 +71,5 @@ google_analytics:
 
 # Extras
 gems:
-  - jekyll-paginate
   - jekyll-redirect-from
   - jekyll-sitemap

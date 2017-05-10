@@ -212,7 +212,8 @@ picture {
   }
 }
 
-.main-content-feed {
+.main-content-feed,
+.archive-content-feed {
   .margin-bottom-large;
 }
 
@@ -240,20 +241,16 @@ picture {
   .margin-bottom-large;
 }
 
-.main-content-pagination-description,
-.main-content-pagination {
-  .u-text-center;
+.archive-content-feed {
+  ul {
+    .u-unstyled-list;
+    padding-left: 4rem;
+  }
 }
 
-.main-content-pagination {
-  .margin-bottom-large;
-  .navigation;
+.archive-content-feed-item-draft {
+  color: #666;
 }
-
-.main-content-pagination-item {
-  .navigation-item;
-}
-
 
 // Main content post/page
 .main-content-post,
