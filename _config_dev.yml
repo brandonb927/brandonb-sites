@@ -16,13 +16,11 @@ disqus:
 exclude: [
   '.ruby-version',
   '.editorconfig',
-  '.bowerrc',
   'README.md',
   'Gemfile',
   'Gemfile.lock',
   'gulpfile.babel.js',
   'package.json',
-  'bower.json',
   'gulp_tasks',
   'node_modules',
   'build_prod']

@@ -16,17 +16,24 @@ title: Archive
     {% for post in posts %}
     {% assign currentYear = post.date | date: "%Y" %}
     {% if currentYear != nextYear %}
-    {% unless forloop.first %}</ul>{% endunless %}
+    {% unless forloop.first %}
+    </ul>
+    {% endunless %}
     <h2>{{ currentYear }}</h2>
     <ul>
-      {% assign nextYear = currentYear %}
-      {% endif %}
+    {% assign nextYear = currentYear %}
+    {% endif %}
       <li>
         {% if post.draft %}
         <span class="archive-content-feed-item-draft">**DRAFT**</span>
+        {% else %}
+        <span class="archive-content-feed-item-time">
+          <time datetime="{{ post.date | date_to_rfc822 }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
+        </span>
         {% endif %}
-        <a href="{{ post.url | prepend: site.baseurl }}">
-          <span><time datetime="{{ post.date | date_to_rfc822 }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></span> - {{ post.title }}
+        <a href="{{ post.url | prepend: site.baseurl }}"
+           class="archive-content-feed-item-title">
+          {{ post.title }}
         </a>
       </li>
     {% if forloop.last %}

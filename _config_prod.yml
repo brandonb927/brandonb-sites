@@ -11,12 +11,10 @@ show_drafts: false
 exclude: [
   '.ruby-version',
   '.editorconfig',
-  '.bowerrc',
   'gulpfile.babel.js',
   'Gemfile',
   'Gemfile.lock',
   'package.json',
-  'bower.json',
   'README.md',
   'node_modules',
   'gulp_tasks',

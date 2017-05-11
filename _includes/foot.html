@@ -4,22 +4,22 @@
 
 <script>
   // Show site favicon next to external links
-  function getDomain(url) {
-    if (url) {
-      return url.match(/:\/\/(.[^/]+)/)[1];
-    }
-    return null
-  }
-  var externalLinks = document.querySelectorAll(".main-content-post a[href^='http']")
-  for (var link in externalLinks) {
-    var a = externalLinks[link]
-    var domain = getDomain(a.href)
-    var currWindow = new RegExp('/' + window.location.host + '/')
-    if (!currWindow.test(a.href) && domain) {
-      a.style.background ='url(https://www.google.com/s2/favicons?domain=' + domain + ') left center no-repeat'
-      a.style.paddingLeft = '2rem'
-    }
-  }
+  // function getDomain(url) {
+  //   if (url) {
+  //     return url.match(/:\/\/(.[^/]+)/)[1];
+  //   }
+  //   return null
+  // }
+  // var externalLinks = document.querySelectorAll(".main-content-post a[href^='http']")
+  // for (var link in externalLinks) {
+  //   var a = externalLinks[link]
+  //   var domain = getDomain(a.href)
+  //   var currWindow = new RegExp('/' + window.location.host + '/')
+  //   if (!currWindow.test(a.href) && domain) {
+  //     a.style.background ='url(https://www.google.com/s2/favicons?domain=' + domain + ') left center no-repeat'
+  //     a.style.paddingLeft = '2rem'
+  //   }
+  // }
 </script>
 
 {% include foot/checkins.html %}

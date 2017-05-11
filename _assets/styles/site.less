@@ -244,8 +244,13 @@ picture {
 .archive-content-feed {
   ul {
     .u-unstyled-list;
-    padding-left: 4rem;
   }
+}
+
+.archive-content-feed-item-draft,
+.archive-content-feed-item-time {
+  display: inline-block;
+  width: 12rem;
 }
 
 .archive-content-feed-item-draft {
@@ -265,7 +270,9 @@ picture {
 }
 
 // Fix lists globally
+.main-content-post ol ul,
 .main-content-post ul ul,
+.main-content-post ol li,
 .main-content-post ul li {
   margin-top: .5rem;
   margin-bottom: .5rem;
@@ -274,6 +281,7 @@ picture {
   padding: 0;
 }
 
+.main-content-post ol li,
 .main-content-post ul li {
   padding-left: 2rem;
 }
