@@ -16,7 +16,7 @@
 <meta content="{{ site.meta_description }}" property="og:description">
 {% endif %}
 {% if page.url %}
-<meta content="{{ page.url | prepend: site.baseurl | prepend: site.url }}" property="og:url">
+<meta content="{{ page.url | absolute_url }}" property="og:url">
 {% endif %}
 {% if page.date %}
 <meta content="{{ page.date | date_to_xmlschema }}" property="article:published_time">
@@ -40,7 +40,7 @@
   <meta name="twitter:title" content="{{ site.title }}">
 {% endif %}
 {% if page.url %}
-  <meta name="twitter:url" content="{{ page.url | prepend: site.baseurl | prepend: site.url }}">
+  <meta name="twitter:url" content="{{ page.url | absolute_url }}">
 {% endif %}
 {% if page.description %}
   <meta name="twitter:description" content="{{ page.description }}">

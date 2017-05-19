@@ -25,8 +25,9 @@
 
 {% include favicons.html %}
 
-<link rel="canonical" href="{{ page.url | replace: 'index.html', '' | prepend: site.url }}">
-<link rel="alternate" type="application/rss+xml" title="RSS Feed" href="/feed.xml">
+<link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS Feed" href="{{ '/feed.xml' | absolute_url }}">
+<link rel="alternate" type="application/json" title="{{ site.title }} RSS Feed" href="{{ '/feed.json' | absolute_url }}">
 
 <link href="/assets/styles/site.css" rel="stylesheet" inline>
 

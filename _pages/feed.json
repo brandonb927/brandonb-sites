@@ -5,10 +5,10 @@ sitemap:
 ---
 {
   "version": "https://jsonfeed.org/version/1",
-  "title": "{{ site.title }}",
-  "description": "{{ site.description | strip_newlines }}",
+  "title": "{{ site.title | normalize_whitespace }}",
+  "description": "{{ site.description | normalize_whitespace | replace: '<br />',' | ' }}",
   "home_page_url": "{{ site.url }}",
-  "feed_url": "{{ '/feed.json' | prepend: site.url }}",
+  "feed_url": "{{ '/feed.json' | absolute_url }}",
   "icon": "{{ site.favicon.png | prepend: site.assets_images }}",
   "favicon": "{{ site.favicon.png | prepend: site.assets_images }}",
   "author": {
@@ -16,15 +16,26 @@ sitemap:
     "url": "{{ 'https://twitter.com/' | append: site.social.twitter }}"
   },
   "items": [
-    {% for post in site.posts limit:10 %}{% unless post.draft %}{% capture post_content %}{{ post.content | split: site.break_tag | first }}{% if post.content contains site.break_tag %}<br /><a href="{{ post.url | prepend: site.url }}">Click through to read this post</a>{% endif %}{% endcapture %}{
+    {% for post in site.posts limit:10 %}
+    {% unless post.draft %}
+    {% capture post_content %}
+    {{ post.content | split: site.break_tag | first }}
+    {% if post.content contains site.break_tag %}
+    <br />
+    <a href="{{ post.url | absolute_url }}">Click through to read this post</a>
+    {% endif %}
+    {% endcapture %}
+    {
       "title": "{{ post.title }}",
       "date_published": "{{ post.date | date_to_xmlschema }}",
-      "id": "{{ post.url | prepend: site.url }}",
-      "url": "{{ post.url | prepend: site.url }}",
+      "id": "{{ post.url | absolute_url }}",
+      "url": "{{ post.url | absolute_url }}",
       "author": {
         "name": "{{ site.author.name }}"
       },
-      "content_html": "{{ post_content | strip_newlines | replace: '"','\"' }}"
-    }{% if forloop.last != true %},{% endif %}{% endunless %}{% endfor %}
+      "content_html": "{{ post_content | normalize_whitespace | replace: '"','\"' }}"
+    }{% if forloop.last != true %},{% endif %}
+    {% endunless %}
+    {% endfor %}
   ]
 }

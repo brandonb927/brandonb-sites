@@ -31,7 +31,7 @@ title: Archive
           <time datetime="{{ post.date | date_to_rfc822 }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
         </span>
         {% endif %}
-        <a href="{{ post.url | prepend: site.baseurl }}"
+        <a href="{{ post.url | absolute_url }}"
            class="archive-content-feed-item-title">
           {{ post.title }}
         </a>
