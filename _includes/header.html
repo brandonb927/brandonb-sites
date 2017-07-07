@@ -19,6 +19,11 @@
     {% assign navurl = page.url | remove: 'index.html' %}
     {% assign _pages = site.pages | sort: 'order' %}
     <ul class="main-header-nav">
+      <li class="main-header-nav-item" itemprop="url">
+        <a href="/" title="Blog" itemprop="name">
+          Blog
+        </a>
+      </li>
       {% for page in _pages %}
         {% if page.include_in_nav %}
         <li class="main-header-nav-item" itemprop="url">

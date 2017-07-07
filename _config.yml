@@ -7,8 +7,8 @@ author:
   name: 'Brandon Brown'
   email: 'brandon@brandonb.io'
 description: > # ignore newlines in this value
-  Canadian with a passion for open source, tech, and front-end web development<br />Product Developer @ Sendwithus<br />Host of Favicon Valley podcast
-meta_description: Product Developer at Sendwithus, host of Favicon Valley podcast.
+  Canadian with a passion for open source, tech, and front-end web development<br />QA Engineer @ Sendwithus<br />Host of Favicon Valley podcast
+meta_description: QA Engineer @ Sendwithus, host of Favicon Valley podcast.
 
 # Favicons
 favicon:
