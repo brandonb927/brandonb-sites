@@ -9,13 +9,15 @@ future: false
 show_drafts: false
 
 exclude: [
+  'node_modules',
+  'gulp_tasks',
+  'build_dev',
   '.ruby-version',
   '.editorconfig',
-  'gulpfile.babel.js',
   'Gemfile',
   'Gemfile.lock',
   'package.json',
-  'README.md',
-  'node_modules',
-  'gulp_tasks',
-  'build_dev']
+  'package-lock.json',
+  'gulpfile.babel.js',
+  'README.md'
+]

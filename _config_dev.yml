@@ -14,13 +14,15 @@ disqus:
 
 # Build settings
 exclude: [
+  'node_modules',
+  'gulp_tasks',
+  'build_prod',
   '.ruby-version',
   '.editorconfig',
-  'README.md',
   'Gemfile',
   'Gemfile.lock',
-  'gulpfile.babel.js',
   'package.json',
-  'gulp_tasks',
-  'node_modules',
-  'build_prod']
+  'package-lock.json',
+  'gulpfile.babel.js',
+  'README.md'
+]
