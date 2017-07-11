@@ -4,7 +4,6 @@ import cp from 'child_process'
 import parallelize from 'concurrent-transform'
 import gulp from 'gulp'
 import awspublish from 'gulp-awspublish'
-import inlinesource from 'gulp-inline-source'
 import duration from 'gulp-duration'
 import plumber from 'gulp-plumber'
 import runSequence from 'run-sequence'
@@ -54,17 +53,6 @@ gulp.task('s3-images', () => {
              .pipe(awspublish.reporter())
 })
 
-gulp.task('inlinesource', () => {
-  let options = {
-    compress: false
-  }
-
-  return gulp.src(deployHtmlPath)
-             .pipe(inlinesource(options))
-             .pipe(duration('Inlining styles and scripts'))
-             .pipe(gulp.dest(deployConfig.deploy.dest))
-})
-
 gulp.task('deploy', (callback) => {
   if (argv.dryrun) {
     runSequence(
@@ -73,7 +61,6 @@ gulp.task('deploy', (callback) => {
         'optimize:scripts',
         'optimize:styles',
       ],
-      'inlinesource',
       'optimize:html',
       'foursquare:prod',
       'instagram:prod',
@@ -86,7 +73,6 @@ gulp.task('deploy', (callback) => {
         'optimize:scripts',
         'optimize:styles'
       ],
-      'inlinesource',
       'optimize:html',
       'foursquare:prod',
       'instagram:prod',
