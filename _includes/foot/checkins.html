@@ -14,6 +14,7 @@
   L.mapbox.accessToken = 'pk.eyJ1IjoiYnJhbmRvbmI5MjciLCJhIjoic1RRVkdTdyJ9.6k_mxsjzAVn1Mjk1k2t0SQ'
   var mapId = 'checkin_map'
   var mapElem = document.getElementById(mapId)
+  var loaderWrapper = document.querySelector('.checkin-map-loader-wrapper')
   var loader = document.querySelector('.u-loader')
   var map = L.mapbox.map(mapId, 'mapbox.emerald').setView([45, -102], 4)
 
@@ -90,7 +91,9 @@
 
   var showMap = function () {
     mapElem.style.opacity = '1.0'
+    mapElem.style.zIndex = '3'
     loader.style.opacity = '0'
+    loaderWrapper.style.zIndex = '2'
   }
 
   var handleGeoLocation = function () {
