@@ -10,7 +10,10 @@ An archive of the episodes and shownotes can be found below:
 
 ### Ep 7 - Interview with Julian Lepinski of Cast
 
-[Archived episode audio]({{ '/ep7.mp3'| prepend: '/faviconvalley/episode-audio' | prepend: site.assets_root }})
+<audio src="{{ '/ep7.mp3'| prepend: '/faviconvalley/episode-audio' | prepend: site.assets_root }}" controls style="width:100%;">
+  Your browser does not support streaming audio, you can download the
+  [archived episode audio]({{ '/ep7.mp3'| prepend: '/faviconvalley/episode-audio' | prepend: site.assets_root }}) instead.
+</audio>
 
 Brandon chats with Julian Lepinski about his new product, [Cast](http://tryca.st), which makes the recording, editing, and distribution of podcasts incredibly simple. Cast allows you to invite guests to a private session (the Cast Studio) where you can record a conversation with multiple tracks. Once the episode is recorded, you take that conversation into the Cast Editor to slice and dice tracks into a well-produced show, then use the Cast Publisher to distribute your show in an RSS feed and view analytics for the listeners and downloads of episodes. Cast allows you to do everything all in once place!
 
@@ -22,7 +25,10 @@ Brandon chats with Julian Lepinski about his new product, [Cast](http://tryca.st
 
 ### Ep 6 - Products & Tools I Use Daily
 
-[Archived episode audio]({{ '/ep6.mp3'| prepend: '/faviconvalley/episode-audio' | prepend: site.assets_root }})
+<audio src="{{ '/ep6.mp3'| prepend: '/faviconvalley/episode-audio' | prepend: site.assets_root }}" controls style="width:100%;">
+  Your browser does not support streaming audio, you can download the
+  [archived episode audio]({{ '/ep6.mp3'| prepend: '/faviconvalley/episode-audio' | prepend: site.assets_root }}) instead.
+</audio>
 
 Brandon goes solo for this episode to talk about some of the products and tools that he uses on a daily basis.
 
@@ -43,7 +49,10 @@ Brandon goes solo for this episode to talk about some of the products and tools 
 
 ### Ep 5 - Interview with Brock Whitten of Surge.sh
 
-[Archived episode audio]({{ '/ep5.mp3'| prepend: '/faviconvalley/episode-audio' | prepend: site.assets_root }})
+<audio src="{{ '/ep5.mp3'| prepend: '/faviconvalley/episode-audio' | prepend: site.assets_root }}" controls style="width:100%;">
+  Your browser does not support streaming audio, you can download the
+  [archived episode audio]({{ '/ep5.mp3'| prepend: '/faviconvalley/episode-audio' | prepend: site.assets_root }}) instead.
+</audio>
 
 In this episode Brandon talks to Brock Whitten (co-creator of Phonegap) about his new product Surge.sh which makes the deployment and distribution of frontend web assets extremely easy. They also talked about the evolution of Harp, trust on the web, and we find out what Brock really wants to do with his life when he grows up (just kidding, he's already grown up).
 
@@ -62,7 +71,10 @@ In this episode Brandon talks to Brock Whitten (co-creator of Phonegap) about hi
 
 ### Ep 4 - Interview with Samuel Clay of NewsBlur
 
-[Archived episode audio]({{ '/ep4.mp3'| prepend: '/faviconvalley/episode-audio' | prepend: site.assets_root }})
+<audio src="{{ '/ep4.mp3'| prepend: '/faviconvalley/episode-audio' | prepend: site.assets_root }}" controls style="width:100%;">
+  Your browser does not support streaming audio, you can download the
+  [archived episode audio]({{ '/ep4.mp3'| prepend: '/faviconvalley/episode-audio' | prepend: site.assets_root }}) instead.
+</audio>
 
 Brandon talks to [Samuel Clay](https://twitter.com/samuelclay) the founder of NewsBlur.com about the Google Reader shutdown in 2013 and how it has affected NewsBlur's growth.
 
@@ -77,7 +89,10 @@ Brandon talks to [Samuel Clay](https://twitter.com/samuelclay) the founder of Ne
 
 ### Ep 3 - Email
 
-[Archived episode audio]({{ '/ep3.mp3'| prepend: '/faviconvalley/episode-audio' | prepend: site.assets_root }})
+<audio src="{{ '/ep3.mp3'| prepend: '/faviconvalley/episode-audio' | prepend: site.assets_root }}" controls style="width:100%;">
+  Your browser does not support streaming audio, you can download the
+  [archived episode audio]({{ '/ep3.mp3'| prepend: '/faviconvalley/episode-audio' | prepend: site.assets_root }}) instead.
+</audio>
 
 Episode 3 is finally here after a month delay! Brandon talks about your favourite topic: email.
 
@@ -86,13 +101,19 @@ Episode 3 is finally here after a month delay! Brandon talks about your favourit
 
 ### Ep 2 - StartupSlam
 
-[Archived episode audio]({{ '/ep2.mp3'| prepend: '/faviconvalley/episode-audio' | prepend: site.assets_root }})
+<audio src="{{ '/ep2.mp3'| prepend: '/faviconvalley/episode-audio' | prepend: site.assets_root }}" controls style="width:100%;">
+  Your browser does not support streaming audio, you can download the
+  [archived episode audio]({{ '/ep2.mp3'| prepend: '/faviconvalley/episode-audio' | prepend: site.assets_root }}) instead.
+</audio>
 
 Episode 2 is finally here! Brandon talks with some students from University of Victoria, Joe Czepil and Dominique Charlebois, during the Sendwithus StartupSlam event (startupslam.io) about what they're doing in the tech space and how they want to change the world.
 ![](https://farm6.staticflickr.com/5751/22106872969_122937d471_z_d.jpg")
 
 ### Ep 1: Introductions
 
-[Archived episode audio]({{ '/ep1.mp3'| prepend: '/faviconvalley/episode-audio' | prepend: site.assets_root }})
+<audio src="{{ '/ep1.mp3'| prepend: '/faviconvalley/episode-audio' | prepend: site.assets_root }}" controls style="width:100%;">
+  Your browser does not support streaming audio, you can download the
+  [archived episode audio]({{ '/ep1.mp3'| prepend: '/faviconvalley/episode-audio' | prepend: site.assets_root }}) instead.
+</audio>
 
 This is the first episode of many to come for the Favicon Valley Podcast. Brandon lays out the basic details of the show and where he wants to take it for future episodes. He hopes you enjoy this small presentation so that it can lead to bigger things.
