@@ -7,6 +7,36 @@ body_class: 'page-favicon-valley-podcast'
 
 A former show where I talked about products, email, and the web. I have preserved the old site [here on github](https://github.com/brandonb927/faviconvalley.show).
 
+In the spirit of transparency, I'm publishing all the download/listen stats for the show alongside the episodes. Here is a table of the total all-time stats across all episodes since the show started:
+
+| Date            | Downloads |
+|-----------------|-----------|
+| 10-2015         | 31        |
+| 11-2015         | 27        |
+| 12-2015         | 203       |
+| 01-2016         | 239       |
+| 02-2016         | 161       |
+| 03-2016         | 147       |
+| 04-2016         | 64        |
+| 05-2016         | 20        |
+| 06-2016         | 16        |
+| 07-2016         | 20        |
+| 08-2016         | 14        |
+| 09-2016         | 81        |
+| 10-2016         | 36        |
+| 11-2016         | 8         |
+| 12-2016         | 42        |
+| 01-2017         | 14        |
+| 02-2017         | 8         |
+| 03-2017         | 57        |
+| 04-2017         | 68        |
+| 05-2017         | 116       |
+| 06-2017         | 175       |
+| 07-2017         | 113       |
+| 08-2017         | 68        |
+| Total Downloads | 1728      |
+
+
 An archive of the episodes and shownotes can be found below:
 
 ### Ep 7 - Interview with Julian Lepinski of Cast
