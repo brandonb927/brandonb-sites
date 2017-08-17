@@ -36,6 +36,10 @@ In the spirit of transparency, I'm publishing all the download/listen stats for 
 | 08-2017         | 68        |
 | Total Downloads | 1728      |
 
+And here is a screenshot of the final listener stats for all-time:
+
+![]({{ '/faviconvalley/stats.png' | prepend: site.assets_root }})
+
 
 An archive of the episodes and shownotes can be found below:
 
