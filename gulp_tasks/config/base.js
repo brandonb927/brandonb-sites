@@ -45,10 +45,11 @@ baseConfig.watch = {
     `${baseConfig.src.base}/*.yml`,
     `${baseConfig.src.base}/_data/*`,
     `${baseConfig.src.base}/{archive,index,404}.html`,
-    `${baseConfig.src.base}/_pages/*`,
+    `${baseConfig.src.base}/_includes/**/*`,
     `${baseConfig.src.base}/_layouts/*`,
+    `${baseConfig.src.base}/_pages/*`,
     `${baseConfig.src.base}/_posts/**/*`,
-    `${baseConfig.src.base}/_includes/**/*`
+    `${baseConfig.src.base}/_projects/*`
   ],
   styles: `${baseConfig.src.assets}/styles/**/*.less`,
   scripts: `${baseConfig.src.assets}/scripts/*.js`,

@@ -21,6 +21,7 @@ break_tag: '<!-- break -->'
 # Routes
 permalink: /:title
 
+assets_root: ''
 assets_images: /assets/images
 assets_scripts: /assets/scripts
 assets_styles: /assets/styles
