@@ -32,34 +32,3 @@ layout: base
   </p>
   {% endif %}
 </article>
-
-{% if page.layout == 'post' and site.disqus.shortname %}
-<div class="main-content-comments">
-  <div class="main-content-comments-button">
-    <button class="button show-comments">Load Comments</button>
-  </div>
-  <div id="disqus_thread" data-disqus-shortname="{{ site.disqus.shortname }}" data-disqus-url="{{ page.url }}"></div>
-  <script>
-    var commentsButton = document.querySelector('.show-comments');
-    var buttonStyle = commentsButton.style;
-    buttonStyle.opacity = 1;
-
-    commentsButton.addEventListener('click', function () {
-      {% if site.google_analytics.id %}
-      ga('send', 'event', 'button', 'click', 'show-comments');
-      {% endif %}
-
-      // Delay the script loading so the button fades out
-      // before the disqus loader takes it's place
-      setTimeout(function () {
-        var script = document.createElement('script');
-        script.setAttribute('type','text/javascript');
-        script.setAttribute('src', '//{{ site.disqus.shortname }}.disqus.com/embed.js');
-        document.getElementsByTagName('head')[0].appendChild(script);
-      }, 200);
-
-      ;(function fade () { (buttonStyle.opacity -= .1) < 0 ? buttonStyle.display = "none" : setTimeout(fade ,40) })();
-    });
-  </script>
-</div>
-{% endif %}

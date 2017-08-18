@@ -9,9 +9,6 @@ google_analytics:
   id: false
   domain: false
 
-disqus:
-  shortname: false
-
 # Build settings
 exclude: [
   'node_modules',
