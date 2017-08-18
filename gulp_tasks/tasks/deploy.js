@@ -1,11 +1,13 @@
 import { readFileSync } from 'fs'
 import { argv } from 'yargs'
 import cp from 'child_process'
+import path from 'path'
 import parallelize from 'concurrent-transform'
 import gulp from 'gulp'
 import awspublish from 'gulp-awspublish'
 import duration from 'gulp-duration'
 import plumber from 'gulp-plumber'
+import rename from 'gulp-rename'
 import runSequence from 'run-sequence'
 
 import imagesConfig from '../config/prod'
@@ -47,6 +49,9 @@ gulp.task('s3-images', () => {
   let publisher = awspublish.create(s3ImagesConfig)
 
   return gulp.src(imagesConfig.copy.images.src)
+             .pipe(rename((filePath) => {
+                filePath.dirname = path.join(deployConfig.deploy.domain, filePath.dirname)
+              }))
              .pipe(publisher.publish())
              .pipe(publisher.cache())
              .pipe(duration('Uploading images to S3'))
