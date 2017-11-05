@@ -1,5 +1,5 @@
 {
-  "name": "brandonb.io",
+  "name": "brandonb.ca",
   "private": true,
   "devDependencies": {
     "babel-core": "^6.26.0",
@@ -14,7 +14,7 @@
     "gulp-duration": "0.0.0",
     "gulp-gm": "0.0.8",
     "gulp-htmlmin": "^3.0.0",
-    "gulp-imagemin": "^3.3.0",
+    "gulp-imagemin": "^3.4.0",
     "gulp-less": "^3.3.2",
     "gulp-notify": "^3.0.0",
     "gulp-plumber": "^1.1.0",
@@ -26,9 +26,9 @@
     "lodash": "^4.17.4",
     "require-dir": "^0.3.2",
     "rimraf": "^2.6.1",
-    "run-sequence": "^2.1.0",
+    "run-sequence": "^2.2.0",
     "sync-request": "^4.1.0",
-    "yargs": "^8.0.2"
+    "yargs": "^10.0.3"
   },
   "dependencies": {},
   "scripts": {

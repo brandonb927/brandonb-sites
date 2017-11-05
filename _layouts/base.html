@@ -2,7 +2,7 @@
 <html lang="en-US"
       prefix="og: http://ogp.me/ns#"
       xmlns:og="http://ogp.me/ns#"
-      {% if !site.debug %}manifest="/auto.appcache"{% endif %}>
+      {% if site.debug == false %}manifest="/auto.appcache"{% endif %}>
   <head>
     {% include head.html %}
   </head>
