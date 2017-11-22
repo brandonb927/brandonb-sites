@@ -17,7 +17,7 @@ const baseConfig = {
     domain: 'brandonb.io',
     s3: {
       region: 'us-east-1',
-      bucketImages: 'brandonb-web-media',
+      bucketMedia: 'brandonb-web-media',
     }
   },
   jekyll: {
@@ -53,7 +53,7 @@ baseConfig.watch = {
   ],
   styles: `${baseConfig.src.assets}/styles/**/*.less`,
   scripts: `${baseConfig.src.assets}/scripts/*.js`,
-  images: `${baseConfig.src.assets}/images/*`,
+  media: `${baseConfig.src.assets}/media/*`,
 }
 
 baseConfig.scripts = {

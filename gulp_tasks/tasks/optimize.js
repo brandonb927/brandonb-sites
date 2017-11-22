@@ -13,12 +13,12 @@ import sizeConfig from '../config/prod'
 import errorHandler from '../utils/errorHandler'
 
 // Optimize image assets
-gulp.task('optimize:images', () => {
-  return gulp.src(config.optimize.images.src)
+gulp.task('optimize:media', () => {
+  return gulp.src(config.optimize.media.src)
              .pipe(plumber({errorHandler:errorHandler}))
-             .pipe(imagemin(config.optimize.images.options))
-             .pipe(duration('Optimizing images for production'))
-             .pipe(gulp.dest(config.optimize.images.dest))
+             .pipe(imagemin(config.optimize.media.options))
+             .pipe(duration('Optimizing media for production'))
+             .pipe(gulp.dest(config.optimize.media.dest))
              .pipe(size(sizeConfig.size))
 })
 
@@ -53,7 +53,7 @@ gulp.task('optimize:html', () => {
 })
 
 gulp.task('optimize', [
-  'optimize:images',
+  'optimize:media',
   'optimize:styles',
   'optimize:scripts',
   'optimize:html'

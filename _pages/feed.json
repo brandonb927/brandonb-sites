@@ -9,8 +9,8 @@ sitemap:
   "description": "{{ site.description | normalize_whitespace | replace: '<br />',' | ' }}",
   "home_page_url": "{{ site.url }}",
   "feed_url": "{{ '/feed.json' | absolute_url }}",
-  "icon": "{{ site.favicon.png | prepend: site.assets_images }}",
-  "favicon": "{{ site.favicon.png | prepend: site.assets_images }}",
+  "icon": "{{ site.favicon.png | prepend: site.assets_media }}",
+  "favicon": "{{ site.favicon.png | prepend: site.assets_media }}",
   "author": {
     "name": "{{ site.author.name }}",
     "url": "{{ 'https://twitter.com/' | append: site.social.twitter }}"

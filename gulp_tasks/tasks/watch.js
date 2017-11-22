@@ -7,5 +7,5 @@ gulp.task('watch', (callback) => {
   gulp.watch(config.watch.jekyll,  ['jekyll-rebuild'])
   gulp.watch(config.watch.styles,  ['styles:dev'])
   gulp.watch(config.watch.scripts, ['scripts:dev'])
-  gulp.watch(config.watch.images,  ['copy:images:dev'])
+  gulp.watch(config.watch.media,  ['copy:media:dev'])
 })

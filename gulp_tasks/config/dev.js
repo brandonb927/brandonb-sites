@@ -51,9 +51,9 @@ const baseDevConfig = {
     dest: `${buildAssets}/scripts`
   },
   copy: {
-    images: {
-      src: `${srcAssets}/images/**/*`,
-      dest: `${buildAssets}/images`
+    media: {
+      src: `${srcAssets}/media/**/*`,
+      dest: `${buildAssets}/media`
     }
   },
   jekyll: {

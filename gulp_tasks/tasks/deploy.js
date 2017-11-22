@@ -10,18 +10,18 @@ import plumber from 'gulp-plumber'
 import rename from 'gulp-rename'
 import runSequence from 'run-sequence'
 
-import imagesConfig from '../config/prod'
+import mediaConfig from '../config/prod'
 import deployConfig from '../config/prod'
 import errorHandler from '../utils/errorHandler'
 
 const awsConfig = JSON.parse(readFileSync(`${process.env.HOME}/.aws.json`))
 
-const s3ImagesConfig = {
+const s3MediaConfig = {
   accessKeyId: awsConfig.key,
   secretAccessKey: awsConfig.secret,
   region: deployConfig.deploy.s3.region,
   params:{
-    'Bucket': deployConfig.deploy.s3.bucketImages
+    'Bucket': deployConfig.deploy.s3.bucketMedia
   }
 }
 
@@ -39,22 +39,22 @@ gulp.task('surge-deploy', (callback) => {
   ).on('close', callback)
 })
 
-gulp.task('s3-images', () => {
+gulp.task('s3-media', () => {
   let options = {
     headers: {
       'Cache-Control': 'max-age=315360000, no-transform, public'
     }
   }
 
-  let publisher = awspublish.create(s3ImagesConfig)
+  let publisher = awspublish.create(s3MediaConfig)
 
-  return gulp.src(imagesConfig.copy.images.src)
+  return gulp.src(mediaConfig.copy.media.src)
              .pipe(rename((filePath) => {
                 filePath.dirname = path.join(deployConfig.deploy.domain, filePath.dirname)
               }))
              .pipe(publisher.publish())
              .pipe(publisher.cache())
-             .pipe(duration('Uploading images to S3'))
+             .pipe(duration('Uploading media to S3'))
              .pipe(awspublish.reporter())
 })
 
@@ -82,7 +82,7 @@ gulp.task('deploy', (callback) => {
       'foursquare:prod',
       'instagram:prod',
       'surge-deploy',
-      's3-images',
+      's3-media',
       callback
     )
   }

@@ -6,7 +6,7 @@ build_dev
 build_prod
 _posts
 _assets/bower_components
-_assets/images
+_assets/media
 
 .jekyll-metadata
 .awspublish-*

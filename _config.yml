@@ -22,7 +22,7 @@ break_tag: '<!-- break -->'
 permalink: /:title
 
 assets_root: ''
-assets_images: /assets/images
+assets_media: /assets/media
 assets_scripts: /assets/scripts
 assets_styles: /assets/styles
 

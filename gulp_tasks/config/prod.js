@@ -31,9 +31,9 @@ const baseProdConfig = {
     dest: `${buildAssets}/scripts`
   },
   copy: {
-    images: {
-      src: `${srcAssets}/images/**/*`,
-      dest: `${buildAssets}/images`
+    media: {
+      src: `${srcAssets}/media/**/*`,
+      dest: `${buildAssets}/media`
     },
     surgeignore: {
       src: `${src}/.surgeignore`,
@@ -62,9 +62,9 @@ const baseProdConfig = {
       dest: `${buildAssets}/scripts`,
       options: {}
     },
-    images: {
-      src: `${srcAssets}/images/*`,
-      dest: `${srcAssets}/images`,
+    media: {
+      src: `${srcAssets}/media/*`,
+      dest: `${srcAssets}/media`,
       options:{
         optimizationLevel: 3,
         progessive: true,
