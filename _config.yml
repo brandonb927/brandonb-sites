@@ -6,9 +6,8 @@ title: 'Brandons Blog'
 author:
   name: 'Brandon Brown'
   email: 'brandon@brandonb.ca'
-description: > # ignore newlines in this value
-  Canadian with a passion for open source, tech, and front-end web development<br />Product QA Developer @ Sendwithus<br />Former host of Favicon Valley podcast
-meta_description: Brandon Brown, Product QA Developer @ Sendwithus from beautiful Victoria, BC
+description: Canadian with a passion for <br />open source, tech, and front-end web development
+meta_description: Brandon Brown, Product QA Developer
 
 # Favicons
 favicon:
