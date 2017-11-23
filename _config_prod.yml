@@ -18,7 +18,7 @@ exclude: [
   'Gemfile',
   'Gemfile.lock',
   'package.json',
-  'package-lock.json',
+  'yarn.lock',
   'gulpfile.babel.js',
   'README.md'
 ]
