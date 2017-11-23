@@ -2,7 +2,6 @@
 url: "http://localhost:8888"
 
 # Publishing
-future: true
 show_drafts: true
 
 # Disable some things for development
