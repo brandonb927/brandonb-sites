@@ -30,7 +30,9 @@
     "sync-request": "^4.1.0",
     "yargs": "^10.0.3"
   },
-  "dependencies": {},
+  "dependencies": {
+    "ngrok": "^2.2.24"
+  },
   "scripts": {
     "start": "gulp",
     "deploy": "gulp deploy"
