@@ -15,7 +15,7 @@ const baseConfig = {
   },
   deploy: {
     domain: 'brandonb.ca',
-    secureDomain: false,
+    secureDomain: true,
     s3: {
       region: 'us-east-1',
       bucketMedia: 'brandonb-web-media',
