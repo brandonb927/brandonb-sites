@@ -15,6 +15,7 @@ const baseConfig = {
   },
   deploy: {
     domain: 'brandonb.ca',
+    secureDomain: false,
     s3: {
       region: 'us-east-1',
       bucketMedia: 'brandonb-web-media',
@@ -28,7 +29,7 @@ const baseConfig = {
       cascade: true,
       browsers: [
         "last 2 versions",
-        "ios 8",
+        "ios 9",
         "android 4.4",
       ]
     }

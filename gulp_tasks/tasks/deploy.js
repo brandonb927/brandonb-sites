@@ -33,7 +33,7 @@ gulp.task('surge-deploy', (callback) => {
     'surge',
     [
       deployConfig.deploy.src,
-      `--domain=https://${deployConfig.deploy.domain}`
+      `--domain=http${deployConfig.deploy.secureDomain ? 's' : ''}://${deployConfig.deploy.domain}`
     ],
     { stdio: 'inherit' }
   ).on('close', callback)
