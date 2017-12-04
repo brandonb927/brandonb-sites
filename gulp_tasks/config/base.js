@@ -14,7 +14,7 @@ const baseConfig = {
     assets: resolve(base, "_assets")
   },
   deploy: {
-    domain: 'brandonb.io',
+    domain: 'brandonb.ca',
     s3: {
       region: 'us-east-1',
       bucketMedia: 'brandonb-web-media',
