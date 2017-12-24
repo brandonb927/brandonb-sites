@@ -31,6 +31,23 @@
 
 <link href="/assets/styles/site.css" rel="stylesheet">
 
+<link rel="manifest" href="/manifest.json">
+
+<script>
+  if ("serviceWorker" in navigator) {
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then(registration => {
+        console.log('You can now browse this site offline! Try disconnecting from your internet connection and reload the page.')
+        // console.log('Service Worker registration successful with scope: ', registration.scope)
+      })
+      .catch(err => {
+        console.log('Oops, you can\'t browse this site offline, something went from!', err)
+        // console.log('Service Worker registration failed: ', err)
+      })
+  }
+</script>
+
 {% include google_analytics.html %}
 
 <script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
