@@ -15,6 +15,7 @@ const buildConfigFilename = `${baseConfig.jekyll.baseConfig},${prodBuildConfigFi
 
 // Config
 const baseProdConfig = {
+  buildDir: build,
   deploy: {
     src: build,
     dest: build
@@ -47,18 +48,14 @@ const baseProdConfig = {
   },
   optimize: {
     styles:{
-      src: [
-        `${buildAssets}/styles/*.css`
-      ],
+      src: `${buildAssets}/styles/*.css`,
       dest: `${buildAssets}/styles`,
       options: {
         keepSpecialComments: 0
       }
     },
     scripts: {
-      src: [
-        `${buildAssets}/scripts/*.js`
-      ],
+      src: `${buildAssets}/scripts/*.js`,
       dest: `${buildAssets}/scripts`,
       options: {}
     },

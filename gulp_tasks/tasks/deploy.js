@@ -63,10 +63,10 @@ gulp.task('deploy', (callback) => {
     runSequence(
       'build:prod',
       [
-        'optimize:scripts',
-        'optimize:styles',
+        'optimize:scripts:prod',
+        'optimize:styles:prod',
       ],
-      'optimize:html',
+      'optimize:inlineCSS:prod',
       'foursquare:prod',
       'instagram:prod',
       callback
@@ -75,10 +75,10 @@ gulp.task('deploy', (callback) => {
     runSequence(
       'build:prod',
       [
-        'optimize:scripts',
-        'optimize:styles'
+        'optimize:scripts:prod',
+        'optimize:styles:prod'
       ],
-      'optimize:html',
+      'optimize:inlineCSS:prod',
       'foursquare:prod',
       'instagram:prod',
       'surge-deploy',

@@ -1,5 +1,4 @@
 // Development config
-
 import { existsSync } from 'fs'
 import { extname, join, resolve } from 'path'
 import { parse } from 'url'
@@ -18,6 +17,7 @@ const buildConfigFilename = `${baseConfig.jekyll.baseConfig},${devBuildConfigFil
 
 // Config
 const baseDevConfig = {
+  buildDir: build,
   browsersync: {
     server: {
       baseDir: build,
@@ -60,6 +60,12 @@ const baseDevConfig = {
     src: src,
     dest: build,
     config: buildConfigFilename
+  },
+  optimize: {
+    html: {
+      src: `${build}/**/*.html`,
+      dest: build,
+    }
   }
 }
 

@@ -51,7 +51,7 @@ self.addEventListener('fetch', event => {
         })
         .catch(() => {
           // Fallback to the offline page if not available in the cache.
-          return caches.match('/offlineZZ')
+          return caches.match('/offline')
         })
   )
 })
@@ -68,7 +68,7 @@ self.addEventListener('fetch', event => {
       })
       .catch(() => {
         // Fallback to the offline page if not available in the cache.
-        return caches.match('/offlineZZ')
+        return caches.match('/offline')
       })
   )
 })
