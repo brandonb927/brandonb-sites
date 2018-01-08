@@ -4,7 +4,7 @@ import ngrok from 'ngrok'
 
 import config from '../config/dev'
 
-gulp.task('browser-sync', () => {
+gulp.task('browser_sync', () => {
   browsersync(
     config.browsersync,
     (err, bs) => {

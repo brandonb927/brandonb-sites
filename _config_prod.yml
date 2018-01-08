@@ -9,6 +9,11 @@ debug: false
 future: false
 show_drafts: false
 
+# Build settings
+keep_files: [
+  'build_prod/api'
+]
+
 exclude: [
   'node_modules',
   'gulp_tasks',

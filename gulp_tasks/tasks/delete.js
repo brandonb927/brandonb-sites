@@ -1,5 +1,7 @@
 import gulp from 'gulp'
 import rimraf from 'rimraf'
+import { resolve } from 'path'
+
 import configDev from '../config/dev'
 import configProd from '../config/prod'
 
@@ -10,4 +12,8 @@ gulp.task('delete:dev', (callback) => {
 
 gulp.task('delete:prod', (callback) => {
   rimraf(configProd.delete.src, callback)
+})
+
+gulp.task('delete:serviceworker', (callback) => {
+  rimraf(resolve(configDev.delete.src, 'sw.js'), callback)
 })

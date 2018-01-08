@@ -5,18 +5,21 @@ import configProd from '../config/prod'
 
 // Copy media
 gulp.task('copy:media:dev', () => {
-  return gulp.src(configDev.copy.media.src)
-             .pipe(gulp.dest(configDev.copy.media.dest))
+  return gulp
+    .src(configDev.copy.media.src)
+    .pipe(gulp.dest(configDev.copy.media.dest))
 })
 
 gulp.task('copy:media:prod', () => {
-  return gulp.src(configProd.copy.media.src)
-             .pipe(gulp.dest(configProd.copy.media.dest))
+  return gulp
+    .src(configProd.copy.media.src)
+    .pipe(gulp.dest(configProd.copy.media.dest))
 })
 
 gulp.task('copy:surgeignore:prod', () => {
-  return gulp.src(configProd.copy.surgeignore.src)
-             .pipe(gulp.dest(configProd.copy.surgeignore.dest))
+  return gulp
+    .src(configProd.copy.surgeignore.src)
+    .pipe(gulp.dest(configProd.copy.surgeignore.dest))
 })
 
 gulp.task('copy:dev', (callback) => {

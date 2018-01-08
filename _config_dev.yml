@@ -10,12 +10,17 @@ google_analytics:
   domain: false
 
 # Build settings
+keep_files: [
+  'build_dev/api'
+]
+
 exclude: [
   'node_modules',
   'gulp_tasks',
   'build_prod',
   '.ruby-version',
   '.editorconfig',
+  '.thirdparty-updated',
   'Gemfile',
   'Gemfile.lock',
   'package.json',

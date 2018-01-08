@@ -11,25 +11,27 @@ import configProd from '../config/prod'
 import errorHandler from '../utils/errorHandler'
 
 gulp.task('scripts:js:dev', () => {
-  return gulp.src(configDev.scripts.src)
-             .pipe(plumber({errorHandler:errorHandler}))
-             .pipe(sourcemaps.init())
-             .pipe(babel())
-             .pipe(sourcemaps.write())
-             .pipe(duration('Compiling ES6 js for development'))
-             .pipe(gulp.dest(configDev.scripts.dest))
-             .pipe(reload({stream:true}))
+  return gulp
+    .src(configDev.scripts.src)
+    .pipe(plumber({errorHandler:errorHandler}))
+    .pipe(sourcemaps.init())
+    .pipe(babel())
+    .pipe(sourcemaps.write())
+    .pipe(duration('Compiling ES6 js for development'))
+    .pipe(gulp.dest(configDev.scripts.dest))
+    .pipe(reload({stream:true}))
 })
 
 // Compile babel js files
 gulp.task('scripts:js:prod', () => {
-  return gulp.src(configProd.scripts.src)
-             .pipe(plumber({errorHandler:errorHandler}))
-             .pipe(sourcemaps.init())
-             .pipe(babel())
-             .pipe(sourcemaps.write())
-             .pipe(duration('Compiling ES6 js for production'))
-             .pipe(gulp.dest(configProd.scripts.dest))
+  return gulp
+    .src(configProd.scripts.src)
+    .pipe(plumber({errorHandler:errorHandler}))
+    .pipe(sourcemaps.init())
+    .pipe(babel())
+    .pipe(sourcemaps.write())
+    .pipe(duration('Compiling ES6 js for production'))
+    .pipe(gulp.dest(configProd.scripts.dest))
 })
 
 

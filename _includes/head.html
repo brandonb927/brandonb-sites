@@ -31,6 +31,7 @@
 
 <link rel="manifest" href="/manifest.json">
 
+{% if site.serviceworker != 'false' %}
 <script>
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker
@@ -45,6 +46,7 @@
       })
   }
 </script>
+{% endif %}
 
 {% include google_analytics.html %}
 
