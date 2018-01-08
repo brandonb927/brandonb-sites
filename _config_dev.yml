@@ -11,7 +11,8 @@ google_analytics:
 
 # Build settings
 keep_files: [
-  'build_dev/api'
+  'assets',
+  'api'
 ]
 
 exclude: [

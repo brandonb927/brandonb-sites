@@ -118,5 +118,8 @@
     })
     .then(generateMapMarkers)
     .then(handleGeoLocation)
+    .catch(function () {
+      console.log('Oops, looks like something went wrong requesting data to load the checkins.')
+    })
 </script>
 {% endif %}

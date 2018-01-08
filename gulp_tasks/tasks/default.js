@@ -34,9 +34,9 @@ gulp.task('third_party:dev', callback => {
       'instagram:dev',
       callback
     )
+  } else {
+    callback()
   }
-
-  callback()
 })
 
 gulp.task('third_party:prod', callback => {

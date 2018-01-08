@@ -27,7 +27,7 @@
 <link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS Feed" href="{{ '/feed.xml' | absolute_url }}">
 <link rel="alternate" type="application/json" title="{{ site.title }} RSS Feed" href="{{ '/feed.json' | absolute_url }}">
 
-<link rel="stylesheet" href="/assets/styles/site.css">
+<link rel="stylesheet" href="/assets/styles/site.css" inline>
 
 <link rel="manifest" href="/manifest.json">
 
@@ -36,11 +36,11 @@
   if ("serviceWorker" in navigator) {
     navigator.serviceWorker
       .register('/sw.js')
-      .then(registration => {
+      .then(function (registration) {
         console.log('You can now browse this site offline! Try disconnecting from your internet connection and reload the page.')
         // console.log('Service Worker registration successful with scope: ', registration.scope)
       })
-      .catch(err => {
+      .catch(function (err) {
         console.log('Oops, you can\'t browse this site offline, something went from!', err)
         // console.log('Service Worker registration failed: ', err)
       })

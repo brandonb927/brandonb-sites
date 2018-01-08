@@ -3,7 +3,7 @@ import cssnano from 'gulp-cssnano'
 import duration from 'gulp-duration'
 import htmlmin from 'gulp-htmlmin'
 import imagemin from 'gulp-imagemin'
-import inlineCSS from 'gulp-inline-css'
+import inline from 'gulp-inline-source'
 import plumber from 'gulp-plumber'
 import size from 'gulp-size'
 import uglify from 'gulp-uglify'
@@ -58,24 +58,24 @@ gulp.task('optimize:html:prod', () => {
 })
 
 // Optimize and inline external assets
-gulp.task('optimize:inlineCSS:prod', () => {
+gulp.task('optimize:inline:prod', () => {
   return gulp
   .src(configProd.optimize.html.src)
   .pipe(plumber({errorHandler: errorHandler}))
-  .pipe(inlineCSS({
-    url: `file://${configProd.buildDir}/`,
+  .pipe(inline({
+    rootpath: configProd.buildDir
   }))
   .pipe(duration('Inlining CSS into HTML for production'))
   .pipe(gulp.dest(configProd.optimize.html.dest))
 })
 
 // Optimize and inline external assets
-gulp.task('optimize:inlineCSS:dev', () => {
+gulp.task('optimize:inline:dev', () => {
   return gulp
     .src(configDev.optimize.html.src)
     .pipe(plumber({errorHandler: errorHandler}))
-    .pipe(inlineCSS({
-      url: `file://${configDev.buildDir}/`,
+    .pipe(inline({
+      rootpath: configDev.buildDir
     }))
     .pipe(duration('Inlining CSS into HTML for development'))
     .pipe(gulp.dest(configDev.optimize.html.dest))
@@ -87,7 +87,7 @@ gulp.task('optimize:prod', (callback) => {
     'optimize:styles:prod',
     'optimize:scripts:prod',
     'optimize:html:prod',
-    'optimize:inlineCSS:prod',
+    'optimize:inline:prod',
     callback
   )
 })

@@ -18,7 +18,7 @@
     "gulp-gm": "0.0.8",
     "gulp-htmlmin": "^4.0.0",
     "gulp-imagemin": "^4.1.0",
-    "gulp-inline-css": "^3.1.2",
+    "gulp-inline-source": "^3.1.0",
     "gulp-less": "^3.4.0",
     "gulp-notify": "^3.1.0",
     "gulp-plumber": "^1.2.0",

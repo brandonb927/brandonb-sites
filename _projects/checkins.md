@@ -11,7 +11,7 @@ Want to see where I've spent my time lately? Check out my check-ins on [Swarm](h
   <div class="checkin-map-loader-wrapper">
     <div class="u-loader"></div>
   </div>
-  
+
   <div id="checkin_map" style="opacity:0;"></div>
 </div>
 

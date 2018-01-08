@@ -13,7 +13,7 @@ gulp.task('build:dev', (callback) => {
         'scripts:dev',
         'copy:dev'
       ],
-      'optimize:inlineCSS:dev',
+      'optimize:inline:dev',
       callback
     )
   } else {
