@@ -6,7 +6,7 @@ module Jekyll
 
     def generate(site)
       site.config['env'] = ENV['JEKYLL_ENV'] || 'development'
-      site.config['serviceworker'] = ENV['SERVICEWORKER'] || true
+      site.config['serviceworker'] = ENV['SERVICEWORKER'] || 'true'
 
       # Add other environment variables to `site.config` here...
     end

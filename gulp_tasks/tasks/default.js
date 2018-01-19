@@ -4,27 +4,16 @@ import runSequence from 'run-sequence'
 
 // Build the development environment, and watch files for changes
 gulp.task('default', callback => {
-  // If we don't want to register the serviceworker, we delete it
+  // WE might not want to register the serviceworker for local dev.
   // Very hacky way to do this!
-  if (argv.noserviceworker) {
-    process.env.SERVICEWORKER = false
-    runSequence(
-      'build:dev',
-      'browser_sync',
-      'third_party:dev',
-      'delete:serviceworker',
-      'watch',
-      callback
-    )
-  } else {
-    runSequence(
-      'build:dev',
-      'browser_sync',
-      'third_party:dev',
-      'watch',
-      callback
-    )
-  }
+  process.env.SERVICEWORKER = argv.noserviceworker ? 'false' : 'true'
+  runSequence(
+    'build:dev',
+    'browser_sync',
+    'third_party:dev',
+    'watch',
+    callback
+  )
 })
 
 gulp.task('third_party:dev', callback => {

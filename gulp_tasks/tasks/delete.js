@@ -13,7 +13,3 @@ gulp.task('delete:dev', (callback) => {
 gulp.task('delete:prod', (callback) => {
   rimraf(configProd.delete.src, callback)
 })
-
-gulp.task('delete:serviceworker', (callback) => {
-  rimraf(resolve(configDev.delete.src, 'sw.js'), callback)
-})
