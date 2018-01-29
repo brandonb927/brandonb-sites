@@ -1,26 +1,9 @@
-<script src='https://cdnjs.cloudflare.com/ajax/libs/fetch/1.0.0/fetch.min.js'></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.1/picturefill.min.js"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/1.3.1/lazysizes.min.js"></script>
-
-<script>
-  // Show site favicon next to external links
-  // function getDomain(url) {
-  //   if (url) {
-  //     return url.match(/:\/\/(.[^/]+)/)[1];
-  //   }
-  //   return null
-  // }
-  // var externalLinks = document.querySelectorAll(".main-content-post a[href^='http']")
-  // for (var link in externalLinks) {
-  //   var a = externalLinks[link]
-  //   var domain = getDomain(a.href)
-  //   var currWindow = new RegExp('/' + window.location.host + '/')
-  //   if (!currWindow.test(a.href) && domain) {
-  //     a.style.background ='url(https://www.google.com/s2/favicons?domain=' + domain + ') left center no-repeat'
-  //     a.style.paddingLeft = '2rem'
-  //   }
-  // }
-</script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/fetch/2.0.3/fetch.min.js" async></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/picturefill/3.0.3/picturefill.min.js" async></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lazysizes/4.0.1/lazysizes.min.js" async></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/domready/1.0.8/ready.min.js" async></script>
+<script src="/assets/scripts/konami.js" async></script>
+<script src="/assets/scripts/site.js" async></script>
 
 {% include foot/checkins.html %}
 {% include foot/garage.html %}

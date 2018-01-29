@@ -3915,6 +3915,10 @@ kind-of@^4.0.0:
   dependencies:
     is-buffer "^1.1.5"
 
+konami@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.yarnpkg.com/konami/-/konami-1.6.0.tgz#1fea890f9bb1e07da13e6086d6971dfb5095be11"
+
 lazy-cache@^1.0.3:
   version "1.0.4"
   resolved "https://registry.yarnpkg.com/lazy-cache/-/lazy-cache-1.0.4.tgz#a1d78fc3a50474cb80845d3b3b6e1da49a446e8e"
