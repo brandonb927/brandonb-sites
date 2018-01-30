@@ -1,0 +1,70 @@
+body.dark-mode {
+  background: #222;
+  color: #ddd;
+
+  a {
+    color: #ddd;
+  }
+
+  a:hover,
+  a:active {
+    color: #fff;
+  }
+
+  .navigation-item {
+    a:hover,
+    a:active {
+      background: #ddd;
+      color: #111;
+    }
+  }
+
+  .u-text-muted {
+    color: #aaa;
+  }
+
+  .bordered {
+    border-top-color: #ddd;
+    border-bottom-color: #ddd;
+  }
+
+  .main-header-title,
+  .main-header-nav,
+  .main-footer-nav {
+    .bordered;
+  }
+
+  .main-content-feed-sponsor {
+    border: solid .3rem #ccc;
+  }
+
+  .page-favicon-valley-podcast {
+    tbody tr:last-child {
+      border-top: 1px solid #111;
+    }
+  }
+}
+
+.toggle-dark-mode {
+  position: fixed;
+  left: 0;
+  top: 0;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.toggle-dark-mode:before {
+  display: block;
+  height: 5rem;
+  width: 5rem;
+  padding: 1rem;
+  font-size: 3rem;
+  line-height: 1;
+  content: '🌑';
+}
+
+body.dark-mode .toggle-dark-mode {
+  &:before {
+    content: '🌞';
+  }
+}

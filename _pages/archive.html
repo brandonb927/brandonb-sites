@@ -31,8 +31,12 @@ title: Archive
           <time datetime="{{ post.date | date_to_rfc822 }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
         </span>
         {% endif %}
+        {% capture post_content %}
+        {{ post.content | split: site.break_tag | first }}
+        {% endcapture %}
         <a href="{{ post.url | absolute_url }}"
-           class="archive-content-feed-item-title">
+           class="archive-content-feed-item-title"
+           title="{{ post_content | strip_html | strip }}">
           {{ post.title }}
         </a>
       </li>
