@@ -10,3 +10,5 @@ _assets/media
 
 .jekyll-metadata
 .awspublish-*
+
+.vscode
