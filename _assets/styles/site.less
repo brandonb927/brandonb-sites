@@ -378,38 +378,37 @@ picture {
   }
 }
 
+// Unsplash
 
-// Garage
-
-#garage_images {
+#unsplash_images {
   min-height: 46rem;
   .full-width;
   transition: opacity .2s ease;
   opacity: 0;
 }
 
-.instagram-post {
+.unsplash-image {
   .margin-tb;
 }
 
-.instagram-link {
+.unsplash-link {
   display: block;
   position: relative;
   .u-text-center;
 }
 
-.instagram-image-heart,
-.instagram-image-likes {
+.unsplash-image-heart,
+.unsplash-image-likes {
   position: absolute;
 }
 
-.instagram-link:hover .instagram-image-heart,
-.instagram-link:hover .instagram-image-likes {
+.unsplash-link:hover .unsplash-image-heart,
+.unsplash-link:hover .unsplash-image-likes {
   opacity: 1;
 }
 
-.instagram-image-heart,
-.instagram-image-likes {
+.unsplash-image-heart,
+.unsplash-image-likes {
   display: inline-block;
   top: 50%;
   left: 50%;
@@ -418,34 +417,27 @@ picture {
   opacity: 0;
 }
 
-.instagram-image-heart {
+.unsplash-image-heart {
   height: 5rem;
   width: 5rem;
   fill: #fff;
 }
 
-.instagram-image-likes {
+.unsplash-image-likes {
   width: 4rem;
   text-align: center;
+  color: #222;
 }
 
-// .instagram-image {
-
-// }
-
-.instagram-caption {
+.unsplash-caption {
   padding-top: 2rem;
   padding-right: 2rem;
   padding-bottom: 2rem;
   padding-left: 2rem;
 }
 
-// .instagram-tag {
-//   // Nothing
-// }
-
 @media (min-width: @mobile-width) {
-  #garage_images {
+  #unsplash_images {
     .margin-top-large;
     .margin-bottom-large;
     display: flex;
@@ -453,10 +445,10 @@ picture {
     justify-content: space-around;
   }
 
-  .instagram-post {
+  .unsplash-image {
     max-width: 40rem;
-    margin-top: 0;
-    margin-bottom: 0;
+    margin-top: 0.5rem;
+    margin-bottom: 0.5rem;
   }
 }
 

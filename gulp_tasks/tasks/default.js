@@ -20,7 +20,7 @@ gulp.task('third_party:dev', callback => {
   if (argv.thirdparty) {
     runSequence(
       'foursquare:dev',
-      'instagram:dev',
+      'unsplash:dev',
       callback
     )
   } else {
@@ -31,7 +31,7 @@ gulp.task('third_party:dev', callback => {
 gulp.task('third_party:prod', callback => {
   runSequence(
     'foursquare:prod',
-    'instagram:prod',
+    'unsplash:prod',
     callback
   )
 })
