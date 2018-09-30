@@ -2,18 +2,15 @@ import { readFileSync } from 'fs'
 import { argv } from 'yargs'
 import cp from 'child_process'
 import path from 'path'
-import parallelize from 'concurrent-transform'
 import gulp from 'gulp'
 import awspublish from 'gulp-awspublish'
 import duration from 'gulp-duration'
-import plumber from 'gulp-plumber'
 import rename from 'gulp-rename'
 import runSequence from 'run-sequence'
 
 import mediaConfig from '../config/prod'
 import deployConfig from '../config/prod'
 
-import errorHandler from '../utils/errorHandler'
 
 const awsConfig = JSON.parse(readFileSync(`${process.env.HOME}/.aws.json`))
 

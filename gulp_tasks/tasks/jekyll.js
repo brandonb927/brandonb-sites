@@ -2,15 +2,14 @@
 import { argv } from 'yargs'
 import gulp from 'gulp'
 import cp from 'child_process'
-import { notify, reload } from 'browser-sync'
 
 import configDev from '../config/dev'
 import configProd from '../config/prod'
 
+import { server } from './browser_sync'
+
 // Build the Jekyll site
 gulp.task('jekyll-build:dev', (callback) => {
-  notify('Compiling Jekyll for development')
-
   let args = [
     'exec',
     'jekyll',
@@ -33,8 +32,6 @@ gulp.task('jekyll-build:dev', (callback) => {
 })
 
 gulp.task('jekyll-build:prod', (callback) => {
-  notify('Compiling Jekyll for production')
-
   let args = [
     'exec',
     'jekyll',
@@ -57,4 +54,7 @@ gulp.task('jekyll-build:prod', (callback) => {
 })
 
 // Jekyll site rebuild + browser reload
-gulp.task('jekyll-rebuild', ['jekyll-build:dev'], reload)
+gulp.task('jekyll-rebuild', ['jekyll-build:dev'], (done) => {
+  server.reload()
+  done()
+})

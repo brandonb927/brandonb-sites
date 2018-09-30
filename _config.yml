@@ -2,12 +2,13 @@ encoding: 'utf-8'
 language: 'en-us'
 
 # Site Settings
-title: 'Brandons Blog'
+title: Brandons Blog
 author:
-  name: 'Brandon Brown'
-  email: 'brandon@brandonb.ca'
+  name: Brandon Brown
+  email: brandon@brandonb.ca
 description: Canadian with a passion for <br />open source, tech, and front-end web development
 meta_description: Brandon Brown, Product QA Developer
+avatar_img: /avatar18_256.jpg
 
 # Favicons
 favicon:

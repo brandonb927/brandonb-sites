@@ -1,11 +1,11 @@
 import runSequence from 'run-sequence'
-import { reload } from 'browser-sync'
 import gulp from 'gulp'
 import babel from 'gulp-babel'
 import duration from 'gulp-duration'
 import plumber from 'gulp-plumber'
 import sourcemaps from 'gulp-sourcemaps'
 
+import { server } from './browser_sync'
 import configDev from '../config/dev'
 import configProd from '../config/prod'
 import errorHandler from '../utils/errorHandler'
@@ -19,7 +19,7 @@ gulp.task('scripts:js:dev', () => {
     .pipe(sourcemaps.write())
     .pipe(duration('Compiling ES6 js for development'))
     .pipe(gulp.dest(configDev.scripts.dest))
-    .pipe(reload({stream:true}))
+    .pipe(server.stream())
 })
 
 // Compile babel js files

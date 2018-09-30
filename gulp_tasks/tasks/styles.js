@@ -1,18 +1,17 @@
-import { notify, reload } from 'browser-sync'
 import gulp from  'gulp'
 import autoprefixer from  'gulp-autoprefixer'
 import duration from  'gulp-duration'
 import less from  'gulp-less'
 import plumber from  'gulp-plumber'
 import sourcemaps from 'gulp-sourcemaps'
+
 import configDev from '../config/dev'
 import configProd from '../config/prod'
 import errorHandler from '../utils/errorHandler'
+import { server } from './browser_sync'
 
 // Compile LESS into CSS, and add vendor prefixes
 gulp.task('styles:dev', () => {
-  notify('Compiling styles for development')
-
   return gulp
     .src(configDev.styles.src)
     .pipe(plumber({errorHandler:errorHandler}))
@@ -22,12 +21,10 @@ gulp.task('styles:dev', () => {
     .pipe(duration('Compiling LESS and vendor prefixing CSS for development'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(configDev.styles.dest))
-    .pipe(reload({stream:true}))
+    .pipe(server.stream())
 })
 
 gulp.task('styles:prod', () => {
-  notify('Compiling styles for production')
-
   return gulp
     .src(configProd.styles.src)
     .pipe(plumber({errorHandler:errorHandler}))

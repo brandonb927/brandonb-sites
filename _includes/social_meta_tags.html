@@ -6,9 +6,9 @@
 {% if page.url %}
 <meta property="og:url" content="{{ page.url | absolute_url }}">
 {% endif %}
-<meta property="og:image" content="{% if post.share_image %}{{ post.share_image }}{% else %}{{ '/avatar_256.jpg' | prepend: site.assets_media }}{% endif %}">
+<meta property="og:image" content="{% if post.share_image %}{{ post.share_image }}{% else %}{{ site.avatar_img | prepend: site.assets_media }}{% endif %}">
 
 <!-- Twitter Cards  -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image:src" content="{% if post.share_image %}{{ post.share_image }}{% else %}{{ '/avatar_256.jpg' | prepend: site.assets_media }}{% endif %}">
+<meta name="twitter:image:src" content="{% if post.share_image %}{{ post.share_image }}{% else %}{{ site.avatar_img | prepend: site.assets_media }}{% endif %}">
 
