@@ -34,22 +34,26 @@ const buildJSON = (buildPath, callback) => {
 
   // Get Unsplash photos
   let req = request('GET', generateApiUrl(PATH_GET_MEDIA))
-  let res = JSON.parse(req.getBody('utf8'))
+  let images = JSON.parse(req.getBody('utf8'))
 
-  res.forEach(image => {
-    imageItems[image.id] = {
-      url: image.links.html,
+  images.forEach(item => {
+    let req = request('GET', generateApiUrl(`photos/${item.id}`))
+    let img = JSON.parse(req.getBody('utf8'))
+
+    imageItems[img.id] = {
+      url: img.links.html,
       images: {
-        thumb: image.urls.thumb,
-        small: image.urls.small,
-        regular: image.urls.regular,
-        full: image.urls.full,
+        thumb: img.urls.thumb,
+        small: img.urls.small,
+        regular: img.urls.regular,
+        full: img.urls.full,
       },
-      height: image.height,
-      width: image.width,
-      description: image.description || '',
-      categories: image.categories,
-      likes: image.likes,
+      height: img.height,
+      width: img.width,
+      description: img.description || '',
+      location: img.location,
+      categories: img.categories,
+      likes: img.likes,
     }
   })
 
