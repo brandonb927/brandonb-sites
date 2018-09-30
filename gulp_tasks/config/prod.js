@@ -1,6 +1,6 @@
 // Production config
 import { resolve } from 'path'
-import { merge }  from 'lodash'
+import { merge } from 'lodash'
 
 import baseConfig from './base'
 
@@ -11,72 +11,74 @@ const build = resolve(src, 'build_prod')
 const buildAssets = resolve(build, 'assets')
 
 const prodBuildConfigFilename = resolve(src, '_config_prod.yml')
-const buildConfigFilename = `${baseConfig.jekyll.baseConfig},${prodBuildConfigFilename}`
+const buildConfigFilename = `${
+  baseConfig.jekyll.baseConfig
+},${prodBuildConfigFilename}`
 
 // Config
 const baseProdConfig = {
   buildDir: build,
   deploy: {
     src: build,
-    dest: build
+    dest: build,
   },
   delete: {
-    src: build
+    src: build,
   },
   styles: {
     src: `${srcAssets}/styles/site.less`,
-    dest: `${buildAssets}/styles`
+    dest: `${buildAssets}/styles`,
   },
   scripts: {
     src: `${srcAssets}/scripts/*.js`,
-    dest: `${buildAssets}/scripts`
+    dest: `${buildAssets}/scripts`,
   },
   copy: {
     media: {
       src: `${srcAssets}/media/**/*`,
-      dest: `${buildAssets}/media`
+      dest: `${buildAssets}/media`,
     },
     surgeignore: {
       src: `${src}/.surgeignore`,
-      dest: build
-    }
+      dest: build,
+    },
   },
   jekyll: {
     src: src,
     dest: build,
-    config: buildConfigFilename
+    config: buildConfigFilename,
   },
   optimize: {
-    styles:{
+    styles: {
       src: `${buildAssets}/styles/*.css`,
       dest: `${buildAssets}/styles`,
       options: {
-        keepSpecialComments: 0
-      }
+        keepSpecialComments: 0,
+      },
     },
     scripts: {
       src: `${buildAssets}/scripts/*.js`,
       dest: `${buildAssets}/scripts`,
-      options: {}
+      options: {},
     },
     media: {
       src: `${srcAssets}/media/*`,
       dest: `${srcAssets}/media`,
-      options:{
+      options: {
         optimizationLevel: 3,
         progessive: true,
-        interlaced: true
-      }
+        interlaced: true,
+      },
     },
     html: {
       src: `${build}/**/*.html`,
       dest: build,
       options: {
         collapseWhitespace: true,
-        conservativeCollapse: true
-      }
-    }
-  }
+        conservativeCollapse: true,
+      },
+    },
+  },
 }
 
 const prodConfig = merge(baseProdConfig, baseConfig)

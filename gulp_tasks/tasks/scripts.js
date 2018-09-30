@@ -13,7 +13,7 @@ import errorHandler from '../utils/errorHandler'
 gulp.task('scripts:js:dev', () => {
   return gulp
     .src(configDev.scripts.src)
-    .pipe(plumber({errorHandler:errorHandler}))
+    .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(sourcemaps.init())
     .pipe(babel())
     .pipe(sourcemaps.write())
@@ -26,26 +26,19 @@ gulp.task('scripts:js:dev', () => {
 gulp.task('scripts:js:prod', () => {
   return gulp
     .src(configProd.scripts.src)
-    .pipe(plumber({errorHandler:errorHandler}))
+    .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(sourcemaps.init())
-    .pipe(babel())
-    .pipe(sourcemaps.write())
+    .pipe(babel({ presets: ['@babel/env'] }))
+    .pipe(sourcemaps.write('.'))
     .pipe(duration('Compiling ES6 js for production'))
     .pipe(gulp.dest(configProd.scripts.dest))
 })
 
-
 // Main tasks
-gulp.task('scripts:dev', (callback) => {
-  runSequence(
-    'scripts:js:dev',
-    callback
-  )
+gulp.task('scripts:dev', callback => {
+  runSequence('scripts:js:dev', callback)
 })
 
-gulp.task('scripts:prod', (callback) => {
-  runSequence(
-    'scripts:js:prod',
-    callback
-  )
+gulp.task('scripts:prod', callback => {
+  runSequence('scripts:js:prod', callback)
 })

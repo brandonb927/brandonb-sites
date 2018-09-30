@@ -22,17 +22,10 @@ gulp.task('copy:surgeignore:prod', () => {
     .pipe(gulp.dest(configProd.copy.surgeignore.dest))
 })
 
-gulp.task('copy:dev', (callback) => {
-  runSequence(
-    'copy:media:dev',
-    callback
-  )
+gulp.task('copy:dev', callback => {
+  runSequence('copy:media:dev', callback)
 })
 
-gulp.task('copy:prod', (callback) => {
-  runSequence(
-    'copy:media:prod',
-    'copy:surgeignore:prod',
-    callback
-  )
+gulp.task('copy:prod', callback => {
+  runSequence('copy:media:prod', 'copy:surgeignore:prod', callback)
 })

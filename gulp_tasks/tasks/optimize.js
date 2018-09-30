@@ -17,7 +17,7 @@ import errorHandler from '../utils/errorHandler'
 gulp.task('optimize:media:prod', () => {
   return gulp
     .src(configProd.optimize.media.src)
-    .pipe(plumber({errorHandler: errorHandler}))
+    .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(imagemin(configProd.optimize.media.options))
     .pipe(duration('Optimizing media for production'))
     .pipe(gulp.dest(configProd.optimize.media.dest))
@@ -28,7 +28,7 @@ gulp.task('optimize:media:prod', () => {
 gulp.task('optimize:styles:prod', () => {
   return gulp
     .src(configProd.optimize.styles.src)
-    .pipe(plumber({errorHandler: errorHandler}))
+    .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(cssnano(configProd.optimize.styles.options))
     .pipe(duration('Optimizing and minifying CSS for production'))
     .pipe(gulp.dest(configProd.optimize.styles.dest))
@@ -39,7 +39,7 @@ gulp.task('optimize:styles:prod', () => {
 gulp.task('optimize:scripts:prod', () => {
   return gulp
     .src(configProd.optimize.scripts.src)
-    .pipe(plumber({errorHandler: errorHandler}))
+    .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(uglify(configProd.optimize.scripts.options))
     .pipe(duration('Optimizing, minifying and minifying JS for production'))
     .pipe(gulp.dest(configProd.optimize.scripts.dest))
@@ -50,7 +50,7 @@ gulp.task('optimize:scripts:prod', () => {
 gulp.task('optimize:html:prod', () => {
   return gulp
     .src(configProd.optimize.html.src)
-    .pipe(plumber({errorHandler: errorHandler}))
+    .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(htmlmin(configProd.optimize.html.options))
     .pipe(duration('Optimizing and minifying HTML for production'))
     .pipe(gulp.dest(configProd.optimize.html.dest))
@@ -60,28 +60,32 @@ gulp.task('optimize:html:prod', () => {
 // Optimize and inline external assets
 gulp.task('optimize:inline:prod', () => {
   return gulp
-  .src(configProd.optimize.html.src)
-  .pipe(plumber({errorHandler: errorHandler}))
-  .pipe(inline({
-    rootpath: configProd.buildDir
-  }))
-  .pipe(duration('Inlining CSS into HTML for production'))
-  .pipe(gulp.dest(configProd.optimize.html.dest))
+    .src(configProd.optimize.html.src)
+    .pipe(plumber({ errorHandler: errorHandler }))
+    .pipe(
+      inline({
+        rootpath: configProd.buildDir,
+      })
+    )
+    .pipe(duration('Inlining CSS into HTML for production'))
+    .pipe(gulp.dest(configProd.optimize.html.dest))
 })
 
 // Optimize and inline external assets
 gulp.task('optimize:inline:dev', () => {
   return gulp
     .src(configDev.optimize.html.src)
-    .pipe(plumber({errorHandler: errorHandler}))
-    .pipe(inline({
-      rootpath: configDev.buildDir
-    }))
+    .pipe(plumber({ errorHandler: errorHandler }))
+    .pipe(
+      inline({
+        rootpath: configDev.buildDir,
+      })
+    )
     .pipe(duration('Inlining CSS into HTML for development'))
     .pipe(gulp.dest(configDev.optimize.html.dest))
 })
 
-gulp.task('optimize:prod', (callback) => {
+gulp.task('optimize:prod', callback => {
   runSequence(
     'optimize:media:prod',
     'optimize:styles:prod',

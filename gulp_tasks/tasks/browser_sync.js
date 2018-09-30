@@ -12,8 +12,8 @@ gulp.task('browser_sync', () => {
       ready: async (err, bs) => {
         const url = await ngrok.connect(bs.options.get('port'))
         console.log(`Your ngrok URL is: ${url}`)
-      }
-    }
+      },
+    },
   })
   server.init(bsOptions)
 })

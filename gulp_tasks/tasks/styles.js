@@ -1,8 +1,8 @@
-import gulp from  'gulp'
-import autoprefixer from  'gulp-autoprefixer'
-import duration from  'gulp-duration'
-import less from  'gulp-less'
-import plumber from  'gulp-plumber'
+import gulp from 'gulp'
+import autoprefixer from 'gulp-autoprefixer'
+import duration from 'gulp-duration'
+import less from 'gulp-less'
+import plumber from 'gulp-plumber'
 import sourcemaps from 'gulp-sourcemaps'
 
 import configDev from '../config/dev'
@@ -14,7 +14,7 @@ import { server } from './browser_sync'
 gulp.task('styles:dev', () => {
   return gulp
     .src(configDev.styles.src)
-    .pipe(plumber({errorHandler:errorHandler}))
+    .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(autoprefixer(configDev.styles.autoprefixer))
@@ -27,7 +27,7 @@ gulp.task('styles:dev', () => {
 gulp.task('styles:prod', () => {
   return gulp
     .src(configProd.styles.src)
-    .pipe(plumber({errorHandler:errorHandler}))
+    .pipe(plumber({ errorHandler: errorHandler }))
     .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(autoprefixer(configProd.styles.autoprefixer))

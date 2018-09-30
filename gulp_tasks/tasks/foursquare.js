@@ -1,10 +1,4 @@
-import {
-  writeFile,
-  closeSync,
-  openSync,
-  mkdirSync,
-  existsSync
-} from 'fs'
+import { writeFile, closeSync, openSync, mkdirSync, existsSync } from 'fs'
 import gulp from 'gulp'
 import gutil from 'gulp-util'
 import request from 'sync-request'
@@ -16,7 +10,7 @@ import configProd from '../config/prod'
 const FOURSQUARE_OAUTH_TOKEN = process.env.FOURSQUARE_OAUTH_TOKEN
 
 // Set the API Base URL, straight forward
-const API_BASE_URL = "https://api.foursquare.com/v2/users/self/checkins"
+const API_BASE_URL = 'https://api.foursquare.com/v2/users/self/checkins'
 
 // Give the API a unique URL (the docs demonstrate this, though I'm not sure why)
 // https://developer.foursquare.com/overview/auth
@@ -80,8 +74,8 @@ const buildJSON = (buildPath, callback) => {
 
       if (!checkinItems.hasOwnProperty(venue.id)) {
         checkinItems[venue.id] = {
-          'venue': venue,
-          'checkins': []
+          venue: venue,
+          checkins: [],
         }
       }
 
@@ -91,9 +85,9 @@ const buildJSON = (buildPath, callback) => {
     // Sort dates of checkins, descending by date
     for (let venueId in checkinItems) {
       checkinItems[venueId]['checkins'].sort(function(a, b) {
-        a = new Date(a.createdAt);
-        b = new Date(b.createdAt);
-        return a > b ? -1 : a < b ? 1 : 0;
+        a = new Date(a.createdAt)
+        b = new Date(b.createdAt)
+        return a > b ? -1 : a < b ? 1 : 0
       })
     }
 
@@ -108,10 +102,10 @@ const buildJSON = (buildPath, callback) => {
 }
 
 // Tasks to generate the Foursquare JSON data file
-gulp.task('foursquare:dev', (cb) => {
+gulp.task('foursquare:dev', cb => {
   buildJSON(configDev.jekyll.dest, cb)
 })
 
-gulp.task('foursquare:prod', (cb) => {
+gulp.task('foursquare:prod', cb => {
   buildJSON(configProd.jekyll.dest, cb)
 })

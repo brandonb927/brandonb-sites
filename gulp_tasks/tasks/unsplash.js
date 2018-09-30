@@ -1,10 +1,4 @@
-import {
-  writeFile,
-  closeSync,
-  openSync,
-  mkdirSync,
-  existsSync
-} from 'fs'
+import { writeFile, closeSync, openSync, mkdirSync, existsSync } from 'fs'
 import gulp from 'gulp'
 import gutil from 'gulp-util'
 import request from 'sync-request'
@@ -19,7 +13,7 @@ const UNSPLASH_CLIENT_ID = process.env.UNSPLASH_CLIENT_ID
 const API_BASE_URL = 'https://api.unsplash.com/'
 
 // Generate an API url
-const generateApiUrl = (path) => {
+const generateApiUrl = path => {
   let fullUrl = `${API_BASE_URL}${path}?client_id=${UNSPLASH_CLIENT_ID}`
 
   // Make the fullUrl safe for logging to stdout, etc.
@@ -49,13 +43,13 @@ const buildJSON = (buildPath, callback) => {
         thumb: image.urls.thumb,
         small: image.urls.small,
         regular: image.urls.regular,
-        full: image.urls.full
+        full: image.urls.full,
       },
       height: image.height,
       width: image.width,
       description: image.description || '',
       categories: image.categories,
-      likes: image.likes
+      likes: image.likes,
     }
   })
 
@@ -70,10 +64,10 @@ const buildJSON = (buildPath, callback) => {
 }
 
 // Tasks to generate the Unsplash JSON data file
-gulp.task('unsplash:dev', (cb) => {
+gulp.task('unsplash:dev', cb => {
   buildJSON(configDev.jekyll.dest, cb)
 })
 
-gulp.task('unsplash:prod', (cb) => {
+gulp.task('unsplash:prod', cb => {
   buildJSON(configProd.jekyll.dest, cb)
 })
