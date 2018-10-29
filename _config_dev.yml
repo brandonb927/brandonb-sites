@@ -10,6 +10,9 @@ google_analytics:
   id: false
   domain: false
 
+google_ads:
+  id: false
+
 # Build settings
 keep_files: [
   'assets',

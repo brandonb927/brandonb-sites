@@ -67,6 +67,9 @@ google_analytics:
   id: UA-32422940-2
   domain: brandonb.ca
 
+google_ads:
+  id: ca-pub-5686888191550897
+
 # Extras
 plugins:
   - jekyll-redirect-from
