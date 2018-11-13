@@ -10,7 +10,7 @@ A show where I talked about products, email, and the web. I have preserved the o
 In the spirit of transparency, I'm publishing all the download/listen stats for the show alongside the episodes. Here is a table of the total all-time stats across all episodes since the show started:
 
 | Date            | Downloads |
-|-----------------|-----------|
+| --------------- | --------- |
 | 10-2015         | 31        |
 | 11-2015         | 27        |
 | 12-2015         | 203       |
@@ -40,7 +40,6 @@ And here is a screenshot of the final listener stats for all-time:
 
 ![]({{ '/faviconvalley/stats.png' | prepend: site.assets_root }})
 
-
 An archive of the episodes and shownotes can be found below:
 
 ### Ep 7 - Interview with Julian Lepinski of Cast
@@ -63,7 +62,7 @@ Brandon chats with Julian Lepinski about his new product, [Cast](http://tryca.st
 #### Stats
 
 | Date            | Downloads |
-|-----------------|-----------|
+| --------------- | --------- |
 | 03-2016         | 108       |
 | 04-2016         | 22        |
 | 05-2016         | 9         |
@@ -113,7 +112,7 @@ Brandon goes solo for this episode to talk about some of the products and tools 
 #### Stats
 
 | Date            | Downloads |
-|-----------------|-----------|
+| --------------- | --------- |
 | 02-2016         | 70        |
 | 03-2016         | 12        |
 | 04-2016         | 2         |
@@ -147,13 +146,12 @@ Brandon goes solo for this episode to talk about some of the products and tools 
 In this episode Brandon talks to Brock Whitten (co-creator of Phonegap) about his new product Surge.sh which makes the deployment and distribution of frontend web assets extremely easy. They also talked about the evolution of Harp, trust on the web, and we find out what Brock really wants to do with his life when he grows up (just kidding, he's already grown up).
 
 > "[…] there's people out there that put trust in a product when they adopt a small company, and you don't want them ever to be hung high-and-dry […]"
-> <br />
-> <span class="bq-cite bq-cite-right">Brock Whitten</span>
+> <br /> > <span class="bq-cite bq-cite-right">Brock Whitten</span>
 
-- [Brock Whitten](https://sintaxi.com)
+- [Brock Whitten](http://sintaxi.com)
 - [Brock Whitten on Twitter](https://twitter.com/sintaxi)
 - [Harp Webserver](https://github.com/sintaxi/harp)
-- [The Harp Platform](https://harp.io)
+- [The Harp Platform](https://harpjs.com)
 - [Surge.sh](https://surge.sh)
 - [Let's Encrypt [~51 mins]](http://letsencrypt.org)
 - [React-powered slideshow/presentation boilerplate [~1 hour]](https://github.com/FormidableLabs/spectacle)
@@ -161,7 +159,7 @@ In this episode Brandon talks to Brock Whitten (co-creator of Phonegap) about hi
 #### Stats
 
 | Date            | Downloads |
-|-----------------|-----------|
+| --------------- | --------- |
 | 01-2016         | 135       |
 | 02-2016         | 32        |
 | 03-2016         | 11        |
@@ -207,7 +205,7 @@ Brandon talks to [Samuel Clay](https://twitter.com/samuelclay) the founder of Ne
 #### Stats
 
 | Date            | Downloads |
-|-----------------|-----------|
+| --------------- | --------- |
 | 12-2015         | 162       |
 | 01-2016         | 70        |
 | 02-2016         | 38        |
@@ -248,7 +246,7 @@ Episode 3 is finally here after a month delay! Brandon talks about your favourit
 #### Stats
 
 | Date            | Downloads |
-|-----------------|-----------|
+| --------------- | --------- |
 | 11-2015         | 15        |
 | 12-2015         | 21        |
 | 01-2016         | 7         |
@@ -288,7 +286,7 @@ Episode 2 is finally here! Brandon talks with some students from University of V
 #### Stats
 
 | Date            | Downloads |
-|-----------------|-----------|
+| --------------- | --------- |
 | 10-2015         | 20        |
 | 11-2015         | 5         |
 | 12-2015         | 10        |
@@ -328,7 +326,7 @@ This is the first episode of many to come for the Favicon Valley Podcast. Brando
 #### Stats
 
 | Date            | Downloads |
-|-----------------|-----------|
+| --------------- | --------- |
 | 10-2015         | 11        |
 | 11-2015         | 7         |
 | 12-2015         | 10        |
@@ -353,4 +351,3 @@ This is the first episode of many to come for the Favicon Valley Podcast. Brando
 | 07-2017         | 12        |
 | 08-2017         | 9         |
 | Total Downloads | 126       |
-

@@ -6,7 +6,7 @@ title: Brandons Blog
 author:
   name: Brandon Brown
   email: brandon@brandonb.ca
-description: Canadian with a passion for <br />open source, tech, and front-end web development
+description: Canadian with a passion for <br />open source, tech, and web development
 meta_description: Brandon Brown, QA Developer — Canadian with a passion for open source, tech, and web development
 avatar_img: /avatar18_512.jpg
 
@@ -34,19 +34,15 @@ kramdown:
   syntax_highlighter: rouge
 
 # Build-stuff
-keep_files: [
-  'assets',
-  'api']
+keep_files: ['assets', 'api']
 
 defaults:
-  -
-    scope:
+  - scope:
       path: ''
       type: posts
     values:
       layout: post
-  -
-    scope:
+  - scope:
       path: ''
       type: projects
     values:
