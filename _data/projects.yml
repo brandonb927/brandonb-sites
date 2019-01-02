@@ -1,48 +1,41 @@
 pages:
-  -
-    url: /projects/checkins
+  - url: /projects/checkins
     title: Swarm Check-ins
     description: |
       Powered by Mapbox and the Foursquare API, a historical map of my Swarm check-ins.
       See check out where I've been lately!
-  -
-    url: /projects/faviconvalley
+  - url: /projects/faviconvalley
     title: Favicon Valley Podcast
     description: |
-      A podcast hosted by myself where I talk about products, email, and the web.
+      [ENDED] A podcast hosted by myself where I talk about products, email, and the web.
       I chat with founders and other product developers about the things they're working on.
-  -
-    url: https://unicodeforyou.surge.sh
+  - url: https://unicodeforyou.surge.sh
     title: Unicode For You
     description: |
       A useful unicode/emoji character map. Click on a character to
       have it copied to your clipboard, or use your arrow keys and hit enter to copy.
     image: unicodeforyou.gif
-  -
-    url: https://apps.rebble.io/en_US/applications/58070ba89392ff32cf0002ce
+  - url: https://apps.rebble.io/en_US/applications/58070ba89392ff32cf0002ce
     title: VW (Unofficial) Pebble Watchface
     description: |
       For VW enthusiasts such as myself, built with RockyJS for Pebble smart watches.
       Available on the Pebble App Store. Source is available [on Github](https://github.com/brandonb927/pebble-watchface-vw-unofficial).
     image: pebble-watchface-vw-unofficial.png
-  -
-    url: https://apps.rebble.io/en_US/application/583db01800355abe66000853
+  - url: https://apps.rebble.io/en_US/application/583db01800355abe66000853
     title: Tree Pebble Watchface
     description: |
       A very simple sitka spruce treee with a twist at certain times of the year, built with RockyJS for Pebble smart watches.
       Available on the Pebble App Store. Source is available [on Github](https://github.com/brandonb927/pebble-watchface-tree).
     image: pebble-watchface-tree.png
 packages:
-  -
-    url: https://github.com/brandonb927/ron-swanson
+  - url: https://github.com/brandonb927/ron-swanson
     title: Ron Swanson CLI
     description: |
       An offline CLI npm package that exposes a single command `ron-swanson` which outputs quotes from the
       [Ron Swanson API](https://ron-swanson-quotes.herokuapp.com/v2/quotes). Imports the repo that powers
       the API directly rather than making calls over HTTP.
     image: ron-swanson-cli.gif
-  -
-    url: https://github.com/brandonb927/dwight
+  - url: https://github.com/brandonb927/dwight
     title: Dwight Schrute CLI
     description: |
       A CLI npm package that exposes two commands: `dwight` that simple outputs the face of the man himself,

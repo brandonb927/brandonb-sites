@@ -5,7 +5,7 @@ title: Favicon Valley Podcast
 body_class: 'page-favicon-valley-podcast'
 ---
 
-A show where I talked about products, email, and the web. I have preserved the old site [here on github](https://github.com/brandonb927/faviconvalley.show).
+[ENDED] A show where I talked about products, email, and the web. I have preserved the old site [here on github](https://github.com/brandonb927/faviconvalley.show).
 
 In the spirit of transparency, I'm publishing all the download/listen stats for the show alongside the episodes. Here is a table of the total all-time stats across all episodes since the show started:
 
