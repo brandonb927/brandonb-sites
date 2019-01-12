@@ -16,16 +16,16 @@ gulp.task('copy:media:prod', () => {
     .pipe(gulp.dest(configProd.copy.media.dest))
 })
 
-gulp.task('copy:apis:dev', () => {
+gulp.task('copy:api_data:dev', () => {
   return gulp
-    .src(configProd.copy.apis.src)
-    .pipe(gulp.dest(configProd.copy.apis.dest))
+    .src(configDev.copy.apiData.src)
+    .pipe(gulp.dest(configDev.copy.apiData.dest))
 })
 
-gulp.task('copy:apis:prod', () => {
+gulp.task('copy:api_data:prod', () => {
   return gulp
-    .src(configProd.copy.apis.src)
-    .pipe(gulp.dest(configProd.copy.apis.dest))
+    .src(configProd.copy.apiData.src)
+    .pipe(gulp.dest(configProd.copy.apiData.dest))
 })
 
 gulp.task('copy:surgeignore:prod', () => {
@@ -35,9 +35,9 @@ gulp.task('copy:surgeignore:prod', () => {
 })
 
 gulp.task('copy:dev', callback => {
-  runSequence('copy:media:dev', callback)
+  runSequence('copy:api_data:dev', 'copy:media:dev', callback)
 })
 
 gulp.task('copy:prod', callback => {
-  runSequence('copy:media:prod', 'copy:surgeignore:prod', callback)
+  runSequence('copy:api_data:prod', 'copy:media:prod', 'copy:surgeignore:prod', callback)
 })

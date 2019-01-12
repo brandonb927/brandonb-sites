@@ -38,8 +38,8 @@ const baseProdConfig = {
       src: `${srcAssets}/media/**/*`,
       dest: `${buildAssets}/media`,
     },
-    media: {
-      src: `${srcAssets}/apis/**/*`,
+    apiData: {
+      src: `${src}/api_data/*.json`,
       dest: `${build}/api`,
     },
     surgeignore: {

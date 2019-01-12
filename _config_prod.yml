@@ -14,6 +14,7 @@ exclude: [
   'node_modules',
   'gulp_tasks',
   'build_dev',
+  'api_data',
   '.ruby-version',
   '.editorconfig',
   'Gemfile',

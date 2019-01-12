@@ -60,8 +60,8 @@ const baseDevConfig = {
       src: `${srcAssets}/media/**/*`,
       dest: `${buildAssets}/media`,
     },
-    apis: {
-      src: `${srcAssets}/apis/**/*`,
+    apiData: {
+      src: `${src}/api_data/*.json`,
       dest: `${build}/api`,
     },
   },
