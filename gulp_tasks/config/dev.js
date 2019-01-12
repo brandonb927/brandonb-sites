@@ -60,6 +60,10 @@ const baseDevConfig = {
       src: `${srcAssets}/media/**/*`,
       dest: `${buildAssets}/media`,
     },
+    apis: {
+      src: `${srcAssets}/apis/**/*`,
+      dest: `${build}/api`,
+    },
   },
   jekyll: {
     src: src,

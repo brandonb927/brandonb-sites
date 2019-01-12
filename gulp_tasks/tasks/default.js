@@ -12,12 +12,14 @@ gulp.task('default', callback => {
 
 gulp.task('third_party:dev', callback => {
   if (argv.thirdparty) {
-    runSequence('foursquare:dev', 'unsplash:dev', callback)
+    // runSequence('foursquare:dev', 'unsplash:dev', callback)
+    runSequence('unsplash:dev', callback)
   } else {
     callback()
   }
 })
 
 gulp.task('third_party:prod', callback => {
-  runSequence('foursquare:prod', 'unsplash:prod', callback)
+  // runSequence('foursquare:prod', 'unsplash:prod', callback)
+  runSequence('unsplash:prod', callback)
 })

@@ -16,6 +16,18 @@ gulp.task('copy:media:prod', () => {
     .pipe(gulp.dest(configProd.copy.media.dest))
 })
 
+gulp.task('copy:apis:dev', () => {
+  return gulp
+    .src(configProd.copy.apis.src)
+    .pipe(gulp.dest(configProd.copy.apis.dest))
+})
+
+gulp.task('copy:apis:prod', () => {
+  return gulp
+    .src(configProd.copy.apis.src)
+    .pipe(gulp.dest(configProd.copy.apis.dest))
+})
+
 gulp.task('copy:surgeignore:prod', () => {
   return gulp
     .src(configProd.copy.surgeignore.src)
