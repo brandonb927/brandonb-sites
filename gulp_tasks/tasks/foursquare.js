@@ -2,7 +2,8 @@
 
 import { writeFile, closeSync, openSync, mkdirSync, existsSync } from 'fs'
 import gulp from 'gulp'
-import gutil from 'gulp-util'
+import log from 'fancy-log'
+import chalk from 'chalk'
 import request from 'sync-request'
 
 import configDev from '../config/dev'
@@ -30,7 +31,7 @@ const buildJSON = (buildPath, callback) => {
   let res = request('GET', API_ENDPOINT)
   let data = JSON.parse(res.getBody('utf8'))
   if (data.meta.code !== 200) {
-    gutil.log(gutil.colors.red(errorMsg))
+    log(chalk.red(errorMsg))
     return
   }
 
@@ -63,10 +64,10 @@ const buildJSON = (buildPath, callback) => {
     let checkinData = JSON.parse(result.getBody('utf8'))
 
     let LOGGED_API_URL = `${LOGGED_API_ENDPOINT}&limit=${maxApiCheckins}&offset=${checkinOffset}`
-    gutil.log(gutil.colors.green(successMsg, LOGGED_API_URL))
+    log(chalk.green(successMsg, LOGGED_API_URL))
 
     if (checkinData.meta.code !== 200) {
-      gutil.log(gutil.colors.red(errorMsg))
+      log(chalk.red(errorMsg))
       return
     }
 

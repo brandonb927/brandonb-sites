@@ -1,6 +1,7 @@
 import { writeFile, closeSync, openSync, mkdirSync, existsSync } from 'fs'
 import gulp from 'gulp'
-import gutil from 'gulp-util'
+import log from 'fancy-log'
+import chalk from 'chalk'
 import request from 'sync-request'
 
 import configDev from '../config/dev'
@@ -19,7 +20,7 @@ const generateApiUrl = path => {
   // Make the fullUrl safe for logging to stdout, etc.
   let safeUrl = fullUrl.replace(UNSPLASH_CLIENT_ID, 'XXXXXX')
 
-  gutil.log(gutil.colors.green('✓ Hitting Unsplash API:', safeUrl))
+  log(chalk.green('✓ Hitting Unsplash API:', safeUrl))
 
   return fullUrl
 }
