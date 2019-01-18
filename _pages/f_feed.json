@@ -1,7 +1,6 @@
 ---
 layout: null
-sitemap:
-  exclude: "yes"
+sitemap: false
 ---
 {
   "version": "https://jsonfeed.org/version/1",

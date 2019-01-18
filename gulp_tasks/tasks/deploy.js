@@ -69,7 +69,6 @@ gulp.task('deploy', callback => {
       'build:prod',
       ['optimize:scripts:prod', 'optimize:styles:prod'],
       'optimize:inline:prod',
-      'third_party:prod',
       callback
     )
   } else {
@@ -77,7 +76,6 @@ gulp.task('deploy', callback => {
       'build:prod',
       ['optimize:scripts:prod', 'optimize:styles:prod'],
       'optimize:inline:prod',
-      'third_party:prod',
       'surge_deploy',
       's3_media',
       callback
