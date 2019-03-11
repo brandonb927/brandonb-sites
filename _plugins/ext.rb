@@ -30,7 +30,7 @@ module Jekyll
                srcset=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\"
                data-sizes=\"auto\"
                data-srcset=\"#{@image1x}\"
-               class=\"lazyload\" #{alt_text}>
+               class=\"styled-image lazyload\" #{alt_text}>
         </picture>
         """.strip
       else
@@ -50,7 +50,7 @@ module Jekyll
                srcset=\"data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7\"
                data-sizes=\"auto\"
                data-srcset=\"#{@image1x}, #{@image2x} 2x\"
-               class=\"lazyload\" #{alt_text}>
+               class=\"styled-image lazyload\" #{alt_text}>
         </picture>
         """.strip
       end
@@ -86,7 +86,7 @@ module Jekyll
       """
       <video width=\"100%\" height=\"#{@attr_height}\" controls>
         <source src=\"#{@src_path}\" type=\"video/mp4\"/>
-        <p>Hmm, your browser doesn't seem to support HTML5 video.</p>
+        <p>Hmm, your browser doesn't seem to support HTML5 video. <a href=\"#{@src_path}\">You can download this video instead</a>.</p>
       </video>
       """.strip
     end
