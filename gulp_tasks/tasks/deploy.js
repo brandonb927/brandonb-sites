@@ -39,10 +39,8 @@ gulp.task('surge_deploy', callback => {
 })
 
 gulp.task('s3_media', () => {
-  let publishOptions = {
-    headers: {
-      'Cache-Control': 'max-age=315360000, no-transform, public',
-    },
+  let headers = {
+    'Cache-Control': 'max-age=315360000, no-transform, public',
   }
 
   let publisher = awspublish.create(s3MediaConfig)
@@ -57,7 +55,7 @@ gulp.task('s3_media', () => {
         )
       })
     )
-    .pipe(publisher.publish(publishOptions))
+    .pipe(publisher.publish(headers))
     .pipe(publisher.cache())
     .pipe(duration('Uploading media to S3'))
     .pipe(awspublish.reporter())
