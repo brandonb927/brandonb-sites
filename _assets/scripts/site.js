@@ -14,7 +14,7 @@ domready(() => {
     return window.localStorage.getItem(KEY_DARK_MODE) === 'true' ? true : false
   }
 
-  const setStoredDarkMode = (val) => {
+  const setStoredDarkMode = val => {
     window.localStorage.setItem(KEY_DARK_MODE, val)
     return val
   }
@@ -46,7 +46,5 @@ domready(() => {
       : enableDarkMode()
   })
 
-  getStoredDarkMode()
-    ? enableDarkMode()
-    : disableDarkMode()
+  getStoredDarkMode() ? enableDarkMode() : disableDarkMode()
 })
