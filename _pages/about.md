@@ -11,4 +11,4 @@ On the weekends I venture out to beautiful locations around where I live on [Van
 
 {% picture src:ship-at-sea.jpg alt:"Near East Sooke Park, Sooke, BC" %}
 
-You can view my up-to-date resume on [LinkedIn](https://www.linkedin.com/in/brandonb927/).
+You can view my up-to-date resume [here]({{ '/resume.pdf' | prepend: site.assets_media }}) or check out my [LinkedIn](https://www.linkedin.com/in/brandonb927/).
