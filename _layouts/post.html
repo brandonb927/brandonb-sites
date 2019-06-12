@@ -8,7 +8,15 @@ layout: base
   </h2>
 
   <p>
-    🕒&nbsp;&nbsp;Posted <span><time datetime="{{ page.date | date_to_rfc822 }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></span>
+    🗓&nbsp;&nbsp;Posted <span><time datetime="{{ page.date | date_to_rfc822 }}"
+        itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></span>
+    {% if page.date_modified %}
+    <span class="post-date-last-modified">
+      &nbsp;&nbsp;|&nbsp;&nbsp;
+      Last Updated <span><time datetime="{{ page.date_modified | date_to_rfc822 }}"
+          itemprop="dateModified">{{ page.date_modified | date: "%b %-d, %Y" }}</time></span>
+    </span>
+    {% endif %}
   </p>
 
   <div itemprop="text">
@@ -16,22 +24,24 @@ layout: base
   </div>
 
   <p class="u-text-center">
-  …
+    …
   </p>
 
   <p class="u-text-center">
     I want to hear from you, dear reader 😄
     <br />
-    If you enjoyed this content, <a href="https://twitter.com/intent/tweet?via={{ site.social.twitter }}&url={{ page.url | absolute_url }}" title="Twitter">please let me know on Twitter</a>.
+    If you enjoyed this content, <a
+      href="https://twitter.com/intent/tweet?via={{ site.social.twitter }}&url={{ page.url | absolute_url }}"
+      title="Twitter">please let me know on Twitter</a>.
   </p>
   {% if page.tags > 0 %}
   <p>
-      Tagged with
-      <span class="post-meta-tags">
-        {% for tag in page.tags %}
-          <a href="/tag/{{ tag }}">{{ tag }}</a>
-        {% endfor %}
-      </span>
+    Tagged with
+    <span class="post-meta-tags">
+      {% for tag in page.tags %}
+      <a href="/tag/{{ tag }}">{{ tag }}</a>
+      {% endfor %}
+    </span>
   </p>
   {% endif %}
 </article>

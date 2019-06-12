@@ -16,16 +16,18 @@
   background-color: #222;
   margin: 4rem auto;
   -webkit-animation: cssLoader 1.2s infinite ease-in-out;
-          animation: cssLoader 1.2s infinite ease-in-out;
+  animation: cssLoader 1.2s infinite ease-in-out;
 }
 
 @keyframes cssLoader {
   0% {
     transform: perspective(120px) rotateX(0deg) rotateY(0deg);
   }
+
   50% {
     transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
   }
+
   100% {
     transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
   }
@@ -154,6 +156,7 @@ picture {
 }
 
 @media (min-width: @mobile-width) {
+
   .main-header-title,
   .main-header-description,
   .main-header-nav,
@@ -208,8 +211,8 @@ picture {
 
 @media (min-width: @mobile-width) {
   .main-content {
-      padding-left: 0;
-      padding-right: 0;
+    padding-left: 0;
+    padding-right: 0;
   }
 }
 
@@ -274,6 +277,10 @@ picture {
 
 .page-subtitle {
   color: #666;
+}
+
+.post-date-last-modified {
+  color: #bbb;
 }
 
 .post-gallery {
@@ -373,10 +380,12 @@ picture {
 }
 
 .page-favicon-valley-podcast {
+
   thead th:last-child,
   tr td:last-child {
     text-align: right;
   }
+
   tbody tr:last-child {
     font-weight: bold;
     border-top: 1px solid #E1E1E1;
