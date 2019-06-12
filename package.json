@@ -3,14 +3,14 @@
   "private": true,
   "devDependencies": {
     "konami": "1.6.2",
-    "prettier": "^1.17.0"
+    "prettier": "1.18.2"
   },
   "dependencies": {
-    "@babel/core": "7.4.4",
-    "@babel/preset-env": "7.4.4",
+    "@babel/core": "7.4.5",
+    "@babel/preset-env": "7.4.5",
     "@babel/register": "7.4.4",
     "broken-link-checker": "0.7.8",
-    "browser-sync": "2.26.5",
+    "browser-sync": "2.26.7",
     "chalk": "2.4.2",
     "eslint": "5.16.0",
     "gulp": "3.9.1",
@@ -22,7 +22,7 @@
     "gulp-duration": "0.0.0",
     "gulp-gm": "0.0.9",
     "gulp-htmlmin": "5.0.1",
-    "gulp-imagemin": "5.0.3",
+    "gulp-imagemin": "4.1.0",
     "gulp-inline-source": "4.0.0",
     "gulp-less": "4.0.1",
     "gulp-notify": "3.2.0",
@@ -37,7 +37,7 @@
     "rimraf": "2.6.3",
     "run-sequence": "2.2.1",
     "sync-request": "6.1.0",
-    "yargs": "13.2.2"
+    "yargs": "13.2.4"
   },
   "scripts": {
     "start": "gulp",
