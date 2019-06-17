@@ -270,6 +270,11 @@ picture {
   padding-left: 2rem;
 }
 
+.main-content-post li p,
+.main-content-post li p {
+  display: inline;
+}
+
 .page-title,
 .page-subtitle {
   display: inline;
@@ -304,14 +309,31 @@ picture {
   .navigation-item;
 }
 
-// Disclaimer
-.disclaimer {
+.post-disclaimer,
+.post-updated {
   display: block;
   padding: 3rem;
   border-radius: 5px;
-  border: solid 1px rgb(104, 23, 23);
-  background: rgb(121, 26, 26);
+
+}
+
+// Post disclaimer
+.post-disclaimer {
+  border: solid 1px #333;
+  background: #555;
   color: #eee;
+}
+
+// Post updated
+.post-updated {
+  border: solid 1px rgb(206, 202, 149);
+  background: rgb(255, 250, 185);
+  color: #222;
+
+  &:before {
+    display: '';
+    content: '';
+  }
 }
 
 // Images
