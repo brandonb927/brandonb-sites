@@ -1,0 +1,39 @@
+---
+layout: null
+sitemap:
+  exclude: 'yes'
+---
+
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  {% for post in site.posts reversed %}
+  {% unless post.sitemap == false %}
+  {% unless post.draft %}
+  <url>
+    <loc>{{ site.url }}{{ post.url }}</loc>
+    {% if post.date_modified %}
+    <lastmod>{{ post.date_modified | date_to_xmlschema }}</lastmod>
+    {% elsif post.date %}
+    <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+    {% else %}
+    <lastmod>{{ site.time | date_to_xmlschema }}</lastmod>
+    {% endif %}
+  </url>
+  {% endunless %}
+  {% endunless %}
+  {% endfor %}
+  {% for page in site.pages %}
+  {% unless page.sitemap == false %}
+  {% unless page.draft %}
+  <url>
+    <loc>{{ site.url }}{{ page.url }}</loc>
+    {% if page.date_modified %}
+    <lastmod>{{ page.date_modified | date_to_xmlschema }}</lastmod>
+    {% elsif page.date %}
+    <lastmod>{{ page.date | date_to_xmlschema }}</lastmod>
+    {% endif %}
+  </url>
+  {% endunless %}
+  {% endunless %}
+  {% endfor %}
+</urlset>

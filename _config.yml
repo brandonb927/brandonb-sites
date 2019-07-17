@@ -66,8 +66,3 @@ google_analytics:
 google_ads:
   id: ca-pub-5686888191550897
   publisher_id: pub-5686888191550897
-
-# Extras
-plugins:
-  - jekyll-redirect-from
-  - jekyll-sitemap
