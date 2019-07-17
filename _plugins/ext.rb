@@ -34,14 +34,19 @@ module Jekyll
         </picture>
         """.strip
       else
-        # Build the 2x image path from the 1x path
-        @image2x_array = @image1x.split('.')
-        filename2x = "#{@image2x_array[0]}@2x"
-        @image2x = "#{filename2x}.#{@image2x_array[1]}"
+        # Special case for gifs, just pass them through
+        if @image1x.end_with? ".gif"
+          @image1x = "#{@media_root}/#{@image1x}"
+        else
+          # Build the 2x image path from the 1x path
+          @image2x_array = @image1x.split('.')
+          filename2x = "#{@image2x_array[0]}@2x"
+          @image2x = "#{filename2x}.#{@image2x_array[1]}"
 
-        # Replace the images with the proper urls
-        @image1x = "#{@media_root}/#{@image1x}"
-        @image2x = "#{@media_root}/#{@image2x}"
+          # Replace the images with the proper urls
+          @image1x = "#{@media_root}/#{@image1x}"
+          @image2x = "#{@media_root}/#{@image2x}"
+        end
 
         """
         <picture>
