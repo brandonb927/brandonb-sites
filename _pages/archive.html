@@ -33,7 +33,7 @@ title: Archive
         </span>
         {% endif %}
         <a href="{{ post.url | absolute_url }}" class="archive-content-feed-item-title"
-          title="{{ post.excerpt | strip_newlines | strip_html }}">
+          title="{{ post.excerpt | strip_newlines | strip_html | xml_escape }}">
           {{ post.title }}
         </a>
       </li>

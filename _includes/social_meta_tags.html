@@ -2,7 +2,7 @@
   {%- if page.description -%}
     {{ page.description }}
   {%- elsif page.excerpt -%}
-    {{ page.excerpt | strip_html | strip_newlines }}
+    {{ page.excerpt | strip_html | strip_newlines | xml_escape }}
   {%- else -%}
     {{ site.meta_description }}
   {%- endif -%}
