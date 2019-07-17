@@ -63,17 +63,11 @@ gulp.task('s3_media', () => {
 
 gulp.task('deploy', callback => {
   if (argv.dryrun) {
-    runSequence(
-      'build:prod',
-      ['optimize:scripts:prod', 'optimize:styles:prod'],
-      'optimize:inline:prod',
-      callback
-    )
+    runSequence('build:prod', 'optimize:prod', callback)
   } else {
     runSequence(
       'build:prod',
-      ['optimize:scripts:prod', 'optimize:styles:prod'],
-      'optimize:inline:prod',
+      'optimize:prod',
       'surge_deploy',
       's3_media',
       callback

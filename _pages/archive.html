@@ -21,26 +21,25 @@ title: Archive
     {% endunless %}
     <h2>{{ currentYear }}</h2>
     <ul>
-    {% assign nextYear = currentYear %}
-    {% endif %}
+      {% assign nextYear = currentYear %}
+      {% endif %}
       <li>
         {% if post.draft %}
         <span class="archive-content-feed-item-draft">**DRAFT**</span>
         {% else %}
         <span class="archive-content-feed-item-time">
-          <time datetime="{{ post.date | date_to_rfc822 }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
+          <time datetime="{{ post.date | date_to_rfc822 }}"
+            itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
         </span>
         {% endif %}
         {% capture post_content %}
         {{ post.content | split: site.break_tag | first }}
         {% endcapture %}
-        <a href="{{ post.url | absolute_url }}"
-           class="archive-content-feed-item-title"
-           title="{{ post_content | strip_html | strip }}">
+        <a href="{{ post.url | absolute_url }}" class="archive-content-feed-item-title" title="{{ post.title }}">
           {{ post.title }}
         </a>
       </li>
-    {% if forloop.last %}
+      {% if forloop.last %}
     </ul>
     {% endif %}
     {% endfor %}

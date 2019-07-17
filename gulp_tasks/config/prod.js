@@ -11,9 +11,7 @@ const build = resolve(src, 'build_prod')
 const buildAssets = resolve(build, 'assets')
 
 const prodBuildConfigFilename = resolve(src, '_config_prod.yml')
-const buildConfigFilename = `${
-  baseConfig.jekyll.baseConfig
-},${prodBuildConfigFilename}`
+const buildConfigFilename = `${baseConfig.jekyll.baseConfig},${prodBuildConfigFilename}`
 
 // Config
 const baseProdConfig = {
@@ -75,7 +73,7 @@ const baseProdConfig = {
       },
     },
     html: {
-      src: `${build}/**/*.html`,
+      src: [`${build}/**/*.html`, `${build}/**/*.xml`],
       dest: build,
       options: {
         collapseWhitespace: true,
