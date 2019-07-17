@@ -9,23 +9,37 @@
 {% endcapture %}
 
 {% capture share_image %}
-  {%- if post.share_image -%}
-    {{ post.share_image }}
+  {%- if page.share_image -%}
+    {{ page.share_image }}
   {%- else -%}
-    {{ site.avatar_img | prepend: site.assets_media }}
+    {{ site.avatar_img | prepend: site.assets_media | absolute_url }}
   {%- endif -%}
 {% endcapture %}
+
+{% if page.is_post %}
+  {% assign type = "article" %}
+{% else %}
+  {% assign type = "website" %}
+{% endif %}
 
 <meta name="description" content="{{ description_content }}">
 
 <!-- Open Graph -->
-<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-<meta property="og:description" content="{{ description_content }}">
+<meta property="og:type" content="{{ type }}" />
 {% if page.url %}
 <meta property="og:url" content="{{ page.url | absolute_url }}">
 {% endif %}
+<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+<meta property="og:description" content="{{ description_content }}">
 <meta property="og:image" content="{{ share_image }}">
+{% if page.is_post %}
+<meta property="og:site_name" content="{{ site.title }}" />
+{% endif %}
 
 <!-- Twitter Cards  -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image:src" content="{{ share_image }}">
+<meta name="twitter:site" content="@{{ site.social.twitter }}" />
+<meta name="twitter:creator" content="@{{ site.social.twitter }}" />
+<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
+<meta name="twitter:description" content="{{ description_content }}" />
+<meta name="twitter:image" content="{{ share_image }}">
