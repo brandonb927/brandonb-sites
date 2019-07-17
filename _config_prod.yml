@@ -20,7 +20,7 @@ exclude: [
   'Gemfile',
   'Gemfile.lock',
   'package.json',
-  'yarn.lock',
+  'package-lock.json',
   'gulpfile.babel.js',
   'README.md'
 ]
