@@ -73,7 +73,7 @@ const baseProdConfig = {
       },
     },
     html: {
-      src: [`${build}/**/*.html`, `${build}/**/*.xml`],
+      src: `${build}/**/*.html`,
       dest: build,
       options: {
         collapseWhitespace: true,
