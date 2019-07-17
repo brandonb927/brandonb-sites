@@ -1,14 +1,31 @@
-<meta name="description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.meta_description }}{% endif %}">
+{% capture description_content %}
+  {%- if page.description -%}
+    {{ page.description }}
+  {%- elsif page.excerpt -%}
+    {{ page.excerpt | strip_html | strip_newlines }}
+  {%- else -%}
+    {{ site.meta_description }}
+  {%- endif -%}
+{% endcapture %}
+
+{% capture share_image %}
+  {%- if post.share_image -%}
+    {{ post.share_image }}
+  {%- else -%}
+    {{ site.avatar_img | prepend: site.assets_media }}
+  {%- endif -%}
+{% endcapture %}
+
+<meta name="description" content="{{ description_content }}">
 
 <!-- Open Graph -->
 <meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
-<meta property="og:description" content="{% if page.description %}{{ page.description }}{% else %}{{ site.meta_description }}{% endif %}">
+<meta property="og:description" content="{{ description_content }}">
 {% if page.url %}
 <meta property="og:url" content="{{ page.url | absolute_url }}">
 {% endif %}
-<meta property="og:image" content="{% if post.share_image %}{{ post.share_image }}{% else %}{{ site.avatar_img | prepend: site.assets_media }}{% endif %}">
+<meta property="og:image" content="{{ share_image }}">
 
 <!-- Twitter Cards  -->
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image:src" content="{% if post.share_image %}{{ post.share_image }}{% else %}{{ site.avatar_img | prepend: site.assets_media }}{% endif %}">
-
+<meta name="twitter:image:src" content="{{ share_image }}">

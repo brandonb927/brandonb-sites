@@ -22,9 +22,9 @@ layout: base
         🕒&nbsp;&nbsp;Posted <span><time datetime="{{ post.date | date_to_rfc822 }}" itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></span>
       </p>
 
-      {{ post.content | split: site.break_tag | first }}
+      {{ post.excerpt }}
 
-      {% if post.content contains site.break_tag %}
+      {% if post.content contains site.excerpt_separator %}
       <div class="u-text-right">
         <a href="{{ post.url }}">Read more…</a>
       </div>

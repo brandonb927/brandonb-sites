@@ -16,8 +16,8 @@ sitemap: false
     <item>
       <title>{{ post.title | xml_escape }}</title>
       {% capture post_content %}
-      {{ post.content | split: site.break_tag | first }}
-      {% if post.content contains site.break_tag %}
+      {{ post.excerpt }}
+      {% if post.content contains site.excerpt_separator %}
       <br />
       <a href="{{ post.url | absolute_url }}">Click through to read this post!</a>
       {% endif %}

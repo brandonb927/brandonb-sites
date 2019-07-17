@@ -16,7 +16,7 @@ favicon:
   png: /logo-144.png
   theme_color: '#FFFFFF'
 
-break_tag: '<!-- break -->'
+excerpt_separator: '<!-- break -->'
 
 # Routes
 permalink: /:title
