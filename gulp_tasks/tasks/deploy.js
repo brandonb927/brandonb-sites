@@ -1,4 +1,3 @@
-import { readFileSync } from 'fs'
 import { argv } from 'yargs'
 import cp from 'child_process'
 import path from 'path'
@@ -11,11 +10,7 @@ import runSequence from 'run-sequence'
 import mediaConfig from '../config/prod'
 import deployConfig from '../config/prod'
 
-const awsConfig = JSON.parse(readFileSync(`${process.env.HOME}/.aws.json`))
-
 const s3MediaConfig = {
-  accessKeyId: awsConfig.key,
-  secretAccessKey: awsConfig.secret,
   region: deployConfig.deploy.s3.region,
   params: {
     Bucket: deployConfig.deploy.s3.bucketMedia,
