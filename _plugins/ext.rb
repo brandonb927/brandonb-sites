@@ -7,10 +7,18 @@ module Jekyll
 
     def render(context)
       site = context.registers[:site]
+      page = context.environments.first['page']
 
       @base_url = site.config['baseurl']
       @site_url = site.config['url']
-      @media_root = "#{site.config['assets_media']}/#{context.environments.first['page']['layout']}s"
+
+      if page['layout'].eql? 'post'
+        page_year = page['date'].strftime('%Y')
+        page_month = page['date'].strftime('%m')
+        @media_root = "#{site.config['assets_media']}/#{page['layout']}s/#{page_year}/#{page_month}"
+      else
+        @media_root = "#{site.config['assets_media']}/#{page['layout']}s"
+      end
 
       @attributes = {}
 
@@ -74,7 +82,14 @@ module Jekyll
 
       @base_url = site.config['baseurl']
       @site_url = site.config['url']
-      @media_root = "#{site.config['assets_media']}/#{page['layout']}s/#{page['slug']}"
+
+      if page['layout'].eql? 'post'
+        page_year = page['date'].strftime('%Y')
+        page_month = page['date'].strftime('%m')
+        @media_root = "#{site.config['assets_media']}/#{page['layout']}s/#{page_year}/#{page_month}"
+      else
+        @media_root = "#{site.config['assets_media']}/#{page['layout']}s"
+      end
 
       @attributes = {}
 
