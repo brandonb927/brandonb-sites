@@ -32,7 +32,7 @@ title: Archive
             itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
         </span>
         {% endif %}
-        <a href="{{ post.url | absolute_url }}" class="archive-content-feed-item-title"
+        <a href="{{ post.url }}" class="archive-content-feed-item-title"
           title="{{ post.excerpt | strip_newlines | strip_html | xml_escape }}">
           {{ post.title }}
         </a>
