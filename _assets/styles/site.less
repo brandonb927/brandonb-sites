@@ -225,6 +225,21 @@ picture {
   .margin-bottom-large;
 }
 
+.main-content-feed-item-pinned {
+  display: block;
+  padding: 3rem;
+  border-radius: 5px;
+
+  border: solid 1px rgb(152, 216, 208);
+  background: rgb(192, 250, 242);
+  color: #222;
+
+  &:before {
+    display: '';
+    content: '';
+  }
+}
+
 .archive-content-feed {
   ul {
     .u-unstyled-list;
@@ -284,6 +299,13 @@ picture {
   color: #666;
 }
 
+.post-heading-anchor {
+  display: block;
+  float: right;
+  font-size: 3rem;
+  text-decoration: none;
+}
+
 .post-date-last-modified {
   color: #aaa;
 }
@@ -314,13 +336,16 @@ picture {
   display: block;
   padding: 3rem;
   border-radius: 5px;
-
 }
 
 // Post disclaimer
 .post-disclaimer {
-  border: solid 1px #333;
-  background: #555;
+  border: solid 1px rgb(136, 40, 40);
+  background: rgb(121, 26, 26);
+}
+
+.post-disclaimer,
+.post-disclaimer a {
   color: #eee;
 }
 
