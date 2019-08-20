@@ -20,15 +20,12 @@ keep_files: [
 ]
 
 exclude: [
-  'node_modules',
   'gulp_tasks',
   'build_prod',
   'api_data',
   '.ruby-version',
   '.editorconfig',
   '.thirdparty-updated',
-  'Gemfile',
-  'Gemfile.lock',
   'package.json',
   'package-lock.json',
   'gulpfile.babel.js',

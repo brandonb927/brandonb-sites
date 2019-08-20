@@ -11,14 +11,11 @@ show_drafts: false
 
 # Build settings
 exclude: [
-  'node_modules',
   'gulp_tasks',
   'build_dev',
   'api_data',
   '.ruby-version',
   '.editorconfig',
-  'Gemfile',
-  'Gemfile.lock',
   'package.json',
   'package-lock.json',
   'gulpfile.babel.js',
