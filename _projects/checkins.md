@@ -15,4 +15,4 @@ _Note:_ I've since stopped checking in via Swarm, but you can see where I've spe
   <div id="checkin_map" style="opacity:0;"></div>
 </div>
 
-Interested in building this yourself? Check out my post on [building simple read-only APIs on Surge](/developing-simple-json-apis-on-surge).
+Interested in building this yourself? Check out my post on [building simple read-only APIs on Surge]({% post_url /2016/2016-03-02-developing-simple-json-apis-on-surge %}).

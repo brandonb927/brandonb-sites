@@ -12,3 +12,5 @@ _assets/media
 .awspublish-*
 
 .vscode
+
+.jekyll-cache
