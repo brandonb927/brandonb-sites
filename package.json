@@ -6,9 +6,9 @@
     "prettier": "1.18.2"
   },
   "dependencies": {
-    "@babel/core": "7.5.4",
-    "@babel/preset-env": "7.5.4",
-    "@babel/register": "7.4.4",
+    "@babel/core": "7.5.5",
+    "@babel/preset-env": "7.5.5",
+    "@babel/register": "7.5.5",
     "broken-link-checker": "0.7.8",
     "browser-sync": "2.26.7",
     "chalk": "2.4.2",
@@ -31,13 +31,13 @@
     "gulp-size": "3.0.0",
     "gulp-sourcemaps": "2.6.5",
     "gulp-uglify": "3.0.2",
-    "lodash": "4.17.14",
-    "ngrok": "3.2.2",
+    "lodash": "4.17.15",
+    "ngrok": "3.2.5",
     "require-dir": "1.2.0",
-    "rimraf": "2.6.3",
+    "rimraf": "3.0.0",
     "run-sequence": "2.2.1",
     "sync-request": "6.1.0",
-    "yargs": "13.3.0"
+    "yargs": "14.0.0"
   },
   "scripts": {
     "start": "gulp",
