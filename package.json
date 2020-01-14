@@ -37,7 +37,7 @@
     "rimraf": "3.0.0",
     "run-sequence": "2.2.1",
     "sync-request": "6.1.0",
-    "yargs": "14.0.0"
+    "yargs": "15.1.0"
   },
   "scripts": {
     "start": "gulp",
