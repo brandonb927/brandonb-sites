@@ -36,7 +36,8 @@
 
 html.konami-code,
 html.konami-code * {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" style="font-size:48px"><text y="48">🦄</text></svg>'), auto !important;
+  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" style="font-size:48px"><text y="48">🦄</text></svg>'),
+    auto !important;
 }
 
 /* Once there is natural vertical overflow,
@@ -63,8 +64,8 @@ picture {
 }
 
 .bordered {
-  border-top: solid .3rem #222;
-  border-bottom: solid .3rem #222;
+  border-top: solid 0.3rem #222;
+  border-bottom: solid 0.3rem #222;
 }
 
 .margin-lr {
@@ -119,7 +120,7 @@ picture {
     display: block;
     padding: 2rem;
     text-decoration: none;
-    transition: background .2s;
+    transition: background 0.2s;
   }
 
   a:hover,
@@ -146,7 +147,6 @@ picture {
   .u-text-center;
 }
 
-
 .main-header-title,
 .main-header-description,
 .main-header-nav,
@@ -155,7 +155,6 @@ picture {
 }
 
 @media (min-width: @mobile-width) {
-
   .main-header-title,
   .main-header-description,
   .main-header-nav,
@@ -272,8 +271,8 @@ picture {
 .main-content-post ul ul,
 .main-content-post ol li,
 .main-content-post ul li {
-  margin-top: .5rem;
-  margin-bottom: .5rem;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
   margin-right: 0;
   margin-left: 0;
   padding: 0;
@@ -366,6 +365,22 @@ picture {
   margin-bottom: 2rem;
 }
 
+// Responsive embeds
+
+.responsive-embed {
+	position: relative;
+	padding-bottom: 56.25%; /* 16:9 */
+  padding-top: 25px;
+  margin-bottom: 2rem;
+	height: 0;
+}
+.responsive-embed iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
 
 // Custom pages
 
@@ -385,7 +400,6 @@ picture {
     max-height: 192px;
   }
 }
-
 
 // Swarm Check-ins
 
@@ -409,7 +423,7 @@ picture {
   margin-top: 2rem;
   margin-left: -2rem;
   margin-right: -2rem;
-  transition: opacity .2s ease;
+  transition: opacity 0.2s ease;
 }
 
 @media (min-width: @mobile-width) {
@@ -426,7 +440,6 @@ picture {
 }
 
 .page-favicon-valley-podcast {
-
   thead th:last-child,
   tr td:last-child {
     text-align: right;
@@ -434,7 +447,7 @@ picture {
 
   tbody tr:last-child {
     font-weight: bold;
-    border-top: 1px solid #E1E1E1;
+    border-top: 1px solid #e1e1e1;
   }
 }
 
