@@ -2,6 +2,7 @@ import { argv } from 'yargs'
 import cp from 'child_process'
 import path from 'path'
 import gulp from 'gulp'
+import AWS from 'aws-sdk'
 import awspublish from 'gulp-awspublish'
 import duration from 'gulp-duration'
 import rename from 'gulp-rename'
@@ -15,6 +16,7 @@ const s3MediaConfig = {
   params: {
     Bucket: deployConfig.deploy.s3.bucketMedia,
   },
+  credentials: new AWS.SharedIniFileCredentials({ profile: 'personal' })
 }
 
 // Upload a published build to the interwebs
