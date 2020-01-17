@@ -29,7 +29,7 @@ layout: base
         {% if post.date_modified %}
         <span>
           &nbsp;&nbsp;|&nbsp;&nbsp;
-          Last Updated <span><time datetime="{{ post.date_modified | date_to_rfc822 }}"
+          🔄&nbsp;Last Updated <span><time datetime="{{ post.date_modified | date_to_rfc822 }}"
               itemprop="dateModified">{{ post.date_modified | date: "%b %-d, %Y" }}</time></span>
         </span>
         {% endif %}
