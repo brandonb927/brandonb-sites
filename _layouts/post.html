@@ -8,12 +8,12 @@ layout: base
   </h2>
 
   <p>
-    🗓&nbsp;&nbsp;Posted <span><time datetime="{{ page.date | date_to_rfc822 }}"
+    🗓&nbsp;Posted <span><time datetime="{{ page.date | date_to_rfc822 }}"
         itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></span>
     {% if page.date_modified %}
     <span class="post-date-last-modified">
       &nbsp;&nbsp;|&nbsp;&nbsp;
-      Last Updated <span><time datetime="{{ page.date_modified | date_to_rfc822 }}"
+      🔄&nbsp;Last Updated <span><time datetime="{{ page.date_modified | date_to_rfc822 }}"
           itemprop="dateModified">{{ page.date_modified | date: "%b %-d, %Y" }}</time></span>
     </span>
     {% endif %}
