@@ -5,9 +5,8 @@ node_modules
 build_dev
 build_prod
 
-.jekyll-metadata
-.awspublish-*
-
+.env
 .vscode
-
+.jekyll-metadata
 .jekyll-cache
+.awspublish-*

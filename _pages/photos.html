@@ -1,0 +1,30 @@
+---
+layout: page
+title: Photos
+
+include_in_nav: true
+order: 3
+
+page_id: photos
+---
+
+
+<p>
+  Some shots from my Flickr account. Click on an image to view the original.
+</p>
+
+<div class="photos-container">
+  <ul>
+    {% for photo in site.data['flickr-data'] %}
+    <li>
+      <a href="{{photo.src_original}}" _target="blank">
+        <img src="{{photo.src}}"
+          srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          data-sizes="auto"
+          data-srcset="{{photo.src_original}}"
+          class="lazyload" alt="{{photo.description|xml_escape}}" />
+      </a>
+    </li>
+    {% endfor %}
+  </ul>
+</div>

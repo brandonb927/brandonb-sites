@@ -25,7 +25,6 @@ exclude: [
   'api_data',
   '.ruby-version',
   '.editorconfig',
-  '.thirdparty-updated',
   'package.json',
   'package-lock.json',
   'gulpfile.babel.js',
