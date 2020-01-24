@@ -17,7 +17,7 @@ page_id: photos
   <ul>
     {% for photo in site.data['flickr-data'] %}
     <li>
-      <a href="{{photo.src_original}}" title="{{photo.description|xml_escape}}" _target="blank">
+      <a href="{{photo.src_original}}" title="{{photo.description|xml_escape}}" target="_blank">
         <img src="{{photo.src}}"
           srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
           data-sizes="auto"
