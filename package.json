@@ -48,7 +48,7 @@
     "prettier": "prettier '_assets/scripts/**/*.js' --write",
     "deploy": "gulp deploy",
     "deploy:dryrun": "gulp deploy --dryrun",
-    "flickr": "node ./flickr.js"
+    "flickr": "node ./gulp_tasks/flickr.js"
   },
   "prettier": {
     "trailingComma": "es5",

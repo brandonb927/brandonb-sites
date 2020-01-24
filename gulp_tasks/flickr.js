@@ -61,11 +61,31 @@ async function fetchAndWriteFlickrData() {
       tags,
       src_original: url_o,
       src: url_c,
-      timestamp: datetaken,
+      date_taken: new Date(datetaken),
     })
   }
 
-  fs.writeFileSync('./_data/flickr-data.json', JSON.stringify(flickrData));
+  const rebuiltData = {}
+  for (let i in flickrData) {
+    const photo = flickrData[i]
+    const year = photo.date_taken.getFullYear()
+    const monthName = photo.date_taken.toLocaleString('default', { month: 'long' })
+
+    if(!rebuiltData.hasOwnProperty(year)) {
+      rebuiltData[year] = {}
+    }
+
+    if(!rebuiltData[year].hasOwnProperty(monthName)) {
+      rebuiltData[year][monthName] = []
+    }
+
+    const formattedDateTaken = photo.date_taken.toLocaleString('default', { month: 'short', day: 'numeric', year: 'numeric' })
+    photo.date_taken = formattedDateTaken
+
+    rebuiltData[year][monthName].push(photo)
+  }
+
+  fs.writeFileSync('./_data/flickr-data.json', JSON.stringify(rebuiltData));
 
   console.log('Done!')
 }

@@ -406,50 +406,70 @@ picture {
 // Gallery technique borrowed from https://css-tricks.com/adaptive-photo-layout-with-flexbox/
 #photos {
   .photos-container {
-    .full-width
+    .full-width;
+
+    h2, h3 {
+      margin-left: 2rem;;
+    }
+
+
+    ul {
+      .u-unstyled-list;
+      margin-bottom: 5rem;
+    }
+
+    li {
+      margin: 0;
+      .u-text-center;
+    }
+
+    img {
+      vertical-align: bottom;
+      width: 100%;
+    }
   }
 
-  ul {
-    .u-unstyled-list;
-  }
 
-  li {
-    margin: 0;
-    .u-text-center;
-  }
-
-  img {
-    vertical-align: bottom;
-    width: 100%;
-  }
 }
 
 @media (min-width: @mobile-width) {
   #photos {
-    ul {
-      display: flex;
-      flex-wrap: wrap;
-      margin-left: 2rem;
-      margin-right: 1.5rem;
-    }
-
-    li {
-      height: 30rem;
-      flex-grow: 1;
-      text-align: left;
-      margin-bottom: .5rem;
-      margin-right: .5rem;
-
-      &:last-child {
-        flex-grow: 10;
+    .photos-container {
+      ul {
+        display: flex;
+        flex-wrap: wrap;
+        margin-left: 2rem;
+        margin-right: 1.5rem;
       }
-    }
 
-    img {
-      max-height: 100%;
-      min-width: 100%;
-      width: auto;
-      object-fit: cover;
+      li {
+        height: 30rem;
+        flex-grow: 1;
+        text-align: left;
+        margin-bottom: .5rem;
+        margin-right: .5rem;
+
+        &:last-child {
+          flex-grow: 10;
+        }
+
+        &.photos-year {
+          min-width: 100vh;
+          height: 15rem;
+        }
+
+        &.photos-year h2,
+        &.photos-month h3 {
+          min-width: 20rem;
+        }
+      }
+
+      img {
+        max-height: 100%;
+        min-width: 100%;
+        width: auto;
+        object-fit: cover;
+      }
     }
   }
 }

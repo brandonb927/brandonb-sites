@@ -14,17 +14,27 @@ page_id: photos
 </p>
 
 <div class="photos-container">
-  <ul>
-    {% for photo in site.data['flickr-data'] %}
-    <li>
-      <a href="{{photo.src_original}}" title="{{photo.description|xml_escape}}" target="_blank">
-        <img src="{{photo.src}}"
-          srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-          data-sizes="auto"
-          data-srcset="{{photo.src}}"
-          class="lazyload" alt="{{photo.description|xml_escape}}" />
-      </a>
-    </li>
-    {% endfor %}
-  </ul>
+{% for year in site.data['flickr-data'] %}
+<ul>
+  {% for month in year[1] %}
+  <li class="{% if forloop.first == true %}photos-year{% else %}photos-month{% endif %}">
+    {% if forloop.first == true %}
+    <h2>{{year[0]}}</h2>
+    {% endif %}
+    <h3>{{month[0]}}</h3>
+  </li>
+  {% for photo in month[1] %}
+  <li>
+    <a href="{{photo.src_original}}" title="{{photo.description|xml_escape}}" target="_blank">
+      <img src="{{photo.src}}"
+        srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+        data-sizes="auto"
+        data-srcset="{{photo.src}}"
+        class="lazyload" alt="{{photo.description|xml_escape}}" />
+    </a>
+  </li>
+  {% endfor %}
+  {% endfor %}
+</ul>
+{% endfor %}
 </div>
