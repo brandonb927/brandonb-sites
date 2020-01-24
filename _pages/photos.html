@@ -17,11 +17,11 @@ page_id: photos
   <ul>
     {% for photo in site.data['flickr-data'] %}
     <li>
-      <a href="{{photo.src_original}}" _target="blank">
+      <a href="{{photo.src_original}}" title="{{photo.description|xml_escape}}" _target="blank">
         <img src="{{photo.src}}"
           srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
           data-sizes="auto"
-          data-srcset="{{photo.src_original}}"
+          data-srcset="{{photo.src}}"
           class="lazyload" alt="{{photo.description|xml_escape}}" />
       </a>
     </li>
