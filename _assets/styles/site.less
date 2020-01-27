@@ -440,6 +440,13 @@ picture {
         flex-wrap: wrap;
         margin-left: 2rem;
         margin-right: 1.5rem;
+
+        &:hover {
+          // Hack to accomplish "apply to all except the currently hovered element"
+          .photo-overlay:not(:hover) {
+            background: rgba(0, 0, 0, .5);
+          }
+        }
       }
 
       li {
@@ -448,6 +455,7 @@ picture {
         text-align: left;
         margin-bottom: .5rem;
         margin-right: .5rem;
+        position: relative;
 
         &:last-child {
           flex-grow: 10;
@@ -462,6 +470,22 @@ picture {
         &.photos-month h3 {
           min-width: 20rem;
         }
+      }
+
+      .photo-overlay {
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        transition: background .2s ease-in-out;
+
+        &:hover {
+          background: transparent;
+        }
+
       }
 
       img {
