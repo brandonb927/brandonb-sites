@@ -223,18 +223,39 @@ picture {
   .margin-bottom-large;
 }
 
-.main-content-feed-item-pinned {
+.main-content-feed-item-pinned,
+.main-content-feed-item-draft {
   display: block;
   padding: 3rem;
   border-radius: 5px;
+  position: relative;
 
-  border: solid 1px rgb(152, 216, 208);
-  background: rgb(192, 250, 242);
   color: #222;
 
   &:before {
-    display: '';
+    display: block;
     content: '';
+  }
+}
+
+.main-content-feed-item-pinned {
+  border: solid 1px rgb(152, 216, 208);
+  background: rgb(192, 250, 242);
+}
+
+.main-content-feed-item-draft {
+  background: rgb(255, 225, 143);
+
+  &:before {
+    content: 'DRAFT';
+    position: absolute;
+    top: 0;
+    left: 0;
+    border-top-left-radius: 5px;
+    border-bottom-right-radius: 5px;
+    padding: 0 1rem;
+    background: rgba(0, 0, 0, 0.45);
+    color: #fff;
   }
 }
 
