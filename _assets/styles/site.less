@@ -238,8 +238,8 @@ picture {
   }
 }
 
+.post-useful-content,
 .main-content-feed-item-pinned {
-  border: solid 1px rgb(152, 216, 208);
   background: rgb(192, 250, 242);
 }
 
@@ -350,8 +350,10 @@ picture {
   .navigation-item;
 }
 
+// Post bubbles
 .post-author-note,
 .post-disclaimer,
+.post-useful-content,
 .post-updated {
   display: block;
   padding: 3rem;
@@ -363,19 +365,20 @@ picture {
   background: rgba(0, 0, 0, 0.5);
 }
 
-.post-author-note,
-.post-author-note a {
-  color: #eee;
-}
-
 // Post disclaimer
 .post-disclaimer {
   background: rgb(121, 26, 26);
 }
 
+.post-author-note,
+.post-author-note a,
 .post-disclaimer,
 .post-disclaimer a {
   color: #eee;
+}
+
+.post-useful-content a {
+  font-size: 2rem;
 }
 
 // Post updated
