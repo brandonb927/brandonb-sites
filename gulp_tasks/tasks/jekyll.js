@@ -16,6 +16,7 @@ gulp.task('jekyll-build:dev', callback => {
     `--source=${configDev.jekyll.src}`,
     `--destination=${configDev.jekyll.dest}`,
     `--config=${configDev.jekyll.config}`,
+    `--trace`,
   ]
 
   // Activate the profiler if needed

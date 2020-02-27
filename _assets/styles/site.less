@@ -350,6 +350,7 @@ picture {
   .navigation-item;
 }
 
+.post-author-note,
 .post-disclaimer,
 .post-updated {
   display: block;
@@ -357,9 +358,18 @@ picture {
   border-radius: 5px;
 }
 
+// Post author's note
+.post-author-note {
+  background: rgba(0, 0, 0, 0.5);
+}
+
+.post-author-note,
+.post-author-note a {
+  color: #eee;
+}
+
 // Post disclaimer
 .post-disclaimer {
-  border: solid 1px rgb(136, 40, 40);
   background: rgb(121, 26, 26);
 }
 
@@ -370,7 +380,6 @@ picture {
 
 // Post updated
 .post-updated {
-  border: solid 1px rgb(206, 202, 149);
   background: rgb(255, 250, 185);
   color: #222;
 
@@ -389,18 +398,18 @@ picture {
 // Responsive embeds
 
 .responsive-embed {
-	position: relative;
-	padding-bottom: 56.25%; /* 16:9 */
+  position: relative;
+  padding-bottom: 56.25%; /* 16:9 */
   padding-top: 25px;
   margin-bottom: 2rem;
-	height: 0;
+  height: 0;
 }
 .responsive-embed iframe {
-	position: absolute;
-	top: 0;
-	left: 0;
-	width: 100%;
-	height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
 }
 
 // Custom pages
@@ -429,10 +438,10 @@ picture {
   .photos-container {
     .full-width;
 
-    h2, h3 {
-      margin-left: 2rem;;
+    h2,
+    h3 {
+      margin-left: 2rem;
     }
-
 
     ul {
       .u-unstyled-list;
@@ -449,8 +458,6 @@ picture {
       width: 100%;
     }
   }
-
-
 }
 
 @media (min-width: @mobile-width) {
@@ -465,7 +472,7 @@ picture {
         &:hover {
           // Hack to accomplish "apply to all except the currently hovered element"
           .photo-overlay:not(:hover) {
-            background: rgba(0, 0, 0, .5);
+            background: rgba(0, 0, 0, 0.5);
           }
         }
       }
@@ -474,8 +481,8 @@ picture {
         height: 30rem;
         flex-grow: 1;
         text-align: left;
-        margin-bottom: .5rem;
-        margin-right: .5rem;
+        margin-bottom: 0.5rem;
+        margin-right: 0.5rem;
         position: relative;
 
         &:last-child {
@@ -501,12 +508,11 @@ picture {
         left: 0;
         height: 100%;
         width: 100%;
-        transition: background .2s ease-in-out;
+        transition: background 0.2s ease-in-out;
 
         &:hover {
           background: transparent;
         }
-
       }
 
       img {

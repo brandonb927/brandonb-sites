@@ -45,6 +45,7 @@ baseConfig.watch = {
     `${baseConfig.src.base}/_pages/*`,
     `${baseConfig.src.base}/_posts/**/*`,
     `${baseConfig.src.base}/_projects/*`,
+    `${baseConfig.src.base}/_plugins/*`,
   ],
   styles: `${baseConfig.src.assets}/styles/**/*.less`,
   scripts: `${baseConfig.src.assets}/scripts/*.js`,
