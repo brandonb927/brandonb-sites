@@ -10,3 +10,6 @@ build_prod
 .jekyll-metadata
 .jekyll-cache
 .awspublish-*
+
+_posts
+_assets/media
