@@ -7,16 +7,17 @@ layout: base
     {% if page.draft %}DRAFT: <br />{% endif %} {{ page.title }}
   </h2>
 
+  {% if page.date_modified %}
+  <p class="u-margin-bottom-none">
+    <span class="post-date-last-modified">
+      🔄&nbsp;Last Updated <span><time datetime="{{ page.date_modified | date_to_rfc822 }}"
+        itemprop="dateModified">{{ page.date_modified | date: "%b %-d, %Y" }}</time></span>
+    </span>
+  </p>
+  {% endif %}
   <p>
     🗓&nbsp;Posted <span><time datetime="{{ page.date | date_to_rfc822 }}"
         itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></span>
-    {% if page.date_modified %}
-    <span class="post-date-last-modified">
-      &nbsp;&nbsp;|&nbsp;&nbsp;
-      🔄&nbsp;Last Updated <span><time datetime="{{ page.date_modified | date_to_rfc822 }}"
-          itemprop="dateModified">{{ page.date_modified | date: "%b %-d, %Y" }}</time></span>
-    </span>
-    {% endif %}
   </p>
 
   <div itemprop="text">

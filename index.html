@@ -23,16 +23,17 @@ layout: base
     </h2>
 
     <div itemprop="text">
+      {% if post.date_modified %}
+      <p class="u-margin-bottom-none">
+        <span>
+          🔄&nbsp;Last Updated <span><time datetime="{{ post.date_modified | date_to_rfc822 }}"
+              itemprop="dateModified">{{ post.date_modified | date: "%b %-d, %Y" }}</time></span>
+        </span> &nbsp;&nbsp;|&nbsp;&nbsp;
+      </p>
+      {% endif %}
       <p>
         🗓&nbsp;&nbsp;Posted <span><time datetime="{{ post.date | date_to_rfc822 }}"
             itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></span>
-        {% if post.date_modified %}
-        <span>
-          &nbsp;&nbsp;|&nbsp;&nbsp;
-          🔄&nbsp;Last Updated <span><time datetime="{{ post.date_modified | date_to_rfc822 }}"
-              itemprop="dateModified">{{ post.date_modified | date: "%b %-d, %Y" }}</time></span>
-        </span>
-        {% endif %}
       </p>
     </div>
   </article>
