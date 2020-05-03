@@ -31,9 +31,15 @@ const baseProdConfig = {
     src: `${srcAssets}/scripts/*.js`,
     dest: `${buildAssets}/scripts`,
   },
+  media: {
+    src: `${buildAssets}/media/**/*`,
+  },
   copy: {
     media: {
-      src: `${srcAssets}/media/**/*`,
+      src: [
+        `${srcAssets}/media/*.{png,jpg,ico}`,
+        `${srcAssets}/media/**/*.mp4`
+      ],
       dest: `${buildAssets}/media`,
     },
     apiData: {
@@ -64,8 +70,8 @@ const baseProdConfig = {
       options: {},
     },
     media: {
-      src: `${srcAssets}/media/*`,
-      dest: `${srcAssets}/media`,
+      src: `${buildAssets}/media/**/*`,
+      dest: `${buildAssets}/media`,
       options: {
         optimizationLevel: 3,
         progessive: true,

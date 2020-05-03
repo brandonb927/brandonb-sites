@@ -33,10 +33,10 @@ domready(() => {
     console.log('Dark mode deactivated! 🌞')
   }
 
-  let easterEgg = new Konami(() => {
+  cheet('↑ ↑ ↓ ↓ ← → ← → b a', () => {
     document.querySelector('html').classList.add('konami-code')
     console.log('Konami code activated! 😉')
-  })
+  });
 
   toggleDarkMode.addEventListener('click', e => {
     e.preventDefault()

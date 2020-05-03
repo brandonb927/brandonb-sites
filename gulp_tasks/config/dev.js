@@ -57,7 +57,10 @@ const baseDevConfig = {
   },
   copy: {
     media: {
-      src: `${srcAssets}/media/**/*`,
+      src: [
+        `${srcAssets}/media/*.{png,jpg,ico}`,
+        `${srcAssets}/media/**/*.mp4`
+      ],
       dest: `${buildAssets}/media`,
     },
     apiData: {

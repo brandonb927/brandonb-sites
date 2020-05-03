@@ -1,13 +1,11 @@
 {
   "name": "brandonb.ca",
   "private": true,
-  "devDependencies": {
-    "konami": "1.6.2"
-  },
+  "devDependencies": {},
   "dependencies": {
-    "@babel/core": "7.8.3",
-    "@babel/preset-env": "7.8.3",
-    "@babel/register": "7.8.3",
+    "@babel/core": "7.9.6",
+    "@babel/preset-env": "7.9.6",
+    "@babel/register": "7.9.0",
     "broken-link-checker": "0.7.8",
     "browser-sync": "2.26.7",
     "chalk": "3.0.0",
@@ -34,9 +32,9 @@
     "gulp-uglify": "3.0.2",
     "lodash": "4.17.15",
     "ngrok": "3.2.7",
-    "prettier": "1.19.1",
+    "prettier": "2.0.5",
     "require-dir": "1.2.0",
-    "rimraf": "3.0.0",
+    "rimraf": "3.0.2",
     "run-sequence": "2.2.1",
     "sync-request": "6.1.0",
     "yargs": "15.1.0"
@@ -46,8 +44,8 @@
     "start:dev": "npm run flickr && gulp --noserviceworker",
     "lint": "eslint '_assets/scripts/**/*.js'",
     "prettier": "prettier '_assets/scripts/**/*.js' --write",
-    "deploy": "gulp deploy",
-    "deploy:dryrun": "gulp deploy --dryrun",
+    "deploy": "JEKYLL_ENV=production gulp deploy",
+    "deploy:dryrun": "JEKYLL_ENV=production gulp deploy --dryrun",
     "flickr": "node ./gulp_tasks/flickr.js"
   },
   "prettier": {

@@ -10,14 +10,15 @@ future: false
 show_drafts: false
 
 # Build settings
-exclude: [
-  'gulp_tasks',
-  'build_dev',
-  'api_data',
-  '.ruby-version',
-  '.editorconfig',
-  'package.json',
-  'package-lock.json',
-  'gulpfile.babel.js',
-  'README.md'
-]
+exclude:
+  [
+    "gulp_tasks",
+    "build_dev",
+    "api_data",
+    ".ruby-version",
+    ".editorconfig",
+    "package.json",
+    "package-lock.json",
+    "gulpfile.babel.js",
+    "README.md",
+  ]

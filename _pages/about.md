@@ -9,6 +9,6 @@ I'm a QA Developer with a few years experience ensuring the highest quality user
 
 On the weekends I venture out to beautiful locations around where I live on [Vancouver Island, BC](https://www.google.ca/maps/@49.7879305,-125.7618705,8z), and with the amazing mountain and ocean scenery some of the other activities I like to do include biking, hiking, and camping.
 
-{% picture src:ship-at-sea.jpg alt:"Near East Sooke Park, Sooke, BC" %}
+{% responsive_image path:_assets/media/pages/ship-at-sea.jpg alt:"Near East Sooke Park, Sooke, BC" %}
 
 You can view my up-to-date resume [here]({{ '/resume.pdf' | prepend: site.assets_media }}) or check out my [LinkedIn](https://www.linkedin.com/in/brandonb927/).

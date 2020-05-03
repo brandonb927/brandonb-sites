@@ -43,7 +43,7 @@ gulp.task('s3_media', () => {
   let publisher = awspublish.create(s3MediaConfig)
 
   return gulp
-    .src(mediaConfig.copy.media.src)
+    .src(mediaConfig.media.src)
     .pipe(
       rename(filePath => {
         filePath.dirname = path.join(
@@ -65,8 +65,8 @@ gulp.task('deploy', callback => {
     runSequence(
       'build:prod',
       'optimize:prod',
-      'surge_deploy',
       's3_media',
+      'surge_deploy',
       callback
     )
   }

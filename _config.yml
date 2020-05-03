@@ -1,5 +1,5 @@
-encoding: 'utf-8'
-language: 'en-us'
+encoding: "utf-8"
+language: "en-us"
 
 # Site Settings
 title: Brandons Blog
@@ -14,14 +14,14 @@ avatar_img: /avatar18_512.jpg
 favicon:
   ico: /favicon.ico
   png: /logo-144.png
-  theme_color: '#FFFFFF'
+  theme_color: "#FFFFFF"
 
-excerpt_separator: '<!-- break -->'
+excerpt_separator: "<!-- break -->"
 
 # Routes
 permalink: /:title
 
-assets_root: ''
+assets_root: ""
 assets_media: /assets/media
 assets_scripts: /assets/scripts
 assets_styles: /assets/styles
@@ -34,17 +34,17 @@ kramdown:
   syntax_highlighter: rouge
 
 # Build-stuff
-keep_files: ['assets', 'api']
+keep_files: ["assets", "api"]
 
 defaults:
   - scope:
-      path: ''
+      path: ""
       type: posts
     values:
       layout: post
       is_post: true
   - scope:
-      path: ''
+      path: ""
       type: projects
     values:
       layout: page
@@ -69,3 +69,41 @@ google_ads:
   publisher_id: pub-5686888191550897
 
 amazon_associates_tag: brandonb0a-20
+
+# Plugins
+plugins:
+  - jekyll-responsive-image
+
+# responsive_image config
+responsive_image:
+  template: _includes/responsive_image.html
+
+  default_quality: 100 # Default: 85
+
+  strip: true
+
+  sizes:
+    - width: 480
+    - width: 800
+    - width: 1400
+    - width: 1920
+
+  ignored_extensions: ["gif", "ico"]
+
+  # [Optional, Default: assets/resized/%{filename}-%{width}x%{height}.%{extension}]
+  # The template used when generating filenames for resized images. Must be a
+  # relative path.
+  #
+  # Parameters available are:
+  #   %{dirname}     Directory of the file relative to `base_path` (assets/sub/dir/some-file.jpg => sub/dir)
+  #   %{basename}    Basename of the file (assets/some-file.jpg => some-file.jpg)
+  #   %{filename}    Basename without the extension (assets/some-file.jpg => some-file)
+  #   %{extension}   Extension of the file (assets/some-file.jpg => jpg)
+  #   %{width}       Width of the resized image
+  #   %{height}      Height of the resized image
+  #
+  output_path_format: assets/media/r/%{filename}-%{width}x%{height}.%{extension}
+
+  save_to_source: false
+
+  cache: true
