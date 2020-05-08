@@ -14,12 +14,12 @@ page_id: photos
 </p>
 
 <div class="photos-container">
-  {% for year in site.data['flickr-data'] %}
+  {% for yearData in site.data['flickr-data'] %}
   <ul>
-    {% for month in year[1] %}
+    {% for month in yearData.months %}
     <li class="{% if forloop.first == true %}photos-year{% else %}photos-month{% endif %}">
       {% if forloop.first == true %}
-      <h2>{{year[0]}}</h2>
+      <h2>{{yearData.year}}</h2>
       {% endif %}
       <h3>{{month[0]}}</h3>
     </li>

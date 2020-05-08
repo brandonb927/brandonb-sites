@@ -50,10 +50,7 @@ async function getPhotoExifData(photoId) {
     if (exifDataItems.length > 1) {
       throw new Error('More than one item by that key!', exifDataItems)
     }
-    return _.get(
-      exifDataItems[0],
-      `${raw ? 'raw' : 'clean'}._content`,
-    )
+    return _.get(exifDataItems[0], `${raw ? 'raw' : 'clean'}._content`)
   }
 
   console.log(`  Getting EXIF data for photo ${photoId}`)
@@ -68,7 +65,11 @@ async function getPhotoExifData(photoId) {
 
   exifData.lens = getDataByKey(exif, 'Lens', true)
   exifData.focalLength = getDataByKey(exif, 'FocalLength')
-  exifData.focalLengthEquiv = getDataByKey(exif, 'FocalLengthIn35mmFormat', true)
+  exifData.focalLengthEquiv = getDataByKey(
+    exif,
+    'FocalLengthIn35mmFormat',
+    true
+  )
   exifData.iso = getDataByKey(exif, 'ISO', true)
   exifData.shutterSpeed = getDataByKey(exif, 'ExposureTime', true)
   exifData.aperture = getDataByKey(exif, 'FNumber')
@@ -83,7 +84,8 @@ async function fetchAndWriteFlickrData() {
   for (let i in photos.photo) {
     const { id, datetaken, description, tags, url_o, url_c } = photos.photo[i]
 
-    const exif = await getPhotoExifData(id)
+    // const exif = await getPhotoExifData(id)
+    const exif = null
 
     flickrData.push({
       id,
@@ -122,7 +124,14 @@ async function fetchAndWriteFlickrData() {
     rebuiltData[year][monthName].push(photo)
   }
 
-  fs.writeFileSync('./_data/flickr-data.json', JSON.stringify(rebuiltData))
+  const sortedData = []
+  Object.keys(rebuiltData)
+    .reverse()
+    .forEach(year => {
+      sortedData.push({ year, months: rebuiltData[year] })
+    })
+
+  fs.writeFileSync('./_data/flickr-data.json', JSON.stringify(sortedData))
 
   console.log('Done!')
 }
