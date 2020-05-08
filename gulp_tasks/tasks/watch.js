@@ -1,5 +1,4 @@
 import gulp from 'gulp'
-import runSequence from 'run-sequence'
 import config from '../config/dev'
 
 // Run the jekyll build, browsersync server, and watch files for changes

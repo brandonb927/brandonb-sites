@@ -471,13 +471,6 @@ picture {
         flex-wrap: wrap;
         margin-left: 2rem;
         margin-right: 1.5rem;
-
-        &:hover {
-          // Hack to accomplish "apply to all except the currently hovered element"
-          .photo-overlay:not(:hover) {
-            background: rgba(0, 0, 0, 0.5);
-          }
-        }
       }
 
       li {
@@ -504,6 +497,7 @@ picture {
       }
 
       .photo-overlay {
+        display: flex;
         position: absolute;
         top: 0;
         right: 0;
@@ -511,11 +505,25 @@ picture {
         left: 0;
         height: 100%;
         width: 100%;
-        transition: background 0.2s ease-in-out;
+        transition: box-shadow 0.2s ease-in-out;
 
         &:hover {
-          background: transparent;
+          box-shadow: inset 0 -18rem 10rem -8rem rgba(0, 0, 0, 0.6);
+
+          .photo-overlay-content {
+            opacity: 1;
+          }
         }
+      }
+
+      .photo-overlay-content {
+        width: 100%;
+        align-self: flex-end;
+        text-align: right;
+        margin: 1rem;
+        opacity: 0;
+        transition: opacity 0.2s ease-in-out;
+        color: #fff;
       }
 
       img {

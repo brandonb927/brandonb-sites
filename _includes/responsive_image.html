@@ -23,7 +23,7 @@ Usage:
 {%- else -%}
 {{ i.path }}
 {%- endif %}
-{{ i.width }}w{% unless forloop.last == true %}, {% endunless %}
+ {{ i.width }}w{% unless forloop.last == true %}, {% endunless %}
 {% endfor %}
 {% endcapture %}
 

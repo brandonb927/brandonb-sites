@@ -86,7 +86,6 @@ responsive_image:
     - width: 480
     - width: 800
     - width: 1400
-    - width: 1920
 
   ignored_extensions: ["gif", "ico"]
 

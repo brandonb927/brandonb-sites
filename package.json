@@ -32,21 +32,22 @@
     "gulp-uglify": "3.0.2",
     "lodash": "4.17.15",
     "ngrok": "3.2.7",
+    "nodemon": "2.0.3",
     "prettier": "2.0.5",
     "require-dir": "1.2.0",
     "rimraf": "3.0.2",
     "run-sequence": "2.2.1",
     "sync-request": "6.1.0",
-    "yargs": "15.1.0"
+    "yargs": "15.3.1"
   },
   "scripts": {
-    "start": "npm run flickr && gulp",
-    "start:dev": "npm run flickr && gulp --noserviceworker",
+    "start": "gulp",
+    "start:dev": "gulp --noserviceworker",
     "lint": "eslint '_assets/scripts/**/*.js'",
     "prettier": "prettier '_assets/scripts/**/*.js' --write",
     "deploy": "JEKYLL_ENV=production gulp deploy",
     "deploy:dryrun": "JEKYLL_ENV=production gulp deploy --dryrun",
-    "flickr": "node ./gulp_tasks/flickr.js"
+    "task:flickr": "node ./gulp_tasks/flickr.js"
   },
   "prettier": {
     "trailingComma": "es5",
