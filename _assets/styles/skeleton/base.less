@@ -6,6 +6,15 @@
 @-o-viewport      { width: device-width; }
 @viewport         { width: device-width; }
 
+
+@font-face {
+  font-family: 'Cascadia Code';
+  src: url('../fonts/cascadia-webfont.woff2') format('woff2'),
+       url('../fonts/cascadia-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   box-sizing: border-box;
   /* NOTE
@@ -24,10 +33,6 @@ body {
   font-size: 1.5em; /* currently ems cause chrome bug misinterpreting rems on body element */
   line-height: 1.6;
   font-weight: 400;
-  font-family:
-    /* https://www.smashingmagazine.com/2015/11/using-system-ui-fonts-practical-guide/ */
-    /* 1 */ -apple-system, BlinkMacSystemFont,
-    /* 2 */ "Segoe UI", "Roboto", "Oxygen", "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans",
-    /* 3 */ "Helvetica Neue", sans-serif;
+  font-family: "Cascadia Code", Consolas, Monaco, "Courier New", Courier, monospace;
   color: #222;
 }

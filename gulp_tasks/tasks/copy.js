@@ -16,6 +16,18 @@ gulp.task('copy:media:prod', () => {
     .pipe(gulp.dest(configProd.copy.media.dest))
 })
 
+gulp.task('copy:fonts:dev', () => {
+  return gulp
+    .src(configDev.copy.fonts.src)
+    .pipe(gulp.dest(configDev.copy.fonts.dest))
+})
+
+gulp.task('copy:fonts:prod', () => {
+  return gulp
+    .src(configProd.copy.fonts.src)
+    .pipe(gulp.dest(configProd.copy.fonts.dest))
+})
+
 gulp.task('copy:api_data:dev', () => {
   return gulp
     .src(configDev.copy.apiData.src)
@@ -35,9 +47,9 @@ gulp.task('copy:surgeignore:prod', () => {
 })
 
 gulp.task('copy:dev', callback => {
-  runSequence('copy:api_data:dev', 'copy:media:dev', callback)
+  runSequence('copy:fonts:dev', 'copy:api_data:dev', 'copy:media:dev', callback)
 })
 
 gulp.task('copy:prod', callback => {
-  runSequence('copy:api_data:prod', 'copy:media:prod', 'copy:surgeignore:prod', callback)
+  runSequence('copy:fonts:prod', 'copy:api_data:prod', 'copy:media:prod', 'copy:surgeignore:prod', callback)
 })
