@@ -26,28 +26,29 @@ Usage:
  {{ i.width }}w{% unless forloop.last == true %}, {% endunless %}
 {% endfor %}
 {% endcapture %}
-
 <picture>
   {% for i in resized %}
-    <source
-      media="(min-width: {{ i.width }}px)"
-      {% if jekyll.environment == 'production' %}
-      srcset="{{ site.assets_media }}/{{ i.path | replace: 'assets/media/', '' }}"
-      {% else %}
-      srcset="{{ i.path }}"
-      {% endif %}
-    />
-  {% endfor %}
-  <img
-    data-srcset="{{ srcset | strip_newlines }}"
-    data-sizes="auto"
-    srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-    {% if jekyll.environment == 'production' %}
-    src="{{ site.assets_media }}/{{ largest.path | replace: 'assets/media/', '' }}"
-    {% else %}
-    src="{{ largest.path }}"
-    {% endif %}
-    alt="{{ alt }}"
-    class="styled-image lazyload"
+  <source
+  media="(min-width: {{ i.width }}px)"
+  {% if jekyll.environment == 'production' %}
+  srcset="{{ site.assets_media }}/{{ i.path | replace: 'assets/media/', '' }}"
+  {% else %}
+  srcset="{{ i.path }}"
+  {% endif %}
   />
+  {% endfor %}
+  <a href="{{ largest.path }}">
+    <img
+      data-srcset="{{ srcset | strip_newlines }}"
+      data-sizes="auto"
+      srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+      {% if jekyll.environment == 'production' %}
+      src="{{ site.assets_media }}/{{ largest.path | replace: 'assets/media/', '' }}"
+      {% else %}
+      src="{{ largest.path }}"
+      {% endif %}
+      alt="{{ alt }}"
+      class="styled-image lazyload"
+    />
+  </a>
 </picture>
