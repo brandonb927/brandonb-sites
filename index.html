@@ -7,9 +7,12 @@ layout: base
 {% else %}
 {% assign posts = site.posts | where: "draft",false %}
 {% endif %}
+{% assign pinned_posts = site.posts | where: "pinned",true %}
+{% assign updated_posts = site.posts | sort: "date_modified" | reverse %}
+{% assign now_unix_ts = 'now' | date: '%s' %}
+{% assign time_ago_seconds = 7776000 %}
 
 <div class="main-content-feed">
-  {% assign pinned_posts = site.posts | where: "pinned",true %}
   {% for post in pinned_posts %}
   <article class="main-content-feed-item main-content-feed-item-pinned"
     itemprop="blogPosts"
@@ -37,10 +40,32 @@ layout: base
   </article>
   {% endfor %}
 
+  {% if updated_posts %}
+  <div class="main-content-feed-item main-content-feed-item-updated">
+    <h4 class="u-underline">Recently Updated Posts</h4>
+    {% for post in updated_posts %}
+    {% assign date_modified_ts = post.date_modified | date: '%s' %}
+    {% if date_modified_ts < (now_unix_ts - time_ago_seconds) %}
+    <p class="u-margin-bottom-none">
+      <strong>
+        <time datetime="{{ post.date_modified | date_to_rfc822 }}" itemprop="dateModified">{{ post.date_modified | date: "%b %-d, %Y" }}</time>
+      </strong>
+      —
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </p>
+    {% endif %}
+    {% endfor %}
+  </div>
+  {% endif %}
+
   {% for post in posts limit:7 %}
   {% unless post.pinned %}
   <article class="main-content-feed-item {% if post.draft %}main-content-feed-item-draft{% endif %}"
-    itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
+    itemprop="blogPosts"
+    itemtype="http://schema.org/BlogPosting"
+    itemscope>
     <h2 itemprop="name headline">
       <a href="{{ post.url }}">
         {{ post.title }}
