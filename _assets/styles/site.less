@@ -500,14 +500,24 @@ picture {
           flex-grow: 10;
         }
 
-        &.photos-year {
+        &.photos-year,
+        &.photos-month {
           min-width: 100vh;
+        }
+        &.photos-year {
           height: 15rem;
+        }
+        &.photos-month {
+          height: 10rem;
         }
 
         &.photos-year h2,
         &.photos-month h3 {
           min-width: 20rem;
+        }
+
+        &.photos-month h3 {
+          margin-top: 2rem;
         }
       }
 

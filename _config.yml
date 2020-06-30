@@ -76,6 +76,8 @@ plugins:
 
 # responsive_image config
 responsive_image:
+  cache: true
+
   template: _includes/responsive_image.html
 
   default_quality: 100 # Default: 85

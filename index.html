@@ -11,6 +11,7 @@ layout: base
 {% assign updated_posts = site.posts | sort: "date_modified" | reverse %}
 {% assign now_unix_ts = 'now' | date: '%s' %}
 {% assign time_ago_seconds = 7776000 %}
+{% assign now_minus_time_ago_seconds = now_unix_ts - time_ago_seconds %}
 
 <div class="main-content-feed">
   {% for post in pinned_posts %}
@@ -45,7 +46,7 @@ layout: base
     <h4 class="u-underline">Recently Updated Posts</h4>
     {% for post in updated_posts %}
     {% assign date_modified_ts = post.date_modified | date: '%s' %}
-    {% if date_modified_ts < (now_unix_ts - time_ago_seconds) %}
+    {% if date_modified_ts < now_minus_time_ago_seconds %}
     <p class="u-margin-bottom-none">
       <strong>
         <time datetime="{{ post.date_modified | date_to_rfc822 }}" itemprop="dateModified">{{ post.date_modified | date: "%b %-d, %Y" }}</time>
