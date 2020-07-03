@@ -37,16 +37,17 @@ Usage:
   {% endif %}
   />
   {% endfor %}
-  <a href="{{ largest.path }}">
+  {% if jekyll.environment == 'production' %}
+    {% assign image_path = largest.path | replace: 'assets/media/', '' | prepend: '/' | prepend: site.assets_media %}
+  {% else %}
+    {% assign image_path = largest.path %}
+  {% endif %}
+  <a href="{{ image_path }}">
     <img
       data-srcset="{{ srcset | strip_newlines }}"
       data-sizes="auto"
       srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-      {% if jekyll.environment == 'production' %}
-      src="{{ site.assets_media }}/{{ largest.path | replace: 'assets/media/', '' }}"
-      {% else %}
-      src="{{ largest.path }}"
-      {% endif %}
+      src="{{ image_path }}"
       alt="{{ alt }}"
       class="styled-image lazyload"
     />
