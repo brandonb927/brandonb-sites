@@ -2,7 +2,9 @@
 layout: page
 title: Uses
 include_in_nav: true
-order: 4
+order: 3
+
+share_image: https://dc1r9kxqg42ml.cloudfront.net/brandonb.ca/r/uses-overhead-desk-1400x1120.jpg
 ---
 
 {% include author_affiliated.html %}
@@ -103,11 +105,13 @@ I have an {% amazon B017VXU6GG "APC 11-outlet 2880 joules surge protector" %} mo
 
 - {% amazon B081SMR5BS "Nikon Z 50 + FTZ adapter" %} — recently acquired, I love it!
 - {% amazon B01MT82V43 "Nikon D5600 (backup camera)" %} — purchased used, body only
-- {% amazon B00DBL09FG "Sigma 18-55mm f1.8 Art DC lens" %} — purchased used, dropped once onto some rocks on a beach in 2019 but built like a tank and still works fine
+- {% amazon B00DBL09FG "Sigma 18-35mm f1.8 Art DC lens" %} — purchased used, dropped once onto some rocks on a beach in 2019 but built like a tank and still works fine
 - Sigma 50-150mm f2.8 lens — purchased used, though it was discontinued due to poor sales this lens is bloody amazing on APS-C cameras
 - {% amazon B007ORX8ME "Tokina AT-X 11-20mm Pro DX f2.8 lens" %} — purchased used, this is my go-to lens for astro photography and landscape photography
 - [72mm Breakthrough Photography X4 6-stop ND filter](https://breakthrough.photography/products/x4-neutral-density?variant=30850759569)
 - 72mm Hoya CIR-PL filter
 - [Black Diamond Spot 325 Headlamp](https://www.mec.ca/en/product/5061-168/Spot-325-Headlamp) — an invaluable piece of kit for when I'm out doing astrophotography, it's very bright and has a "red light" mode
+
+{% responsive_image path:_assets/media/pages/uses-milky-way.jpg alt:"The Milky Way, taken about 10 minutes from my residence" %}
 
 I also have some of my shots from Flickr over on my [photos page]({% link photos.html %}) if you're curious!
