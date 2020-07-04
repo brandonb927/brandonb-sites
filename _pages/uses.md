@@ -63,8 +63,13 @@ My primary work machine is a Mac so most tools and software listed here are macO
 - Monitors:
   - Dell 27" 4K U2718Q (discontinued, succeeded by the U2720Q)
   - Dell 24" 2K U2515H (discontinued, succeeded by the U2518D)
-- Dock: {% amazon B07CZPV8DF "Caldigit TS3 Plus" %}
+  - {% amazon B009S750LA "Dual monitor desktop mount" %} — used to hold up my monitors, at a great price
+  - {% amazon B00B21TLQU "Single monitor desktop mount" %} — used as a camera arm mount that can swing around the desk (more info on that below)
+- Dock: {% amazon B07CZPV8DF "Caldigit TS3 Plus" %} - sure it's expensive, but this is honestly one of the best investments I've ever made. All the i/o that would connect to my MacBook Pro connects to the TS3+ first, then I have a single Thunderbolt 3 cable that connects from it to the MacBook which also supplies 87W of power, all in one single mess-free cable!
+- Dongles:
+  - {% amazon B079JJ2MTR "Sabrent Thunderbolt 3 to Dual DisplayPort adapter" %}
+  - {% amazon B07K3FN5MR "Elgato Cam Link 4K" %} - to connect my camera below
 - Webcam: {% amazon B01M050N05 "Panasonic Lumix DMC-G85" %} - see my post on [how to use a DSLR or mirrorless camera as a webcam]({% post_url 2020/2020-02-26-use-a-dslr-mirrorless-camera-as-a-webcam %})
 - Microphone: {% amazon B084P1CXFD "Rode NT-USB-Mini" %} - I love this microphones small footprint
-- Speakers: {% amazon  "" %}
+- Speakers: {% amazon B00CD1PTF0 "Bose Companion 2 Series III" %} - the things I love about these speakers are theiy're small, loud, and have two aux inputs!
 - Headphones: {% amazon B07G4MNFS1 "Sony WH-1000XM3" %}
