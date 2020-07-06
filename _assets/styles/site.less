@@ -295,9 +295,10 @@ picture {
   .margin-bottom-large;
 
   figure {
-    // .full-width;
     .margin-top-large;
     .margin-bottom-large;
+    margin-left: 0;
+    margin-right: 0;
   }
 }
 
@@ -411,6 +412,21 @@ picture {
 
 .styled-image {
   margin-bottom: 2rem;
+}
+
+figure {
+  .styled-image {
+    margin-bottom: 0;
+  }
+
+  figcaption {
+    margin-top: 1rem;
+    .u-text-center;
+  }
+}
+
+picture a {
+  display: inline-block;
 }
 
 // Responsive embeds
