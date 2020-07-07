@@ -18,7 +18,9 @@ layout: base
         itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></span>
   </p>
 
-  <div itemprop="text">
+  <p>By <span itemprop="author">{{ site.author.name }}</span></p>
+
+  <div itemprop="articleBody">
     {% include anchor_headings.html html=content anchorBody='#' anchorClass='post-heading-anchor' anchorTitle='Link to this section' %}
   </div>
 
