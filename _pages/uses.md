@@ -78,7 +78,7 @@ My primary work machine is a Mac so most tools and software listed here are macO
   - Dell 24" 2K U2515H (discontinued, succeeded by the U2518D)
   - {% amazon B009S750LA "Dual monitor desktop mount" %} — used to hold up my monitors, at a great price
   - {% amazon B00B21TLQU "Single monitor desktop mount" %} — used as a camera arm mount that can swing around the desk (more info on that below)
-- Keyboard: [Keychron K2, RGB aluminum frame with brown switches](http://keychronwireless.refr.cc/brandonbrown), {% amazon B00FPDAU6Q "Wrist rest" %} (the desk mat is a random generic one I found somewhere a long time ago)
+- Keyboard: [Keychron K2, RGB aluminum frame with brown switches](http://keychronwireless.refr.cc/brandonbrown), {% amazon B00FPDAU6Q "Wrist rest" %}, {% amazon B07N13PW4V "Uncrowned Kings black leather desk pad" %}
 - Mouse: {% amazon B071YZJ1G1 "Logitech MX Master 2S" %}
 - Dock: {% amazon B07CZPV8DF "Caldigit TS3 Plus" %} — sure it's expensive, but this is honestly one of the best investments I've ever made for my home office. All the i/o that would connect to my MacBook Pro via different cables and dongles now connects to the TS3+ first, then I have a single Thunderbolt 3 cable that connects from it to the MacBook which also supplies 87W of power, all in one single mess-free cable!
 - Dongles:
