@@ -18,5 +18,5 @@ layout: base
   </h2>
   {% endif %}
 
-  {{ content }}
+  {% include anchor_headings.html html=content anchorBody='#' anchorClass='post-heading-anchor' anchorTitle='Link to this section' %}
 </article>
