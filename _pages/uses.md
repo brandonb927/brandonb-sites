@@ -112,7 +112,7 @@ I have an {% amazon B017VXU6GG "APC 11-outlet 2880 joules surge protector" %} mo
 - 72mm Hoya CIR-PL filter
 - [Black Diamond Spot 325 Headlamp](https://www.mec.ca/en/product/5061-168/Spot-325-Headlamp) — an invaluable piece of kit for when I'm out doing astrophotography, it's very bright and has a "red light" mode
 
-{% responsive_image path:_assets/media/pages/uses-milky-way-2020.jpg alt:"The Milky Way taken July 17th 2020" %}
+{% responsive_image path:_assets/media/pages/uses-milky-way-2020-07-18.jpg alt:"The Milky Way taken July 18th 2020" %}
 
 {% responsive_image path:_assets/media/pages/uses-comet-neowise.jpg alt:"The comet NEOWISE taken July 17th 2020" %}
 
