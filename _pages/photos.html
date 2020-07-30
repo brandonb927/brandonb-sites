@@ -30,7 +30,10 @@ page_id: photos
           <div class="photo-overlay-content">
             <p itemprop="description">{{photo.description}}</p>
             {% if photo.exif != nil %}
-            <p>Taken on a {{photo.exif.camera}} at {{photo.exif.aperture}} {{photo.exif.focalLength}} ({{photo.exif.focalLengthEquiv}} equiv.)</p>
+            <p>Taken on a {{photo.exif.camera}}<br />
+              {% if photo.exif.aperture != 0 and photo.exif.focalLength != 0 and photo.exif.focalLengthEquiv != 0 %}
+              at {{photo.exif.aperture}} {{photo.exif.focalLength}} ({{photo.exif.focalLengthEquiv}} equiv.)</p>
+              {% endif %}
             {% endif %}
           </div>
         </div>

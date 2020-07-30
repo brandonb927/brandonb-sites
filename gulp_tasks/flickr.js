@@ -84,8 +84,7 @@ async function fetchAndWriteFlickrData() {
   for (let i in photos.photo) {
     const { id, datetaken, description, tags, url_o, url_c } = photos.photo[i]
 
-    // const exif = await getPhotoExifData(id)
-    const exif = null
+    const exif = await getPhotoExifData(id)
 
     flickrData.push({
       id,
