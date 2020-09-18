@@ -21,6 +21,6 @@
      data-full-width-responsive="true"></ins>
   {% endif %}
   <a href="{{ page.redirect_to }}">Click here if you are not redirected.<a>
-  <script>setTimeout(function(){window.location='{{ page.redirect_to }}'},3500)</script>
+  <script>setTimeout(function(){window.location='{{ page.redirect_to }}'+window.location.search},3500)</script>
 </body>
 </html>
