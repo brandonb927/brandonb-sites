@@ -3,7 +3,15 @@ layout: null
 ---
 
 User-agent: *
-Disallow:
+
+{%- assign posts = site.posts | where: "robots_txt",true -%}
+{%- assign pages = site.pages | where: "robots_txt",true -%}
+{% for post in posts %}
+Disallow: {{ post.url }}
+{% endfor %}
+{% for page in pages %}
+Disallow: {{ page.url }}
+{% endfor %}
 
 Allow: /
 
