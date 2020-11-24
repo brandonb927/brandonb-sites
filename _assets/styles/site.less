@@ -78,16 +78,24 @@ picture {
   margin-bottom: 2rem;
 }
 
+.margin-top-sm {
+  margin-top: 1.5rem;
+}
+
 .margin-top-med {
   margin-top: 4rem;
 }
 
-.margin-bottom-med {
-  margin-bottom: 4rem;
-}
-
 .margin-top-large {
   margin-top: 6rem;
+}
+
+.margin-bottom-sm {
+  margin-bottom: 1.5rem;
+}
+
+.margin-bottom-med {
+  margin-bottom: 4rem;
 }
 
 .margin-bottom-large {
@@ -483,13 +491,17 @@ picture a {
     }
 
     li {
-      margin: 0;
+      .margin-bottom-large;
       .u-text-center;
     }
 
     img {
       vertical-align: bottom;
       width: 100%;
+    }
+
+    .photo-overlay-content {
+      .margin-top-sm;
     }
   }
 }
