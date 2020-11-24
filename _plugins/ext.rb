@@ -33,6 +33,24 @@ module Jekyll
       """.strip
     end
   end
+
+  module Last90DaysFilter
+    def last_90_days_filter(posts)
+      now = DateTime.now
+      today = DateTime.new(now.year, now.month, now.day, 0, 0, 0, now.zone)
+      target = today - 90
+
+      posts.select do |post|
+        postedOn = post.data['date'].to_datetime
+
+        if postedOn < today && postedOn > target
+          post
+        end
+      end
+    end
+  end
 end
 
 Liquid::Template.register_tag('video', Jekyll::RenderVideoElement)
+Liquid::Template.register_filter(Jekyll::Last90DaysFilter)
+

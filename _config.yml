@@ -8,7 +8,7 @@ author:
   email: brandon@brandonb.ca
 description: Canadian with a passion for <br />open source, tech, and web development
 meta_description: Brandon Brown, QA Developer — Canadian with a passion for open source, tech, and web development
-avatar_img: /avatar18_512.jpg
+avatar_img: /avatar20_512.jpg
 
 # Favicons
 favicon:
@@ -105,5 +105,3 @@ responsive_image:
   output_path_format: assets/media/r/%{filename}-%{width}x%{height}.%{extension}
 
   save_to_source: false
-
-  cache: true
