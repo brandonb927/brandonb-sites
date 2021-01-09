@@ -88,7 +88,9 @@ responsive_image:
     - width: 800
     - width: 1400
 
-  ignored_extensions: ["gif", "ico"]
+  ignored_extensions:
+    - "gif"
+    - "ico"
 
   # [Optional, Default: assets/resized/%{filename}-%{width}x%{height}.%{extension}]
   # The template used when generating filenames for resized images. Must be a
