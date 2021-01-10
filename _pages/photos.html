@@ -37,9 +37,11 @@ page_id: photos
             {% if photo.exif != nil %}
             <p>📸 {{photo.exif.camera}}<br />
               {% if photo.exif.aperture != 0 and photo.exif.focalLength != 0 and photo.exif.focalLengthEquiv != 0 %}
-              at {{photo.exif.aperture}} {{photo.exif.focalLength}} ({{photo.exif.focalLengthEquiv}} equiv.)</p>
+              at {{photo.exif.aperture}} {{photo.exif.focalLength}} ({{photo.exif.focalLengthEquiv}} equiv.)<br />
               {% endif %}
+            </p>
             {% endif %}
+            <p><small>{{photo.license}}</small></p>
           </div>
         </div>
       </a>
