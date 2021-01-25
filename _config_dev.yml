@@ -1,4 +1,5 @@
 # Routes
+domain: localhost
 url: "http://localhost:8888"
 
 # Publishing
