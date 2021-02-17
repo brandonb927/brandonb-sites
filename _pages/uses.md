@@ -74,6 +74,7 @@ My primary work machine is a Mac so most tools and software listed here are macO
   - [72" Acacia wood countertop](https://www.lowes.ca/product/kitchen-countertops/q-solutions-acacia-straight-cut-kitchen-countertop-970792)
 - Chair: [Steelcase Series 1](https://www.steelcase.com/products/office-chairs/steelcase-series-1/) in purple and light grey with a white base
 - Monitors:
+  - Dell 27" 4K U2721Q
   - Dell 27" 4K U2718Q (discontinued, succeeded by the U2720Q)
   - Dell 24" 2K U2515H (discontinued, succeeded by the U2518D)
   - {% amazon B009S750LA "Dual monitor desktop mount" %} — used to hold up my monitors, at a great price
@@ -83,8 +84,9 @@ My primary work machine is a Mac so most tools and software listed here are macO
 - Dock: {% amazon B07CZPV8DF "Caldigit TS3 Plus" %} — sure it's expensive, but this is honestly one of the best investments I've ever made for my home office. All the i/o that would connect to my MacBook Pro via different cables and dongles now connects to the TS3+ first, then I have a single Thunderbolt 3 cable that connects from it to the MacBook which also supplies 87W of power, all in one single mess-free cable!
 - Dongles:
   - {% amazon B079JJ2MTR "Sabrent Thunderbolt 3 to Dual DisplayPort adapter" %} — because there is only a single DisplayPort input on the TS3+ sadly, but a few Thunderbolt 3 ports, connects the two monitors to the dock
-  - {% amazon B07K3FN5MR "Elgato Cam Link 4K" %} — to connect my camera to the dock
   - {% amazon B075FW7H5J "Satechi aluminum USB-C dongle" %} — my on-the-go adapter that lives in my backpack
+  - {% amazon B07K3FN5MR "Elgato Cam Link 4K" %} — to connect my camera to the dock
+  - {% amazon B08J4J1YH8 "Atomos Connect" %} — a spare HDMI-to-USB adapter, like the Cam Link above but way less expensive!
 - Webcam: {% amazon B01M050N05 "Panasonic Lumix DMC-G85" %} — see my post on [how to use a DSLR or mirrorless camera as a webcam]({% post_url 2020/2020-02-26-use-a-dslr-mirrorless-camera-as-a-webcam %})
 - Microphone: {% amazon B084P1CXFD "RØDE NT-USB-Mini" %} — I love this microphone and its small footprint
 - Microphone boom arm: [RØDE PSA1 microphone boom arm](https://www.vistek.ca/store/235511/rode-microphones-studio-arm-comes-desk-clamp-permanent-install-ad)
