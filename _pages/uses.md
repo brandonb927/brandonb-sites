@@ -4,12 +4,12 @@ title: Uses
 include_in_nav: true
 order: 3
 
-share_image: https://dc1r9kxqg42ml.cloudfront.net/brandonb.ca/r/uses-overhead-desk-1400x1120.jpg
+share_image: https://dc1r9kxqg42ml.cloudfront.net/brandonb.ca/r/uses-overhead-desk-v2-1400x1120.jpg
 ---
 
 {% include author_affiliated.html %}
 
-{% responsive_image path:_assets/media/pages/uses-desk-overview.jpg alt:"My desk setup" %}
+{% responsive_image path:_assets/media/pages/uses-desk-overview-v2.jpg alt:"My desk setup" %}
 
 This page has everything I use, both hardware and software-wise, to be a productive internet person (job titles are so passé). If you decide to make your own `uses` page on your site, consider adding it to [uses.tech](https://uses.tech) created by [Wes Bos](https://twitter.com/wesbos).
 
@@ -59,7 +59,7 @@ My primary work machine is a Mac so most tools and software listed here are macO
 - [AppCleaner](http://freemacsoft.net/appcleaner/) - sometimes you just gotta delete every trace of an app that is installed
 - [DaisyDisk](https://daisydiskapp.com/) - when you want to visualize your disk space, this is the app you want to use
 
-{% responsive_image path:_assets/media/pages/uses-overhead-desk.jpg alt:"Desk setup overhead ❤️" %}
+{% responsive_image path:_assets/media/pages/uses-overhead-desk-v2.jpg alt:"Desk setup overhead ❤️" %}
 
 ## Office/Desk Setup
 
@@ -97,7 +97,7 @@ My primary work machine is a Mac so most tools and software listed here are macO
 - Water bottle: {% amazon B071S6B1YZ "Yeti Rambler 532mL, insulated" %}
 - Lighting: {% amazon B01934RL0U "Neewer 480 LED lights" %} affixed to custom light stand poles that were converted from 9ft Neewer light stands, mounted on {% amazon B00009R6BO "Manfrotto super clamps" %} which are attached to the desk.
 
-{% responsive_image path:_assets/media/pages/uses-desk-keyboard.jpg alt:"Keychron K2 keyboard, RØDE NT-USB-Mini microphone, Logitech MX Master 2S mouse" %}
+{% responsive_image path:_assets/media/pages/uses-desk-keyboard-v2.jpg alt:"Keychron K2 keyboard, RØDE NT-USB-Mini microphone, Logitech MX Master 2S mouse" %}
 
 I have an {% amazon B017VXU6GG "APC 11-outlet 2880 joules surge protector" %} mounted on the underside of the desk, and on the floor is my [Plex media server]({% post_url 2017/2017-08-10-ultimate-media-server-setup %}), a {% amazon B07S98YLHM "5-port Netgear unmanaged switch" %}, an {% amazon B01FWAZEIU "APC 600VA UPS battery backup and surge protector" %}, and a [Raspberry Pi 3 B+](https://www.buyapi.ca/product/raspberry-pi-3-model-b-plus/) running Homebridge and Pi-Hole. Throughout my office and the house I have a few IoT devices: some {% amazon B01K1JVZOE "TP-Link HS105 wifi outlets" %}, a few [Sonoff DIY smart switches](https://sonoff.tech/product/wifi-diy-smart-switches/basicr2), and two Echo Dot speakers which are basically used for two things: turning the smart switches on and off, and setting cooking timers.
 
