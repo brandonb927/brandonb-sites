@@ -45,7 +45,7 @@
     "lint": "eslint '_assets/scripts/**/*.js'",
     "prettier": "prettier '_assets/scripts/**/*.js' --write",
     "deploy": "JEKYLL_ENV=production gulp deploy",
-    "deploy:dryrun": "JEKYLL_ENV=production gulp deploy --dryrun",
+    "deploy:dryrun": "JEKYLL_ENV=production gulp deploy_dryrun",
     "task:flickr": "node ./gulp_tasks/flickr.js"
   },
   "prettier": {
@@ -67,6 +67,11 @@
       ]
     ]
   },
+  "browserslist": [
+    "last 2 versions",
+    "ios 12",
+    "android 4.4"
+  ],
   "eslintConfig": {
     "parserOptions": {
       "ecmaVersion": 2019,

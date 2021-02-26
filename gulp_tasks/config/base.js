@@ -1,17 +1,13 @@
 import { normalize, resolve } from 'path'
 
-const base = normalize(`${__dirname}/../..`)
-
-const getHomeFolder = () => {
-  return process.env[process.platform == 'win32' ? 'USERPROFILE' : 'HOME']
-}
+const basePath = normalize(`${__dirname}/../..`)
 
 // Export the base config
-const baseConfig = {
-  homeFolder: getHomeFolder(),
+export default {
+  homeFolder: process.env[process.platform === 'win32' ? 'USERPROFILE' : 'HOME'],
   src: {
-    base: base,
-    assets: resolve(base, '_assets'),
+    base: basePath,
+    assets: resolve(basePath, '_assets'),
   },
   deploy: {
     domain: 'brandonb.ca',
@@ -22,43 +18,40 @@ const baseConfig = {
     },
   },
   jekyll: {
-    baseConfig: resolve(base, '_config.yml'),
+    baseConfig: resolve(basePath, '_config.yml'),
   },
   styles: {
     autoprefixer: {
       cascade: true,
-      browsers: ['last 2 versions', 'ios 9', 'android 4.4'],
+    },
+  },
+  scripts: {
+    options: {
+      debug: true,
+    },
+    vendor: {
+      src: [],
     },
   },
   size: {
     showFiles: true,
   },
-}
-
-baseConfig.watch = {
-  jekyll: [
-    `${baseConfig.src.base}/*.yml`,
-    `${baseConfig.src.base}/_data/*`,
-    `${baseConfig.src.base}/{archive,index,404}.html`,
-    `${baseConfig.src.base}/_includes/**/*`,
-    `${baseConfig.src.base}/_layouts/*`,
-    `${baseConfig.src.base}/_pages/*`,
-    `${baseConfig.src.base}/_posts/**/*`,
-    `${baseConfig.src.base}/_projects/*`,
-    `${baseConfig.src.base}/_plugins/*`,
-  ],
-  styles: `${baseConfig.src.assets}/styles/**/*.less`,
-  scripts: `${baseConfig.src.assets}/scripts/*.js`,
-  media: `${baseConfig.src.assets}/media/*`,
-}
-
-baseConfig.scripts = {
-  options: {
-    debug: true,
-  },
-  vendor: {
-    src: [],
+  get watch() {
+    return {
+      jekyll: [
+        `${this.src.base}/*.yml`,
+        `${this.src.base}/_data/*`,
+        `${this.src.base}/{archive,index,404}.html`,
+        `${this.src.base}/_includes/**/*`,
+        `${this.src.base}/_layouts/*`,
+        `${this.src.base}/_pages/*`,
+        `${this.src.base}/_posts/**/*`,
+        `${this.src.base}/_projects/*`,
+        `${this.src.base}/_plugins/*`,
+      ],
+      styles: `${this.src.assets}/styles/**/*.less`,
+      scripts: `${this.src.assets}/scripts/*.js`,
+      media: `${this.src.assets}/media/*`,
+    }
   },
 }
-
-export default baseConfig

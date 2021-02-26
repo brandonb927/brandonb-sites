@@ -85,6 +85,4 @@ const baseDevConfig = {
   },
 }
 
-const devConfig = merge(baseDevConfig, baseConfig)
-
-export default devConfig
+export default merge(baseConfig, baseDevConfig)
