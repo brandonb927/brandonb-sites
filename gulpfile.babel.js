@@ -127,7 +127,7 @@ function clean_prod() {
 function optimize_media_prod() {
   return gulp
     .src(configProd.optimize.media.src)
-    .pipe(plumber({ errorHandler: errorHandler }))
+    .pipe(plumber({ errorHandler }))
     .pipe(imagemin(configProd.optimize.media.options))
     .pipe(duration('Optimizing media for production'))
     .pipe(gulp.dest(configProd.optimize.media.dest))
@@ -137,7 +137,7 @@ function optimize_media_prod() {
 function optimize_styles_prod() {
   return gulp
     .src(configProd.optimize.styles.src)
-    .pipe(plumber({ errorHandler: errorHandler }))
+    .pipe(plumber({ errorHandler }))
     .pipe(cssnano(configProd.optimize.styles.options))
     .pipe(duration('Optimizing and minifying CSS for production'))
     .pipe(gulp.dest(configProd.optimize.styles.dest))
@@ -147,7 +147,7 @@ function optimize_styles_prod() {
 function optimize_scripts_prod() {
   return gulp
     .src(configProd.optimize.scripts.src)
-    .pipe(plumber({ errorHandler: errorHandler }))
+    .pipe(plumber({ errorHandler }))
     .pipe(uglify(configProd.optimize.scripts.options))
     .pipe(duration('Optimizing, minifying and minifying JS for production'))
     .pipe(gulp.dest(configProd.optimize.scripts.dest))
@@ -157,7 +157,7 @@ function optimize_scripts_prod() {
 function optimize_html_prod() {
   return gulp
     .src(configProd.optimize.html.src)
-    .pipe(plumber({ errorHandler: errorHandler }))
+    .pipe(plumber({ errorHandler }))
     .pipe(htmlmin(configProd.optimize.html.options))
     .pipe(duration('Optimizing and minifying HTML for production'))
     .pipe(gulp.dest(configProd.optimize.html.dest))
@@ -167,7 +167,7 @@ function optimize_html_prod() {
 function optimize_inline_prod() {
   return gulp
     .src(configProd.optimize.html.src)
-    .pipe(plumber({ errorHandler: errorHandler }))
+    .pipe(plumber({ errorHandler }))
     .pipe(
       inline({
         rootpath: configProd.buildDir,
@@ -192,7 +192,7 @@ export const optimize_prod = gulp.series(
 export function scripts_dev() {
   return gulp
     .src(configDev.scripts.src)
-    .pipe(plumber({ errorHandler: errorHandler }))
+    .pipe(plumber({ errorHandler }))
     .pipe(sourcemaps.init())
     .pipe(babel())
     .pipe(sourcemaps.write())
@@ -204,7 +204,7 @@ export function scripts_dev() {
 export function scripts_prod() {
   return gulp
     .src(configProd.scripts.src)
-    .pipe(plumber({ errorHandler: errorHandler }))
+    .pipe(plumber({ errorHandler }))
     .pipe(sourcemaps.init())
     .pipe(babel({ presets: ['@babel/env'] }))
     .pipe(sourcemaps.write('.'))
@@ -218,7 +218,7 @@ export function scripts_prod() {
 export function styles_dev() {
   return gulp
     .src(configDev.styles.src)
-    .pipe(plumber({ errorHandler: errorHandler }))
+    .pipe(plumber({ errorHandler }))
     .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(autoprefixer(configDev.styles.autoprefixer))
@@ -231,7 +231,7 @@ export function styles_dev() {
 export function styles_prod() {
   return gulp
     .src(configProd.styles.src)
-    .pipe(plumber({ errorHandler: errorHandler }))
+    .pipe(plumber({ errorHandler }))
     .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(autoprefixer(configProd.styles.autoprefixer))
