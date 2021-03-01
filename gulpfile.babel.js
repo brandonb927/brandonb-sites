@@ -33,7 +33,7 @@ process.env.SERVICEWORKER = argv.noserviceworker ? 'false' : 'true'
 /**
  * Browsersync
  */
-const server = browsersync.create()
+const bsServer = browsersync.create()
 
 export function browser_sync(cb) {
   const bsOptions = Object.assign({}, configDev.browsersync, {
@@ -44,12 +44,8 @@ export function browser_sync(cb) {
       },
     },
   })
-  server.init(bsOptions)
+  bsServer.init(bsOptions)
   cb()
-}
-
-function browser_sync_reload() {
-  server.reload()
 }
 
 /**
@@ -198,7 +194,7 @@ export function scripts_dev() {
     .pipe(sourcemaps.write())
     .pipe(duration('Compiling ES6 js for development'))
     .pipe(gulp.dest(configDev.scripts.dest))
-    .pipe(server.stream())
+    .pipe(bsServer.stream())
 }
 
 export function scripts_prod() {
@@ -225,7 +221,7 @@ export function styles_dev() {
     .pipe(duration('Compiling LESS and vendor prefixing CSS for development'))
     .pipe(sourcemaps.write())
     .pipe(gulp.dest(configDev.styles.dest))
-    .pipe(server.stream())
+    .pipe(bsServer.stream())
 }
 
 export function styles_prod() {
@@ -326,9 +322,7 @@ function jekyll_build_dev(cb) {
     args = args.concat('--profile')
   }
 
-  return spawn('bundle', args, { stdio: 'inherit' })
-    .on('close', browser_sync_reload)
-    .on('exit', cb)
+  return spawn('bundle', args, { stdio: 'inherit' }).on('close', cb)
 }
 
 function jekyll_build_prod(cb) {
@@ -355,7 +349,10 @@ function jekyll_build_prod(cb) {
 export function watch() {
   gulp.watch(
     configDev.watch.jekyll,
-    gulp.series(jekyll_build_dev, browser_sync_reload)
+    gulp.series(jekyll_build_dev, function browsersync_reload(cb) {
+      bsServer.reload()
+      cb()
+    })
   )
   gulp.watch(configDev.watch.styles, styles_dev)
   gulp.watch(configDev.watch.scripts, scripts_dev)
