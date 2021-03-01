@@ -93,5 +93,5 @@ const baseProdConfig = {
   },
 }
 
-export default merge(baseConfig, baseProdConfig)
+export default merge(baseProdConfig, baseConfig)
 
