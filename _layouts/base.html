@@ -6,15 +6,17 @@
   <body
     class="{% if page.body_class %}{{ page.body_class }}{% endif %}"
     itemscope
-    itemtype="http://schema.org/WebPage">
-    <div
-      class="site-wrapper"
-      >
+    itemtype="http://schema.org/WebPage"
+  >
+    <div class="site-wrapper">
       {% include header.html %}
       {% include body.html %}
       {% include footer.html %}
       {% include foot.html %}
     </div>
-    <a class="toggle-dark-mode js-toggle-dark-mode" title="Toggle dark mode"></a>
+    <a
+      class="toggle-dark-mode js-toggle-dark-mode"
+      title="Toggle dark mode"
+    ></a>
   </body>
 </html>

@@ -4,7 +4,7 @@
 
 @import 'skeleton.less';
 
-@mobile-width: 550px;
+@mobile-width: 960px;
 
 // Not sure where this should live...
 
@@ -149,7 +149,7 @@ picture {
 // Main site wrapper
 
 .site-wrapper {
-  max-width: 768px;
+  max-width: 800px;
   margin-top: 0;
   margin-bottom: 0;
   margin-left: auto;
@@ -308,6 +308,52 @@ picture {
     margin-left: 0;
     margin-right: 0;
   }
+}
+
+// Draft notice
+.main-content-post-draft {
+  width: 23rem;
+  height: 23rem;
+  overflow: hidden;
+  position: fixed;
+  pointer-events: none;
+}
+
+.main-content-post-draft span {
+  position: absolute;
+  display: block;
+  width: 30rem;
+  padding: 1.5rem 0;
+  background-color: #f5e61a;
+  box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+  color: #fff;
+  font-size: 3rem;
+  text-shadow: 0 1px 1px rgba(0,0,0,.65);
+  text-transform: uppercase;
+  text-align: center;
+}
+
+.main-content-post-draft {
+  top: 0;
+  right: 0;
+}
+.main-content-post-draft::before,
+.main-content-post-draft::after {
+  border-top-color: transparent;
+  border-right-color: transparent;
+}
+.main-content-post-draft::before {
+  top: 0;
+  left: 0;
+}
+.main-content-post-draft::after {
+  bottom: 0;
+  right: 0;
+}
+.main-content-post-draft span {
+  left: .5rem;
+  top: 3rem;
+  transform: rotate(45deg);
 }
 
 // Fix lists globally

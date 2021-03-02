@@ -3,8 +3,11 @@ layout: base
 ---
 
 <article class="main-content-post" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
+  {% if page.draft %}
+  <div class="main-content-post-draft"><span>Draft</span></div>
+  {% endif %}
   <h2 itemprop="name headline">
-    {% if page.draft %}DRAFT: <br />{% endif %} {{ page.title }}
+    {{ page.title }}
   </h2>
 
   <p>
