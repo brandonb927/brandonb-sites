@@ -65,10 +65,15 @@ body.dark-mode {
 
 .toggle-dark-mode {
   position: fixed;
-  left: 0;
+  right: 0;
   top: 0;
   cursor: pointer;
   text-decoration: none;
+  border-bottom-left-radius: 5px;
+
+  &:hover {
+    background-color: rgba(0,0,0,.1);
+  }
 }
 
 .toggle-dark-mode:before {
@@ -84,5 +89,9 @@ body.dark-mode {
 body.dark-mode .toggle-dark-mode {
   &:before {
     content: '🌞';
+  }
+
+  &:hover {
+    background-color: rgba(255,255,255,.1);
   }
 }
