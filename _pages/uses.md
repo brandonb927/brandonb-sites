@@ -36,6 +36,8 @@ My primary work machine is a Mac so most tools and software listed here are macO
 - [ExpressVPN]({% link r/vpn.md %}){:rel="nofollow"} — the only VPN I trust because they [don't retain _any_ logs](https://www.expressvpn.com/what-is-vpn/policy-towards-logs)
 - [1Password Password Manager](https://1password.com/sign-up/ca/) — 🇨🇦 Canadian and trustworthy, the two traits to look for in a quality product for storing passwords
 
+{% include ad/1password_fam_banner.html %}
+
 ### Productivity
 
 - [Aerial Screensaver](https://github.com/JohnCoates/Aerial) — Beautiful FullHD and 4K video screensavers
