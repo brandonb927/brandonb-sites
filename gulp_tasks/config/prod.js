@@ -38,6 +38,7 @@ const baseProdConfig = {
     media: {
       src: [
         `${srcAssets}/media/*.{png,jpg,ico}`,
+        `${srcAssets}/media/ad/*`,
         `${srcAssets}/media/**/*.{gif,mp4}`,
       ],
       dest: `${buildAssets}/media`,
