@@ -12,7 +12,7 @@ const logoImagePath = './_assets/media/avatar20_256.jpg'
 const canvasWidth = 1200
 const canvasHeight = 630
 const lineHeight = 72
-const fontSize = 64
+const fontSize = 54
 
 const getTitle = url => {
   return fetch(url)
@@ -45,7 +45,7 @@ const getDateModified = url => {
     })
 }
 
-const writeTitle = (context, text, x, y, maxWidth, lineHeight) => {
+const generateContent = (context, text, x, y, maxWidth, lineHeight) => {
   const words = text.split(' ')
   let line = ''
 
@@ -97,8 +97,6 @@ const stringToColour = str => {
   context.textAlign = 'center'
 
   // Generate text background
-  // context.fillStyle = '#3574d4'
-  // context.fillStyle = '#632572'
   context.fillStyle = stringToColour(postSlug)
   context.fillRect(
     0,
@@ -109,7 +107,7 @@ const stringToColour = str => {
 
   // Write title text
   context.font = `bold ${fontSize}px Cascadia Code`
-  writeTitle(
+  generateContent(
     context,
     title,
     canvasWidth / 2,
@@ -136,7 +134,6 @@ const stringToColour = str => {
   // Insert logo image at the top
   loadImage(logoImagePath).then(image => {
     // draw our circle mask
-    context.save()
     context.beginPath()
     context.arc(
       canvasWidth / 2,
@@ -146,8 +143,7 @@ const stringToColour = str => {
       2 * Math.PI // end angle
     )
     context.clip()
-    context.drawImage(image, canvasWidth / 2 - 50, 60, 100, 100)
-    context.restore()
+    context.drawImage(image, canvasWidth / 2 - 50, 50, 100, 100)
 
     const buffer = canvas.toBuffer('image/png')
     fs.writeFileSync(`_assets/media/share/${postSlug}.png`, buffer)
