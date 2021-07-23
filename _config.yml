@@ -42,11 +42,13 @@ defaults:
       type: posts
     values:
       layout: post
+      is_post: true
   - scope:
       path: ""
       type: projects
     values:
       layout: page
+      is_post: false
 
 collections:
   projects:

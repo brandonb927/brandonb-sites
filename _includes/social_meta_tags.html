@@ -16,17 +16,19 @@
   {%- endif -%}
 {% endcapture %}
 
-{% if page.is_post %}
+{%- if page.is_post -%}
   {% assign type = "article" %}
-{% else %}
+{%- else -%}
   {% assign type = "website" %}
-{% endif %}
+{%- endif -%}
 
 <meta name="description" content="{{ description_content }}">
+{% if page.is_post %}
 <meta name="date" content="{{ page.date | date: '%b %-d, %Y' }}">
 {% if page.date_modified %}
   <meta name="revised" content="{{ page.date_modified | date: '%b %-d, %Y' }}">
 </span>
+{% endif %}
 {% endif %}
 
 <!-- Open Graph -->
