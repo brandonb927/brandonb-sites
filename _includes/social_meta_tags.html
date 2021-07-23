@@ -12,7 +12,7 @@
   {%- if page.share_image -%}
     {{ page.share_image }}
   {%- else -%}
-    {{ site.avatar_img | prepend: site.assets_media | absolute_url }}
+    {{ '/post-'| append: page.slug | prepend: site.assets_media | absolute_url | append: '.png' }}
   {%- endif -%}
 {% endcapture %}
 

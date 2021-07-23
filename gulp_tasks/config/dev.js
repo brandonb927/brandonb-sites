@@ -60,6 +60,7 @@ const baseDevConfig = {
       src: [
         `${srcAssets}/media/*.{png,jpg,ico}`,
         `${srcAssets}/media/ad/*`,
+        `${srcAssets}/media/share/*`,
         `${srcAssets}/media/**/*.{gif,mp4}`,
       ],
       dest: `${buildAssets}/media`,
