@@ -23,6 +23,11 @@
 {% endif %}
 
 <meta name="description" content="{{ description_content }}">
+<meta name="date" content="{{ page.date | date: '%b %-d, %Y' }}">
+{% if page.date_modified %}
+  <meta name="revised" content="{{ page.date_modified | date: '%b %-d, %Y' }}">
+</span>
+{% endif %}
 
 <!-- Open Graph -->
 <meta property="og:type" content="{{ type }}" />
