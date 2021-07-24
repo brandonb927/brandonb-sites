@@ -12,7 +12,7 @@
   {%- if page.share_image -%}
     {{ page.share_image }}
   {%- else -%}
-    {{ '/post-'| append: page.slug | prepend: site.assets_media | absolute_url | append: '.png' }}
+    {{ '/share/post-'| append: page.slug | prepend: site.assets_media | absolute_url | append: '.png' }}
   {%- endif -%}
 {% endcapture %}
 
@@ -44,7 +44,7 @@
 {% endif %}
 
 <!-- Twitter Cards  -->
-<meta name="twitter:card" content="summary">
+<meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@{{ site.social.twitter }}" />
 <meta name="twitter:creator" content="@{{ site.social.twitter }}" />
 <meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
