@@ -34,6 +34,7 @@
     "gulp-uglify": "3.0.2",
     "jsdom": "^16.6.0",
     "lodash": "4.17.21",
+    "mkdirp": "^1.0.4",
     "ngrok": "4.0.1",
     "nodemon": "2.0.12",
     "postcss": "^8.3.6",
@@ -50,6 +51,7 @@
     "prettier": "prettier '_assets/scripts/**/*.js' --write",
     "deploy": "JEKYLL_ENV=production gulp deploy",
     "deploy:dryrun": "JEKYLL_ENV=production gulp deploy_dryrun",
+    "task:generate-share-images": "gulp generate_share_images",
     "task:flickr": "node ./gulp_tasks/flickr.js"
   },
   "prettier": {
