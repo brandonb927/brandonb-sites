@@ -1,24 +1,29 @@
-const fs = require('fs')
-const fetch = require('node-fetch')
-const jsdom = require('jsdom')
+const fs = require('fs/promises')
 const { createCanvas, loadImage } = require('canvas')
+const jsdom = require('jsdom')
+const mkdirp = require('mkdirp')
+const fetch = require('node-fetch')
+
+const outputDir = 'build_prod/assets/media/share'
 
 ;(async () => {
-  // Get all URLs
-  let urls = []
-  await fetch('https://brandonb.ca/archive')
-    .then(response => response.text())
-    .then(html => {
-      const dom = new jsdom.JSDOM(html)
-      const links = dom.window.document.querySelectorAll(
-        '.archive-content-feed-item-title'
-      )
-      for (let link of links) {
-        urls.push(`https://brandonb.ca/${link.getAttribute('href').replace('/', '')}`)
-      }
-    })
+  // Start by creating the output directory if not exists
+  await mkdirp(outputDir)
 
-  // Loop through URLs to generate image
+  let urls = []
+  // Get all post URLs from the archive page
+  const html = await fs.readFile('./build_prod/archive.html')
+  const dom = new jsdom.JSDOM(html)
+  const links = dom.window.document.querySelectorAll(
+    '.archive-content-feed-item-title'
+  )
+  for (let link of links) {
+    urls.push(
+      `https://brandonb.ca/${link.getAttribute('href').replace('/', '')}`
+    )
+  }
+
+  // Loop through URLs to generate an image for each post
   for (let url of urls) {
     const urlWithoutProtocol = url.replace('https://', '')
     const segments = urlWithoutProtocol.split('/')
@@ -148,7 +153,7 @@ const { createCanvas, loadImage } = require('canvas')
     context.fillText(urlWithoutProtocol, canvasWidth / 2, 520)
 
     // Insert logo image at the top
-    loadImage(logoImagePath).then(image => {
+    loadImage(logoImagePath).then(async image => {
       // draw our circle mask
       context.beginPath()
       context.arc(
@@ -162,7 +167,7 @@ const { createCanvas, loadImage } = require('canvas')
       context.drawImage(image, canvasWidth / 2 - 50, 50, 100, 100)
 
       const buffer = canvas.toBuffer('image/png')
-      fs.writeFileSync(`_assets/media/share/post-${postSlug}.png`, buffer)
+      await fs.writeFile(`${outputDir}/post-${postSlug}.png`, buffer)
     })
   }
 })()
