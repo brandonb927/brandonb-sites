@@ -1,8 +1,8 @@
 // Production config
 import { resolve } from 'path'
-import { merge } from 'lodash'
+import merge from 'lodash.merge'
 
-import baseConfig from './base'
+import baseConfig from './base.js'
 
 // Paths
 const src = baseConfig.src.base

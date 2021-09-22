@@ -2,9 +2,9 @@
 import { existsSync } from 'fs'
 import { extname, join, resolve } from 'path'
 import { parse } from 'url'
-import { merge } from 'lodash'
+import merge from 'lodash.merge'
 
-import baseConfig from './base'
+import baseConfig from './base.js'
 
 // Paths
 const src = baseConfig.src.base

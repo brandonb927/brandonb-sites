@@ -20,11 +20,14 @@ import size from 'gulp-size'
 import sourcemaps from 'gulp-sourcemaps'
 import uglify from 'gulp-uglify'
 import ngrok from 'ngrok'
-import { argv } from 'yargs'
+import yargs from 'yargs'
+import { hideBin } from 'yargs/helpers'
 
-import configDev from './gulp_tasks/config/dev'
-import configProd from './gulp_tasks/config/prod'
-import errorHandler from './gulp_tasks/utils/errorHandler'
+import configDev from './gulp_tasks/config/dev.js'
+import configProd from './gulp_tasks/config/prod.js'
+import errorHandler from './gulp_tasks/utils/errorHandler.js'
+
+const argv = yargs(hideBin(process.argv)).argv
 
 // We might not want to register the serviceworker for local dev.
 // Very hacky way to do this!

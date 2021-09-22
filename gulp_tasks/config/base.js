@@ -1,6 +1,6 @@
 import { normalize, resolve } from 'path'
 
-const basePath = normalize(`${__dirname}/../..`)
+const basePath = normalize('node:../..')
 
 // Export the base config
 export default {
