@@ -1,8 +1,10 @@
-const fs = require('fs/promises')
-const { createCanvas, loadImage } = require('canvas')
-const jsdom = require('jsdom')
-const mkdirp = require('mkdirp')
-const fetch = require('node-fetch')
+import { readFile, writeFile } from 'fs/promises'
+import canvas from 'canvas'
+import jsdom from 'jsdom'
+import mkdirp from 'mkdirp'
+import fetch from 'node-fetch'
+
+const { createCanvas, loadImage } = canvas
 
 const outputDir = 'build_prod/assets/media/share'
 
@@ -12,7 +14,7 @@ const outputDir = 'build_prod/assets/media/share'
 
   let urls = []
   // Get all post URLs from the archive page
-  const html = await fs.readFile('./build_prod/archive.html')
+  const html = await readFile('./build_prod/archive.html')
   const dom = new jsdom.JSDOM(html)
   const links = dom.window.document.querySelectorAll(
     '.archive-content-feed-item-title'
@@ -167,7 +169,7 @@ const outputDir = 'build_prod/assets/media/share'
       context.drawImage(image, canvasWidth / 2 - 50, 50, 100, 100)
 
       const buffer = canvas.toBuffer('image/png')
-      await fs.writeFile(`${outputDir}/post-${postSlug}.png`, buffer)
+      await writeFile(`${outputDir}/post-${postSlug}.png`, buffer)
     })
   }
 })()
