@@ -1,9 +1,11 @@
-require('dotenv').config()
+import dotenv from 'dotenv'
 
-const _ = require('lodash')
+import lodash from 'lodash'
 
-const fs = require('fs')
-const Flickr = require('flickr-sdk')
+import { existsSync, readFileSync, writeFileSync } from 'fs'
+import Flickr from 'flickr-sdk'
+
+dotenv.config()
 
 const DATA_FILE_PATH = './_data/flickr-data.json'
 const MIN_DATE_TAKEN = '2019-01-01 00:00:00'
@@ -32,11 +34,26 @@ var flickr = new Flickr(
 //   open(authorizationUrl)
 // }
 
+var MONTHS = [
+  'January',
+  'February',
+  'March',
+  'April',
+  'May',
+  'June',
+  'July',
+  'August',
+  'September',
+  'October',
+  'November',
+  'December',
+]
+
 function getCachedData() {
   // Check if the cached date file exists
-  if (fs.existsSync(DATA_FILE_PATH)) {
+  if (existsSync(DATA_FILE_PATH)) {
     // Read the cached date file and query the most recent photo taken date
-    return JSON.parse(fs.readFileSync(DATA_FILE_PATH))
+    return JSON.parse(readFileSync(DATA_FILE_PATH))
   }
 
   return null
@@ -55,8 +72,6 @@ async function cacheLicenses() {
 }
 
 async function getPhotos() {
-  console.log('Retrieving photos from Flickr...')
-
   // Use a default minimum date to start with
   let minDateTaken = MIN_DATE_TAKEN
 
@@ -77,6 +92,10 @@ async function getPhotos() {
     minDateTaken = `${parsedDate.toISOString().substring(0, 10)} 00:00:00`
   }
 
+  console.log(
+    `Retrieving photos from Flickr with a minimum data of ${minDateTaken}...`
+  )
+
   const photosResponse = await flickr.people.getPhotos({
     user_id: 'me',
     per_page: 500,
@@ -96,7 +115,7 @@ async function getPhotoExifData(photoId) {
     if (exifDataItems.length > 1) {
       throw new Error('More than one item by that key!', exifDataItems)
     }
-    return _.get(exifDataItems[0], `${raw ? 'raw' : 'clean'}._content`)
+    return lodash.get(exifDataItems[0], `${raw ? 'raw' : 'clean'}._content`)
   }
 
   console.log(`  Getting EXIF data for photo ${photoId}`)
@@ -170,8 +189,8 @@ async function fetchAndWriteFlickrData() {
   }
 
   const rebuiltData = {}
-  for (let i in flickrData) {
-    const photo = flickrData[i]
+
+  for (let photo of flickrData) {
     const year = photo.date_taken.getFullYear()
     const monthName = photo.date_taken.toLocaleString('default', {
       month: 'long',
@@ -195,38 +214,41 @@ async function fetchAndWriteFlickrData() {
     rebuiltData[year][monthName].push(photo)
   }
 
-  const cachedData = CACHED_DATA
-  const sortedData = []
-
-  if (cachedData) {
+  if (CACHED_DATA) {
     // Take the cached data and merge it into our rebuilt data
     // so we can create a new sorted data file
-    cachedData.forEach(obj => {
-      const cachedYear = obj.year
+    for (let obj of CACHED_DATA) {
+      const year = obj.year
 
-      if (!rebuiltData.hasOwnProperty(cachedYear)) {
-        rebuiltData[cachedYear] = {}
+      if (!rebuiltData.hasOwnProperty(year)) {
+        rebuiltData[year] = {}
       }
 
-      const cachedMonths = Object.keys(obj.months)
-
-      for (let cachedMonth of cachedMonths) {
-        if (!rebuiltData[cachedYear].hasOwnProperty(cachedMonth)) {
-          rebuiltData[cachedYear][cachedMonth] = obj.months[cachedMonth]
+      for (let month of MONTHS) {
+        if (!rebuiltData[year].hasOwnProperty(month)) {
+          rebuiltData[year][month] = obj.months[month]
         } else {
-          rebuiltData[cachedYear][cachedMonth].concat(obj.months[cachedMonth])
+          rebuiltData[year][month].concat(obj.months[month])
         }
       }
+    }
+  }
+
+  const reversedYears = Object.keys(rebuiltData).reverse()
+  const sortedData = []
+  const reversedMonths = MONTHS.reverse()
+  for (let year of reversedYears) {
+    sortedData.push({
+      year,
+      months: Object.fromEntries(
+        Object.entries(rebuiltData[year]).sort(function (a, b) {
+          return reversedMonths.indexOf(a[0]) - reversedMonths.indexOf(b[0])
+        })
+      ),
     })
   }
 
-  Object.keys(rebuiltData)
-    .reverse()
-    .forEach(year => {
-      sortedData.push({ year, months: rebuiltData[year] })
-    })
-
-  fs.writeFileSync(DATA_FILE_PATH, JSON.stringify(sortedData))
+  writeFileSync(DATA_FILE_PATH, JSON.stringify(sortedData))
 
   console.log('Done!')
 }
