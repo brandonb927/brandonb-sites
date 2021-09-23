@@ -46,6 +46,7 @@
     "yargs": "^17.1.1"
   },
   "scripts": {
+    "surge": "./node_modules/.bin/surge",
     "start": "gulp",
     "start:dev": "gulp --noserviceworker",
     "lint": "eslint '_assets/scripts/**/*.js'",
