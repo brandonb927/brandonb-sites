@@ -13,7 +13,7 @@
     "chalk": "^4.1.2",
     "del": "^6.0.0",
     "dotenv": "^10.0.0",
-    "eslint": "^7.32.00",
+    "eslint": "^7.32.0",
     "flickr-sdk": "^3.10.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
@@ -37,13 +37,13 @@
     "lodash.merge": "^4.6.2",
     "mkdirp": "^1.0.4",
     "ngrok": "^4.2.2",
-    "nodemon": "^2.0.12",
-    "postcss": "^8.3.7",
+    "nodemon": "^2.0.13",
+    "postcss": "^8.3.8",
     "prettier": "^2.4.1",
     "rimraf": "^3.0.2",
-    "surge": "^0.24.0-rc.11",
+    "surge": "^0.24.0-rc.12",
     "sync-request": "^6.1.0",
-    "yargs": "^17.1.1"
+    "yargs": "^17.2.1"
   },
   "scripts": {
     "surge": "./node_modules/.bin/surge",
