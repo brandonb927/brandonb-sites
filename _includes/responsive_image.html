@@ -56,9 +56,9 @@ Usage:
   </picture>
   <figcaption>
     {%- if caption -%}
-    {{ caption }}
+    {{ caption | markdownify }}
     {%- else -%}
-    {{ alt }}
+    {{ alt | markdownify }}
     {%- endif -%}
   </figcaption>
 </figure>

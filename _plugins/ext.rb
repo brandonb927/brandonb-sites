@@ -1,4 +1,5 @@
 module Jekyll
+  require "kramdown"
   class RenderPictureElement < Liquid::Tag
     def initialize(tag_name, markup, tokens)
       super
@@ -21,7 +22,8 @@ module Jekyll
 
       # Get the 1x path
       @src = @attributes['src']
-      @alt_text = @attributes['alt']
+      # @alt_text = @attributes['alt']
+      @alt_text = Kramdown::Document.new(@attributes['alt']).to_html
 
       if @src.include? "http" or @src.include? "https"
         """
