@@ -1,7 +1,7 @@
 import { spawn } from 'child_process'
 import path from 'path'
 
-import AWS from 'aws-sdk'
+import { fromIni } from '@aws-sdk/credential-provider-ini'
 import browsersync from 'browser-sync'
 import del from 'del'
 import gulp from 'gulp'
@@ -291,7 +291,7 @@ function s3_media() {
       params: {
         Bucket: configProd.deploy.s3.bucketMedia,
       },
-      credentials: new AWS.SharedIniFileCredentials({ profile: 'personal' }),
+      credentials: fromIni({ profile: 'personal' }),
     },
     {
       'Cache-Control': 'max-age=315360000, no-transform, public',

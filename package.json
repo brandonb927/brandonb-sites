@@ -4,6 +4,7 @@
   "type": "module",
   "devDependencies": {},
   "dependencies": {
+    "@aws-sdk/credential-provider-ini": "^3.48.0",
     "@babel/core": "^7.16.12",
     "@babel/preset-env": "^7.16.11",
     "@babel/register": "^7.16.9",
