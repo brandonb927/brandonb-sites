@@ -9,10 +9,14 @@
 {% endcapture %}
 
 {% capture share_image %}
-  {%- if page.share_image -%}
-    {{ page.share_image }}
+  {%- if page.is_post -%}
+    {%- if page.share_image -%}
+      {{ page.share_image }}
+    {%- else -%}
+      {{ '/share/post-'| append: page.slug | prepend: site.assets_media | absolute_url | append: '.png' }}
+    {%- endif -%}
   {%- else -%}
-    {{ '/share/post-'| append: page.slug | prepend: site.assets_media | absolute_url | append: '.png' }}
+    {{ site.avatar_img | prepend: site.assets_media }}
   {%- endif -%}
 {% endcapture %}
 
