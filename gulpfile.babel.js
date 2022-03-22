@@ -18,7 +18,7 @@ import plumber from 'gulp-plumber'
 import rename from 'gulp-rename'
 import size from 'gulp-size'
 import sourcemaps from 'gulp-sourcemaps'
-import uglify from 'gulp-uglify'
+import terser from 'gulp-terser'
 import ngrok from 'ngrok'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
@@ -153,7 +153,7 @@ function optimize_scripts_prod() {
   return gulp
     .src(configProd.optimize.scripts.src)
     .pipe(plumber({ errorHandler }))
-    .pipe(uglify(configProd.optimize.scripts.options))
+    .pipe(terser(configProd.optimize.scripts.options))
     .pipe(duration('Optimizing, minifying and minifying JS for production'))
     .pipe(gulp.dest(configProd.optimize.scripts.dest))
     .pipe(size(configProd.size))

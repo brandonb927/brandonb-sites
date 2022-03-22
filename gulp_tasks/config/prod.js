@@ -72,7 +72,10 @@ const baseProdConfig = {
     scripts: {
       src: `${buildAssets}/scripts/*.js`,
       dest: `${buildAssets}/scripts`,
-      options: {},
+      options: {
+        keep_fnames: true,
+        mangle: false
+      },
     },
     media: {
       src: `${buildAssets}/media/**/*`,
