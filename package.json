@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@aws-sdk/credential-provider-ini": "^3.55.0",
-    "@babel/core": "^7.17.8",
+    "@aws-sdk/credential-provider-ini": "^3.67.0",
+    "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
     "@babel/register": "^7.17.7",
     "broken-link-checker": "^0.7.8",
@@ -13,7 +13,7 @@
     "chalk": "^5.0.1",
     "del": "^6.0.0",
     "dotenv": "^16.0.0",
-    "eslint": "^8.11.0",
+    "eslint": "^8.13.0",
     "flickr-sdk": "^6.0.0",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
@@ -38,11 +38,11 @@
     "ngrok": "^4.3.1",
     "nodemon": "^2.0.15",
     "postcss": "^8.4.12",
-    "prettier": "^2.6.0",
+    "prettier": "^2.6.2",
     "rimraf": "^3.0.2",
     "surge": "^0.24.0-rc.13",
     "sync-request": "^6.1.0",
-    "yargs": "^17.4.0"
+    "yargs": "^17.4.1"
   },
   "scripts": {
     "surge": "./node_modules/.bin/surge",
