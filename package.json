@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@aws-sdk/credential-provider-ini": "^3.67.0",
+    "@aws-sdk/credential-provider-ini": "^3.72.0",
     "@babel/core": "^7.17.9",
     "@babel/preset-env": "^7.16.11",
     "@babel/register": "^7.17.7",
