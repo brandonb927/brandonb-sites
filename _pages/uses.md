@@ -65,12 +65,7 @@ My primary work machine is a Mac so most tools and software listed here are macO
 
 ## Office/Desk Setup
 
-- MacBook Pro (15-inch, 2018, work computer):
-  - Processor 2.6GHz 6-Core Intel i7
-  - Memory: 16GB RAM
-  - Graphics:
-    - Radeon Pro 560X 4GB, dedicated GPU
-    - Intel UHD Graphics 630, integrated GPU
+- MacBook Pro (2021 15-inch M1 Pro, work computer)
 - Standing Desk:
   - [Effydesk Business dual-motor standing desk frame](https://effydesk.ca/products/electric-adjustable-standing-desk-business-office) in white - You can get \$15 off your order by using my [referral code](http://effydesk.refr.cc/brandonb)
   - [72" Acacia wood countertop](https://www.lowes.ca/product/kitchen-countertops/q-solutions-acacia-straight-cut-kitchen-countertop-970792)
@@ -81,7 +76,7 @@ My primary work machine is a Mac so most tools and software listed here are macO
   - Dell 24" 2K U2515H (discontinued, succeeded by the U2518D)
   - {% amazon B009S750LA "Dual monitor desktop mount" %} — used to hold up my monitors, at a great price
   - {% amazon B00B21TLQU "Single monitor desktop mount" %} — used as a camera arm mount that can swing around the desk (more info on that below)
-- Keyboard: [Keychron K2, RGB aluminum frame with brown switches]({% link r/keychron.md %}){:rel="nofollow"}, {% amazon B00FPDAU6Q "Wrist rest" %}, {% amazon B07N13PW4V "Uncrowned Kings black leather desk pad" %}
+- Keyboard: [Keychron K3, RGB aluminum frame with brown switches](https://www.keychron.com/products/keychron-k3-wireless-mechanical-keyboard?variant=32220198699097){:rel="nofollow"}, {% amazon B00FPDAU6Q "Wrist rest" %}, {% amazon B07N13PW4V "Uncrowned Kings black leather desk pad" %}
 - Mouse: {% amazon B071YZJ1G1 "Logitech MX Master 2S" %}
 - Dock: {% amazon B07CZPV8DF "Caldigit TS3 Plus" %} — sure it's expensive, but this is honestly one of the best investments I've ever made for my home office. All the i/o that would connect to my MacBook Pro via different cables and dongles now connects to the TS3+ first, then I have a single Thunderbolt 3 cable that connects from it to the MacBook which also supplies 87W of power, all in one single mess-free cable!
 - Dongles:
@@ -103,17 +98,32 @@ My primary work machine is a Mac so most tools and software listed here are macO
 
 {% responsive_image path:_assets/media/pages/uses-desk-keyboard-v2.jpg alt:"Keychron K2 keyboard, RØDE NT-USB-Mini microphone, Logitech MX Master 2S mouse" %}
 
-I have an {% amazon B017VXU6GG "APC 11-outlet 2880 joules surge protector" %} mounted on the underside of the desk, and on the floor is my [Plex media server]({% post_url 2017/2017-08-10-ultimate-media-server-setup %}), a {% amazon B07S98YLHM "5-port Netgear unmanaged switch" %}, an {% amazon B01FWAZEIU "APC 600VA UPS battery backup and surge protector" %}, and a [Raspberry Pi 3 B+](https://www.buyapi.ca/product/raspberry-pi-3-model-b-plus/) running Homebridge and Pi-Hole. Throughout my office and the house I have a few IoT devices: some {% amazon B01K1JVZOE "TP-Link HS105 wifi outlets" %}, a few [Sonoff DIY smart switches](https://sonoff.tech/product/wifi-diy-smart-switches/basicr2), and two Echo Dot speakers which are basically used for two things: turning the smart switches on and off, and setting cooking timers.
+I have an {% amazon B017VXU6GG "APC 11-outlet 2880 joules surge protector" %} mounted on the underside of the desk which is then attached to an {% amazon B01FWAZEIU "APC 600VA UPS battery backup and surge protector" %} on the floor.
+
+In my 12U network rack I have (in order from top to bottom):
+
+- {% amazon B004ELA5W4 "TP-Link TL-SG1024D gigabit unmanaged, 1U rackmountable" %}
+- [UniFi UDM Pro](https://ca.store.ui.com/products/udm-pro)
+- [UniFi 8-port switch with PoE](https://ca.store.ui.com/products/unifi-switch-8-150w) connected over SFP to the UDM-Pro and supplying PoE for:
+  - [UniFi Protect G4 Doorbell](https://ca.store.ui.com/products/uvc-g4-doorbell)
+  - [UniFi FlexHD Access Point](https://ca.store.ui.com/products/unifi-flexhd)
+  - 2x [UniFi NanoHD Access Point](https://ca.store.ui.com/products/unifi-nanohd-us)
+- [Raspberry Pi 4 B+](https://www.buyapi.ca/product/raspberry-pi-3-model-b-plus/) running Homebridge and AdGuard
+- {% amazon B07M5QBL8G "24-port blank keystone 1U patch panel" %}
+- Reolink NVR for PoE cameras
+- [Plex media server]({% post_url 2017/2017-08-10-ultimate-media-server-setup %})
+- {% amazon B0035PS5AE "8-outlet 1U rack mount PDU power strip, 120V/15A" %}
+
+Throughout my office and the house I have a few IoT devices: some {% amazon B01K1JVZOE "TP-Link HS105 wifi outlets" %}, a few [Sonoff DIY smart switches](https://sonoff.tech/product/diy-smart-switch/basicr2/), and two Echo speakers which are basically used for two things: turning the smart switches on and off, and setting cooking timers.
 
 ## Photography
 
-- {% amazon B081SMR5BS "Nikon Z 50 + FTZ adapter" %} — recently acquired, I love it!
-- {% amazon B01MT82V43 "Nikon D5600 (backup camera)" %} — purchased used, body only
+- {% amazon B081SMR5BS "Nikon Z 50 + FTZ adapter" %} — my favourite camera I've owned!
 - {% amazon B00DBL09FG "Sigma 18-35mm f1.8 Art DC lens" %} — purchased used, dropped once onto some rocks on a beach in 2019 but built like a tank and still works fine
 - Sigma 50-150mm f2.8 lens — purchased used, though it was discontinued due to poor sales this lens is bloody amazing on APS-C cameras
+- Sigma 150-600mm f5-6.3 lens — purchased used from Kerrisdale Cameras in Victoria, BC (best camera shop)
 - {% amazon B007ORX8ME "Tokina AT-X 11-20mm Pro DX f2.8 lens" %} — purchased used, this is my go-to lens for astro photography and landscape photography
 - [72mm Breakthrough Photography X4 6-stop ND filter](https://breakthrough.photography/products/x4-neutral-density?variant=30850759569)
-- 72mm Hoya CIR-PL filter
 - [Black Diamond Spot 325 Headlamp](https://www.mec.ca/en/product/5061-168/Spot-325-Headlamp) — an invaluable piece of kit for when I'm out doing astrophotography, it's very bright and has a "red light" mode
 
 {% responsive_image path:_assets/media/pages/uses-milky-way-2020-07-18.jpg alt:"The Milky Way taken July 18th 2020" %}
@@ -121,3 +131,7 @@ I have an {% amazon B017VXU6GG "APC 11-outlet 2880 joules surge protector" %} mo
 {% responsive_image path:_assets/media/pages/uses-comet-neowise.jpg alt:"The comet NEOWISE taken July 17th 2020" %}
 
 I also have some of my shots from Flickr over on my [photos page]({% link photos.html %}) if you're curious!
+
+## Amateur Radio
+
+In my truck I currently run a Kenwood TM-V71A 50W mobile transceiver connected to a Comet CA-2X4SR dual band 40" antenna. At home I have a few Baofeng handheld transceivers with 14" Nagoya whip antennas.
