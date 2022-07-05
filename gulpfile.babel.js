@@ -43,15 +43,15 @@ let browsersyncExternalURL = null
 
 export function browser_sync(cb) {
   const bsOptions = Object.assign({}, configDev.browsersync, {
-    callbacks: {
-      ready: async (_, bs) => {
-        browsersyncLocalURL = bs.options.getIn(['urls', 'local'])
-        browsersyncExternalURL = bs.options.getIn(['urls', 'external'])
-        ngrokURL = await ngrok.connect(bs.options.get('port'))
-        console.log(`Your ngrok URL is:`)
-        console.log(`└── ${ngrokURL}`)
-      },
-    },
+    // callbacks: {
+    //   ready: async (_, bs) => {
+    //     browsersyncLocalURL = bs.options.getIn(['urls', 'local'])
+    //     browsersyncExternalURL = bs.options.getIn(['urls', 'external'])
+    //     ngrokURL = await ngrok.connect(bs.options.get('port'))
+    //     console.log(`Your ngrok URL is:`)
+    //     console.log(`└── ${ngrokURL}`)
+    //   },
+    // },
   })
   bsServer.init(bsOptions)
   cb()
@@ -367,16 +367,21 @@ function jekyll_build_prod(cb) {
 export function watch() {
   gulp.watch(
     configDev.watch.jekyll,
-    gulp.series(jekyll_build_dev, function browsersync_reload(cb) {
-      bsServer.reload()
-      console.log(`** Reminder **`)
-      console.log(`BrowserSync URLs`)
-      console.log(`├── ${browsersyncLocalURL}`)
-      console.log(`└── ${browsersyncExternalURL}`)
-      console.log(`ngrok URL`)
-      console.log(`└── ${ngrokURL}`)
-      cb()
-    })
+    gulp.series(
+      jekyll_build_dev,
+      /*
+      function browsersync_reload(cb) {
+        bsServer.reload()
+        console.log(`** Reminder **`)
+        console.log(`BrowserSync URLs`)
+        console.log(`├── ${browsersyncLocalURL}`)
+        console.log(`└── ${browsersyncExternalURL}`)
+        console.log(`ngrok URL`)
+        console.log(`└── ${ngrokURL}`)
+        cb()
+      }
+      */
+    )
   )
   gulp.watch(configDev.watch.styles, styles_dev)
   gulp.watch(configDev.watch.scripts, scripts_dev)
