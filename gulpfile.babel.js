@@ -19,7 +19,7 @@ import rename from 'gulp-rename'
 import size from 'gulp-size'
 import sourcemaps from 'gulp-sourcemaps'
 import terser from 'gulp-terser'
-import ngrok from 'ngrok'
+// import ngrok from 'ngrok'
 import yargs from 'yargs'
 import { hideBin } from 'yargs/helpers'
 
@@ -37,9 +37,9 @@ process.env.SERVICEWORKER = argv.noserviceworker ? 'false' : 'true'
  * Browsersync
  */
 const bsServer = browsersync.create()
-let ngrokURL = null
-let browsersyncLocalURL = null
-let browsersyncExternalURL = null
+// let ngrokURL = null
+// let browsersyncLocalURL = null
+// let browsersyncExternalURL = null
 
 export function browser_sync(cb) {
   const bsOptions = Object.assign({}, configDev.browsersync, {
@@ -369,18 +369,18 @@ export function watch() {
     configDev.watch.jekyll,
     gulp.series(
       jekyll_build_dev,
-      /*
       function browsersync_reload(cb) {
         bsServer.reload()
+        /*
         console.log(`** Reminder **`)
         console.log(`BrowserSync URLs`)
         console.log(`├── ${browsersyncLocalURL}`)
         console.log(`└── ${browsersyncExternalURL}`)
         console.log(`ngrok URL`)
         console.log(`└── ${ngrokURL}`)
+        */
         cb()
       }
-      */
     )
   )
   gulp.watch(configDev.watch.styles, styles_dev)
