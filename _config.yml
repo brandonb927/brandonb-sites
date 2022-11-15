@@ -1,8 +1,8 @@
-encoding: "utf-8"
+encoding: "UTF-8"
 language: "en-us"
 
 # Site Settings
-title: Brandons Blog
+title: Brandon's Blog
 author:
   name: Brandon Brown
   email: brandon@brandonb.ca
