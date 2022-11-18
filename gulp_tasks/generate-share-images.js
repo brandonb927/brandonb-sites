@@ -1,73 +1,36 @@
 import { readFile, writeFile } from 'fs/promises'
-import canvas from 'canvas'
-import jsdom from 'jsdom'
+import { createCanvas, loadImage } from 'canvas'
+import { JSDOM } from 'jsdom'
 import mkdirp from 'mkdirp'
-import fetch from 'node-fetch'
+// const { createCanvas, loadImage } = canvas
 
-const { createCanvas, loadImage } = canvas
-
+const BUILD_ROOT = './build_prod'
 const outputDir = 'build_prod/assets/media/share'
 
 ;(async () => {
   // Start by creating the output directory if not exists
   await mkdirp(outputDir)
 
-  let urls = []
   // Get all post URLs from the archive page
-  const html = await readFile('./build_prod/archive.html')
-  const dom = new jsdom.JSDOM(html)
+  const html = await readFile(`${BUILD_ROOT}/archive.html`)
+  const dom = new JSDOM(html)
   const links = dom.window.document.querySelectorAll(
     '.archive-content-feed-item-title'
   )
-  for (let link of links) {
-    urls.push(
-      `https://brandonb.ca/${link.getAttribute('href').replace('/', '')}`
-    )
-  }
 
-  // Loop through URLs to generate an image for each post
-  for (let url of urls) {
+  for (let link of links) {
+    const url = link.getAttribute('href').replace('/', '')
     const urlWithoutProtocol = url.replace('https://', '')
     const segments = urlWithoutProtocol.split('/')
     const postSlug = segments[segments.length - 1]
+    const postHtml = await readFile(`${BUILD_ROOT}/${postSlug}.html`)
+    const postDom = new JSDOM(postHtml)
 
     const logoImagePath = './_assets/media/avatar20_256.jpg'
     const canvasWidth = 1200
     const canvasHeight = 630
     const lineHeight = 72
     const fontSize = 54
-
-    const getTitle = url => {
-      return fetch(url)
-        .then(response => response.text())
-        .then(html => {
-          const dom = new jsdom.JSDOM(html)
-          const title = dom.window.document.querySelector('title')
-          return title.textContent.split(' | ')[0]
-        })
-    }
-
-    const getDatePublished = url => {
-      return fetch(url)
-        .then(response => response.text())
-        .then(html => {
-          const dom = new jsdom.JSDOM(html)
-          const datePublished =
-            dom.window.document.querySelector('meta[name=date]')
-          return datePublished.getAttribute('content')
-        })
-    }
-
-    const getDateModified = url => {
-      return fetch(url)
-        .then(response => response.text())
-        .then(html => {
-          const dom = new jsdom.JSDOM(html)
-          const dateModified =
-            dom.window.document.querySelector('meta[name=revised]')
-          return dateModified ? dateModified.getAttribute('content') : null
-        })
-    }
 
     const generateContent = (context, text, x, y, maxWidth, lineHeight) => {
       const words = text.split(' ')
@@ -105,9 +68,17 @@ const outputDir = 'build_prod/assets/media/share'
       return colour
     }
 
-    const title = await getTitle(url)
-    const datePublished = await getDatePublished(url)
-    const dateModified = await getDateModified(url)
+    const title = postDom.window.document
+      .querySelector('title')
+      .textContent.split(' | ')[0]
+    const datePublished = postDom.window.document
+      .querySelector('meta[name=date]')
+      .getAttribute('content')
+    const docDateModified =
+      postDom.window.document.querySelector('meta[name=revised]')
+    const dateModified = docDateModified
+      ? docDateModified.getAttribute('content')
+      : null
     const canvas = createCanvas(canvasWidth, canvasHeight)
     const context = canvas.getContext('2d')
 
