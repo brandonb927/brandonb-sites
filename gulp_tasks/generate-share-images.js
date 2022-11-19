@@ -2,7 +2,6 @@ import { readFile, writeFile } from 'fs/promises'
 import { createCanvas, loadImage } from 'canvas'
 import { JSDOM } from 'jsdom'
 import mkdirp from 'mkdirp'
-// const { createCanvas, loadImage } = canvas
 
 const BUILD_ROOT = './build_prod'
 const outputDir = 'build_prod/assets/media/share'
@@ -19,7 +18,7 @@ const outputDir = 'build_prod/assets/media/share'
   )
 
   for (let link of links) {
-    const url = link.getAttribute('href').replace('/', '')
+    const url = `https://brandonb.ca/${link.getAttribute('href').replace('/', '')}`
     const urlWithoutProtocol = url.replace('https://', '')
     const segments = urlWithoutProtocol.split('/')
     const postSlug = segments[segments.length - 1]
