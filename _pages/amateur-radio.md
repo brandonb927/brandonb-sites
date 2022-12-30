@@ -15,6 +15,6 @@ You can check out my [profile on QRZ](https://www.qrz.com/db/ve7tzb) if you want
 
 In my truck I run a Kenwood TM-V71A 50W mobile transceiver connected to a Comet CA-2X4SR dual band 40" antenna attached to my roof rack.
 
-At home I run another Kenwood TM-V71A 50W mobile transceiver connected to 25ft of LMR-400 which connects to a Diamond X50A dual band 5.6ft antenna in my attic.
+At home I run another Kenwood TM-V71A 50W mobile transceiver as a base station connected to 25ft of LMR-400 which connects to a Diamond X50A dual band 5.6ft antenna in my attic.
 
 I also have a few spare Baofeng handheld transceivers with 14" Nagoya whip antennas that I bring with me on outings.
