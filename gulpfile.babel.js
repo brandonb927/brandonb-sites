@@ -3,7 +3,7 @@ import path from 'path'
 
 import { fromIni } from '@aws-sdk/credential-provider-ini'
 import browsersync from 'browser-sync'
-import del from 'del'
+import { deleteAsync } from 'del'
 import gulp from 'gulp'
 import autoprefixer from 'gulp-autoprefixer'
 import awspublish from 'gulp-awspublish'
@@ -119,11 +119,11 @@ export const copy_prod = gulp.series(
  * Clean folders and files specified in the config
  */
 function clean_dev() {
-  return del(configDev.delete.src)
+  return deleteAsync(configDev.delete.src)
 }
 
 function clean_prod() {
-  return del(configProd.delete.src)
+  return deleteAsync(configProd.delete.src)
 }
 
 /**

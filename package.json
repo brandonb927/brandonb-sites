@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@aws-sdk/credential-provider-ini": "^3.236.0",
+    "@aws-sdk/credential-provider-ini": "^3.241.0",
     "@babel/core": "^7.20.7",
     "@babel/preset-env": "^7.20.2",
     "@babel/register": "^7.18.9",
@@ -11,7 +11,7 @@
     "browser-sync": "^2.27.11",
     "canvas": "^2.11.0",
     "chalk": "^5.2.0",
-    "del": "^6.1.1",
+    "del": "^7.0.0",
     "dotenv": "^16.0.3",
     "eslint": "^8.30.0",
     "flickr-sdk": "^6.0.0",
