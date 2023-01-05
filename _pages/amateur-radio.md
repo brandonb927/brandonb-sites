@@ -5,7 +5,7 @@ include_in_nav: true
 order: 4
 ---
 
-I'm fairly new to amateur radio, but I currently have my Canadian Amateur Radio Basic Qualification (with Honours) and am active on my callsign [VE7TZB](https://aprs.fi/?call=VE7TZB-9) from my home and outdoors.
+I'm fairly new to amateur radio, but I currently have my Canadian Amateur Radio Basic Qualification (with Honours) and am active on my callsign [VE7TZB](https://aprs.fi/?call=VE7TZB) from my home and outdoors.
 
 I'm also part of the [Nanaimo Amateur Radio Association](http://www.ve7na.ca/) and [Cowichan Valley Amateur Radio Society](http://cvars.com) clubs.
 
