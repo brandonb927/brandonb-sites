@@ -1,25 +1,12 @@
 <footer class="main-footer">
   <ul class="main-footer-nav">
+    {%- for item in site.footer_links -%}
     <li class="main-footer-nav-item">
-      <a href="https://github.com/{{ site.social.github }}" title="Github">
-        Github
+      <a href="{{ item.url }}" title="{{ item.title }}" {{ item.attrs }}>
+        {{ item.title }}
       </a>
     </li>
-    <li class="main-footer-nav-item">
-      <a href="https://{{ site.social.mastodon_ham_radio }}" title="Mastodon" rel="me">
-        Mastodon
-      </a>
-    </li>
-    <li class="main-footer-nav-item">
-      <a href="https://www.instagram.com/{{ site.social.instagram }}/" title="Instagram">
-        Instagram
-      </a>
-    </li>
-    <li class="main-footer-nav-item">
-      <a href="https://www.flickr.com/photos/{{ site.social.flickr }}/" title="Flickr">
-        Flickr
-      </a>
-    </li>
+    {%- endfor -%}
     <li class="main-footer-nav-item">
       <a href="{{ '/feed.xml' | absolute_url }}" title="RSS Feed">
         RSS

@@ -54,13 +54,14 @@ collections:
   projects:
     output: true
 
-# 3rd-party
-social:
-  github: brandonb927
-  twitter: brandonb927
-  instagram: brandonb.927
-  flickr: brandonb927
-  mastodon_ham_radio: "mastodon.radio/@ve7tzb"
+footer_links:
+  - title: GitHub
+    url: https://github.com/brandonb927
+  - title: Mastodon
+    url: https://mastodon.radio/@ve7tzb
+    attrs: 'rel="me"'
+  - title: Flickr
+    url: https://flickr.com/photos/brandonb927
 
 google_analytics:
   id: G-7P078D4S4Q
