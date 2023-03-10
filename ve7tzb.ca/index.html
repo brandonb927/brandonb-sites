@@ -1,0 +1,116 @@
+---
+layout: base
+---
+
+{% if site.show_drafts %}
+{% assign posts = site.posts %}
+{% else %}
+{% assign posts = site.posts | where: "draft",false %}
+{% endif %}
+{% assign pinned_posts = site.posts | where: "pinned",true %}
+{% assign recently_updated_posts = site.posts | where: "draft",false | last_90_days_filter | sort: "date_modified" | reverse %}
+
+<div class="main-content-feed">
+  {% for post in pinned_posts %}
+  <article class="main-content-feed-item main-content-feed-item-pinned"
+    itemprop="blogPosts"
+    itemtype="http://schema.org/BlogPosting"
+    itemscope>
+    <h4 class="u-underline">Featured Post</h4>
+    <h2 itemprop="name headline">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h2>
+
+    <div itemprop="text">
+      <p>
+        {% if post.date_modified %}
+        <span>
+          🔄&nbsp;Last Updated <span><time datetime="{{ post.date_modified | date_to_rfc822 }}"
+              itemprop="dateModified">{{ post.date_modified | date: "%b %-d, %Y" }}</time></span>
+        </span> &nbsp;&nbsp;|&nbsp;&nbsp;
+        {% endif %}
+        🗓&nbsp;&nbsp;Posted <span><time datetime="{{ post.date | date_to_rfc822 }}"
+            itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></span>
+      </p>
+    </div>
+  </article>
+  {% endfor %}
+
+  {% if recently_updated_posts.size != 0  %}
+  <div class="main-content-feed-item main-content-feed-item-updated">
+    <h4 class="u-underline">Recently Updated Posts</h4>
+    {% for post in recently_updated_posts %}
+    <p class="u-margin-bottom-none">
+      <strong>
+        <time datetime="{{ post.date_modified | date_to_rfc822 }}" itemprop="dateModified">{{ post.date_modified | date: "%b %-d, %Y" }}</time>
+      </strong>
+      —
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </p>
+    {% endfor %}
+  </div>
+  {% endif %}
+
+  {% for post in posts limit:7 %}
+  {% unless post.pinned %}
+  <article class="main-content-feed-item {% if post.draft %}main-content-feed-item-draft{% endif %}"
+    itemprop="blogPosts"
+    itemtype="http://schema.org/BlogPosting"
+    itemscope>
+    <h2 itemprop="name headline">
+      <a href="{{ post.url }}">
+        {{ post.title }}
+      </a>
+    </h2>
+
+    <div itemprop="text">
+      <p>
+        🗓&nbsp;&nbsp;Posted <span><time datetime="{{ post.date | date_to_rfc822 }}"
+            itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time></span>
+        {% if post.date_modified %}
+        <span class="post-date-last-modified">
+          &nbsp;&nbsp;|&nbsp;&nbsp;
+          Last Updated <span><time datetime="{{ post.date_modified | date_to_rfc822 }}"
+              itemprop="dateModified">{{ post.date_modified | date: "%b %-d, %Y" }}</time></span>
+        </span>
+        {% endif %}
+      </p>
+
+      {{ post.excerpt }}
+
+      {% if post.content contains site.excerpt_separator %}
+      <div class="u-text-right">
+        <a href="{{ post.url }}">Read more…</a>
+      </div>
+      {% endif %}
+    </div>
+  </article>
+
+  {% if forloop.index0 == 1 %}
+  <!--
+  <div class="margin-bottom-med">
+    {% include ad/1password_fam_banner.html %}
+  </div>
+  -->
+  {% endif %}
+
+  {% if forloop.index0 == 3 %}
+  <div class="main-content-feed-sponsor">
+    <!-- GOOGLE AD INSERTED AUTOMATICALLY HERE -->
+  </div>
+  {% endif %}
+  {% endunless %}
+  {% endfor %}
+
+  <p class="u-text-center">
+    For more posts visit
+    <br />
+    <a href="/archive" title="Archive">
+      the Archive
+    </a>
+  </p>
+</div>

@@ -1,0 +1,6 @@
+---
+layout: null
+sitemap: false
+---
+
+google.com, {{ site.google_ads.publisher_id }}, DIRECT, f08c47fec0942fa0

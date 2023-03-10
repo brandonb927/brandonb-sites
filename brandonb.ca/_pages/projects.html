@@ -1,0 +1,32 @@
+---
+layout: page
+title: Projects
+
+include_in_nav: true
+order: 2
+
+page_id: projects
+---
+
+
+<p>
+  A list of some of the projects I've been working on lately, in no particular order
+</p>
+
+<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+  <ul class="projects-list">
+    {% for item in site.data.projects.pages %}
+    {% include projects/list-item.html %}
+    {% endfor %}
+  </ul>
+</nav>
+
+<h4>npm packages</h4>
+
+<nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
+  <ul class="projects-list">
+    {% for item in site.data.projects.packages %}
+    {% include projects/list-item.html %}
+    {% endfor %}
+  </ul>
+</nav>

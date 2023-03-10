@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en-US" prefix="og: http://ogp.me/ns#" xmlns:og="http://ogp.me/ns#">
+  <head>
+    {% include head.html %}
+  </head>
+  <body
+    class="{% if page.body_class %}{{ page.body_class }}{% endif %}"
+    itemscope
+    itemtype="http://schema.org/WebPage"
+  >
+    <div class="site-wrapper">
+      {% include header.html %}
+      {% include body.html %}
+      {% include footer.html %}
+      {% include foot.html %}
+    </div>
+    <a
+      class="toggle-dark-mode js-toggle-dark-mode"
+      title="Toggle dark mode"
+    ></a>
+  </body>
+</html>

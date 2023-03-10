@@ -1,0 +1,45 @@
+---
+layout: base
+title: Archive
+---
+
+{% if site.show_drafts %}
+{% assign posts = site.posts %}
+{% else %}
+{% assign posts = site.posts | where: "draft",false %}
+{% endif %}
+
+{% assign random_post_index = site.time | date: "%s%N" | modulo: posts.size %}
+
+<div class="archive-content-feed">
+  <article class="archive-content-feed-item" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
+    {% for post in posts %}
+    {% assign currentYear = post.date | date: "%Y" %}
+    {% if currentYear != nextYear %}
+    {% unless forloop.first %}
+    </ul>
+    {% endunless %}
+    <h2>{{ currentYear }}</h2>
+    <ul>
+      {% assign nextYear = currentYear %}
+      {% endif %}
+      <li>
+        {% if post.draft %}
+        <span class="archive-content-feed-item-draft">**DRAFT**</span>
+        {% else %}
+        <span class="archive-content-feed-item-time">
+          <time datetime="{{ post.date | date_to_rfc822 }}"
+            itemprop="datePublished">{{ post.date | date: "%b %-d, %Y" }}</time>
+        </span>
+        {% endif %}
+        <a href="{{ post.url }}" class="archive-content-feed-item-title"
+          title="{{ post.excerpt | strip_newlines | strip_html | xml_escape }}">
+          {{ post.title }}
+        </a>
+      </li>
+      {% if forloop.last %}
+    </ul>
+    {% endif %}
+    {% endfor %}
+  </article>
+</div>

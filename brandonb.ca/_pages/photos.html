@@ -1,0 +1,53 @@
+---
+layout: page
+title: Photos
+
+include_in_nav: true
+order: 5
+
+page_id: photos
+---
+
+
+<p>
+  Some shots from my Flickr account. Click on an image to view the original.
+</p>
+
+<div class="photos-container">
+  {% for yearData in site.data['flickr-data'] %}
+  <ul>
+    {% for month in yearData.months %}
+    <li class="{% if forloop.first == true %}photos-year{% else %}photos-month{% endif %}">
+      {% if forloop.first == true %}
+      <h2>{{yearData.year}}</h2>
+      {% endif %}
+      <h3>{{month[0]}}</h3>
+    </li>
+    {% for photo in month[1] %}
+    <li itemscope itemtype="http://schema.org/ImageObject">
+      <a href="{{photo.src_original}}" title="{{photo.description|xml_escape}}" target="_blank" class="photo-nav-link">
+        <img src="{{photo.src}}"
+          srcset="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+          data-sizes="auto"
+          data-srcset="{{photo.src}}"
+          class="lazyload" alt="{{photo.description|xml_escape}}" />
+        <div class="photo-overlay">
+          <div class="photo-overlay-content">
+            <p itemprop="description">{{photo.description}}</p>
+            {% if photo.exif != nil %}
+            <p>📸 {{photo.exif.camera}}<br />
+              {% if photo.exif.aperture != 0 and photo.exif.focalLength != 0 and photo.exif.focalLengthEquiv != 0 %}
+              at {{photo.exif.aperture}} {{photo.exif.focalLength}} ({{photo.exif.focalLengthEquiv}} equiv.)<br />
+              {% endif %}
+            </p>
+            {% endif %}
+            <p><small>&copy; {{photo.license}}</small></p>
+          </div>
+        </div>
+      </a>
+    </li>
+    {% endfor %}
+    {% endfor %}
+  </ul>
+  {% endfor %}
+</div>

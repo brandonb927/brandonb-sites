@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>{{ page.title }} Redirect</title>
+  <link rel="canonical" href="{{ page.redirect_to }}" />
+  <meta http-equiv="content-type" content="text/html; charset=utf-8" />
+  {% if site.google_analytics.id %}
+  <link rel="dns-prefetch" href="//www.google-analytics.com">
+  {% endif %}
+  {% include google_analytics.html %}
+  {% include google_ads.html %}
+</head>
+<body>
+  <h1>Redirecting…</h1>
+  {% if site.google_analytics.id %}
+  <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="{{site.google_analytics.id}}"
+     data-ad-slot="1959656535"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+  {% endif %}
+  <a href="{{ page.redirect_to }}">Click here if you are not redirected.<a>
+  <script>setTimeout(function(){window.location='{{ page.redirect_to }}'+window.location.search},3500)</script>
+</body>
+</html>

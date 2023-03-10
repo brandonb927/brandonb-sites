@@ -1,0 +1,66 @@
+<meta charset="utf-8">
+<title>{% if page.title %}{{ page.title }} | {% endif %}{{ site.title }}</title>
+
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="ClearType" content="true">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black">
+
+{% include social_meta_tags.html %}
+
+{% if site.google_analytics.id %}
+<link rel="dns-prefetch" href="//www.google-analytics.com">
+{% endif %}
+
+{% if page.robots %}
+<meta name="robots" content="{{ page.robots }}">
+{% else %}
+<meta name="robots" content="all">
+{% endif %}
+
+{% include favicons.html %}
+
+<link rel="canonical" href="{{ page.url | replace: 'index.html', '' | absolute_url }}">
+<link rel="alternate" type="application/rss+xml" title="{{ site.title }} RSS Feed" href="{{ '/feed.xml' | absolute_url }}">
+<link rel="alternate" type="application/json" title="{{ site.title }} JSON Feed" href="{{ '/feed.json' | absolute_url }}">
+
+<link rel="stylesheet" href="/assets/styles/site.css" inline>
+
+<link rel="manifest" href="/manifest.json">
+
+<script>
+  if ('serviceWorker' in navigator) {
+    {% if site.serviceworker != 'false' %}
+    navigator.serviceWorker
+      .register('/sw.js')
+      .then(function (registration) {
+        console.log('You can now browse this site offline! Try disconnecting from your internet connection and reload the page.')
+        // console.log('Service Worker registration successful with scope: ', registration.scope)
+      })
+      .catch(function (err) {
+        console.log('Oops, you can\'t browse this site offline, something went from!', err)
+        // console.log('Service Worker registration failed: ', err)
+      })
+    {% else %}
+    navigator.serviceWorker.getRegistrations()
+      .then(function (registrations) {
+        for(let registration of registrations) {
+          registration.unregister()
+        }
+      })
+    {% endif %}
+  }
+</script>
+
+{% include google_analytics.html %}
+{% include google_ads.html %}
+
+<script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
+
+{% if page.page_id == 'checkins' %}
+<script src='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.js'></script>
+<link href='https://api.mapbox.com/mapbox.js/v2.4.0/mapbox.css' rel='stylesheet' />
+{% endif %}

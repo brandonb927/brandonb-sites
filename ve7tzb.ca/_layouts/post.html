@@ -1,0 +1,44 @@
+---
+layout: base
+---
+
+<article class="main-content-post" itemprop="blogPosts" itemscope itemtype="http://schema.org/BlogPosting">
+  {% if page.draft %}
+  <div class="main-content-post-draft"><span>Draft</span></div>
+  {% endif %}
+  <h2 itemprop="name headline">
+    {{ page.title }}
+  </h2>
+
+  <p>
+    {% if page.date_modified %}
+    <span class="post-date-last-modified">
+      🔄&nbsp;Last Updated <span><time datetime="{{ page.date_modified | date_to_rfc822 }}"
+        itemprop="dateModified">{{ page.date_modified | date: "%b %-d, %Y" }}</time></span>
+    </span>
+    {% endif %}
+    🗓&nbsp;Posted <span><time datetime="{{ page.date | date_to_rfc822 }}"
+        itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time></span>
+  </p>
+
+  <p>By <span itemprop="author">{{ site.author.name }}</span></p>
+
+  <div itemprop="articleBody">
+    {% include anchor_headings.html html=content anchorBody='#' anchorClass='post-heading-anchor' anchorTitle='Link to this section' %}
+  </div>
+
+  <p class="u-text-center">
+    …
+  </p>
+
+  {% if page.tags > 0 %}
+  <p>
+    Tagged with
+    <span class="post-meta-tags">
+      {% for tag in page.tags %}
+      <a href="/tag/{{ tag }}">{{ tag }}</a>
+      {% endfor %}
+    </span>
+  </p>
+  {% endif %}
+</article>

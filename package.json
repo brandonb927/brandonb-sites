@@ -1,5 +1,5 @@
 {
-  "name": "brandonb.ca",
+  "name": "brandonb-sites",
   "private": true,
   "type": "module",
   "dependencies": {
@@ -45,15 +45,15 @@
     "yargs": "^17.7.0"
   },
   "scripts": {
-    "surge": "./node_modules/.bin/surge",
-    "start": "gulp",
-    "start:dev": "gulp --noserviceworker",
-    "lint": "eslint '_assets/scripts/**/*.js'",
-    "prettier": "prettier '_assets/scripts/**/*.js' --write",
-    "deploy": "JEKYLL_ENV=production gulp deploy",
-    "deploy:dryrun": "JEKYLL_ENV=production gulp deploy_dryrun",
-    "task:generate-share-images": "gulp generate_share_images",
-    "task:flickr": "node ./gulp_tasks/flickr.js"
+    "deploy:dryrun": "cd brandonb.ca && JEKYLL_ENV=production gulp deploy_dryrun",
+    "deploy": "cd brandonb.ca && JEKYLL_ENV=production gulp deploy",
+    "lint": "cd brandonb.ca && eslint '_assets/scripts/**/*.js'",
+    "prettier": "cd brandonb.ca && prettier '_assets/scripts/**/*.js' --write",
+    "start:dev": "cd brandonb.ca && gulp --noserviceworker",
+    "start": "cd brandonb.ca && gulp",
+    "surge": "cd brandonb.ca && ./node_modules/.bin/surge",
+    "task:flickr": "cd brandonb.ca && node ./gulp_tasks/flickr.js",
+    "task:generate-share-images": "cd brandonb.ca && gulp generate_share_images"
   },
   "prettier": {
     "trailingComma": "es5",

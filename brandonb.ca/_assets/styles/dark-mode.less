@@ -1,0 +1,97 @@
+body.dark-mode {
+  background: #222;
+  color: #ddd;
+
+  a {
+    color: #ddd;
+  }
+
+  a:hover,
+  a:active {
+    color: #fff;
+  }
+
+  blockquote {
+    background: #1a1a1a;
+    border-left-color: #2b2b2b;
+  }
+
+  .navigation-item {
+    a:hover,
+    a:active {
+      background: #ddd;
+      color: #111;
+    }
+  }
+
+  .u-text-muted {
+    color: #aaa;
+  }
+
+  .bordered {
+    border-top-color: #ddd;
+    border-bottom-color: #ddd;
+  }
+
+  .main-header-title,
+  .main-header-nav,
+  .main-footer-nav {
+    .bordered;
+  }
+
+  .main-content-feed-item-draft a,
+  .main-content-feed-item-pinned a,
+  .main-content-feed-item-updated a {
+    color: #222;
+  }
+
+  .post-useful-content,
+  .post-useful-content a {
+    color: #222;
+  }
+
+  .post-updated {
+    border: solid 1px rgb(148, 145, 100);
+    background: rgb(102, 100, 66);
+    color: #fff;
+  }
+
+  .page-favicon-valley-podcast {
+    tbody tr:last-child {
+      border-top: 1px solid #111;
+    }
+  }
+}
+
+.toggle-dark-mode {
+  position: fixed;
+  right: 0;
+  top: 0;
+  cursor: pointer;
+  text-decoration: none;
+  border-bottom-left-radius: 5px;
+
+  &:hover {
+    background-color: rgba(0,0,0,.1);
+  }
+}
+
+.toggle-dark-mode:before {
+  display: block;
+  height: 5rem;
+  width: 5rem;
+  padding: 1rem;
+  font-size: 3rem;
+  line-height: 1;
+  content: '🌑';
+}
+
+body.dark-mode .toggle-dark-mode {
+  &:before {
+    content: '🌞';
+  }
+
+  &:hover {
+    background-color: rgba(255,255,255,.1);
+  }
+}
