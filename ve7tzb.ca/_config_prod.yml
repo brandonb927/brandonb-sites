@@ -1,8 +1,8 @@
 # Routes
-domain: brandonb.ca
-url: https://brandonb.ca
+domain: ve7ztb.ca
+url: https://ve7ztb.ca
 assets_root: https://dc1r9kxqg42ml.cloudfront.net
-assets_media: https://dc1r9kxqg42ml.cloudfront.net/brandonb.ca
+assets_media: https://dc1r9kxqg42ml.cloudfront.net/ve7ztb.ca
 
 debug: false
 
@@ -15,11 +15,6 @@ exclude:
   [
     "gulp_tasks",
     "build_dev",
-    "api_data",
-    ".ruby-version",
-    ".editorconfig",
-    "package.json",
-    "package-lock.json",
     "gulpfile.babel.js",
     "README.md",
   ]

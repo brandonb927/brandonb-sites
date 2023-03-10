@@ -10,11 +10,11 @@ export default {
     assets: resolve(basePath, '_assets'),
   },
   deploy: {
-    domain: 'brandonb.ca',
+    domain: 've7tzb.ca',
     secureDomain: true,
     s3: {
       region: 'us-east-1',
-      bucketMedia: 'brandonb-web-media',
+      bucketMedia: 've7tzb-web-media',
     },
   },
   jekyll: {
@@ -46,7 +46,6 @@ export default {
         `${this.src.base}/_layouts/*`,
         `${this.src.base}/_pages/*`,
         `${this.src.base}/_posts/**/*`,
-        `${this.src.base}/_projects/*`,
         `${this.src.base}/_plugins/*`,
       ],
       styles: `${this.src.assets}/styles/**/*.less`,

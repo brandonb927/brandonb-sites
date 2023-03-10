@@ -2,12 +2,12 @@ encoding: "UTF-8"
 language: "en-us"
 
 # Site Settings
-title: Brandon's Blog
+title: VE7TZB
 author:
-  name: Brandon Brown
-  email: brandon@brandonb.ca
-description: A Canadian with a passion for <br />open source, tech, web development, and amateur radio
-meta_description: Brandon Brown, QA Developer — Canadian with a passion for open source, tech, web development, and amateur radio
+  name: Brandon VE7TZB
+  email: brandon@ve7tzb.ca
+description: TBD
+meta_description: TBD
 avatar_img: /avatar20_512.jpg
 
 # Favicons
@@ -34,7 +34,7 @@ kramdown:
   syntax_highlighter: rouge
 
 # Build-stuff
-keep_files: ["assets", "api"]
+keep_files: ["assets"]
 
 defaults:
   - scope:
@@ -55,43 +55,42 @@ collections:
     output: true
 
 footer_links:
-  - title: GitHub
-    url: https://github.com/brandonb927
-  - title: Mastodon
+  - title: mastodon.hams.social
+    url: https://mastodon.hams.social/@ve7tzb
+    attrs: 'rel="me"'
+  - title: mastodon.radio
     url: https://mastodon.radio/@ve7tzb
     attrs: 'rel="me"'
-  - title: Flickr
-    url: https://flickr.com/photos/brandonb927
 
-google_analytics:
-  id: G-7P078D4S4Q
-  domain: brandonb.ca
+# google_analytics:
+#   id: G-7P078D4S4Q
+#   domain: ve7tzb.ca
 
-google_ads:
-  id: ca-pub-5686888191550897
-  publisher_id: pub-5686888191550897
+# google_ads:
+#   id: ca-pub-5686888191550897
+#   publisher_id: pub-5686888191550897
 
 amazon_associates_tag: brandonb0a-20
 
 # Plugins
-plugins:
-  - jekyll-responsive-image
+# plugins:
+#   - jekyll-responsive-image
 
 # responsive_image config
-responsive_image:
-  cache: true
+# responsive_image:
+#   cache: true
 
-  template: _includes/responsive_image.html
+#   template: _includes/responsive_image.html
 
-  default_quality: 100
+#   default_quality: 100
 
-  strip: true
+#   strip: true
 
-  sizes:
-    - width: 480
-    - width: 720
-    - width: 1440
+#   sizes:
+#     - width: 480
+#     - width: 720
+#     - width: 1440
 
-  output_path_format: assets/media/r/%{filename}-%{width}x%{height}.%{extension}
+#   output_path_format: assets/media/r/%{filename}-%{width}x%{height}.%{extension}
 
-  save_to_source: false
+#   save_to_source: false

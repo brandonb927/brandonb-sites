@@ -15,17 +15,12 @@ google_ads:
   id: false
 
 # Build settings
-keep_files: ["assets", "api"]
+keep_files: ["assets"]
 
 exclude:
   [
     "gulp_tasks",
     "build_prod",
-    "api_data",
-    ".ruby-version",
-    ".editorconfig",
-    "package.json",
-    "package-lock.json",
     "gulpfile.babel.js",
     "README.md",
   ]

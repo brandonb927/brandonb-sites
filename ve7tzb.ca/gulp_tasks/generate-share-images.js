@@ -18,7 +18,7 @@ const outputDir = 'build_prod/assets/media/share'
   )
 
   for (let link of links) {
-    const url = `https://brandonb.ca/${link.getAttribute('href').replace('/', '')}`
+    const url = `https://ve7tzb.ca/${link.getAttribute('href').replace('/', '')}`
     const urlWithoutProtocol = url.replace('https://', '')
     const segments = urlWithoutProtocol.split('/')
     const postSlug = segments[segments.length - 1]

@@ -84,18 +84,6 @@ export function copy_fonts_prod() {
     .pipe(gulp.dest(configProd.copy.fonts.dest))
 }
 
-export function copy_api_data_dev() {
-  return gulp
-    .src(configDev.copy.apiData.src)
-    .pipe(gulp.dest(configDev.copy.apiData.dest))
-}
-
-export function copy_api_data_prod() {
-  return gulp
-    .src(configProd.copy.apiData.src)
-    .pipe(gulp.dest(configProd.copy.apiData.dest))
-}
-
 export function copy_surgeignore_prod() {
   return gulp
     .src(configProd.copy.surgeignore.src)
@@ -104,13 +92,11 @@ export function copy_surgeignore_prod() {
 
 export const copy_dev = gulp.series(
   copy_fonts_dev,
-  copy_api_data_dev,
   copy_media_dev
 )
 
 export const copy_prod = gulp.series(
   copy_fonts_prod,
-  copy_api_data_prod,
   copy_media_prod,
   copy_surgeignore_prod
 )
@@ -183,7 +169,6 @@ function optimize_inline_prod() {
 }
 
 export const optimize_prod = gulp.series(
-  // gulp.parallel(optimize_media_prod, optimize_styles_prod, optimize_scripts_prod),
   optimize_media_prod,
   optimize_styles_prod,
   optimize_scripts_prod,

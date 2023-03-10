@@ -3,7 +3,7 @@ layout: null
 sitemap: false
 ---
 
-var CACHE_NAME = "brandonb-cache::{{site.time | date: '%Y%m%d%H%M%S'}}"
+var CACHE_NAME = "ve7tzb-cache::{{site.time | date: '%Y%m%d%H%M%S'}}"
 
 var urlsToCache = []
 

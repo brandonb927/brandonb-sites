@@ -68,10 +68,6 @@ const baseDevConfig = {
       src: `${srcAssets}/fonts/*`,
       dest: `${buildAssets}/fonts`,
     },
-    apiData: {
-      src: `${src}/api_data/*.json`,
-      dest: `${build}/api`,
-    },
   },
   jekyll: {
     src: src,

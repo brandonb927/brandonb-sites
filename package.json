@@ -45,15 +45,25 @@
     "yargs": "^17.7.0"
   },
   "scripts": {
-    "deploy:dryrun": "cd brandonb.ca && JEKYLL_ENV=production gulp deploy_dryrun",
-    "deploy": "cd brandonb.ca && JEKYLL_ENV=production gulp deploy",
-    "lint": "cd brandonb.ca && eslint '_assets/scripts/**/*.js'",
-    "prettier": "cd brandonb.ca && prettier '_assets/scripts/**/*.js' --write",
-    "start:dev": "cd brandonb.ca && gulp --noserviceworker",
-    "start": "cd brandonb.ca && gulp",
-    "surge": "cd brandonb.ca && ./node_modules/.bin/surge",
-    "task:flickr": "cd brandonb.ca && node ./gulp_tasks/flickr.js",
-    "task:generate-share-images": "cd brandonb.ca && gulp generate_share_images"
+    "brandonb.ca:deploy:dryrun": "cd brandonb.ca && JEKYLL_ENV=production gulp deploy_dryrun",
+    "brandonb.ca:deploy": "cd brandonb.ca && JEKYLL_ENV=production gulp deploy",
+    "brandonb.ca:lint": "cd brandonb.ca && eslint '_assets/scripts/**/*.js'",
+    "brandonb.ca:prettier": "cd brandonb.ca && prettier '_assets/scripts/**/*.js' --write",
+    "brandonb.ca:start:dev": "cd brandonb.ca && gulp --noserviceworker",
+    "brandonb.ca:start": "cd brandonb.ca && gulp",
+    "brandonb.ca:surge": "cd brandonb.ca && ./node_modules/.bin/surge",
+    "brandonb.ca:task:flickr": "cd brandonb.ca && node ./gulp_tasks/flickr.js",
+    "brandonb.ca:task:generate-share-images": "cd brandonb.ca && gulp generate_share_images",
+
+
+    "ve7tzb.ca:deploy:dryrun": "cd ve7tzb.ca && JEKYLL_ENV=production gulp deploy_dryrun",
+    "ve7tzb.ca:deploy": "cd ve7tzb.ca && JEKYLL_ENV=production gulp deploy",
+    "ve7tzb.ca:lint": "cd ve7tzb.ca && eslint '_assets/scripts/**/*.js'",
+    "ve7tzb.ca:prettier": "cd ve7tzb.ca && prettier '_assets/scripts/**/*.js' --write",
+    "ve7tzb.ca:start:dev": "cd ve7tzb.ca && gulp --noserviceworker",
+    "ve7tzb.ca:start": "cd ve7tzb.ca && gulp",
+    "ve7tzb.ca:surge": "cd ve7tzb.ca && ./node_modules/.bin/surge",
+    "ve7tzb.ca:task:generate-share-images": "cd ve7tzb.ca && gulp generate_share_images"
   },
   "prettier": {
     "trailingComma": "es5",

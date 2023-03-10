@@ -38,7 +38,6 @@ const baseProdConfig = {
     media: {
       src: [
         `${srcAssets}/media/*.{png,jpg,ico}`,
-        `${srcAssets}/media/ad/*`,
         `${srcAssets}/media/**/*.{gif,mp4}`,
       ],
       dest: `${buildAssets}/media`,
@@ -46,10 +45,6 @@ const baseProdConfig = {
     fonts: {
       src: `${srcAssets}/fonts/*`,
       dest: `${buildAssets}/fonts`,
-    },
-    apiData: {
-      src: `${src}/api_data/*.json`,
-      dest: `${build}/api`,
     },
     surgeignore: {
       src: `${src}/.surgeignore`,

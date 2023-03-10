@@ -1,3 +1,3 @@
-# brandonb.ca
+# ve7tzb.ca
 
-My personal Jekyll-powered static site blog
+My personal Jekyll-powered static site for my main amateur radio callsign
