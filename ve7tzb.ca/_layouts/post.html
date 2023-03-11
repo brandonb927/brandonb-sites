@@ -24,7 +24,7 @@ layout: base
   <p>By <span itemprop="author">{{ site.author.name }}</span></p>
 
   <div itemprop="articleBody">
-    {% include anchor_headings.html html=content anchorBody='#' anchorClass='post-heading-anchor' anchorTitle='Link to this section' %}
+    {% include anchor_headings.html html=content beforeHeading=true anchorBody='#' anchorClass='post-heading-anchor' anchorTitle='Link to this section' %}
   </div>
 
   <p class="u-text-center">

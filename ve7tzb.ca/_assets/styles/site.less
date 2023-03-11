@@ -6,39 +6,7 @@
 
 @mobile-width: 960px;
 
-// Not sure where this should live...
-
-// Thank you Spinkit - https://github.com/tobiasahlin/SpinKit
-.u-loader {
-  width: 4rem;
-  height: 4rem;
-  background-color: #222;
-  margin: 4rem auto;
-  -webkit-animation: cssLoader 1.2s infinite ease-in-out;
-  animation: cssLoader 1.2s infinite ease-in-out;
-}
-
-@keyframes cssLoader {
-  0% {
-    transform: perspective(120px) rotateX(0deg) rotateY(0deg);
-  }
-
-  50% {
-    transform: perspective(120px) rotateX(-180.1deg) rotateY(0deg);
-  }
-
-  100% {
-    transform: perspective(120px) rotateX(-180deg) rotateY(-179.9deg);
-  }
-}
-
 // Main Site CSS
-
-html.konami-code,
-html.konami-code * {
-  cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" style="font-size:48px"><text y="48">🦄</text></svg>'),
-    auto !important;
-}
 
 /* Once there is natural vertical overflow,
   it causes horizontal overflow, so stopping here. */
@@ -61,11 +29,6 @@ picture {
   right: 50%;
   margin-left: -50vw;
   margin-right: -50vw;
-}
-
-.bordered {
-  border-top: solid 0.3rem #222;
-  border-bottom: solid 0.3rem #222;
 }
 
 .margin-lr {
@@ -100,6 +63,10 @@ picture {
 
 .margin-bottom-large {
   margin-bottom: 6rem;
+}
+
+.margin-left-large {
+  margin-left: 6rem;
 }
 
 .padding-lr {
@@ -146,21 +113,32 @@ picture {
   }
 }
 
-// Main site wrapper
+// Main site wrappers
 
 .site-wrapper {
-  max-width: 800px;
-  margin-top: 0;
-  margin-bottom: 0;
-  margin-left: auto;
-  margin-right: auto;
+  display: flex;
+  // flex-wrap: wrap;
+  // justify-content: center;
+}
+
+.sidebar-wrapper {
+  width: 30vw;
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+}
+
+.body-wrapper {
+  width: 70vw;
+  .margin-top-large;
+  .margin-left-large;
 }
 
 // Main header
 .main-header {
   .margin-top-large;
-  .margin-bottom-large;
   .u-text-center;
+  flex: 1;
 }
 
 .main-header-title,
@@ -181,7 +159,6 @@ picture {
 }
 
 .main-header-title {
-  .bordered;
   .padding-tb;
   .margin-tb;
   display: block;
@@ -204,7 +181,7 @@ picture {
 
 .main-header-nav {
   .navigation;
-  .bordered;
+  flex-direction: column;
 }
 
 .main-header-nav-item {
@@ -221,6 +198,7 @@ picture {
 .main-content {
   .padding-top-large;
   .padding-lr;
+  max-width: 80%;
 }
 
 @media (min-width: @mobile-width) {
@@ -383,8 +361,7 @@ picture {
 }
 
 .post-heading-anchor {
-  display: block;
-  float: right;
+  // display: block;
   font-size: 3rem;
   text-decoration: none;
 }
@@ -402,16 +379,23 @@ picture {
 // Main footer
 .main-footer {
   .u-text-center;
+  display: flex;
+  flex-direction: column;
 }
 
 .main-footer-nav {
   .navigation;
-  .bordered;
-  .margin-bottom-large;
+  flex: 1;
+  flex-direction: column;
 }
 
 .main-footer-nav-item {
   .navigation-item;
+}
+
+.main-footer-copyright {
+  flex: 1;
+  .margin-bottom-sm;
 }
 
 // Post bubbles
@@ -511,189 +495,6 @@ picture a {
   img {
     .margin-tb;
     max-height: 192px;
-  }
-}
-
-// Photos
-
-// Gallery technique borrowed from https://css-tricks.com/adaptive-photo-layout-with-flexbox/
-#photos {
-  .photos-container {
-    .full-width;
-
-    h2,
-    h3 {
-      margin-left: 2rem;
-    }
-
-    ul {
-      .u-unstyled-list;
-      margin-bottom: 5rem;
-    }
-
-    li {
-      .margin-bottom-large;
-      .u-text-center;
-    }
-
-    img {
-      vertical-align: bottom;
-      width: 100%;
-    }
-
-    .photo-overlay-content {
-      .margin-top-sm;
-    }
-  }
-}
-
-@media (min-width: @mobile-width) {
-  #photos {
-    .photos-container {
-      ul {
-        display: flex;
-        flex-wrap: wrap;
-        margin-left: 2rem;
-        margin-right: 1.5rem;
-      }
-
-      li {
-        height: 30rem;
-        flex-grow: 1;
-        text-align: left;
-        margin-bottom: 0.5rem;
-        margin-right: 0.5rem;
-        position: relative;
-
-        &:last-child {
-          flex-grow: 10;
-        }
-
-        &.photos-year,
-        &.photos-month {
-          min-width: 100vw;
-        }
-
-        &.photos-year {
-          height: 15rem;
-        }
-
-        &.photos-month {
-          height: 10rem;
-        }
-
-        &.photos-year h2,
-        &.photos-month h3 {
-          min-width: 20rem;
-        }
-
-        &.photos-month h3 {
-          margin-top: 2rem;
-        }
-      }
-
-      .photo-overlay {
-        display: flex;
-        position: absolute;
-        top: 0;
-        right: 0;
-        bottom: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        transition: box-shadow 0.2s ease-in-out;
-
-        &:hover {
-          box-shadow: inset 0 -18rem 10rem -8rem rgba(0, 0, 0, 0.6);
-
-          .photo-overlay-content {
-            opacity: 1;
-          }
-        }
-      }
-
-      .photo-overlay-content {
-        width: 100%;
-        align-self: flex-end;
-        text-align: right;
-        margin: 1rem;
-        opacity: 0;
-        transition: opacity 0.2s ease-in-out;
-        color: #fff;
-      }
-
-      img {
-        max-height: 100%;
-        min-width: 100%;
-        width: auto;
-        object-fit: cover;
-      }
-    }
-  }
-}
-
-// Swarm Check-ins
-
-.checkin-map-wrapper {
-  .checkin-map-loader-wrapper {
-    position: absolute;
-    width: 100%;
-    top: 50%;
-    transform: translateY(-50%);
-    z-index: 1021;
-  }
-
-  #checkin_map {
-    position: relative;
-    z-index: 1020;
-  }
-}
-
-#checkin_map {
-  height: 46rem;
-  margin-top: 2rem;
-  margin-left: -2rem;
-  margin-right: -2rem;
-  transition: opacity 0.2s ease;
-}
-
-@media (min-width: @mobile-width) {
-  .checkin-map-wrapper {
-    .full-width;
-    padding-left: 2rem;
-    padding-right: 2rem;
-  }
-
-  #checkin_map {
-    height: 60rem;
-    margin-top: 4rem;
-  }
-}
-
-.page-favicon-valley-podcast {
-  thead th:last-child,
-  tr td:last-child {
-    text-align: right;
-  }
-
-  tbody tr:last-child {
-    font-weight: bold;
-    border-top: 1px solid #e1e1e1;
-  }
-}
-
-// Ads
-
-.ad-1p {
-  .u-text-center;
-  .margin-bottom-sm;
-
-  a {
-    display: inline-block;
-  }
-
-  p small {
-    font-size: 1rem;
   }
 }
 

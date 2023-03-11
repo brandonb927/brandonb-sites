@@ -7,5 +7,5 @@ layout: base
     {{ page.title }}
   </h2>
 
-  {% include anchor_headings.html html=content anchorBody='#' anchorClass='post-heading-anchor' anchorTitle='Link to this section' %}
+  {% include anchor_headings.html html=content beforeHeading=true anchorBody='#' anchorClass='post-heading-anchor' anchorTitle='Link to this section' %}
 </article>

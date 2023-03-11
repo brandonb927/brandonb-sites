@@ -52,7 +52,7 @@ defaults:
       path: ""
       type: qso
     values:
-      layout: qso
+      layout: page
       is_post: false
 
 collections:

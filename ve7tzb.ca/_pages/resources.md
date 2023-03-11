@@ -16,7 +16,6 @@ Below is a list of resources I've compiled in my journey of amateur radio:
 ## Antennas
 
 - Cable line loss calculator <https://timesmicrowave.com/calculator/>
--
 
 ## AREDN
 

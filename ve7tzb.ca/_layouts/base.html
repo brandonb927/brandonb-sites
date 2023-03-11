@@ -9,14 +9,18 @@
     itemtype="http://schema.org/WebPage"
   >
     <div class="site-wrapper">
-      {% include header.html %}
-      {% include body.html %}
-      {% include footer.html %}
-      {% include foot.html %}
+      <div class="sidebar-wrapper">
+        {% include header.html %}
+        {% include footer.html %}
+      </div>
+      <div class="body-wrapper">
+        {% include body.html %}
+      </div>
     </div>
     <a
       class="toggle-dark-mode js-toggle-dark-mode"
       title="Toggle dark mode"
     ></a>
+    {% include foot.html %}
   </body>
 </html>

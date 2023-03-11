@@ -1,5 +1,4 @@
 ---
-layout: qso
 title: VA7SGY
 sitemap: false
 ---
