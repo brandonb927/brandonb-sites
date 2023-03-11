@@ -4,11 +4,10 @@ language: "en-us"
 # Site Settings
 title: VE7TZB
 author:
-  name: Brandon VE7TZB
-  email: brandon@ve7tzb.ca
-description: TBD
-meta_description: TBD
-avatar_img: /avatar20_512.jpg
+  name: VE7TZB
+description: VE7TZB home on the web
+meta_description: An amateur radio-focused web site by callsign VE7TZB
+avatar_img: /tmv71a.jpg
 
 # Favicons
 favicon:
@@ -49,9 +48,17 @@ defaults:
     values:
       layout: page
       is_post: false
+  - scope:
+      path: ""
+      type: qso
+    values:
+      layout: qso
+      is_post: false
 
 collections:
   projects:
+    output: true
+  qso:
     output: true
 
 footer_links:

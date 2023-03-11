@@ -11,6 +11,7 @@ layout: base
 {% assign recently_updated_posts = site.posts | where: "draft",false | last_90_days_filter | sort: "date_modified" | reverse %}
 
 <div class="main-content-feed">
+  <p>Welcome to my site.</p>
   {% for post in pinned_posts %}
   <article class="main-content-feed-item main-content-feed-item-pinned"
     itemprop="blogPosts"
@@ -97,12 +98,4 @@ layout: base
   {% endif %}
   {% endunless %}
   {% endfor %}
-
-  <p class="u-text-center">
-    For more posts visit
-    <br />
-    <a href="/archive" title="Archive">
-      the Archive
-    </a>
-  </p>
 </div>

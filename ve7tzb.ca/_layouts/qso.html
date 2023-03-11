@@ -1,0 +1,11 @@
+---
+layout: base
+---
+
+<article class="main-content-page">
+  <h2 class="page-title">
+    {{ page.title }}
+  </h2>
+
+  {% include anchor_headings.html html=content anchorBody='#' anchorClass='post-heading-anchor' anchorTitle='Link to this section' %}
+</article>
