@@ -1,4 +1,7 @@
 #!/bin/sh
+
+# Install these upon pulling the repo for the first time
+
 packages=(
   pkg-config
   cairo
