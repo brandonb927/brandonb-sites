@@ -9,7 +9,7 @@
     "@babel/register": "^7.21.0",
     "broken-link-checker": "^0.7.8",
     "browser-sync": "^2.29.1",
-    "canvas": "^2.11.0",
+    "canvas": "^2.11.2",
     "chalk": "^5.2.0",
     "del": "^7.0.0",
     "dotenv": "^16.0.3",
@@ -54,8 +54,6 @@
     "brandonb.ca:surge": "cd brandonb.ca && ./node_modules/.bin/surge",
     "brandonb.ca:task:flickr": "cd brandonb.ca && node ./gulp_tasks/flickr.js",
     "brandonb.ca:task:generate-share-images": "cd brandonb.ca && gulp generate_share_images",
-
-
     "ve7tzb.ca:deploy:dryrun": "cd ve7tzb.ca && JEKYLL_ENV=production gulp deploy_dryrun",
     "ve7tzb.ca:deploy": "cd ve7tzb.ca && JEKYLL_ENV=production gulp deploy",
     "ve7tzb.ca:lint": "cd ve7tzb.ca && eslint '_assets/scripts/**/*.js'",
