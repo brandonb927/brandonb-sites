@@ -14,7 +14,7 @@
     "del": "^7.0.0",
     "dotenv": "^16.0.3",
     "eslint": "^8.37.0",
-    "flickr-sdk": "^6.1.0",
+    "flickr-sdk": "^6.1.2",
     "gulp": "^4.0.2",
     "gulp-autoprefixer": "^8.0.0",
     "gulp-awspublish": "^7.1.0",
