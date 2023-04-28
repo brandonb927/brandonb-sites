@@ -62,6 +62,8 @@ footer_links:
     attrs: 'rel="me"'
   - title: Flickr
     url: https://flickr.com/photos/brandonb927
+  - title: RSS
+    url: /feed.xml
 
 google_analytics:
   id: G-7P078D4S4Q

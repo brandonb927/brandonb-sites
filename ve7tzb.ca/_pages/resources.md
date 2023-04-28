@@ -5,6 +5,13 @@ include_in_nav: true
 order: 1
 ---
 
+<div class="inline-items">
+  <img src="https://www.hamqsl.com/solarn0nbh.php" alt="Solar conditions for the Amateur Radio bands" />
+  <iframe src="https://widget.dxwatch.com/widget/widget1.php?s=Zmw9MSZwPTEmbD0xJmNhbGxzaWduPSZmPTAmdz0zNTAmcj0xNQ==" width="400" height="535" frameborder="0" scrolling="no"></iframe>
+</div>
+
+---
+
 Below is a list of resources I've compiled in my journey of amateur radio:
 
 ## APRS/AIS

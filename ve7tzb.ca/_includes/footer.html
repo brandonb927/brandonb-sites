@@ -1,18 +1,13 @@
-<footer class="main-footer">
-  <ul class="main-footer-nav">
+<footer class="sidebar-footer">
+  <ul class="sidebar-footer-nav">
     {%- for item in site.footer_links -%}
-    <li class="main-footer-nav-item">
+    <li class="sidebar-footer-nav-item">
       <a href="{{ item.url }}" title="{{ item.title }}" {{ item.attrs }}>
         {{ item.title }}
       </a>
     </li>
     {%- endfor -%}
-    <li class="main-footer-nav-item">
-      <a href="{{ '/feed.xml' | absolute_url }}" title="RSS Feed">
-        RSS
-      </a>
-    </li>
   </ul>
 
-  <p class="main-footer-copyright"><small>&copy; 2021 -&nbsp;<time datetime="{{ site.time | date_to_rfc822 }}" itemprop="datePublished">{{ site.time | date: "%Y" }}</time></small></p>
+  <p class="sidebar-footer-copyright"><small>&copy; 2021 -&nbsp;<time datetime="{{ site.time | date_to_rfc822 }}" itemprop="datePublished">{{ site.time | date: "%Y" }}</time></small></p>
 </footer>

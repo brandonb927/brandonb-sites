@@ -5,8 +5,8 @@ language: "en-us"
 title: VE7TZB
 author:
   name: VE7TZB
-description: VE7TZB, an Amateur Radio Operator in Canada
-meta_description: VE7TZB, an Amateur Radio Operator in Canada
+description: VE7TZB, an Amateur Radio Operator in BC, Canada
+meta_description: VE7TZB, an Amateur Radio Operator in BC, Canada
 avatar_img: /tmv71a.jpg
 
 # Favicons
@@ -65,9 +65,9 @@ footer_links:
   - title: mastodon.hams.social
     url: https://mastodon.hams.social/@ve7tzb
     attrs: 'rel="me"'
-  - title: mastodon.radio
-    url: https://mastodon.radio/@ve7tzb
-    attrs: 'rel="me"'
+  - title: RSS
+    url: /feed.xml
+    attrs: ''
 
 # google_analytics:
 #   id: G-7P078D4S4Q
