@@ -7,9 +7,15 @@ order: 4
 
 I'm fairly new to amateur radio, but I currently have my Canadian Amateur Radio Basic Qualification (with Honours) and am active on my callsign [VE7TZB](https://aprs.fi/?call=VE7TZB) from my home and outdoors.
 
-I'm also part of the [Nanaimo Amateur Radio Association](http://www.ve7na.ca/) and [Cowichan Valley Amateur Radio Society](http://cvars.com) clubs.
+Some of the clubs I belong to are:
+
+- [North Islane Amateur Radio Society](https://niars.ca/)
+- [Nanaimo Amateur Radio Association](http://www.ve7na.ca/)
+- [Cowichan Valley Amateur Radio Society](http://cvars.com)
 
 You can check out my [profile on QRZ](https://www.qrz.com/db/ve7tzb) if you want to log a contact.
+
+I help maintain a Discord bot for querying APRS.fi you should try out: <https://github.com/brandonb927/aprs-discord-bot>
 
 ### My Rigs
 
