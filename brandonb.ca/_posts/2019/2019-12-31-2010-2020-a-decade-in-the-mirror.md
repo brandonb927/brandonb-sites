@@ -28,9 +28,9 @@ I apologize in advance for the long post; it's been awhile since I wrote anythin
 
 In the beginning of 2016, and after a few years working in my career, it was clear in my financials that I could severely ramp up the rate of which I was paying off my student loans. I began making larger sum payments in shorter intervals which eventually lead to having my loans paid **in full** after I made my last payment in July of 2016. 🎉
 
-<blockquote class="twitter-tweet">
-  <p lang="en" dir="ltr">Took me a few years, but I just made my last student loan payment. Officially free of student loan debt, hopefully forever 😁</p>
-  &mdash; Brandon Brown (@brandonb927) <a href="https://twitter.com/brandonb927/status/754172232872501249?ref_src=twsrc%5Etfw">July 16, 2016</a>
+<blockquote>
+  <p>Took me a few years, but I just made my last student loan payment. Officially free of student loan debt, hopefully forever 😁</p>
+  &mdash; Brandon Brown (@brandonb927) July 16, 2016
 </blockquote>
 
 This is one of my greatest achievements and I'm very proud of this. I know there are tens of thousands of people around the world who will never be able to pay off their student load debt in their own lifetime.
@@ -126,11 +126,11 @@ It's 2019 now and I'm a QA Developer at a fast-paced startup headquartered in Vi
 
 Remember when I mentioned attending university way up at the top of this post? Well, I've come full circle: After giving multiple guest lectures to ITAS students over the years since graduating, I was asked to be a part-time lecturer in the fall 2019 semester of the program teaching the "Intro to Web Development" class in the first-year curriculum. Since 2019 was already so chalk full of opportunities for me, and this was my first teaching engagement and I know the material fairly well in a work-related setting, I decided to seize the opportunity.
 
-<blockquote class="twitter-tweet">
-  <p lang="en" dir="ltr">
-    I have exciting news! I accepted my offer from <a href="https://twitter.com/hashtag/VIU?src=hash&amp;ref_src=twsrc%5Etfw">#VIU</a> to (part-time) teach in my graduating program <a href="https://twitter.com/hashtag/ITAS?src=hash&amp;ref_src=twsrc%5Etfw">#ITAS</a> this fall semester 🤯🥳 <br><br>My teenage self had no idea he’d be teaching at a university this early in life, that’s for sure. <a href="https://t.co/QKNn1MOGh6">pic.twitter.com/QKNn1MOGh6</a>
+<blockquote >
+  <p>
+    I have exciting news! I accepted my offer from #VIU to (part-time) teach in my graduating program #ITAS this fall semester 🤯🥳 <br><br>My teenage self had no idea he’d be teaching at a university this early in life, that’s for sure.
   </p>
-  &mdash; Brandon Brown (@brandonb927) <a href="https://twitter.com/brandonb927/status/1155983726959980545?ref_src=twsrc%5Etfw">July 29, 2019</a>
+  &mdash; Brandon Brown (@brandonb927) July 29, 2019
 </blockquote>
 
 To top it off, my first semester review as an instructor lead to being invited back to teach the following spring 2020 semester which is somewhat of a continuation of the class I was teaching, but with a more programming-focused curriculum on JavaScript and PHP.
@@ -141,5 +141,3 @@ really good about forgiving my rants and trailing thoughts while I stumble throu
 ---
 
 I never knew where I'd be in my life going into 2020 and I can definitely tell you with a high degree of confidence this is _not_ the career path I envisioned for myself when I was a teenager, but it's one I certainly enjoy. You never know what life has in store for you; teenage me certainly had no idea he'd have these opportunities over the last decade.
-
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>

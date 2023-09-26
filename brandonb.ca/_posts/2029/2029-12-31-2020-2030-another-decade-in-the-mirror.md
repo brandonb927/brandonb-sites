@@ -86,12 +86,19 @@ As of Nov 2022, I am in my fourth year teaching at Vancouver Island University.
 
 ---
 
-### Echosec
+### Echosec acquired
 
 Echosec was acquired by Flashpoint in mid-2022. I am not enjoying the things I used to enjoy during the transition, Nov 2022. It feels like the fun of the job was stifled and stripped from me. This makes me salty about things because Echosec is a great place to work, but the acquisition did not yield anything in my favour (no stock options at all).
+
+## New puppy
+
+In September of 2023, after a year-long decision, we had an opportunity to drive to Campbell River one evening after work and see a puppy we saw on Kijiji. Once we saw him in person, we knew it was meant to be, and the rest is history. Meet Bento, our chihuahua-dachshund-pomeranian mix.
+
+{% comment %}
+{% responsive_image path:_assets/media/posts/2029-12-bento.jpg alt:"Bento, our dog" %}
+{% endcomment %}
 
 ---
 
 [CLOSING WORDS]
 
-<script async src="https://platform.twitter.com/widgets.js" charset="utf-8"></script>
