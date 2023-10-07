@@ -46,11 +46,3 @@
 {% if page.is_post %}
 <meta property="og:site_name" content="{{ site.title }}" />
 {% endif %}
-
-<!-- Twitter Cards  -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@{{ site.social.twitter }}" />
-<meta name="twitter:creator" content="@{{ site.social.twitter }}" />
-<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
-<meta name="twitter:description" content="{{ description_content }}" />
-<meta name="twitter:image" content="{{ share_image }}">
