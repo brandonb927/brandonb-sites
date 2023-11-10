@@ -4,7 +4,7 @@ date: 2024-03-31
 draft: true
 ---
 
-I'm not a very active amateur radio operator... well, I monitor _a lot_ but I'm not "on the air" very much, except for when checking in to a [local](http://ve7na.ca) [club](https://cvars.ca) [net](https://www.rac.ca/nets/) and making the odd contact while operating mopbile; other than that, I'm a little mic-shy (I know, I know...).
+I'm not a very active amateur radio operator... well, I monitor _a lot_ but I'm not "on the air" very much, except for when checking in to a [local](http://ve7na.ca) [club](https://cvars.ca) [net](https://www.rac.ca/nets/) and making the odd contact while operating mobile; other than that, I'm a little mic-shy (I know, I know...).
 
 My first QSO with someone activating a SOTA peak, or Summits On The Air as it's called, was while randomly listening to the Island Trunk System (ITS) while I was working from home. The operator keyed up the repeater frequency to announce they were doing a SOTA activation on another simplex frequency. Up until now I had heard about SOTA, and vaguely knew what it was, but I fired up the [website](https://www.sota.org.uk/) and refreshed myself on what was taking place, then tuned to the VHF frequency of 146.520MHz that they mentioned they were activating on.
 

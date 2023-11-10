@@ -10,7 +10,7 @@ I'm fairly new to amateur radio, but I currently have my Canadian Amateur Radio 
 Some of the clubs I belong to are:
 
 - [North Island Amateur Radio Society](https://niars.ca/)
-- [Nanaimo Amateur Radio Association](http://www.ve7na.ca/)
+- Director, [Nanaimo Amateur Radio Association](http://www.ve7na.ca/)
 - [Cowichan Valley Amateur Radio Society](http://cvars.com)
 
 You can check out my [profile on QRZ](https://www.qrz.com/db/ve7tzb) if you want to log a contact.

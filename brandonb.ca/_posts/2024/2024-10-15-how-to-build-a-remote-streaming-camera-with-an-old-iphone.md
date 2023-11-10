@@ -1,6 +1,6 @@
 ---
 title: How to build a remote streaming camera with an iPhone and OBS
-date: 2023-10-15
+date: 2024-10-15
 draft: true
 ---
 

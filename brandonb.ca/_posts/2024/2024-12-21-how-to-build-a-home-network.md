@@ -1,6 +1,6 @@
 ---
 title: How to build a robust home network with Ubiquiti and UniFi
-date: 2023-12-21
+date: 2024-12-21
 draft: true
 ---
 
