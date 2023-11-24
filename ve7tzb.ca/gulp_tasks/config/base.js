@@ -14,7 +14,7 @@ export default {
     secureDomain: true,
     s3: {
       region: 'us-east-1',
-      bucketMedia: 've7tzb-web-media',
+      bucketMedia: 'brandonb-web-media',
     },
   },
   jekyll: {
@@ -41,7 +41,7 @@ export default {
       jekyll: [
         `${this.src.base}/*.yml`,
         `${this.src.base}/_data/*`,
-        `${this.src.base}/{archive,index,404}.html`,
+        `${this.src.base}/{index,404}.html`,
         `${this.src.base}/_includes/**/*`,
         `${this.src.base}/_layouts/*`,
         `${this.src.base}/_pages/**/*`,

@@ -1,7 +1,7 @@
 import { readFile, writeFile } from 'fs/promises'
 import { createCanvas, loadImage } from 'canvas'
 import { JSDOM } from 'jsdom'
-import mkdirp from 'mkdirp'
+import { mkdirp } from 'mkdirp'
 
 const BUILD_ROOT = './build_prod'
 const outputDir = 'build_prod/assets/media/share'

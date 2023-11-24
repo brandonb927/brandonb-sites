@@ -10,10 +10,10 @@ meta_description: VE7TZB, an Amateur Radio Operator in BC, Canada
 avatar_img: /tmv71a.jpg
 
 # Favicons
-favicon:
-  ico: /favicon.ico
-  png: /logo-144.png
-  theme_color: "#FFFFFF"
+# favicon:
+#   ico: /favicon.ico
+#   png: /logo-144.png
+#   theme_color: "#FFFFFF"
 
 excerpt_separator: "<!-- break -->"
 
