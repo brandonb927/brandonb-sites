@@ -11,8 +11,16 @@ layout: base
 {% assign recently_updated_posts = site.posts | where: "draft",false | last_90_days_filter | sort: "date_modified" | reverse %}
 
 <div class="main-content-feed">
-  <p>I'm VE7TZB (Brandon)! Check out the blog post about my <a href="https://brandonb.ca/the-road-to-getting-my-canadian-amateur-radio-basic-qualification">road to getting my Basic Qualification (with Honours)</a>.</p>
-  <p>I'm currently interested in HF/VHF/UHF, APRS, Digital Modes, and making radios work with modern computers.</p>
+  <p>Hi there! My name is Brandon and my callsign is VE7TZB and I hail from Vancouver Island, Canada. I'm currently interested in HF/VHF/UHF, APRS, Digital Modes, and making radios work with modern computers.</p>
+  <p>Check out the blog post about my <a href="https://brandonb.ca/the-road-to-getting-my-canadian-amateur-radio-basic-qualification">road to getting my Basic Qualification (with Honours)</a>.</p>
+  <p>Some of the clubs I am a member of include:</p>
+  <ul>
+    <li>NARA, Nanaimo Amateur Radio Association (where I'm a Director, 2023)</li>
+    <li>NIARS, North Island Amateur Radio Society</li>
+    <li>CVARS, Cowichan Valley Amateur Radio Society</li>
+  </ul>
+  <p>I'm currently building out my experience on the amateur bands and the equipment/technology that are used on them. I maintain an APRS iGate that fills in a hole in our current coverage of Nanaimo, BC, and I'm always looking for ways to improve said coverage.</p>
+  <p>POTA/SOTA are my interests away from my home shack as I am an avid outdoors person with an interest in exploration and off-road travel. If we make a contact on air, please reach out to me!</p>
 
   {% for post in pinned_posts %}
   <article class="main-content-feed-item main-content-feed-item-pinned"
