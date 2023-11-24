@@ -35,11 +35,23 @@
         </li>
         {% endif %}
       {% endfor %}
+      {%- for item in site.nav_links -%}
+      <li class="sidebar-header-nav-item" itemprop="url">
+        <a href="{{ item.url }}"
+          title="{{ item.title }}"
+          itemprop="name"
+          {{ item.attrs }}>
+          {{ item.title }}
+        </a>
+      </li>
+      {%- endfor -%}
+      {% comment %}
       <li class="sidebar-header-nav-item" itemprop="url">
         <a href="/qso/" title="Archive" itemprop="name">
           QSOs
         </a>
       </li>
+      {% endcomment %}
     </ul>
   </nav>
 </header>

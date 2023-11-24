@@ -61,13 +61,21 @@ collections:
   qso:
     output: true
 
-footer_links:
+nav_links:
   - title: mastodon.hams.social
     url: https://mastodon.hams.social/@ve7tzb
-    attrs: 'rel="me"'
+    attrs: 'rel="me" target="_blank"'
   - title: RSS
     url: /feed.xml
     attrs: ''
+
+footer_links:
+  # - title: mastodon.hams.social
+  #   url: https://mastodon.hams.social/@ve7tzb
+  #   attrs: 'rel="me"'
+  # - title: RSS
+  #   url: /feed.xml
+  #   attrs: ''
 
 # google_analytics:
 #   id: G-7P078D4S4Q

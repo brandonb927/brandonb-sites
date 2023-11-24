@@ -90,13 +90,12 @@ picture {
   flex-wrap: wrap;
   justify-content: center;
   .u-unstyled-list;
+  margin-bottom: 0;
 }
 
 .navigation-item {
   margin-bottom: 0;
-  flex-grow: 1;
-  flex-shrink: 1;
-  flex-basis: auto;
+  flex: 1;
 
   a {
     display: block;
@@ -116,36 +115,55 @@ picture {
 
 .site-wrapper {
   display: flex;
+  height: 96vh;
 }
 
 .sidebar-wrapper {
   width: 30vw;
-  height: 100vh;
-  position: sticky;
-  top: 0;
-  left: 0;
   display: flex;
   flex-direction: column;
+  flex: 1;
 }
 
 .body-wrapper {
+  display: flex;
+  flex-direction: column;
+  position: relative;
   width: 70vw;
   min-width: 72rem;
-  .margin-top-large;
   .margin-left-large;
+}
+
+@media (max-width: @mobile-width) {
+  .site-wrapper {
+    flex-direction: column;
+  }
+
+  .sidebar-wrapper {
+    width: 100%;
+    height: 100%;
+    position: relative;
+  }
+
+  .body-wrapper {
+    width: 100%;
+    min-width: auto;
+    margin-top: 0;
+    margin-left: 0;
+  }
 }
 
 // Main header
 .sidebar-header {
   .margin-top-large;
   .u-text-center;
+  padding-left: 1rem;
+  padding-right: 1rem;
   flex: 1;
 }
 
 .sidebar-header-title,
-.sidebar-header-description,
-.sidebar-header-nav,
-.sidebar-footer-nav {
+.sidebar-header-description {
   .margin-lr;
 }
 
@@ -153,7 +171,7 @@ picture {
   .sidebar-header-title,
   .sidebar-header-description,
   .sidebar-header-nav,
-  .sidebar-footer-nav {
+  .main-footer-nav {
     margin-left: 0 !important;
     margin-right: 0 !important;
   }
@@ -193,16 +211,23 @@ picture {
 }
 
 // Main content
+.main-wrapper {
+  position: relative;
+  display: flex;
+  flex-grow: 2;
+  .margin-top-large;
+}
+
 .main-content {
   .padding-top-large;
   .padding-lr;
-  max-width: 90%;
 }
 
 @media (min-width: @mobile-width) {
   .main-content {
     padding-left: 0;
     padding-right: 0;
+    max-width: 90%;
   }
 }
 
@@ -373,21 +398,22 @@ picture {
 }
 
 // Main footer
-.sidebar-footer {
-  .u-text-center;
+.main-footer {
   display: flex;
   flex-direction: column;
+  .u-text-center;
 }
 
-.sidebar-footer-nav {
+.main-footer-nav {
   .navigation;
 }
 
-.sidebar-footer-nav-item {
+.main-footer-nav-item {
   .navigation-item;
 }
 
 .main-footer-copyright {
+  .margin-top-med;
   .margin-bottom-med;
 }
 
