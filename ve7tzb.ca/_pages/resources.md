@@ -14,11 +14,13 @@ order: 1
 
 Below is a list of resources I've compiled in my journey of amateur radio:
 
-## APRS/AIS
+## APRS
 
 - APRS.fi <https://aprs.fi>
 - APRSDirect <https://www.aprsdirect.com/>
 - VesselFinder <https://www.vesselfinder.com/>
+- SMS-APRS Gateway (SMSGTE is offline as of mid-2023) <http://theconnectdesk.com/SMS/>
+- SOTA2APRS <https://www.on6zq.be/w/index.php/SOTA/SOTA2APRS> <https://www.sotaspots.co.uk/Aprs2Sota_Info.php>
 
 ## Antennas
 
@@ -27,6 +29,10 @@ Below is a list of resources I've compiled in my journey of amateur radio:
 ## AREDN
 
 - AREDN node map <http://usercontent.arednmesh.org/K/5/K5DLQ/livemap2.html>
+
+## Balloons
+
+- SondeHub-Amateur <https://amateur.sondehub.org/>
 
 ## Satellites
 
@@ -38,11 +44,13 @@ Below is a list of resources I've compiled in my journey of amateur radio:
 - SOTAWatch <https://sotawatch.sota.org.uk/en/>
 - SOTADatabase <https://www.sotadata.org.uk/en/>
 - SOTA Map <https://www.sotamaps.org/>
+- Another SOTA map <https://sotl.as/map>
 
 ## Tools
 
 - Phonetic Alphabet Quiz <https://www.elliotclyde.nz/phonetic-quiz>
 - Space Weather <https://www.solarham.net/>
+- HamAlert <https://hamalert.org>
 
 ## Misc
 
