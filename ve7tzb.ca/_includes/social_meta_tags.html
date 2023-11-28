@@ -27,30 +27,22 @@
 {%- endif -%}
 
 <meta name="description" content="{{ description_content }}">
-{% if page.is_post %}
+{%- if page.is_post -%}
 <meta name="date" content="{{ page.date | date: '%b %-d, %Y' }}">
-{% if page.date_modified %}
+{%- if page.date_modified -%}
   <meta name="revised" content="{{ page.date_modified | date: '%b %-d, %Y' }}">
 </span>
-{% endif %}
-{% endif %}
+{%- endif -%}
+{%- endif -%}
 
 <!-- Open Graph -->
 <meta property="og:type" content="{{ type }}" />
-{% if page.url %}
+{%- if page.url -%}
 <meta property="og:url" content="{{ page.url | absolute_url }}">
-{% endif %}
-<meta property="og:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}">
+{%- endif -%}
+<meta property="og:title" content="{%- if page.title -%}{{ page.title }}{%- else -%}{{ site.title }}{%- endif -%}">
 <meta property="og:description" content="{{ description_content }}">
 <meta property="og:image" content="{{ share_image }}">
-{% if page.is_post %}
+{%- if page.is_post -%}
 <meta property="og:site_name" content="{{ site.title }}" />
-{% endif %}
-
-<!-- Twitter Cards  -->
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:site" content="@{{ site.social.twitter }}" />
-<meta name="twitter:creator" content="@{{ site.social.twitter }}" />
-<meta name="twitter:title" content="{% if page.title %}{{ page.title }}{% else %}{{ site.title }}{% endif %}" />
-<meta name="twitter:description" content="{{ description_content }}" />
-<meta name="twitter:image" content="{{ share_image }}">
+{%- endif -%}

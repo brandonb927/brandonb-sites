@@ -14,27 +14,26 @@
   </p>
 
   <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
-    {% assign navurl = page.url | remove: 'index.html' %}
-    {% assign _pages = site.pages | sort: 'order' %}
+    {%- assign navurl = page.url | remove: 'index.html' -%}
+    {%- assign _pages = site.pages | sort: 'order' -%}
     <ul class="navigation sidebar-header-nav">
       <li class="navigation-item" itemprop="url">
         <a href="/" title="Blog" itemprop="name">
           Home
         </a>
       </li>
-      {% for page in _pages %}
-        {% if page.include_in_nav %}
+      {%- for page in _pages -%}
+        {%- if page.include_in_nav -%}
         <li class="navigation-item" itemprop="url">
           <a href="{{ page.url }}"
-             {% if page.url == navurl %}class="active"{% endif %}
-             {% if page.target %} target="{{ page.target }}"{% endif %}
+             {% if page.url == navurl %}class="navigation-item-active"{% endif %}
              title="{{ page.title }}"
              itemprop="name">
             {{ page.title }}
           </a>
         </li>
-        {% endif %}
-      {% endfor %}
+        {%- endif -%}
+      {%- endfor -%}
       {%- for item in site.nav_links -%}
       <li class="navigation-item" itemprop="url">
         <a href="{{ item.url }}"
@@ -45,13 +44,13 @@
         </a>
       </li>
       {%- endfor -%}
-      {% comment %}
+      {%- comment -%}
       <li class="navigation-item" itemprop="url">
-        <a href="/qso/" title="Archive" itemprop="name">
+        <a href="/qso/" title="QSOs" itemprop="name">
           QSOs
         </a>
       </li>
-      {% endcomment %}
+      {%- endcomment -%}
     </ul>
   </nav>
 </header>
