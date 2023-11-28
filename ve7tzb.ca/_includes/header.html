@@ -16,15 +16,15 @@
   <nav role="navigation" itemscope itemtype="http://schema.org/SiteNavigationElement">
     {% assign navurl = page.url | remove: 'index.html' %}
     {% assign _pages = site.pages | sort: 'order' %}
-    <ul class="sidebar-header-nav">
-      <li class="sidebar-header-nav-item" itemprop="url">
+    <ul class="navigation sidebar-header-nav">
+      <li class="navigation-item" itemprop="url">
         <a href="/" title="Blog" itemprop="name">
           Home
         </a>
       </li>
       {% for page in _pages %}
         {% if page.include_in_nav %}
-        <li class="sidebar-header-nav-item" itemprop="url">
+        <li class="navigation-item" itemprop="url">
           <a href="{{ page.url }}"
              {% if page.url == navurl %}class="active"{% endif %}
              {% if page.target %} target="{{ page.target }}"{% endif %}
@@ -36,7 +36,7 @@
         {% endif %}
       {% endfor %}
       {%- for item in site.nav_links -%}
-      <li class="sidebar-header-nav-item" itemprop="url">
+      <li class="navigation-item" itemprop="url">
         <a href="{{ item.url }}"
           title="{{ item.title }}"
           itemprop="name"
@@ -46,7 +46,7 @@
       </li>
       {%- endfor -%}
       {% comment %}
-      <li class="sidebar-header-nav-item" itemprop="url">
+      <li class="navigation-item" itemprop="url">
         <a href="/qso/" title="Archive" itemprop="name">
           QSOs
         </a>

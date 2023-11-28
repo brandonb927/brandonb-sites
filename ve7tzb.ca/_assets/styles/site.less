@@ -12,6 +12,7 @@
   it causes horizontal overflow, so stopping here. */
 body {
   overflow-x: hidden;
+  height: 100vh;
 }
 
 picture {
@@ -111,11 +112,25 @@ picture {
   }
 }
 
+@media (min-width: @mobile-width) {
+  .navigation-item {
+    a {
+      color: #fff;
+    }
+
+    a:hover,
+    a:active {
+      background: #eee;
+      color: #222;
+    }
+  }
+}
+
 // Main site wrappers
 
 .site-wrapper {
   display: flex;
-  height: 96vh;
+  height: 100%;
 }
 
 .sidebar-wrapper {
@@ -123,6 +138,7 @@ picture {
   display: flex;
   flex-direction: column;
   flex: 1;
+  background-color: #222;
 }
 
 .body-wrapper {
@@ -140,6 +156,7 @@ picture {
   }
 
   .sidebar-wrapper {
+    background-color: #fff;
     width: 100%;
     height: 100%;
     position: relative;
@@ -196,14 +213,6 @@ picture {
   margin-bottom: 4rem;
 }
 
-.sidebar-header-nav {
-  .navigation;
-}
-
-.sidebar-header-nav-item {
-  .navigation-item;
-}
-
 @media (min-width: @mobile-width) {
   .sidebar-header-image {
     height: 16rem;
@@ -215,7 +224,7 @@ picture {
   position: relative;
   display: flex;
   flex-grow: 2;
-  .margin-top-large;
+  .margin-top-sm;
 }
 
 .main-content {
@@ -224,6 +233,13 @@ picture {
 }
 
 @media (min-width: @mobile-width) {
+  .main-wrapper {
+    position: relative;
+    display: flex;
+    flex-grow: 2;
+    .margin-top-large;
+  }
+
   .main-content {
     padding-left: 0;
     padding-right: 0;
@@ -233,7 +249,14 @@ picture {
 
 .main-content-feed,
 .archive-content-feed {
-  .margin-bottom-large;
+  .margin-bottom-med;
+}
+
+@media (min-width: @mobile-width) {
+  .main-content-feed,
+  .archive-content-feed {
+    .margin-bottom-large;
+  }
 }
 
 .main-content-feed-item {
@@ -404,17 +427,14 @@ picture {
   .u-text-center;
 }
 
-.main-footer-nav {
-  .navigation;
-}
-
-.main-footer-nav-item {
-  .navigation-item;
-}
-
 .main-footer-copyright {
-  .margin-top-med;
   .margin-bottom-med;
+}
+
+@media (min-width: @mobile-width) {
+  .main-footer-copyright {
+    .margin-top-med;
+  }
 }
 
 // Post bubbles
