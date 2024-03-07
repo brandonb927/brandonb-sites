@@ -13,6 +13,7 @@ Another decade is in the books; let's take a look at what happened since then!
 - [#](#covid-19) COVID-19
 - [#](#bought-a-house) We bought a house!
 - [#](#married) We got married!
+- [#](#travel) We bought a travel trailer to travel with!
 
 ### Personal Accomplishments
 
@@ -98,7 +99,15 @@ In September of 2023, after a year-long decision, we had an opportunity to drive
 {% responsive_image path:_assets/media/posts/2029-12-bento.jpg alt:"Bento, our dog" %}
 {% endcomment %}
 
+## Travel
+
+In October of 2023, we decided after tent camping all summer on the ground and not having a great time when it came time to pack up, we decided to invest in a travel trailer. We looked at a few different models and ended up deciding on (because we got a smokin' deal) a 2020 Rockwood GeoPro 15TB. It's a 16ft trailer hitch-to-bumper that is less than 3500lbs dry and I can tow it with my 2020 Tacoma fairly easily. Upon purchasing it, I started the modifications almost immediately:
+
+- removed the ridiculously heavy lead-acid batteries from the tongue in favour of LiFePO4 batteries so we can get 2-3x the power for less than half the weight
+-
+
+<!-- pictures here -->
+
 ---
 
 [CLOSING WORDS]
-

@@ -1,14 +1,11 @@
 ---
 title: The Ultimate Automated Media Setup for Movies & TV Shows
 date: 2017-08-10
-date_modified: 2021-12-14
-pinned: true
+date_modified: 2024-03-04
 ---
 
-**[December 2021 Update]** Thanks to everyone who's signed up to ExpressVPN with [my referral link]({% link r/vpn.md %}), I've received over 80 months of free service so far which indicates to me that you folks love this content! 👏😊
+**[March 2024 Update]** Thanks to everyone who's signed up to ExpressVPN with [my referral link]({% link r/vpn.md %}), I've received over 85 months of free service which indicates to me that you folks love this content! 👏😊
 {: .post-updated}
-
-<!-- {% include ad/1password_banner.html %} -->
 
 <!-- break -->
 
@@ -142,7 +139,7 @@ Download and install the latest executable from the site. In order to use Transm
 
 This could almost be a requirement for daily web browsing if you care about your privacy, as you can't be too safe on the internet these days.
 
-I chose to use [Express VPN](https://goo.gl/1BQ24q) after **thoroughly** reading the TorrentFreak [2017 review of anonymous VPN providers](https://torrentfreak.com/vpn-services-anonymous-review-2017-170304/) article. [If you sign up with my referral link]({% link r/vpn.md %}), we **BOTH** get 1 month of free service 😁 !
+I chose to use [Express VPN]({% link r/vpn.md %}) after **thoroughly** reading the TorrentFreak [2017 review of anonymous VPN providers](https://torrentfreak.com/vpn-services-anonymous-review-2017-170304/) article. [If you sign up with my referral link]({% link r/vpn.md %}), we **BOTH** get 1 month of free service 😁 !
 
 **[2019 UPDATE]** I would not advise the use of the following technique based on my personal experience implementing and using it for a reasonable period of time. Even though I found a way to [add a network kill-switch]({% post_url /2018/2018-01-12-how-to-setup-a-windows-10-application-network-killswitch %}), it is still pretty brittle and prone to issues in practice (hanging on dial, no redial on connection loss, etc).
 {: .post-updated}
