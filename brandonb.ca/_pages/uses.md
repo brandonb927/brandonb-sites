@@ -13,23 +13,23 @@ share_image: https://dc1r9kxqg42ml.cloudfront.net/brandonb.ca/r/uses-overhead-de
 
 This page has everything I use, both hardware and software-wise, to be a productive person. If you decide to make your own `uses` page on your site, consider adding it to [uses.tech](https://uses.tech) created by [Wes Bos](https://twitter.com/wesbos).
 
-My primary work OS is macOS, so most tools and software listed here are specific to that OS. I also want to make note of my "dotfiles" macOS bootstrapping scripts available here <https://github.com/brandonb927/dotfiles> that are very personal to me, but a great starting point for others.
+My primary work operating system is macOS, so most tools and software listed here are specific to that. I also want to make note of my "dotfiles" macOS bootstrapping scripts available here <https://github.com/brandonb927/dotfiles> that are very opinionated, but a great starting point for others.
 
 ## Code Editor
 
 - [Visual Studio Code](https://code.visualstudio.com/)
 - Theme: [Min Dark](https://marketplace.visualstudio.com/items?itemName=miguelsolorio.min-theme) (a light variant is included with the theme)
-- Font: [Cascadia Code](https://github.com/microsoft/cascadia-code)
+- Font: [Comic Mono](https://dtinth.github.io/comic-mono-font/)
 
 ## Desktop Apps
 
 ### Development
 
 - [Docker](https://www.docker.com/products/docker-desktop) - development tool for running code inside a "virtual machine"
-- [Insomnia](https://insomnia.rest/) - a beautiful REST client
 - [iTerm2](https://www.iterm2.com/) - a terminal that is 100x better than the default Terminal.app
-- [Keybase](https://keybase.io/) - securing files and messages with PGP, encrypted chat, among other features.
-- [Ngrok](https://ngrok.com/) - when you need to expose a port to the internet from your local network, ngrok should be your tool of choice
+  - [zplug](https://github.com/zplug/zplug) — zsh plugin manager
+  - [p10k theme](https://github.com/romkatv/powerlevel10k) — terminal theme
+- [Ngrok](https://ngrok.com/) - when you need to expose an application to the internet from your local network
 
 ### Security
 
@@ -38,21 +38,25 @@ My primary work OS is macOS, so most tools and software listed here are specific
 
 ### Productivity
 
-- [Aerial Screensaver](https://github.com/JohnCoates/Aerial) — Beautiful FullHD and 4K video screensavers
 - [Raycast](https://www.raycast.com/) — Spotlight search, but 10x better
 - [F.lux](https://justgetflux.com/) - reduces the strain of your screen on your eyes at night, backed by science!
 - [Plex Media Player](https://www.plex.tv/en-ca/media-server-downloads/#plex-app) - I have a Plex server at home and I use plex on all my TVs and devices
 - [Spotify](https://www.spotify.com/) - I have a HUGE Spotify library and I need to rock out sometimes
 - [Steam](https://store.steampowered.com/about/) - I have a rather large Steam library and sometimes I like to play my games
 - [Sync](https://www.sync.com/?_sync_refer=73fd9c3f0) - 🇨🇦 Canadian and trustworthy, a solid Dropbox alternative with end-to-end encryption
+- Rogue Amoeba software:
+  - [Loopback](https://rogueamoeba.com/loopback/) — Cable-free audio routing
+  - [Audio Hijack](https://rogueamoeba.com/audiohijack/) — Professional audio capture tool
+  - [Soundsource](https://rogueamoeba.com/soundsource/) — Powerful sound control
+- [Parsec](https://parsec.app/) — Low-latency remote desktop control
 
 ### Menubar
 
 - [Bartender](https://www.macbartender.com/) - hides apps in your menubar and allows for a hotkey to show them
 - [stats](https://github.com/exelban/stats) - a menubar app to show stats about your system
 - [Kap](https://getkap.co/) - a beautiful minimalist screen recorder
-- [Rectangle](https://rectangleapp.com/) - My window manager of choice in macOS (previously used Spectacle)
 - [Stay](https://cordlessdog.com/stay/) - I've never been happy with macOS window management when plugging in a display, this tool allows you to store window locations on a per-display configuration basis, and even a per-app basis
+- [Hyperduck](https://sindresorhus.com/hyperduck) — Send links from iOS to your Mac
 
 ### macOS Maintenance
 
