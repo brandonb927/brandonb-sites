@@ -43,7 +43,7 @@ My primary work operating system is macOS, so most tools and software listed her
 - [Plex Media Player](https://www.plex.tv/en-ca/media-server-downloads/#plex-app) - I have a Plex server at home and I use plex on all my TVs and devices
 - [Spotify](https://www.spotify.com/) - I have a HUGE Spotify library and I need to rock out sometimes
 - [Steam](https://store.steampowered.com/about/) - I have a rather large Steam library and sometimes I like to play my games
-- [Sync](https://www.sync.com/?_sync_refer=73fd9c3f0) - 🇨🇦 Canadian and trustworthy, a solid Dropbox alternative with end-to-end encryption
+- [Sync.com]({% link r/sync_com.md %}) - 🇨🇦 Canadian and trustworthy, a solid Dropbox alternative with end-to-end encryption
 - Rogue Amoeba software:
   - [Loopback](https://rogueamoeba.com/loopback/) — Cable-free audio routing
   - [Audio Hijack](https://rogueamoeba.com/audiohijack/) — Professional audio capture tool
