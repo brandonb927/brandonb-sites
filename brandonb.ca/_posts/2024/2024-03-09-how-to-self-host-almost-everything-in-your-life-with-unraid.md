@@ -2,7 +2,6 @@
 title: How to self-host (almost) everything in your life with unRAID
 date: 2024-03-09
 pinned: true
-draft: true
 ---
 
 {% include ad/vpn.html %}
