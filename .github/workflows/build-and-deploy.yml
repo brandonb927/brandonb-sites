@@ -50,7 +50,6 @@ jobs:
         if: success()
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          title: "deploy"
           description: "Successfully deployed brandonb.ca"
           color: 0x28a745
 
@@ -58,6 +57,5 @@ jobs:
         if: failure()
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
-          title: "deploy"
           description: "Failed to deploy brandonb.ca"
           color: 0xdc3545
