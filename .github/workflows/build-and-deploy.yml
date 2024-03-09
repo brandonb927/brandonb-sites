@@ -12,8 +12,6 @@ jobs:
   build-brandonb_ca:
     name: Build and Deploy brandonb.ca
     runs-on: ubuntu-latest
-    env:
-      BUILD_URL: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
     steps:
       - uses: actions/checkout@v4
 
@@ -55,6 +53,8 @@ jobs:
           title: "deploy"
           description: "Successfully deployed brandonb.ca `${{ github.sha }}`\nSee [build log](${{ BUILD_URL }})"
           color: 0x28a745
+        env:
+          BUILD_URL: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
       - uses: sarisia/actions-status-discord@v1
         if: failure()
@@ -63,3 +63,5 @@ jobs:
           title: "deploy"
           description: "Failed to deploy brandonb.ca `${{ github.sha }}`\nSee [build log](${{ BUILD_URL }})"
           color: 0xdc3545
+        env:
+          BUILD_URL: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
