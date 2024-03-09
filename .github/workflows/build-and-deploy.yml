@@ -10,6 +10,7 @@ on:
 
 jobs:
   build-brandonb_ca:
+    name: Build and Deploy brandonb.ca
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -37,5 +38,5 @@ jobs:
       - name: Install js dependencies
         run: npm ci
 
-      - name: Build and deploy brandonb.ca
-        run: npm run brandonb.ca:deploy:dryrun
+      - name: Build and deploy
+        run: npm run brandonb.ca:deploy
