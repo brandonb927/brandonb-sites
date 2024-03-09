@@ -51,7 +51,7 @@ jobs:
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           title: "deploy"
-          description: "Successfully deployed brandonb.ca `${{ github.sha }}`\nSee [build log](${{ BUILD_URL }})"
+          description: "Successfully deployed brandonb.ca `${{ github.sha }}`\nSee [build log](${{ env.BUILD_URL }})"
           color: 0x28a745
         env:
           BUILD_URL: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
@@ -61,7 +61,7 @@ jobs:
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           title: "deploy"
-          description: "Failed to deploy brandonb.ca `${{ github.sha }}`\nSee [build log](${{ BUILD_URL }})"
+          description: "Failed to deploy brandonb.ca `${{ github.sha }}`\nSee [build log](${{ env.BUILD_URL }})"
           color: 0xdc3545
         env:
           BUILD_URL: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
