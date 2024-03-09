@@ -2,6 +2,7 @@ import { spawn } from 'child_process'
 import path from 'path'
 
 import { fromIni } from '@aws-sdk/credential-provider-ini'
+import { fromEnv } from '@aws-sdk/credential-provider-env'
 import browsersync from 'browser-sync'
 import { deleteAsync } from 'del'
 import gulp from 'gulp'
@@ -291,7 +292,7 @@ function s3_media() {
       params: {
         Bucket: configProd.deploy.s3.bucketMedia,
       },
-      credentials: fromIni({ profile: 'personal' }),
+      credentials: fromIni({ profile: 'personal' }) || fromEnv(),
     },
     {
       'Cache-Control': 'max-age=315360000, no-transform, public',

@@ -17,20 +17,21 @@ jobs:
 
       - uses: actions/cache@v4
         with:
-          path: vendor/bundle
-          key: ${{ runner.os }}-brandonb.ca-${{ hashFiles('**/Gemfile.lock') }}
+          path: .awspublish-brandonb-web-media
+          key: ${{ runner.os }}-awspublish-cache-${{ hashFiles('**/.awspublish-brandonb-web-media') }}
           restore-keys: |
-            ${{ runner.os }}-brandonb.ca-
+            ${{ runner.os }}-awspublish-cache-
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
         with:
           ruby-version: '3'
+          bundler-cache: true
 
       - uses: actions/setup-node@v4
         with:
           node-version: 20
-          cache-dependency-path: 'package-lock.json'
+          cache: 'npm'
 
       - name: Install ruby dependencies
         run: gem install bundler && bundle install
