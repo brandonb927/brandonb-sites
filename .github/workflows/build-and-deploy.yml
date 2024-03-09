@@ -51,17 +51,13 @@ jobs:
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           title: "deploy"
-          description: "Successfully deployed brandonb.ca `${{ github.sha }}`\nSee [build log](${{ env.BUILD_URL }})"
+          description: "Successfully deployed brandonb.ca"
           color: 0x28a745
-        env:
-          BUILD_URL: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
 
       - uses: sarisia/actions-status-discord@v1
         if: failure()
         with:
           webhook: ${{ secrets.DISCORD_WEBHOOK }}
           title: "deploy"
-          description: "Failed to deploy brandonb.ca `${{ github.sha }}`\nSee [build log](${{ env.BUILD_URL }})"
+          description: "Failed to deploy brandonb.ca"
           color: 0xdc3545
-        env:
-          BUILD_URL: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
