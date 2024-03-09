@@ -47,8 +47,6 @@ If the N2 is a tad too small for you, it has a larger sibling called the {% amaz
 
 These cases fit the criteria of exactly what I want in a PC case: small, attractive design, seemingly easy to build in, and don't have a bunch of empty space due to poor design where the PSU fits. It wasn't until my N2 arrived that I was truly amazed at the quality of the case build. I've built a lot of PCs in my life, but this case was so well engineered that I'm now obsessed with it and will exclusively use Jonsbo for the foreseeable future.
 
-[image of my Jonsbo case on the network rack shelf here with description "look how nice it looks, and you'd never believe it has 5 HDDs inside!"]
-
 ### Storage
 
 With the case sorted, next up was picking a motherboard, SSDs (the motherboard I picked has 2x NVMe slots so they will be used for the cache pool, but more on that later), RAM, CPU & cooler. Honestly, the hardest part of all this was figuring out how much money I wanted to spend on HDDs because they were going to be half the cost of the whole build 🤣. I ended up with 3x Seagate IronWolf Pro 20TB HDDs that I luckily acquired on sale. This hurt my wallet a bit but I knew it would pay off when I setup the RAID and would inevitably have +40TB of usable space (I didn't mention I was also installing a 10TB HDD pulled from the previous machine).
