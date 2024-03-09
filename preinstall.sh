@@ -7,11 +7,13 @@ packages=(
   cairo
   pango
   libpng
+  optipng
   jpeg
+  mozjpeg
   giflib
   librsvg
 )
 
-for package in "$packages[@]"; do
-  brew list $package &>/dev/null || brew install $package
+for package in "${packages[@]}"; do
+  brew list "$package" &>/dev/null || brew install "$package"
 done
