@@ -16,6 +16,8 @@ jobs:
       brandonb_ca: ${{ steps.filter.outputs.brandonb_ca }}
       ve7tzb_ca: ${{ steps.filter.outputs.ve7tzb_ca }}
     steps:
+      - uses: actions/checkout@v4
+
       - uses: dorny/paths-filter@v3
         id: changes
         with:
