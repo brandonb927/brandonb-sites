@@ -262,9 +262,11 @@ export const build_prod = gulp.series(
 )
 
 export function generate_share_images() {
-  return spawn('node', ['gulp_tasks/generate-share-images.js'], {
-    stdio: 'inherit',
-  })
+  return spawn(
+    'node',
+    ['gulp_tasks/generate-share-images.js'],
+    { stdio: 'inherit' }
+  )
 }
 
 /**
@@ -284,20 +286,13 @@ function surge_deploy() {
 }
 
 function s3_media() {
-  let credentials
-  try {
-    credentials = fromIni({ profile: 'personal' })
-  } catch (error) {
-    credentials = fromEnv()
-  }
-
   let publisher = awspublish.create(
     {
       region: configProd.deploy.s3.region,
       params: {
         Bucket: configProd.deploy.s3.bucketMedia,
       },
-      credentials,
+      credentials: process.env.CI ? fromEnv() : fromIni({ profile: 'personal' }),
     },
     {
       'Cache-Control': 'max-age=315360000, no-transform, public',
@@ -317,11 +312,7 @@ function s3_media() {
     .pipe(awspublish.reporter())
 }
 
-export const deploy_dryrun = gulp.series(
-  build_prod,
-  generate_share_images,
-  optimize_prod
-)
+export const deploy_dryrun = gulp.series(build_prod, generate_share_images, optimize_prod)
 
 export const deploy = gulp.series(
   build_prod,
@@ -377,9 +368,11 @@ function jekyll_build_prod(cb) {
 export function watch() {
   gulp.watch(
     configDev.watch.jekyll,
-    gulp.series(jekyll_build_dev, function browsersync_reload(cb) {
-      bsServer.reload()
-      /*
+    gulp.series(
+      jekyll_build_dev,
+      function browsersync_reload(cb) {
+        bsServer.reload()
+        /*
         console.log(`** Reminder **`)
         console.log(`BrowserSync URLs`)
         console.log(`├── ${browsersyncLocalURL}`)
@@ -387,8 +380,9 @@ export function watch() {
         console.log(`ngrok URL`)
         console.log(`└── ${ngrokURL}`)
         */
-      cb()
-    })
+        cb()
+      }
+    )
   )
   gulp.watch(configDev.watch.styles, styles_dev)
   gulp.watch(configDev.watch.scripts, scripts_dev)
