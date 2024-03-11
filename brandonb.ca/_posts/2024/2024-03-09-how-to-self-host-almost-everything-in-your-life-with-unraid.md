@@ -67,7 +67,7 @@ Below is a cost breakdown of the parts going into this build if you're curious, 
 | {% amazon B0813X9G8T "Noctua NF-A12x15 chromax black fans, 120x15mm" %}       | 2        | $31.95     | $71.57      |
 | {% amazon B07WFX3FZ5 "SilterStone 450W 80 Plus Bronze PSU (ST45SF-V3-USA)" %} | 1        | $112.65    | $126.17     |
 |                                                                               |          |            |             |
-| **TOTAL**                                                                     |          |            | $3,154.33   |
+| **TOTAL (CAD)**                                                               |          |            | $3,154.33   |
 
 ---
 
