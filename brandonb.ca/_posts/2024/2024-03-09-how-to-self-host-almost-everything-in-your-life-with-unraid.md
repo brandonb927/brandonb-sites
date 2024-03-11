@@ -107,6 +107,7 @@ Here are my recommendations for apps you can install to self-host and replace so
 - [Hammond](https://github.com/AlfHou/hammond) — track and manage your vehicular expenses
 - [Scrutiny](https://github.com/AnalogJ/scrutiny) — web UI for S.M.A.R.T. monitoring
 - [Speedtest-tracker](https://github.com/henrywhitaker3/Speedtest-Tracker) — automated speedtest tracking tool
+- [Uptime Kuma](https://github.com/louislam/uptime-kuma) — service and website monitoring
 - [Homebridge](https://homebridge.io/) — run non-approved devices with Homekit, over 2K plugins
 - [Homepage](https://gethomepage.dev/) — homepage for all your services
 - [Nginx proxy manager](https://github.com/NginxProxyManager/nginx-proxy-manager) — easily setup reverse proxy domains for your services
