@@ -6,7 +6,7 @@ date_modified: 2023-04-04
 
 {% include ad/vpn.html %}
 
-This is a follow up to my [last post]({% post_url 2021/2021-12-14-the-road-to-getting-my-canadian-amateur-radio-basic-qualification %}) about getting my Amateur Radio Basic Qualification (with Honours) and being interested in APRS. Since then, I've made some progress in my ham radio journey and setup my own APRS tracker that I run in my truck! This allows me to go explore our backcountry roads without fear that I will get lost.
+This is a follow up to my [last post]({{ site.url }}{% post_url 2021/2021-12-14-the-road-to-getting-my-canadian-amateur-radio-basic-qualification %}) about getting my Amateur Radio Basic Qualification (with Honours) and being interested in APRS. Since then, I've made some progress in my ham radio journey and setup my own APRS tracker that I run in my truck! This allows me to go explore our backcountry roads without fear that I will get lost.
 
 What lies beyond is mostly a brain dump of notes I made over the course of putting this project together so that in the future I can refer back to it when I forget some things about the setup. I'm hoping that it helps you when setting up your own APRS tracker using some open-source software called Dire Wolf and some other relatively inexpensive hardware.
 

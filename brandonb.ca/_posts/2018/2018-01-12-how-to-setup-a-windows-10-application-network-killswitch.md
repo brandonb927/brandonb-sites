@@ -5,7 +5,7 @@ date: 2018-01-12
 
 A more appropriate title for this could be: How to setup Windows 10 firewall rules to kill network traffic to an application when it disconnects from your VPN connection, for whatever reason.
 
-If you're concerned with privacy and you're using a VPN connection on your computer to browse the internet, you're likely wanting to protect your downloading habits from prying eyes among other things. In a previous post I [documented the ultimate automated media setup]({% post_url /2017/2017-08-10-ultimate-media-server-setup %}) and covered a bit on setting up a VPN to ensure you're safe from your ISP and other 3rd-party snoopers. In this post I want to show you how to setup an application in Windows 10 to kill network activity _only for that application_ using just the Windows Firewall and some straight-forward inbound/outbound rules.
+If you're concerned with privacy and you're using a VPN connection on your computer to browse the internet, you're likely wanting to protect your downloading habits from prying eyes among other things. In a previous post I [documented the ultimate automated media setup]({{ site.url }}{% post_url /2017/2017-08-10-ultimate-media-server-setup %}) and covered a bit on setting up a VPN to ensure you're safe from your ISP and other 3rd-party snoopers. In this post I want to show you how to setup an application in Windows 10 to kill network activity _only for that application_ using just the Windows Firewall and some straight-forward inbound/outbound rules.
 
 <!-- break -->
 

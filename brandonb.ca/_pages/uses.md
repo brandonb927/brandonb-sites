@@ -86,7 +86,7 @@ My primary work operating system is macOS, so most tools and software listed her
   - {% amazon B079JJ2MTR "Sabrent Thunderbolt 3 to Dual DisplayPort adapter" %} — because there is only a single DisplayPort input on the TS3+ sadly, but a few Thunderbolt 3 ports, connects the two monitors to the dock
   - {% amazon B075FW7H5J "Satechi aluminum USB-C dongle" %} — my on-the-go adapter that lives in my backpack
 - Webcam: {% amazon B085TFF7M1 "Logitech c920" %} — previously used a mirrorless DSLR camera for my webcam, downsized in 2023 to free up some desk space
-  - Previous: {% amazon B01M050N05 "Panasonic Lumix DMC-G85" %} — see my post on [how to use a DSLR or mirrorless camera as a webcam]({% post_url 2020/2020-02-26-use-a-dslr-mirrorless-camera-as-a-webcam %})
+  - Previous: {% amazon B01M050N05 "Panasonic Lumix DMC-G85" %} — see my post on [how to use a DSLR or mirrorless camera as a webcam]({{ site.url }}{% post_url 2020/2020-02-26-use-a-dslr-mirrorless-camera-as-a-webcam %})
 - Headset: {% amazon B084P1CXFD "Razer Blackshark v2" %} — I spent years with a boom arm and mic, switched up to a headset to free up desk space in early 2024
 - Speakers: {% amazon B00CD1PTF0 "Bose Companion 2 Series III" %} — the things I love about these speakers are they're small, loud, and have two aux inputs!
 - Headphones: {% amazon B07G4MNFS1 "Sony WH-1000XM3" %} — my main headphones for both home and on-the-go use
@@ -109,7 +109,7 @@ In my 12U network rack I have (in order from top to bottom):
 - [Raspberry Pi 4 B+](https://www.buyapi.ca/product/raspberry-pi-3-model-b-plus/) running Homebridge and AdGuard
 - {% amazon B07M5QBL8G "24-port blank keystone 1U patch panel" %}
 - Reolink NVR for PoE cameras
-- [Plex media server]({% post_url 2017/2017-08-10-ultimate-media-server-setup %})
+- [Plex media server]({{ site.url }}{% post_url 2017/2017-08-10-ultimate-media-server-setup %})
 - {% amazon B0035PS5AE "8-outlet 1U rack mount PDU power strip, 120V/15A" %}
 
 Throughout my office and the house I have a few IoT devices: some {% amazon B01K1JVZOE "TP-Link HS105 wifi outlets" %}, a few [Sonoff DIY smart switches](https://sonoff.tech/product/diy-smart-switch/basicr2/), and two Echo speakers which are basically used for two things: turning the smart switches on and off, and setting cooking timers.

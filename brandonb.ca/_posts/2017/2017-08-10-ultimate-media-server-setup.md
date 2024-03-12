@@ -32,7 +32,7 @@ Below is a list of applications and some background on them that comprise the se
 
 A note before continuing: I am writing this with Windows 10 in mind, but most of the apps have other ways you can install them on various OSs, your mileage may vary ✌️. I also don't take into consideration using a NAS (more on that at the end).
 
-You might find this post useful as well! <br />**[How to use a DSLR or mirrorless camera as a webcam]({% post_url 2020/2020-02-26-use-a-dslr-mirrorless-camera-as-a-webcam %})**
+You might find this post useful as well! <br />**[How to use a DSLR or mirrorless camera as a webcam]({{ site.url }}{% post_url 2020/2020-02-26-use-a-dslr-mirrorless-camera-as-a-webcam %})**
 {: .post-useful-content}
 
 ### [Plex Media Server](https://www.plex.tv/)
@@ -141,7 +141,7 @@ This could almost be a requirement for daily web browsing if you care about your
 
 I chose to use [Express VPN]({{ site.url }}{% link r/vpn.md %}) after **thoroughly** reading the TorrentFreak [2017 review of anonymous VPN providers](https://torrentfreak.com/vpn-services-anonymous-review-2017-170304/) article. [If you sign up with my referral link]({{ site.url }}{% link r/vpn.md %}), we **BOTH** get 1 month of free service 😁 !
 
-**[2019 UPDATE]** I would not advise the use of the following technique based on my personal experience implementing and using it for a reasonable period of time. Even though I found a way to [add a network kill-switch]({% post_url /2018/2018-01-12-how-to-setup-a-windows-10-application-network-killswitch %}), it is still pretty brittle and prone to issues in practice (hanging on dial, no redial on connection loss, etc).
+**[2019 UPDATE]** I would not advise the use of the following technique based on my personal experience implementing and using it for a reasonable period of time. Even though I found a way to [add a network kill-switch]({{ site.url }}{% post_url /2018/2018-01-12-how-to-setup-a-windows-10-application-network-killswitch %}), it is still pretty brittle and prone to issues in practice (hanging on dial, no redial on connection loss, etc).
 {: .post-updated}
 
 Once you sign up, get your account details from the subscriptions page to manually create new VPN configuration in Windows 10. To do so:

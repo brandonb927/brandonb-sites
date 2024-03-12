@@ -4,7 +4,7 @@ date: 2024-06-15
 draft: true
 ---
 
-Ever since I graduated from the [ITAS program at VIU]({% post_url 2019/2019-12-31-2010-2020-a-decade-in-the-mirror %}#university-itas), I've had this nagging desire to build my own home network from scratch using enterprise-level hardware. My partner and I were fortunate enough to purchase our own home in the last year (yay 🎉!) and I was able to _finally_ scratch that itch.
+Ever since I graduated from the [ITAS program at VIU]({{ site.url }}{% post_url 2019/2019-12-31-2010-2020-a-decade-in-the-mirror %}#university-itas), I've had this nagging desire to build my own home network from scratch using enterprise-level hardware. My partner and I were fortunate enough to purchase our own home in the last year (yay 🎉!) and I was able to _finally_ scratch that itch.
 
 In this post I will go over building out my home network from scratch, starting from wiring the house with Cat6 all the way to configuring the VLans and routing in a 12U network rack in my office closet.
 

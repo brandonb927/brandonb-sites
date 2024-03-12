@@ -19,7 +19,7 @@ Another decade is in the books; let's take a look at what happened since then!
 
 #### Canadian Amateur Radio Basic Qualification
 
-I became a certified "ham" in November of 2021 🐷 Read more about it over in [my post]({% post_url 2021/2021-12-14-the-road-to-getting-my-canadian-amateur-radio-basic-qualification %}).
+I became a certified "ham" in November of 2021 🐷 Read more about it over in [my post]({{ site.url }}{% post_url 2021/2021-12-14-the-road-to-getting-my-canadian-amateur-radio-basic-qualification %}).
 
 Shortly after this I acquired my Restricted Operators Certificate - Maritime (ROC-M) license in May of 2022.
 

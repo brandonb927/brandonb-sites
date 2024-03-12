@@ -143,7 +143,7 @@ Once you'd completed the above steps, you should now have a functioning Raspberr
 
 - [Setup an MOTD](https://github.com/gagle/raspberrypi-motd)
 - Install nodejs with [nvm](https://github.com/creationix/nvm)
-- Install [homebridge]({% post_url /2017/2017-11-22-getting-started-with-homebridge-on-a-raspberry-pi-zero-w-with-homekit %})
+- Install [homebridge]({{ site.url }}{% post_url /2017/2017-11-22-getting-started-with-homebridge-on-a-raspberry-pi-zero-w-with-homekit %})
 
 ### Resources
 

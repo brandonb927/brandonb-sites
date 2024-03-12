@@ -3,7 +3,7 @@ title: Setup Sonarr and Radarr to notify via SMS with Twilio Runtime
 date: 2018-04-10
 ---
 
-So you read my post on setting up the [ultimate media server for movies and tv shows]({% post_url /2017/2017-08-10-ultimate-media-server-setup %}) and you're in awe over how amazing a feeling it is to automate something that is such a pain to manage manually. You might also wonder what it would be like to get notifications when episodes or movies are downloaded. I came up with a rather non-obvious solution that might pique your interest: getting download, etc. notifications via text message.
+So you read my post on setting up the [ultimate media server for movies and tv shows]({{ site.url }}{% post_url /2017/2017-08-10-ultimate-media-server-setup %}) and you're in awe over how amazing a feeling it is to automate something that is such a pain to manage manually. You might also wonder what it would be like to get notifications when episodes or movies are downloaded. I came up with a rather non-obvious solution that might pique your interest: getting download, etc. notifications via text message.
 
 <!-- break -->
 

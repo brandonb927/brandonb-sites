@@ -8,7 +8,7 @@ pinned: true
 
 Maintenance is a word that can strike a chord in even the most seasoned administrators; it is also the bane of my existence. Sometimes we spend countless hours maintaining something for very little return.
 
-In this post I talk about building a new machine to replace my aging [media server]({% post_url 2017/2017-08-10-ultimate-media-server-setup %}) and how you can take back some control over the data you constantly give out to services and products.
+In this post I talk about building a new machine to replace my aging [media server]({{ site.url }}{% post_url 2017/2017-08-10-ultimate-media-server-setup %}) and how you can take back some control over the data you constantly give out to services and products.
 
 <!-- break -->
 
