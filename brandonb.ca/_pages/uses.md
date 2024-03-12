@@ -33,7 +33,7 @@ My primary work operating system is macOS, so most tools and software listed her
 
 ### Security
 
-- [ExpressVPN]({% link r/vpn.md %}){:rel="nofollow"} — the only VPN I trust because they [don't retain _any_ logs](https://www.expressvpn.com/what-is-vpn/policy-towards-logs)
+- [ExpressVPN]({{ site.baseurl }}{% link r/vpn.md %}){:rel="nofollow"} — the only VPN I trust because they [don't retain _any_ logs](https://www.expressvpn.com/what-is-vpn/policy-towards-logs)
 - [1Password Password Manager](https://1password.com/sign-up/ca/) — 🇨🇦 Canadian and trustworthy, the two traits to look for in a quality product for storing passwords
 
 ### Productivity
@@ -43,7 +43,7 @@ My primary work operating system is macOS, so most tools and software listed her
 - [Plex Media Player](https://www.plex.tv/en-ca/media-server-downloads/#plex-app) - I have a Plex server at home and I use plex on all my TVs and devices
 - [Spotify](https://www.spotify.com/) - I have a HUGE Spotify library and I need to rock out sometimes
 - [Steam](https://store.steampowered.com/about/) - I have a rather large Steam library and sometimes I like to play my games
-- [Sync.com]({% link r/sync_com.md %}) - 🇨🇦 Canadian and trustworthy, a solid Dropbox alternative with end-to-end encryption
+- [Sync.com]({{ site.baseurl }}{% link r/sync_com.md %}) - 🇨🇦 Canadian and trustworthy, a solid Dropbox alternative with end-to-end encryption
 - Rogue Amoeba software:
   - [Loopback](https://rogueamoeba.com/loopback/) — Cable-free audio routing
   - [Audio Hijack](https://rogueamoeba.com/audiohijack/) — Professional audio capture tool
@@ -130,8 +130,8 @@ Throughout my office and the house I have a few IoT devices: some {% amazon B01K
 
 {% responsive_image path:_assets/media/pages/uses-comet-neowise.jpg alt:"The comet NEOWISE taken July 17th 2020" %}
 
-I also have some of my shots from Flickr over on my [photos page]({% link photos.html %}) if you're curious!
+I also have some of my shots from Flickr over on my [photos page]({{ site.baseurl }}{% link photos.html %}) if you're curious!
 
 ## Amateur Radio
 
-See my [dedicated page]({% link amateur-radio.md %}) on amateur radio.
+See my [dedicated page]({{ site.baseurl }}{% link amateur-radio.md %}) on amateur radio.
