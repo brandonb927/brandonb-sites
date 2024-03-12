@@ -134,4 +134,4 @@ I also have some of my shots from Flickr over on my [photos page]({% link photos
 
 ## Amateur Radio
 
-In my truck I run a Kenwood TM-D710A (modified with internal GPS) 50W mobile transceiver connected to a Comet CA-2X4SR dual band 40" antenna. My shack consists of a Kenwood V71A 50W transceiver as my main radio and I have an old Kenwood commercial radio programmed to the APRS (144.390MHz) frequency acting as an iGate, which is connected to a DigiRig Mobile and Direwolf running on a Raspberry Pi 4. I also have a handful of Baofeng handheld transceivers with 14" Nagoya whip antennas as well.
+See my [dedicated page]({% link amateur-radio.md %}) on amateur radio.

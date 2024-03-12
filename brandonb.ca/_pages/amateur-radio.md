@@ -5,7 +5,7 @@ include_in_nav: true
 order: 4
 ---
 
-I'm fairly new to amateur radio, but I currently have my Canadian Amateur Radio Basic Qualification (with Honours) and am active on my callsign [VE7TZB](https://aprs.fi/?call=VE7TZB) from my home and outdoors.
+I'm fairly new to amateur radio, but I currently hold my Canadian Amateur Radio Basic Qualification (with Honours) and am active with my callsign [VE7TZB](https://aprs.fi/?call=VE7TZB) from home and the outdoors.
 
 Some of the clubs I belong to are:
 
@@ -15,14 +15,10 @@ Some of the clubs I belong to are:
 
 You can check out my [profile on QRZ](https://www.qrz.com/db/ve7tzb) if you want to log a contact.
 
-I help maintain a Discord bot for querying APRS.fi you should try out: <https://github.com/brandonb927/aprs-discord-bot>
+I help maintain a Discord bot that makes it easier to interact with various amateur radio information sources that you should try out: <https://github.com/brandonb927/amateur-radio-discord-bot>
 
 ### My Rigs
 
-In my truck I run a Kenwood TM-V71A 50W mobile transceiver connected to a Comet CA-2X4SR dual band 40" antenna attached to my roof rack.
+In my truck I run a Kenwood TM-D710A (modified with internal GPS) 50W mobile transceiver connected to a Comet CA-2X4SR dual band 40" antenna.
 
-At home I run another Kenwood TM-V71A 50W mobile transceiver as a base station powered by a Pyramid PSV3000 which will run for some time in the event of grid power loss by a UPS (I eventually want to run this station off a large LiFePO4 battery but that costs $$$). The station is connected to 25ft of LMR-400 which goes to a Diamond X50A dual band 5.6ft antenna in my attic.
-
-{% comment %}This station acts as an APRS IGate/Digipeater running through a DigiRig into a machine running Dire-Wolf 1.7.{% endcomment %}
-
-I also have a few spare Baofeng handheld transceivers with 14" Nagoya whip antennas that I bring with me on outings.
+My QTH shack consists of a Kenwood V71A 50W transceiver as my main radio and I have an old Kenwood commercial radio programmed to the APRS (144.390MHz) frequency acting as an iGate, which is connected to a DigiRig Mobile and Direwolf running on a Raspberry Pi 4. I also have a handful of Baofeng handheld transceivers with 14" Nagoya whip antennas as well.
