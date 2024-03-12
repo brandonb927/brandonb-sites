@@ -5,7 +5,7 @@ sitemap: false
 {
   "version": "https://jsonfeed.org/version/1",
   "title": "{{ site.title | normalize_whitespace }}",
-  "description": "{{ site.description | normalize_whitespace | replace: '<br />',' | ' }}",
+  "description": "{{ site.description | strip_html | normalize_whitespace }}",
   "home_page_url": "{{ site.url }}",
   "feed_url": "{{ '/feed.json' | absolute_url }}",
   "icon": "{{ site.favicon.png | prepend: site.assets_media }}",
