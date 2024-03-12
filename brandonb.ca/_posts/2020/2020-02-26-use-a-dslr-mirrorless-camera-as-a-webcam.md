@@ -6,7 +6,7 @@ date_modified: 2021-03-01
 
 {% include author_affiliated.html %}
 
-**[March 2021 UPDATE]** Revisited — Since posting this, a bunch of new tech has been released and over one year into the world-wide pandemic for COVID-19 our lives have fundamentally changed (for the better in some instances, not so in others). I have revised some of the sections and updated the content to reflect alternative offerings since the original publish date. Most notably is the addition of [webcam software](#webcam-software) available from most major camera manufacturers.
+**[March 2021 UPDATE]** Revisited — Since posting this, a bunch of new tech has been released and over one year into the world-wide pandemic for COVID-19 our lives have fundamentally changed (for the better in some instances, not so in others). I have revised some of the sections and updated the content to reflect alternative offerings since the original publish date. Most notably is the addition of [webcam software]({{ site.url }}{{ page.url | relative_url }}#webcam-software) available from most major camera manufacturers.
 {: .post-updated}
 
 <!-- break -->
