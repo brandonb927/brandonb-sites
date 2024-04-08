@@ -34,6 +34,10 @@ Below is a list of resources I've compiled in my journey of amateur radio:
 
 - SondeHub-Amateur <https://amateur.sondehub.org/>
 
+## POTA
+
+- Parks on the Air <https://pota.app/>
+
 ## Satellites
 
 - Heavens Above (satellite tracking) <https://www.heavens-above.com/main.aspx>
