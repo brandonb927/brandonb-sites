@@ -1,6 +1,6 @@
 ---
 title: Amateur Radio Summits On The Air (SOTA)
-date: 2024-03-31
+date: 2024-04-30
 draft: true
 ---
 
