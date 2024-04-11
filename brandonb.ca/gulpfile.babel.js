@@ -269,6 +269,14 @@ export function generate_share_images() {
   )
 }
 
+export function generate_flickr_data() {
+  return spawn(
+    'node',
+    ['gulp_tasks/flickr.js'],
+    { stdio: 'inherit' }
+  )
+}
+
 /**
  * Deploy
  */
@@ -316,6 +324,7 @@ export const deploy_dryrun = gulp.series(build_prod, generate_share_images, opti
 
 export const deploy = gulp.series(
   build_prod,
+  generate_flickr_data,
   generate_share_images,
   optimize_prod,
   s3_media,
