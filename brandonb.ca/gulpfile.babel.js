@@ -323,8 +323,8 @@ function s3_media() {
 export const deploy_dryrun = gulp.series(build_prod, generate_share_images, optimize_prod)
 
 export const deploy = gulp.series(
-  build_prod,
   generate_flickr_data,
+  build_prod,
   generate_share_images,
   optimize_prod,
   s3_media,
