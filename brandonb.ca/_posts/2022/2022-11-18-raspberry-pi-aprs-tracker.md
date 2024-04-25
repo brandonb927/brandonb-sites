@@ -1,7 +1,7 @@
 ---
 title: How to build a Raspberry Pi APRS Tracker using Dire Wolf
 date: 2022-11-18
-date_modified: 2023-04-04
+date_modified: 2024-04-24
 ---
 
 {% include ad/vpn.html %}
