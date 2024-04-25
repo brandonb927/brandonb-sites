@@ -34,7 +34,7 @@ There are some things you need to get started:
 The setup for this build assumes the use of a Debian-based OS, in my case I use Ubuntu 22.04 Server.
 
 ```shell
-sudo apt-get install -y vim git gcc gpsd gpsd-clients g++ make cmake ntp screen \
+sudo apt install -y vim git gcc gpsd gpsd-clients g++ make cmake ntp screen \
   avahi-daemon libasound2-dev libudev-dev libavahi-client-dev libgps-dev
 ```
 
@@ -116,7 +116,7 @@ sudo chmod 0644 /etc/udev/rules.d/85-usb-digirig.rules && sudo udevadm control -
 
 ## Boot config (specific for rPi 3)
 
-Edit `/boot/config.txt` to modify the boot-time configuration for the DigiRig and GPS to play nice with USB stack:
+Edit `/boot/firmware/config.txt` to modify the boot-time configuration for the DigiRig and GPS to play nice with USB stack:
 
 ```plaintext
 dtoverlay=dwc2 # Add this below previous dtoverlay for gpio pins, enables new usb stack
@@ -175,7 +175,7 @@ Empty the `/home/aprs/direwolf.conf` file and replace it with the contents below
 ```conf
 ADEVICE  plughw:1,0
 CHANNEL 0
-MYCALL VE7TZB-9
+MYCALL [CALLSIGN]
 MODEM 1200
 PTT /dev/ttyDigiRig RTS
 
@@ -220,8 +220,8 @@ then disable any bluetooth-related services and uninstall packages with:
 sudo systemctl disable hciuart.service
 sudo systemctl disable bluealsa.service
 sudo systemctl disable bluetooth.service
-sudo apt-get purge bluez -y
-sudo apt-get autoremove -y
+sudo apt purge -y bluez
+sudo apt autoremove -y
 ```
 
 #### Firewall
@@ -229,7 +229,7 @@ sudo apt-get autoremove -y
 Setup a simple firewall to keep people from abusing connecting to the rPi wireless network. There is a lot more that could be done here but this is not a [linux server ssh hardening article](https://linuxhandbook.com/ssh-hardening-tips/).
 
 ```shell
-sudo apt-get install -y ufw
+sudo apt install -y ufw
 sudo ufw default deny incoming
 sudo ufw default allow outgoing
 sudo ufw limit 2022/tcp comment 'SSH port rate limit'
@@ -252,7 +252,7 @@ We want to write as little to the SD card as possible to extend the life of it, 
 ```shell
 sudo systemctl stop dphys-swapfile
 sudo systemctl disable dphys-swapfile
-sudo apt-get purge dphys-swapfile
+sudo apt purge dphys-swapfile
 ```
 
 {% comment %}
@@ -260,7 +260,7 @@ sudo apt-get purge dphys-swapfile
 #### Setup logging to a separate drive
 
 ```shell
-sudo apt-get install btrfs-tools
+sudo apt install btrfs-tools
 sudo mkfs.btrfs -m single /dev/sda # Use /dev/sda or USB drive disk
 sudo mkdir /var/log/direwolf
 ```
@@ -349,7 +349,7 @@ It's advisable to protect against random lockups and issues using the hardware "
 There is a watchdog daemon that "feeds" the watchdog by reseting the counter periodically. Run the following enable the daemon:
 
 ```shell
-sudo apt-get install watchdog
+sudo apt install -y watchdog
 ```
 
 Modify `/etc/watchdog` to set the device line as follows:
