@@ -8,7 +8,7 @@ I activated my first park on March 31 2024, Pacific Rim National Park (CA-0066) 
 
 Setup for my activation was fairly straight forward: I brought camping chairs for both my wife and I, a small table to operate from and for the radio to sit on, and sunglasses because the sun was beating down on us on the beach.
 
-Standard operating procedure when activating a park is a s follows:
+Standard operating procedure when activating a park is as follows:
 
 > CQ POTA, CQ Parks on the Air, this is [callsign in phonetics] in [park reference] calling Parks on the Air
 

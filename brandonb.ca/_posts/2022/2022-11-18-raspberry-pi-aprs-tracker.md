@@ -1,12 +1,12 @@
 ---
 title: How to build a Raspberry Pi APRS Tracker using Dire Wolf
 date: 2022-11-18
-date_modified: 2024-04-24
+date_modified: 2024-05-10
 ---
 
 {% include ad/vpn.html %}
 
-This is a follow up to my [last post]({{ site.url }}{% post_url 2021/2021-12-14-the-road-to-getting-my-canadian-amateur-radio-basic-qualification %}) about getting my Amateur Radio Basic Qualification (with Honours) and being interested in APRS. Since then, I've made some progress in my ham radio journey and setup my own APRS tracker that I run in my truck! This allows me to go explore our backcountry roads without fear that I will get lost.
+This is a follow up to my [last post]({{ site.url }}{% post_url 2021/2021-12-14-the-road-to-getting-my-canadian-amateur-radio-basic-qualification %}) about getting my Amateur Radio Basic Qualification (with Honours) and being interested in APRS. Since then, I've made some progress in my ham radio journey and setup my own APRS tracker that I run in my truck! This allows me to go explore our back-country roads without fear that I will get lost.
 
 What lies beyond is mostly a brain dump of notes I made over the course of putting this project together so that in the future I can refer back to it when I forget some things about the setup. I'm hoping that it helps you when setting up your own APRS tracker using some open-source software called Dire Wolf and some other relatively inexpensive hardware.
 
@@ -147,10 +147,10 @@ The above settings are only important when using an un-attenuated homebrew cable
 
 ### RaspAP config
 
-Install and configu raspAP
+Install and configure RaspAP:
 
 ```shell
-sudo raspi-config # Set Localisation for WiFi country
+sudo raspi-config # Set Localization for WiFi country
 
 curl -sL https://install.raspap.com | bash
 ```
@@ -207,7 +207,7 @@ This "fix" is because of an [issue](https://groups.io/g/direwolf/message/5973) w
 
 #### Disable bluetooth
 
-Let's disable the Bluetooth modem as it's not needed for our purposes (unless you plan to use it). Add the following to the `/boot/config.txt`:
+Let's disable the Bluetooth modem as it's not needed for our purposes (unless you plan to use it). Add the following to the `/boot/firmware/config.txt`:
 
 ```plaintext
 # Disable Bluetooth
