@@ -28,11 +28,29 @@ jobs:
             ve7tzb_ca:
               - 've7tzb.ca/**'
 
+  lint_and_test:
+    name: Lint and Test
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install js dependencies
+        run: npm ci
+
+      - name: Run linting
+        run: npm run lint:nofix
+
   build-brandonb_ca:
     name: Build and Deploy brandonb.ca
     runs-on: ubuntu-latest
     needs:
       - files_changed
+      - lint_and_test
     if: ${{ needs.files_changed.outputs.brandonb_ca == 'true' }}
     steps:
       - uses: actions/checkout@v4
@@ -97,6 +115,7 @@ jobs:
     runs-on: ubuntu-latest
     needs:
       - files_changed
+      - lint_and_test
     if: ${{ needs.files_changed.outputs.ve7tzb_ca == 'true' }}
     steps:
       - uses: actions/checkout@v4
