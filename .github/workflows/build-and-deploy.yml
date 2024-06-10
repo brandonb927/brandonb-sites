@@ -8,8 +8,8 @@ on:
     branches:
       - 'main'
 
-# env:
-#   RUNNER_TOOL_CACHE: /toolcache
+env:
+  RUNNER_TOOL_CACHE: /toolcache
 
 jobs:
   files_changed:
