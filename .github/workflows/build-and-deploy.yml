@@ -71,7 +71,7 @@ jobs:
           path: .awspublish-brandonb-web-media
           key: ${{ runner.os }}-awspublish-cache-${{ steps.get-awspublish-hash.outputs.hash }}
           restore-keys: |
-            ${{ runner.os }}-awspublish-cache-
+            ${{ runner.os }}-awspublish-cache-${{ steps.get-awspublish-hash.outputs.hash }}
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
@@ -100,6 +100,8 @@ jobs:
           FLICKR_CONSUMER_SECRET: ${{ secrets.FLICKR_CONSUMER_SECRET }}
           FLICKR_OAUTH_TOKEN: ${{ secrets.FLICKR_OAUTH_TOKEN }}
           FLICKR_OAUTH_TOKEN_SECRET: ${{ secrets.FLICKR_OAUTH_TOKEN_SECRET }}
+
+      - run: ls -al brandonb.ca
 
       - uses: sarisia/actions-status-discord@v1
         if: success()
