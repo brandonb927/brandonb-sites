@@ -26,13 +26,13 @@ When I made the decision to start replacing my server, I decided to build my own
 Some context for my network rack: The first 3U rows of the rack are occupied by a Ubiquiti UDM-Pro, a Unifi 24-port PoE switch, and a patch panel. I then have a shelf that houses a [Reolink NVR](https://reolink.com/product/rlk8-800b4/) and Raspberry Pi 4 running AdGuard Home and some other unrelated bits of software for Amateur Radio things, and another shelf on the bottom 11U row where the existing machine lives. The last 12U row is a rackmount 8-port power strip to power everything in the rack connected to a {% amazon B0BCMLLSHL "CyberPower CP1500AVRLCD3" %} that lives on a shelf below the rack (because it weighs way too much for it's size).
 {: .post-useful-content}
 
-### Server components
+### Server Components
 
-#### Dedicated vs integrated GPU
+#### Dedicated vs Integrated GPU
 
 A server's power consumption is a big deal when it runs 24/7, so I wanted to make sure that I picked a CPU for this build with an integrated video processor instead of a power-hungry dedicated GPU. The existing machine has an Intel i7-8700 and RTX 3070 graphics card combo which worked well for gaming when I wanted, but idle power draw was very high comparatively. Another reason to pick an iGPU is because Plex transcoding performance on an Intel iGPU with QuickSync is [very good](https://old.reddit.com/r/PleX/comments/11ih0gs/plex_hardware_transcoding_explained/) and is now the recommended setup for most situations.
 
-### A diamond in the rough
+### A Diamond In The Rough
 
 Researching for a NAS-focused SFF case is a tedious task: first off, almost every case meant to be used for an mITX build that exists with more than two HDD bays is ugly as sin; you cannot change my mind about this.
 
@@ -97,7 +97,7 @@ I also recommend a few other non-essential-but-useful plugins:
 - [rclone](https://forums.unraid.net/topic/51633-plugin-rclone/) — for backing up certain data to various cloud providers
 - [User Scripts](https://forums.unraid.net/topic/48286-plugin-ca-user-scripts/) — Run scripts on a schedule, like cronjobs
 
-## Apps to self-host
+## Apps To Self-host
 
 Now that you can install community-support apps, this is where the convenience, usefulness, and power of unRAID really shines. This is also what unlocks the "self-host" part of the server; any docker image you can think of, you can likely run it on your server with ease.
 
@@ -124,7 +124,7 @@ Here are my recommendations for apps you can install to self-host and replace so
   - [required for Nextcloud] [Postgresql](https://registry.hub.docker.com/_/postgres/) (or some other database, mariaDB is another good choice)
 - ... and the list grows every day!
 
-### Easy service access
+### Easy Service Access
 
 Setting up `nginx-proxy-manager` from the list above allows you to put all of these services behind a reverse proxy which makes them accessible by a domain name of your choosing. This can be designed to be accessible outside your home network if you want to, or only resolve within your network; that control is in your hands. The advantage of doing this is that you don't have to remember which service maps to which port when trying to access it in your browser; you can just enter the domain like you would a regular website! If you're familiar with setting up nginx already to do this, then do that, but this tool makes it very easy and it's done in the browser rather than dealing with config files.
 
