@@ -5,6 +5,9 @@ date_modified: 2024-06-10
 pinned: true
 ---
 
+**[June 2024 Update]** I've been running this server for over 3 months. In that time I've explored adding more services to my self-hosted life, namely: running my own dockerized Discord bot, hosting my own Gitea instance for version control (accompanied by Gitea Actions for CI/CD) to reduce my reliance on GitHub, Mealie for recipe management, and Scrypted for NVR camera connection to Homekit with HKSV. I'm constantly evaluating third-party services that I can remove and bring in-house, and I'm sure more will be self-hosted as time marches forward. I will update this space every few months to catalog my changes until it gets to be it's own post.
+{: .post-updated}
+
 Maintenance is a word that can strike a chord in even the most seasoned administrators; it is also the bane of my existence. Sometimes we spend countless hours maintaining something for very little return.
 
 In this post I talk about building a new machine to replace my aging [media server]({{ site.url }}{% post_url 2017/2017-08-10-ultimate-media-server-setup %}) and how you can take back some control over the data you constantly give out to services and products.
