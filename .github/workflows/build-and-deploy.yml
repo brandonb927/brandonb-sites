@@ -51,7 +51,7 @@ jobs:
     needs:
       - files_changed
       - lint_and_test
-    if: ${{ needs.files_changed.outputs.brandonb_ca == 'true' }}
+    # if: ${{ needs.files_changed.outputs.brandonb_ca == 'true' }}
     steps:
       - uses: actions/checkout@v4
 
