@@ -1,6 +1,7 @@
 ---
 title: How to self-host (almost) everything in your life with unRAID
 date: 2024-03-09
+date_modified: 2024-06-10
 pinned: true
 ---
 
@@ -8,9 +9,9 @@ Maintenance is a word that can strike a chord in even the most seasoned administ
 
 In this post I talk about building a new machine to replace my aging [media server]({{ site.url }}{% post_url 2017/2017-08-10-ultimate-media-server-setup %}) and how you can take back some control over the data you constantly give out to services and products.
 
-{% include ad/vpn.html %}
-
 <!-- break -->
+
+{% include ad/vpn.html %}
 
 ### Goodbye, Windows 10; Hello, unRAID
 
