@@ -8,6 +8,9 @@ on:
     branches:
       - 'master'
 
+env:
+  RUNNER_TOOL_CACHE: /toolcache
+
 jobs:
   files_changed:
     name: Get changed files
@@ -36,10 +39,16 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
+      - uses: actions/go-hashfiles@v0.0.1
+        id: get-awspublish-hash
+        with:
+          patterns: |-
+            **/.awspublish-brandonb-web-media
+
       - uses: actions/cache@v4
         with:
           path: .awspublish-brandonb-web-media
-          key: ${{ runner.os }}-awspublish-cache-${{ hashFiles('**/.awspublish-brandonb-web-media') }}
+          key: ${{ runner.os }}-awspublish-cache-${{ steps.get-awspublish-hash.outputs.hash }}
           restore-keys: |
             ${{ runner.os }}-awspublish-cache-
 
@@ -96,10 +105,16 @@ jobs:
         with:
           fetch-depth: 0
 
+      - uses: actions/go-hashfiles@v0.0.1
+        id: get-awspublish-hash
+        with:
+          patterns: |-
+            **/.awspublish-brandonb-web-media
+
       - uses: actions/cache@v4
         with:
           path: .awspublish-brandonb-web-media
-          key: ${{ runner.os }}-awspublish-cache-${{ hashFiles('**/.awspublish-brandonb-web-media') }}
+          key: ${{ runner.os }}-awspublish-cache-${{ steps.get-awspublish-hash.outputs.hash }}
           restore-keys: |
             ${{ runner.os }}-awspublish-cache-
 
