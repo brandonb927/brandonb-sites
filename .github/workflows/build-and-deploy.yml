@@ -68,7 +68,7 @@ jobs:
 
       - uses: actions/cache/restore@v4
         with:
-          path: .awspublish-brandonb-web-media
+          path: brandonb.ca/.awspublish-brandonb-web-media
           key: ${{ runner.os }}-awspublish-cache-${{ steps.get-awspublish-hash-restore.outputs.hash }}
           restore-keys: |
             ${{ runner.os }}-awspublish-cache-${{ steps.get-awspublish-hash-restore.outputs.hash }}
@@ -110,7 +110,7 @@ jobs:
 
       - uses: actions/cache/save@v4
         with:
-          path: .awspublish-brandonb-web-media
+          path: brandonb.ca/.awspublish-brandonb-web-media
           key: ${{ runner.os }}-awspublish-cache-${{ steps.get-awspublish-hash-save.outputs.hash }}
           restore-keys: |
             ${{ runner.os }}-awspublish-cache-${{ steps.get-awspublish-hash-save.outputs.hash }}
