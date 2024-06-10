@@ -62,8 +62,9 @@ jobs:
       - uses: https://gitea.com/actions/go-hashfiles@v0.0.1
         id: get-awspublish-hash
         with:
+          workdir: ${{ github.workspace }}/brandonb.ca
           patterns: |-
-            brandonb.ca/.awspublish-brandonb-web-media
+            .awspublish-brandonb-web-media
 
       - uses: actions/cache@v4
         with:
@@ -129,13 +130,6 @@ jobs:
       - uses: actions/setup-go@v3
         with:
           go-version: '>=1.20.1'
-
-      - uses: actions/cache@v4
-        with:
-          path: .awspublish-brandonb-web-media
-          key: ${{ runner.os }}-awspublish-cache-${{ steps.get-awspublish-hash.outputs.hash }}
-          restore-keys: |
-            ${{ runner.os }}-awspublish-cache-
 
       - name: Setup Ruby
         uses: ruby/setup-ruby@v1
