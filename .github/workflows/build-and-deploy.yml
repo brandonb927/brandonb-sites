@@ -6,9 +6,6 @@ on:
       - main
   pull_request:
 
-env:
-  RUNNER_TOOL_CACHE: /toolcache
-
 jobs:
   files_changed:
     name: Get changed files
