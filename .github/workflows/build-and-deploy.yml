@@ -55,7 +55,7 @@ jobs:
     steps:
       - uses: actions/checkout@v4
 
-      - uses: actions/go-hashfiles@v0.0.1
+      - uses: https://gitea.com/actions/go-hashfiles@v0.0.1
         id: get-awspublish-hash
         with:
           patterns: |-
@@ -122,7 +122,7 @@ jobs:
         with:
           fetch-depth: 0
 
-      - uses: actions/go-hashfiles@v0.0.1
+      - uses: https://gitea.com/actions/go-hashfiles@v0.0.1
         id: get-awspublish-hash
         with:
           patterns: |-
