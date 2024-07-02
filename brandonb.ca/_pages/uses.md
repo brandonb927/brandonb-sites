@@ -52,9 +52,9 @@ My primary work operating system is macOS, so most tools and software listed her
 
 ### Menubar
 
-- [Bartender](https://www.macbartender.com/) - hides apps in your menubar and allows for a hotkey to show them
+- [Ice](https://github.com/jordanbaird/Ice) - hides apps in your menubar and allows for a hotkey to show them
 - [stats](https://github.com/exelban/stats) - a menubar app to show stats about your system
-- [Kap](https://getkap.co/) - a beautiful minimalist screen recorder
+- [Flameshot](https://flameshot.org/) - screen recorder/screenshot tool
 - [Stay](https://cordlessdog.com/stay/) - I've never been happy with macOS window management when plugging in a display, this tool allows you to store window locations on a per-display configuration basis, and even a per-app basis
 - [Hyperduck](https://sindresorhus.com/hyperduck) — Send links from iOS to your Mac
 
@@ -67,6 +67,7 @@ My primary work operating system is macOS, so most tools and software listed her
 
 ## Office/Desk Setup
 
+- MacBook Pro (2023 14-inch M3 Pro)
 - MacBook Pro (2019 15-inch Intel i7 6-core, last of it's kind)
 - Standing Desk:
   - [Effydesk Business dual-motor standing desk frame](https://effydesk.ca/products/electric-adjustable-standing-desk-business-office) in white - You can get \$15 off your order by using my [referral code](http://effydesk.refr.cc/brandonb)
