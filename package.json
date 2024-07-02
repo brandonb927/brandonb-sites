@@ -15,7 +15,7 @@
     "dotenv": "^16.4.5",
     "eslint": "^8.57.0",
     "flickr-sdk": "^6.3.0",
-    "gulp": "^4.0.2",
+    "gulp": "^5.0.0",
     "gulp-autoprefixer": "^9.0.0",
     "gulp-awspublish": "^8.0.0",
     "gulp-babel": "^8.0.0",
