@@ -3,6 +3,9 @@
   "npm": {
     "enabled": true
   },
+  "github-actions": {
+    "enabled": true
+  },
   "packageRules": [
     {
       "groupName": "npm dependencies",
@@ -13,6 +16,10 @@
       "groupName": "npm dev-dependencies",
       "matchManagers": ["npm"],
       "matchDepTypes": ["devDependencies"]
+    },
+    {
+      "groupName": "workflow dependencies",
+      "matchManagers": ["github-actions"]
     }
   ]
 }
