@@ -1,25 +1,3 @@
 {
-  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
-  "npm": {
-    "enabled": true
-  },
-  "github-actions": {
-    "enabled": true
-  },
-  "packageRules": [
-    {
-      "groupName": "npm dependencies",
-      "matchManagers": ["npm"],
-      "matchDepTypes": ["dependencies"]
-    },
-    {
-      "groupName": "npm dev-dependencies",
-      "matchManagers": ["npm"],
-      "matchDepTypes": ["devDependencies"]
-    },
-    {
-      "groupName": "workflow dependencies",
-      "matchManagers": ["github-actions"]
-    }
-  ]
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json"
 }
