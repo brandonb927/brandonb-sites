@@ -1,6 +1,6 @@
 ---
 title: Running QTH.app with a custom tileserver for field operations
-date: 2024-01-15
+date: 2024-12-15
 draft: true
 ---
 
@@ -42,7 +42,7 @@ docker run -d \
     run
 ```
 
-In QTH.app
+In QTH.app, in the menubar click View > New Layer > Local Tile Server; you can use the default URL template. If you click View in the menubar again you should see Local Tile Server as an option in the list above New Layer. Clicking on Local Tile Server here will allow you to disable, configure the URL, or remove it as a map layer.
 
 ## Resources
 
