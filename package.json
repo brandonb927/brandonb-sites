@@ -46,8 +46,8 @@
   },
   "scripts": {
     "surge": "./node_modules/.bin/surge",
-    "lint": "eslint --fix '*/_assets/scripts/**/*.js' && npm run prettier:write",
-    "lint:nofix": "eslint '*/_assets/scripts/**/*.js' && npm run prettier",
+    "lint": "eslint --fix && npm run prettier:write",
+    "lint:nofix": "eslint && npm run prettier",
     "prettier": "prettier '*/_assets/scripts/**/*.js' --check",
     "prettier:write": "prettier '*/_assets/scripts/**/*.js' --write",
     "brandonb.ca:deploy:dryrun": "cd brandonb.ca && JEKYLL_ENV=production gulp deploy_dryrun",
@@ -83,11 +83,5 @@
   },
   "browserslist": [
     "defaults"
-  ],
-  "eslintConfig": {
-    "parserOptions": {
-      "ecmaVersion": 2024,
-      "sourceType": "module"
-    }
-  }
+  ]
 }
