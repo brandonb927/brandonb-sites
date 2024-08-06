@@ -48,8 +48,8 @@
     "surge": "./node_modules/.bin/surge",
     "lint": "eslint --fix && npm run prettier:write",
     "lint:nofix": "eslint && npm run prettier",
-    "prettier": "prettier '*/_assets/scripts/**/*.js' --check",
-    "prettier:write": "prettier '*/_assets/scripts/**/*.js' --write",
+    "prettier": "prettier '*.config.js' '*/_assets/scripts/**/*.js' --check",
+    "prettier:write": "prettier '*.config.js' '*/_assets/scripts/**/*.js' --write",
     "brandonb.ca:deploy:dryrun": "cd brandonb.ca && JEKYLL_ENV=production gulp deploy_dryrun",
     "brandonb.ca:deploy": "cd brandonb.ca && JEKYLL_ENV=production gulp deploy",
     "brandonb.ca:start:dev": "cd brandonb.ca && gulp --noserviceworker",
@@ -61,13 +61,6 @@
     "ve7tzb.ca:start:dev": "cd ve7tzb.ca && gulp --noserviceworker",
     "ve7tzb.ca:start": "cd ve7tzb.ca && gulp",
     "ve7tzb.ca:task:generate-share-images": "cd ve7tzb.ca && gulp generate_share_images"
-  },
-  "prettier": {
-    "trailingComma": "es5",
-    "semi": false,
-    "singleQuote": true,
-    "bracketSpacing": true,
-    "arrowParens": "avoid"
   },
   "babel": {
     "presets": [
