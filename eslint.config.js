@@ -1,5 +1,8 @@
 export default [
   {
+    ignores: ['*/_pages/sw.js'],
+  },
+  {
     languageOptions: {
       parserOptions: {
         ecmaVersion: 2024,
