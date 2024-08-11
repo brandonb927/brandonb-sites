@@ -57,11 +57,7 @@ const baseDevConfig = {
   },
   copy: {
     media: {
-      src: [
-        `${srcAssets}/media/*.{png,jpg,ico}`,
-        `${srcAssets}/media/ad/*`,
-        `${srcAssets}/media/**/*.{gif,mp4}`,
-      ],
+      src: `${srcAssets}/media/**/*`,
       dest: `${buildAssets}/media`,
     },
     fonts: {
