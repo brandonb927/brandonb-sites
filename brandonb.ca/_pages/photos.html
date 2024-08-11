@@ -37,7 +37,7 @@ page_id: photos
             {% if photo.exif != nil %}
             <p>📸 {{photo.exif.camera}}<br />
               {% if photo.exif.aperture != 0 and photo.exif.focalLength != 0 and photo.exif.focalLengthEquiv != 0 %}
-              at {{photo.exif.aperture}} {{photo.exif.focalLength}} ({{photo.exif.focalLengthEquiv}} equiv.)<br />
+              at {{photo.exif.aperture}} ISO{{photo.exif.iso}} {{photo.exif.focalLength}}{% if photo.exif.camera != 'Nikon Z 5' %} ({{photo.exif.focalLengthEquiv}} equiv.){% endif %}<br />
               {% endif %}
             </p>
             {% endif %}
