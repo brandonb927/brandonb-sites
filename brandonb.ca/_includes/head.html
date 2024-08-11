@@ -11,10 +11,6 @@
 
 {% include social_meta_tags.html %}
 
-{% if site.google_analytics.id %}
-<link rel="dns-prefetch" href="//www.google-analytics.com">
-{% endif %}
-
 {% if page.robots %}
 <meta name="robots" content="{{ page.robots }}">
 {% else %}
@@ -54,9 +50,6 @@
     {% endif %}
   }
 </script>
-
-{% include google_analytics.html %}
-{% include google_ads.html %}
 
 <script async src="https://assets.codepen.io/assets/embed/ei.js"></script>
 
