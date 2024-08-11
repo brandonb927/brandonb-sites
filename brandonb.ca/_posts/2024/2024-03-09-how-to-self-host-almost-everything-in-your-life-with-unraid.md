@@ -5,7 +5,13 @@ date_modified: 2024-06-10
 pinned: true
 ---
 
-**[June 2024 Update]** I've been running this server for over 3 months. In that time I've explored adding more services to my self-hosted life, namely: running my own dockerized Discord bot, hosting my own Gitea instance for version control (accompanied by Gitea Actions for CI/CD) to reduce my reliance on GitHub, Mealie for recipe management, and Scrypted for NVR camera connection to Homekit with HKSV (HomeKit Secure Video). I've since removed Nextcloud entirely as it does not play well with Apple devices and the UI is very janky which is a shame for a project as mature as it is. I'm constantly evaluating third-party services that I can remove and bring in-house, and I'm sure more will be self-hosted as time marches forward. I will update this space every few months to catalog my changes until it gets to be it's own post.
+**[August 2024 Update]** I've been running this server very stable for several months. In that time I've explored adding more services to my self-hosted life, namely:
+- running my own [dockerized Discord bot](https://github.com/brandonb927/amateur-radio-discord-bot)
+- hosting my own [Gitea](https://docs.gitea.com/installation/comparison) instance for version control (accompanied by Gitea Actions for CI/CD) to reduce my reliance on GitHub
+- recipe management powered by [Mealie](https://mealie.io/)
+- [Scrypted](https://www.scrypted.app/) for NVR camera connection to Homekit with HKSV (HomeKit Secure Video)
+- [Homebox](https://github.com/sysadminsmedia/homebox) for physical asset management
+I removed Nextcloud entirely, not long after starting to use it, because it does not play well with Apple devices and the UI is _very janky_ which is a shame for a project as mature as it is. I'm constantly evaluating third-party services that I can remove and bring in-house, and I'm sure more will be self-hosted as time marches forward. I will update this space every few months to catalog my changes until it gets to be it's own post.
 {: .post-updated}
 
 Maintenance is a word that can strike a chord in even the most seasoned administrators; it is also the bane of my existence. Sometimes we spend countless hours maintaining something for very little return.
