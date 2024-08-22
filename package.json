@@ -3,8 +3,8 @@
   "private": true,
   "type": "module",
   "dependencies": {
-    "@aws-sdk/credential-provider-ini": "3.624.0",
-    "@babel/core": "7.24.7",
+    "@aws-sdk/credential-provider-ini": "3.635.0",
+    "@babel/core": "7.25.2",
     "@babel/preset-env": "7.25.3",
     "@babel/register": "7.24.6",
     "broken-link-checker": "0.7.8",
@@ -39,7 +39,7 @@
     "nodemon": "3.1.4",
     "postcss": "8.4.41",
     "prettier": "3.3.3",
-    "surge": "0.24.5",
+    "surge": "0.24.6",
     "sync-request": "6.1.0",
     "yargs": "17.7.2"
   },
