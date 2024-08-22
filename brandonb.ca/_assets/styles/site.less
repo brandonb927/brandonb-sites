@@ -317,43 +317,46 @@ picture {
   overflow: hidden;
   position: fixed;
   pointer-events: none;
+
+  span {
+    position: absolute;
+    display: block;
+    width: 30rem;
+    padding: 1.5rem 0;
+    background-color: #f5e61a;
+    box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
+    color: #fff;
+    font-size: 3rem;
+    text-shadow: 0 1px 1px rgba(0,0,0,.65);
+    text-transform: uppercase;
+    text-align: center;
+  }
 }
 
-.main-content-post-draft span {
-  position: absolute;
-  display: block;
-  width: 30rem;
-  padding: 1.5rem 0;
-  background-color: #f5e61a;
-  box-shadow: 0 .5rem 1rem rgba(0,0,0,.2);
-  color: #fff;
-  font-size: 3rem;
-  text-shadow: 0 1px 1px rgba(0,0,0,.65);
-  text-transform: uppercase;
-  text-align: center;
-}
 
 .main-content-post-draft {
   top: 0;
   right: 0;
-}
-.main-content-post-draft::before,
-.main-content-post-draft::after {
-  border-top-color: transparent;
-  border-right-color: transparent;
-}
-.main-content-post-draft::before {
-  top: 0;
-  left: 0;
-}
-.main-content-post-draft::after {
-  bottom: 0;
-  right: 0;
-}
-.main-content-post-draft span {
-  left: .5rem;
-  top: 3rem;
-  transform: rotate(45deg);
+
+  ::before,
+  ::after {
+    border-top-color: transparent;
+    border-right-color: transparent;
+  }
+  ::before {
+    top: 0;
+    left: 0;
+  }
+  ::after {
+    bottom: 0;
+    right: 0;
+  }
+
+  span {
+    left: .5rem;
+    top: 3rem;
+    transform: rotate(45deg);
+  }
 }
 
 // Fix lists globally
@@ -420,15 +423,20 @@ picture {
 .post-disclaimer,
 .post-useful-content,
 .post-updated {
+  .margin-bottom-med;
   display: block;
   padding: 3rem;
   border-radius: 5px;
+
+  p:last-child {
+    margin-bottom: 0;
+  }
 }
+
 
 // Post author's note
 .post-author-note {
   background: rgba(0, 0, 0, 0.5);
-  .margin-bottom-med;
 }
 
 // Post disclaimer
@@ -483,13 +491,14 @@ picture a {
   padding-top: 25px;
   margin-bottom: 2rem;
   height: 0;
-}
-.responsive-embed iframe {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
+
+  iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
 }
 
 // Custom pages
